@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "spotify",
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "projects": {
+    "spotify": {
+      "projectType": "application",
+      "root": "apps/spotify",
+      "sourceRoot": "apps/spotify/src",
+      "prefix": "artur-ba",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/spotify",
+            "index": "apps/spotify/src/index.html",
+            "main": "apps/spotify/src/main.ts",
+            "polyfills": "apps/spotify/src/polyfills.ts",
+            "tsConfig": "apps/spotify/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/spotify/src/favicon.ico",
+              "apps/spotify/src/assets"
+            ],
+            "styles": ["apps/spotify/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/spotify/src/environments/environment.ts",
+                  "with": "apps/spotify/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "spotify:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "spotify:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "spotify:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/spotify/src/**/*.ts",
+              "apps/spotify/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/spotify"],
+          "options": {
+            "jestConfig": "apps/spotify/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "spotify-e2e": {
+      "root": "apps/spotify-e2e",
+      "sourceRoot": "apps/spotify-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/spotify-e2e/cypress.json",
+            "tsConfig": "apps/spotify-e2e/tsconfig.e2e.json",
+            "devServerTarget": "spotify:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "spotify:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/spotify-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  }
+}
