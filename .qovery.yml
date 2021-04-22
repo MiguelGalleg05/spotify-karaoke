@@ -1,0 +1,11 @@
+---
+application:
+  name: "spotify"
+  project: "spotify-karaoke"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-spotify"
+  routes:
+  - application_name: "spotify"
+    paths:
+    - "/*"
