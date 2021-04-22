@@ -1,11 +1,11 @@
 ---
 application:
-  name: "spotify"
+  name: "spotify-proxy"
   project: "spotify-karaoke"
   organization: "QoveryCommunity"
 routers:
-- name: "main-spotify"
+- name: "main-spotify-proxy"
   routes:
-  - application_name: "spotify"
+  - application_name: "spotify-proxy"
     paths:
     - "/*"
