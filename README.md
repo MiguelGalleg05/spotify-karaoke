@@ -12,6 +12,7 @@ I've tried to implement that for them.
 
 - [minilyrics proxy](https://github.com/olee/minilyrics-proxy). Used to get a lyrics from a MiniLyrics. Thanks for your work
 - [angular spotify](https://github.com/trungk18/angular-spotify). You need to check that out. This was a big inspiration for my project
+- [lcr parser](https://github.com/anhthii/lrc-parser). I've adopted this parser
 
 ## Structure
 

@@ -1,8 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MiniLyricsResponse } from '@artur-ba/web/lyrics/mini-lyrics/interface';
+import { Component, OnInit } from '@angular/core';
 
-import { MiniLyricsService } from 'libs/web/lyrics/mini-lyrics/service/src/lib/mini-lyrics.service';
-// import { MiniLyricsService } from '@artur-ba/web/lyrics/mini-lyrics/service/src/lib/mini-lyrics.service';
+import { Observable } from 'rxjs';
+
+import { MiniLyricsService } from '@artur-ba/web/lyrics/mini-lyrics/service';
+import { PlayerStore } from '@artur-ba/shared/service';
+import { Lyrics, LyricsParser, LyricsScript } from '@artur-ba/web/lyrics/model';
+import { CursorError } from '@angular/compiler/src/ml_parser/lexer';
 
 @Component({
   selector: 'artur-ba-lyrics',
@@ -10,11 +13,34 @@ import { MiniLyricsService } from 'libs/web/lyrics/mini-lyrics/service/src/lib/m
   styleUrls: ['./lyrics.component.scss'],
 })
 export class LyricsComponent implements OnInit {
-  lyrics: string;
+  lyrics: Lyrics;
+  author: string;
+  title: string;
+  progress: Observable<number>;
 
-  constructor(protected lyricsAPI: MiniLyricsService) {}
+  constructor(
+    protected lyricsAPI: MiniLyricsService,
+    protected playerState: PlayerStore
+  ) {}
 
   async ngOnInit(): Promise<void> {
-    this.lyrics = await this.lyricsAPI.getLyrics('hound dog', 'elvis presley');
+    this.playerState.currentTrack$.subscribe(async (track) => {
+      this.handleSongUpdate(track);
+    });
+    this.playerState.progress$.subscribe((pos) => {
+      this.progress = pos;
+    });
+  }
+
+  protected async handleSongUpdate(track: Spotify.Track): Promise<void> {
+    this.author = track.artists[0].name;
+    this.title = track.name;
+    this.updateLyrics();
+  }
+
+  protected async updateLyrics(): Promise<void> {
+    this.lyrics = LyricsParser.lrcParser(
+      await this.lyricsAPI.getLyrics(this.title, this.author)
+    );
   }
 }

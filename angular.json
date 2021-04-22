@@ -147,6 +147,31 @@
         }
       }
     },
+    "shared-service": {
+      "projectType": "library",
+      "root": "libs/shared/service",
+      "sourceRoot": "libs/shared/service/src",
+      "prefix": "artur-ba",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/service/src/**/*.ts",
+              "libs/shared/service/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/service"],
+          "options": {
+            "jestConfig": "libs/shared/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "web-lyrics-view": {
       "projectType": "library",
       "root": "libs/web/lyrics/view",
@@ -217,6 +242,31 @@
           "outputs": ["coverage/libs/web/lyrics/mini-lyrics/interface"],
           "options": {
             "jestConfig": "libs/web/lyrics/mini-lyrics/interface/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "web-lyrics-model": {
+      "projectType": "library",
+      "root": "libs/web/lyrics/model",
+      "sourceRoot": "libs/web/lyrics/model/src",
+      "prefix": "artur-ba",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/lyrics/model/src/**/*.ts",
+              "libs/web/lyrics/model/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/lyrics/model"],
+          "options": {
+            "jestConfig": "libs/web/lyrics/model/jest.config.js",
             "passWithNoTests": true
           }
         }
