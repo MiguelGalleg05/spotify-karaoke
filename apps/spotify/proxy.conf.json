@@ -1,0 +1,18 @@
+{
+  "/minilyrics-proxy/*": {
+    "target": "http://bzeutzheim.de:8981",
+    "secure": false,
+    "pathRewrite": {
+      "^/minilyrics-proxy": ""
+    },
+    "changeOrigin": true
+  },
+  "/minilyrics/*": {
+    "target": "http://search.crintsoft.com",
+    "secure": false,
+    "pathRewrite": {
+      "^/minilyrics": ""
+    },
+    "changeOrigin": true
+  }
+}

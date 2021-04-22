@@ -14,7 +14,15 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@artur-ba/web/lyrics/view": ["libs/web/lyrics/view/src/index.ts"],
+      "@artur-ba/web/lyrics/mini-lyrics/service": [
+        "libs/web/lyrics/mini-lyrics/service/src/index.ts"
+      ],
+      "@artur-ba/web/lyrics/mini-lyrics/interface": [
+        "libs/web/lyrics/mini-lyrics/interface/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

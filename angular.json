@@ -87,7 +87,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "spotify:build"
+            "browserTarget": "spotify:build",
+            "proxyConfig": "apps/spotify/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -142,6 +143,81 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/spotify-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "web-lyrics-view": {
+      "projectType": "library",
+      "root": "libs/web/lyrics/view",
+      "sourceRoot": "libs/web/lyrics/view/src",
+      "prefix": "artur-ba",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/lyrics/view/src/**/*.ts",
+              "libs/web/lyrics/view/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/lyrics/view"],
+          "options": {
+            "jestConfig": "libs/web/lyrics/view/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "web-lyrics-mini-lyrics-service": {
+      "projectType": "library",
+      "root": "libs/web/lyrics/mini-lyrics/service",
+      "sourceRoot": "libs/web/lyrics/mini-lyrics/service/src",
+      "prefix": "artur-ba",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/lyrics/mini-lyrics/service/src/**/*.ts",
+              "libs/web/lyrics/mini-lyrics/service/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/lyrics/mini-lyrics/service"],
+          "options": {
+            "jestConfig": "libs/web/lyrics/mini-lyrics/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "web-lyrics-mini-lyrics-interface": {
+      "projectType": "library",
+      "root": "libs/web/lyrics/mini-lyrics/interface",
+      "sourceRoot": "libs/web/lyrics/mini-lyrics/interface/src",
+      "prefix": "artur-ba",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/lyrics/mini-lyrics/interface/src/**/*.ts",
+              "libs/web/lyrics/mini-lyrics/interface/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/lyrics/mini-lyrics/interface"],
+          "options": {
+            "jestConfig": "libs/web/lyrics/mini-lyrics/interface/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
