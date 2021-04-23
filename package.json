@@ -1,6 +1,6 @@
 {
   "name": "artur-ba",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "scripts": {
     "ng": "nx",
@@ -78,8 +78,8 @@
     "jest": "26.2.2",
     "jest-preset-angular": "8.3.2",
     "lint-staged": "^10.5.4",
+    "postcss": "^8.2.12",
     "prettier": "2.2.1",
-    "tailwindcss": "^2.1.1",
     "ts-jest": "26.4.0",
     "ts-node": "~9.1.1",
     "typescript": "~4.1.4"

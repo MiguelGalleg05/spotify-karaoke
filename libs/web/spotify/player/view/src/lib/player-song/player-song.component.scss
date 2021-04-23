@@ -1,9 +1,16 @@
 :host {
-  @apply flex-1 flex flex-row justify-start;
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
 }
 img {
-  @apply ml-8 w-16;
+  margin-left: 2rem;
+  width: 64px;
 }
 .song-data {
-  @apply flex flex-col ml-8 justify-center;
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

@@ -1,3 +1,10 @@
 :host {
-  @apply flex flex-col h-screen;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+div {
+  display: flex;
+  flex: 1 1 0%;
+  min-height: 0;
 }
