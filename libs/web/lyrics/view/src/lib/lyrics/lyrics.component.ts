@@ -32,6 +32,9 @@ export class LyricsComponent implements OnInit {
   }
 
   protected async handleSongUpdate(track: Spotify.Track): Promise<void> {
+    if (this.author === track.artists[0].name && this.title === track.name) {
+      return;
+    }
     this.author = track.artists[0].name;
     this.title = track.name;
     this.updateLyrics();

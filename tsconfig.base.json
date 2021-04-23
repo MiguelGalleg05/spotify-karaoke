@@ -23,7 +23,21 @@
       "@artur-ba/web/lyrics/mini-lyrics/interface": [
         "libs/web/lyrics/mini-lyrics/interface/src/index.ts"
       ],
-      "@artur-ba/web/lyrics/model": ["libs/web/lyrics/model/src/index.ts"]
+      "@artur-ba/web/lyrics/model": ["libs/web/lyrics/model/src/index.ts"],
+      "@artur-ba/web/spotify/player/view": [
+        "libs/web/spotify/player/view/src/index.ts"
+      ],
+      "@artur-ba/web/spotify/homepage/view": [
+        "libs/web/spotify/homepage/view/src/index.ts"
+      ],
+      "@artur-ba/web/spotify/sidebar/view": [
+        "libs/web/spotify/sidebar/view/src/index.ts"
+      ],
+      "@artur-ba/web/spotify/dashboard/view": [
+        "libs/web/spotify/dashboard/view/src/index.ts"
+      ],
+      "@artur-ba/shared/pipes": ["libs/shared/pipes/src/index.ts"],
+      "@artur-ba/shared/interceptors": ["libs/shared/interceptors/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

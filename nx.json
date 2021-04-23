@@ -18,6 +18,11 @@
     "web-lyrics-view": { "tags": ["type:view"] },
     "web-lyrics-mini-lyrics-service": { "tags": ["type:service"] },
     "web-lyrics-mini-lyrics-interface": { "tags": ["type:interface"] },
-    "web-lyrics-model": { "tags": [] }
+    "web-lyrics-model": { "tags": ["tags:interface"] },
+    "web-spotify-player-view": { "tags": ["tags:view"] },
+    "web-spotify-homepage-view": { "tags": ["tags:view"] },
+    "web-spotify-sidebar-view": { "tags": ["tags:view"] },
+    "web-spotify-dashboard-view": { "tags": ["tags:view"] },
+    "shared-interceptors": { "tags": [] }
   }
 }

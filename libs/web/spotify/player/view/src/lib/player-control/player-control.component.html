@@ -1,0 +1,31 @@
+<div class="flex justify-center">
+  <button mat-icon-button aria-label="Previous" (click)="prevTrack()">
+    <mat-icon>skip_previous</mat-icon>
+  </button>
+  <button
+    mat-mini-fab
+    color="accent"
+    aria-label="Play"
+    *ngIf="paused"
+    (click)="play()"
+  >
+    <mat-icon>play_arrow</mat-icon>
+  </button>
+  <button
+    mat-mini-fab
+    color="accent"
+    aria-label="Pause"
+    *ngIf="!paused"
+    (click)="pause()"
+  >
+    <mat-icon>pause</mat-icon>
+  </button>
+  <button mat-icon-button aria-label="Next" (click)="nextTrack()">
+    <mat-icon>skip_next</mat-icon>
+  </button>
+</div>
+<div class="flex flex-row progress-bar items-center justify-between">
+  {{ (progress$ | async) / 1000 }}
+  <mat-slider [value]="progress$ | async" [max]="max"> </mat-slider>
+  {{ max / 1000 }}
+</div>
