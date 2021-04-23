@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "/minilyrics-proxy/"
+  to = "http://bzeutzheim.de:8981"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/minilyrics/*"
+  to = "http://search.crintsoft.com/:splat"
+  status = 200
+  force = true
