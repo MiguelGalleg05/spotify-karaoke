@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="favicon.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="1165.9592"
+     inkscape:cy="910.94195"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showborder="false"
+     inkscape:window-width="2560"
+     inkscape:window-height="1411"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:snap-text-baseline="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="opacity:1;fill:#66b41f;fill-opacity:1;stroke:none;stroke-width:2.0999999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 47.142578 -428.9082 A 558.57138 558.57138 0 0 0 -71.076172 -415.55469 C -68.097896 -414.32029 -65.154496 -413.03029 -62.248047 -411.67578 C -29.471921 -396.66894 -4.0820346 -375.36359 13.917969 -347.76172 C 32.186628 -320.15985 41.320312 -288.80646 41.320312 -253.70117 L -79.576172 -253.70117 C -79.576172 -280.4991 -88.037515 -301.267 -104.96289 -316.00586 C -121.88827 -331.0127 -145.66414 -338.51758 -176.29102 -338.51758 C -205.84326 -338.51758 -228.81507 -332.22003 -245.20312 -319.625 C -261.59119 -307.29795 -269.78516 -290.95041 -269.78516 -270.58398 C -269.78516 -251.55745 -260.2465 -235.61301 -241.17188 -222.75 C -221.82859 -209.88699 -193.48587 -197.8274 -156.14258 -186.57227 C -87.366445 -165.93786 -37.26292 -140.34651 -5.8300781 -109.79688 C 25.602763 -79.247228 41.320312 -41.193201 41.320312 4.3632812 C 41.320312 55.011371 22.111277 94.806278 -16.306641 123.74805 C -54.724557 152.42183 -106.44209 166.75781 -171.45703 166.75781 C -216.59137 166.75781 -257.6949 158.58502 -294.76953 142.23828 C -331.84416 125.62356 -360.18688 102.97847 -379.79883 74.304688 C -399.14212 45.630901 -408.81445 12.40227 -408.81445 -25.382812 L -287.51562 -25.382812 C -287.51562 39.200201 -248.83018 71.492188 -171.45703 71.492188 C -142.71076 71.492188 -120.27761 65.730142 -104.1582 54.207031 C -88.0388 42.415941 -79.978516 26.068402 -79.978516 5.1660156 C -79.978516 -17.612226 -88.0388 -35.030775 -104.1582 -47.089844 C -120.27761 -59.416892 -149.29268 -72.27877 -191.20312 -85.677734 C -233.11358 -99.344679 -266.29247 -112.74401 -290.74023 -125.875 C -339.77225 -152.3013 -370.76058 -185.47686 -383.70898 -225.40039 A 558.57138 558.57138 0 0 0 -511.42773 129.66211 A 558.57138 558.57138 0 0 0 47.142578 688.23438 A 558.57138 558.57138 0 0 0 605.71484 129.66211 A 558.57138 558.57138 0 0 0 47.142578 -428.9082 z M 62.005859 164.2832 L 144.65039 164.2832 L 144.65039 346.09961 L 181.01367 296.23828 L 283.2168 164.2832 L 384.86914 164.2832 L 242.44531 342.51758 L 389.00195 565.38281 L 290.6543 565.38281 L 187.625 404.50195 L 144.65039 450.78125 L 144.65039 565.38281 L 62.005859 565.38281 L 62.005859 164.2832 z "
+       transform="scale(0.26458333)"
+       id="path815"
+       inkscape:export-filename="/home/artur/Documents/angular/artur-ba/apps/spotify/src/assets/favphoto.png"
+       inkscape:export-xdpi="127.078"
+       inkscape:export-ydpi="127.078" />
+    <flowRoot
+       transform="matrix(5.3602462,0,0,5.3602462,3476.7681,1053.344)"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'TeX Gyre Bonum';-inkscape-font-specification:'TeX Gyre Bonum, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot858"
+       xml:space="preserve"
+       inkscape:export-filename="/home/artur/Documents/angular/artur-ba/apps/spotify/src/assets/favphoto.png"
+       inkscape:export-xdpi="127.078"
+       inkscape:export-ydpi="127.078"><flowRegion
+         id="flowRegion854"><rect
+           y="-224.62317"
+           x="-618.57141"
+           height="537.14288"
+           width="1510"
+           id="rect852" /></flowRegion><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;font-family:Roboto;-inkscape-font-specification:'Roboto, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"
+         id="flowPara856">Spotify</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot866"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'TeX Gyre Bonum';-inkscape-font-specification:'TeX Gyre Bonum, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(3.9151476,0,0,3.9151476,2824.5499,920.45569)"
+       inkscape:export-filename="/home/artur/Documents/angular/artur-ba/apps/spotify/src/assets/favphoto.png"
+       inkscape:export-xdpi="127.078"
+       inkscape:export-ydpi="127.078"><flowRegion
+         id="flowRegion862"><rect
+           id="rect860"
+           width="1510"
+           height="537.14288"
+           x="-618.57141"
+           y="-224.62317" /></flowRegion><flowPara
+         id="flowPara864"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;font-family:Roboto;-inkscape-font-specification:'Roboto, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start">Karaoke</flowPara></flowRoot>  </g>
+</svg>
