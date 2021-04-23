@@ -1,0 +1,9 @@
+:host {
+  @apply flex-1 flex flex-row justify-start;
+}
+img {
+  @apply ml-8 w-16;
+}
+.song-data {
+  @apply flex flex-col ml-8 justify-center;
+}
