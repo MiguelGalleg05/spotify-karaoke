@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +8,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class StateInterface<T> {
   readonly state$ = new BehaviorSubject<T>({} as T);
 
-  setState(t: Object): void {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  setState(t: any): void {
     this.state$.next({
       ...this.state$.value,
       ...t,

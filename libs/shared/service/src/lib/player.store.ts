@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { Observable, of, timer } from 'rxjs';
 import { debounceTime, filter, map } from 'rxjs/operators';
+import { Observable, of, timer } from 'rxjs';
 
 import { StateInterface } from './state-interface';
 
@@ -37,5 +37,5 @@ export class PlayerStore extends StateInterface<PlayerState> {
         map((x) => x + position)
       );
     })
-  );
+  ) as Observable<Observable<number>>;
 }

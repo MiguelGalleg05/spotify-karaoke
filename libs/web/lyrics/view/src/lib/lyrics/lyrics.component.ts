@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
+import { Lyrics, LyricsParser } from '@artur-ba/web/lyrics/model';
 import { MiniLyricsService } from '@artur-ba/web/lyrics/mini-lyrics/service';
 import { PlayerStore } from '@artur-ba/shared/service';
-import { Lyrics, LyricsParser, LyricsScript } from '@artur-ba/web/lyrics/model';
-import { CursorError } from '@angular/compiler/src/ml_parser/lexer';
 
 @Component({
   selector: 'artur-ba-lyrics',
@@ -16,7 +15,7 @@ export class LyricsComponent implements OnInit {
   lyrics: Lyrics;
   author: string;
   title: string;
-  progress: Observable<number>;
+  progress$: Observable<number>;
 
   constructor(
     protected lyricsAPI: MiniLyricsService,
@@ -28,7 +27,7 @@ export class LyricsComponent implements OnInit {
       this.handleSongUpdate(track);
     });
     this.playerState.progress$.subscribe((pos) => {
-      this.progress = pos;
+      this.progress$ = pos;
     });
   }
 

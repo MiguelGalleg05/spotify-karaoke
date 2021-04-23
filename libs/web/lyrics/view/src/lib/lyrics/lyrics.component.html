@@ -3,6 +3,6 @@
 
 <artur-ba-lyrics-text
   *ngIf="this.lyrics"
-  [currentTime]="progress | async"
+  [currentTime]="progress$ | async"
   [lyrics]="lyrics"
 ></artur-ba-lyrics-text>

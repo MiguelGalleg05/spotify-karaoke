@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+
 import { filter, map, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 import { SpotifyAuthorize } from './models/spotify-authorize';
 import { StateInterface } from './state-interface';

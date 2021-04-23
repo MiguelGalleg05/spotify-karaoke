@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
 import { MiniLyricsResponse } from '@artur-ba/web/lyrics/mini-lyrics/interface';
 

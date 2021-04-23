@@ -21,8 +21,8 @@ interface LCR {
 export class LyricsParser {
   static readonly EOL = '\r\n';
 
-  static readonly timeStart = /\[(\d*\:\d*\.?\d*)\]/; // i.g [00:10.55]
-  static readonly timeStartValue = /\[(\d*\:\d*\.?\d*)\](.*)/; // i.g [00:10.55]
+  static readonly timeStart = /\[(\d*:\d*\.?\d*)\]/; // i.g [00:10.55]
+  static readonly timeStartValue = /\[(\d*:\d*\.?\d*)\](.*)/; // i.g [00:10.55]
   static readonly scriptText = /(.*)/; // Havana ooh na-na (ayy)
   static readonly scriptTextValue = /.*\](.*)/; // Havana ooh na-na (ayy)
   static readonly startAndText = new RegExp(

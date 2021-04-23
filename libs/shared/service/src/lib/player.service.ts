@@ -1,6 +1,8 @@
 /// <reference types="spotify-web-playback-sdk" />
 import { Injectable } from '@angular/core';
+
 import { tap } from 'rxjs/operators';
+
 import { AuthStore } from './auth.store';
 import { PlayerStore } from './player.store';
 
