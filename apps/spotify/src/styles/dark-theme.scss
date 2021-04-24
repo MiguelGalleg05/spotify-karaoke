@@ -1,0 +1,25 @@
+@import '~@angular/material/theming';
+@import './variables';
+@import './generatePalette';
+
+@include mat-core();
+
+$primary-dark-map: mat-palette(createPalette($primary-dark));
+$accent-dark-map: mat-palette(createPalette($accent-dark));
+$warn-dark-map: mat-palette(createPalette(purple));
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as `color` or `typography`.
+$app-dark-theme: mat-light-theme(
+  (
+    color: (
+      primary: $primary-dark-map,
+      accent: $accent-dark-map,
+      warn: $warn-dark-map,
+    ),
+  )
+);
+
+.darkMode {
+  @include angular-material-theme($app-dark-theme);
+}

@@ -1,0 +1,8 @@
+:host {
+  display: block;
+  @apply bg-yellow-300 shadow-md w-full;
+}
+
+img {
+  @apply h-12 w-12;
+}

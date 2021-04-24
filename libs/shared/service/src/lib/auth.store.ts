@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 
 import { SpotifyAuthorize } from './models/spotify-authorize';
 import { StateInterface } from './state-interface';
+import { UserSettingsService } from './user-settings.service';
 
 export interface AuthState {
   accessToken: string | null;
@@ -18,7 +19,11 @@ export interface AuthState {
   providedIn: 'root',
 })
 export class AuthStore extends StateInterface<AuthState> {
-  constructor(protected router: Router, protected route: ActivatedRoute) {
+  constructor(
+    protected router: Router,
+    protected route: ActivatedRoute,
+    protected userSettings: UserSettingsService
+  ) {
     super();
     this.setState({} as AuthState);
   }
@@ -32,9 +37,10 @@ export class AuthStore extends StateInterface<AuthState> {
     this.initAuth();
   }
 
-  redirectToAuthorize() {
+  protected redirectToAuthorize() {
     const spotifyAuthorize = new SpotifyAuthorize();
     const url = spotifyAuthorize.createAuthorizeURL();
+    this.userSettings.saveReturnPath(window.location.pathname);
     window.location.href = url;
   }
 
@@ -57,7 +63,7 @@ export class AuthStore extends StateInterface<AuthState> {
           this.setState(params);
         }),
         tap(() => {
-          this.router.navigate([]);
+          this.router.navigate([this.userSettings.getReturnPath()]);
         })
       )
       .subscribe();

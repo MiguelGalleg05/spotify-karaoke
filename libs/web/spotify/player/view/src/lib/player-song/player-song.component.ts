@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { PlayerStore } from '@artur-ba/shared/service';
+import { TrackHelper } from '@artur-ba/web/spotify/shared/helper';
 @Component({
   selector: 'artur-ba-player-song',
   templateUrl: './player-song.component.html',
@@ -18,9 +19,10 @@ export class PlayerSongComponent {
   }
 
   get image64Url(): string {
-    const img = this.track.album.images.filter((image) => image.height == 64);
-    if (img[0]) {
-      return img[0].url;
-    }
+    return TrackHelper.getImage64Url(this.track);
+  }
+
+  get artists(): string {
+    return TrackHelper.getArtists(this.track);
   }
 }

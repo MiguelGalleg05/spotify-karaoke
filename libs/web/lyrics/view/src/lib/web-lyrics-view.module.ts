@@ -6,10 +6,15 @@ import { WebLyricsMiniLyricsServiceModule } from '@artur-ba/web/lyrics/mini-lyri
 
 import { LyricsComponent } from './lyrics/lyrics.component';
 import { LyricsTextComponent } from './lyrics-text/lyrics-text.component';
+import { WebLyricsViewRoutingModule } from './web-lyrics-view-routing.module';
 
 @NgModule({
-  imports: [CommonModule, WebLyricsMiniLyricsServiceModule],
+  imports: [
+    CommonModule,
+    WebLyricsMiniLyricsServiceModule,
+    WebLyricsViewRoutingModule,
+  ],
   declarations: [LyricsComponent, LyricsTextComponent],
-  exports: [LyricsComponent],
+  exports: [],
 })
 export class WebLyricsViewModule {}

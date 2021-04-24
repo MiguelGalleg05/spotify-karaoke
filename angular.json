@@ -55,6 +55,9 @@
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "apps/spotify/src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["apps/spotify/src/styles"]
+            },
             "scripts": []
           },
           "configurations": {
@@ -396,6 +399,106 @@
           "outputs": ["coverage/libs/shared/interceptors"],
           "options": {
             "jestConfig": "libs/shared/interceptors/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "web-spotify-shared-view": {
+      "projectType": "library",
+      "root": "libs/web/spotify/shared/view",
+      "sourceRoot": "libs/web/spotify/shared/view/src",
+      "prefix": "artur-ba",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/spotify/shared/view/src/**/*.ts",
+              "libs/web/spotify/shared/view/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/spotify/shared/view"],
+          "options": {
+            "jestConfig": "libs/web/spotify/shared/view/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "web-spotify-shared-helper": {
+      "projectType": "library",
+      "root": "libs/web/spotify/shared/helper",
+      "sourceRoot": "libs/web/spotify/shared/helper/src",
+      "prefix": "artur-ba",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/spotify/shared/helper/src/**/*.ts",
+              "libs/web/spotify/shared/helper/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/spotify/shared/helper"],
+          "options": {
+            "jestConfig": "libs/web/spotify/shared/helper/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "web-spotify-shared-pipe": {
+      "projectType": "library",
+      "root": "libs/web/spotify/shared/pipe",
+      "sourceRoot": "libs/web/spotify/shared/pipe/src",
+      "prefix": "artur-ba",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/spotify/shared/pipe/src/**/*.ts",
+              "libs/web/spotify/shared/pipe/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/spotify/shared/pipe"],
+          "options": {
+            "jestConfig": "libs/web/spotify/shared/pipe/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-view": {
+      "projectType": "library",
+      "root": "libs/shared/view",
+      "sourceRoot": "libs/shared/view/src",
+      "prefix": "artur-ba",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/view/src/**/*.ts",
+              "libs/shared/view/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/view"],
+          "options": {
+            "jestConfig": "libs/shared/view/jest.config.js",
             "passWithNoTests": true
           }
         }

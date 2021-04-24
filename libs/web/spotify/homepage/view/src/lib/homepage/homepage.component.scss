@@ -1,3 +1,6 @@
+@import 'variables';
+@import 'mixins';
+
 :host {
   display: flex;
   flex-direction: column;
@@ -5,6 +8,13 @@
 }
 div {
   display: flex;
-  flex: 1 1 0%;
+  @include flex-1;
   min-height: 0;
+  div {
+    overflow-y: scroll;
+    height: 100%;
+    @include flex-1;
+    background-color: $primary;
+    padding: $padding-m;
+  }
 }

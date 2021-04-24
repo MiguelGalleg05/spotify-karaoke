@@ -1,0 +1,7 @@
+@mixin rounded {
+  border-radius: 0.25rem;
+}
+
+@mixin flex-1 {
+  flex: 1 1 0%;
+}

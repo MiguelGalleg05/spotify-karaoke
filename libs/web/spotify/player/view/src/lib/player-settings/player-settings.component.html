@@ -1,1 +1,18 @@
-<p>player-settings works!</p>
+<a routerLink="/queue">
+  <mat-icon matTooltip="Queue"> queue_music </mat-icon>
+</a>
+<mat-icon> speaker_group </mat-icon>
+<mat-icon *ngIf="isLoud() && !isMute()" (click)="mute()" matTooltip="Mute">
+  volume_up
+</mat-icon>
+<mat-icon *ngIf="!isLoud() && !isMute()" (click)="mute()" matTooltip="Mute">
+  volume_down
+</mat-icon>
+<mat-icon *ngIf="isMute()" matTooltip="Device is muted"> volume_off </mat-icon>
+<mat-slider
+  [value]="volume * 100"
+  min="0"
+  max="100"
+  (valueChange)="handleVolumeChange($event)"
+>
+</mat-slider>

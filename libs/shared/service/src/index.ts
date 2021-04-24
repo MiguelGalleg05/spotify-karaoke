@@ -3,3 +3,4 @@ export * from './lib/player.service';
 export * from './lib/player.store';
 export * from './lib/auth.store';
 export * from './lib/player-control.service';
+export * from './lib/user-settings.service';

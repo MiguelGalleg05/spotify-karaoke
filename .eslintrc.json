@@ -13,7 +13,6 @@
             "ignoreCase": true,
             "ignoreDeclarationSort": false,
             "ignoreMemberSort": false,
-            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
             "allowSeparatedGroups": true
           }
         ],

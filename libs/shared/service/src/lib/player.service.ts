@@ -51,8 +51,11 @@ export class PlayerService {
     // Playback status updates
     player.addListener(
       'player_state_changed',
-      (state: Spotify.PlaybackState) => {
-        this.playerState.setState({ playbackState: state });
+      async (state: Spotify.PlaybackState) => {
+        this.playerState.setState({
+          playbackState: state,
+          volume: await player.getVolume(),
+        });
       }
     );
 

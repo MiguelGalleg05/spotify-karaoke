@@ -45,4 +45,8 @@ export class PlayerControlComponent {
   prevTrack(): void {
     this.playerControlService.prevTrack();
   }
+
+  handleSeek(new_position: number): void {
+    this.playerControlService.seek(new_position);
+  }
 }

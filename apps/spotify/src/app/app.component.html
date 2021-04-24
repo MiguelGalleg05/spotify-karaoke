@@ -1,1 +1,8 @@
-<artur-ba-homepage></artur-ba-homepage>
+<artur-ba-homepage>
+  <router-outlet></router-outlet>
+</artur-ba-homepage>
+
+<artur-ba-cookie-banner
+  *ngIf="!cookiesAccepted"
+  (cookiesAccept)="cookiesAccept()"
+></artur-ba-cookie-banner>

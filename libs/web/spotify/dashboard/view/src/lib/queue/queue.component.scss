@@ -1,0 +1,6 @@
+:host {
+  @apply flex flex-col;
+  div {
+    @apply bg-indigo-500 m-2 border-2;
+  }
+}

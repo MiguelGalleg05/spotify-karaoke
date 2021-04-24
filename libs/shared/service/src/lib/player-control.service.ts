@@ -53,4 +53,26 @@ export class PlayerControlService {
   prevTrack(): void {
     this.httpClient.post(`${this.playerURL}/previous`, {}).subscribe();
   }
+
+  setVolume(volume: number) {
+    this.playerStore.setState({ volume: volume / 100 });
+    this.httpClient
+      .put(`${this.playerURL}/volume`, null, {
+        params: {
+          volume_percent: `${volume}`,
+        },
+      })
+      .subscribe();
+  }
+
+  seek(new_position: number) {
+    new_position = Math.floor(new_position);
+    this.httpClient
+      .put(`${this.playerURL}/seek`, null, {
+        params: {
+          position_ms: `${new_position}`,
+        },
+      })
+      .subscribe();
+  }
 }

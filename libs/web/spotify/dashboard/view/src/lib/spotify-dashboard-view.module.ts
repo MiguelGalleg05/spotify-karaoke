@@ -1,19 +1,28 @@
 import { NgModule } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import {
-  LyricsComponent,
-  WebLyricsViewModule,
-} from '@artur-ba/web/lyrics/view';
+import { WebLyricsViewModule } from '@artur-ba/web/lyrics/view';
+import { WebSpotifySharedViewModule } from '@artur-ba/web/spotify/shared/view';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { QueueComponent } from './queue/queue.component';
 
-const ROUTES = [{ path: '', component: LyricsComponent }];
 @NgModule({
-  imports: [CommonModule, RouterModule.forRoot(ROUTES), WebLyricsViewModule],
-  declarations: [DashboardComponent],
-  exports: [DashboardComponent],
+  imports: [
+    CommonModule,
+    WebLyricsViewModule,
+    WebSpotifySharedViewModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule,
+  ],
+  declarations: [DashboardComponent, QueueComponent],
+  exports: [DashboardComponent, QueueComponent],
 })
 export class WebSpotifyDashboardViewModule {}
