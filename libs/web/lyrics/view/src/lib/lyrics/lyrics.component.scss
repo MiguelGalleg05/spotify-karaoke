@@ -1,0 +1,13 @@
+@import 'variables';
+
+.user-notify {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  span {
+    margin-top: $margin-m;
+    font-size: x-large;
+  }
+}

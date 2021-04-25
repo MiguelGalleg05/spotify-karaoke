@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { WebLyricsMiniLyricsServiceModule } from '@artur-ba/web/lyrics/mini-lyrics/service';
 
@@ -11,6 +12,7 @@ import { WebLyricsViewRoutingModule } from './web-lyrics-view-routing.module';
 @NgModule({
   imports: [
     CommonModule,
+    MatProgressSpinnerModule,
     WebLyricsMiniLyricsServiceModule,
     WebLyricsViewRoutingModule,
   ],

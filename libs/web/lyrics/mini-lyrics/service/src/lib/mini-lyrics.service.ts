@@ -1,28 +1,29 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { MiniLyricsResponse } from '@artur-ba/web/lyrics/mini-lyrics/interface';
+import {
+  LyricsItem,
+  MiniLyricsResponse,
+} from '@artur-ba/web/lyrics/mini-lyrics/interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MiniLyricsService {
   readonly miniLyricsProxy = 'minilyrics-proxy';
-  readonly miniLyrics = 'minilyrics';
-  readonly miniLyricsHostRegex = /^http:\/\/search.crintsoft.com/;
+  readonly miniLyrics = 'minilyrics/l/';
 
   constructor(protected httpClient: HttpClient) {}
 
-  async getLyrics(title: string, artist: string): Promise<string> {
-    const miniLyricsResponse = await this.getLyricsBase(title, artist);
+  async getLyrics(lyricsItem: LyricsItem): Promise<string> {
     return this.httpClient
-      .get(this.getMiniLyricsAddress(miniLyricsResponse), {
+      .get(this.getMiniLyricsAddress(lyricsItem), {
         responseType: 'text',
       })
       .toPromise();
   }
 
-  getLyricsBase(title: string, artist: string): Promise<MiniLyricsResponse> {
+  getLyricsList(title: string, artist: string): Promise<MiniLyricsResponse> {
     const params = new HttpParams({
       fromObject: {
         title,
@@ -34,16 +35,7 @@ export class MiniLyricsService {
       .toPromise();
   }
 
-  protected getMiniLyricsAddress(
-    miniLyricsResponse: MiniLyricsResponse
-  ): string {
-    return (
-      this.setProxyAddressToMiniLyrics(miniLyricsResponse.server_url) +
-      miniLyricsResponse.children[0].link
-    );
-  }
-
-  protected setProxyAddressToMiniLyrics(server_url: string): string {
-    return server_url.replace(this.miniLyricsHostRegex, this.miniLyrics);
+  protected getMiniLyricsAddress(lyricsItem: LyricsItem): string {
+    return this.miniLyrics + lyricsItem.link;
   }
 }

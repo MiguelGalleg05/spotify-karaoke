@@ -1,8 +1,16 @@
 <h1>Lyrics</h1>
-<h2>{{ author }}:{{ title }}</h2>
 
 <artur-ba-lyrics-text
-  *ngIf="this.lyrics"
+  *ngIf="lyrics && !searching"
   [currentTime]="progress$ | async"
   [lyrics]="lyrics"
 ></artur-ba-lyrics-text>
+
+<div class="user-notify" *ngIf="!lyrics && !searching">
+  <span> Couldn't find a right text :< </span>
+</div>
+
+<div *ngIf="searching" class="user-notify">
+  <mat-spinner diameter="300" strokeWidth="20"> </mat-spinner>
+  <span> Looking for a lyrics </span>
+</div>
