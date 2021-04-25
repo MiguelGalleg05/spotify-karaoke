@@ -16,3 +16,13 @@
     background-image: url('/assets/logo_1x2_dark.png');
   }
 }
+
+button.mat-button-base {
+  width: 100%;
+  display: flex;
+  font-size: larger;
+  margin: $margin-xs auto;
+  mat-icon {
+    margin-right: $margin-s;
+  }
+}
