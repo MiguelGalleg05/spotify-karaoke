@@ -3,6 +3,9 @@
     "commitMessage": "chore: :bookmark: release v${version}",
     "requireBranch": "development"
   },
+  "npm": {
+    "publish": false
+  },
   "plugins": {
     "@release-it/conventional-changelog": {
       "preset": "angular",

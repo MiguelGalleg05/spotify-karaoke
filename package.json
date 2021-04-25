@@ -28,7 +28,7 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "prepare": "husky install",
-    "release": "release-it --dry-run"
+    "release": "release-it"
   },
   "private": true,
   "dependencies": {
