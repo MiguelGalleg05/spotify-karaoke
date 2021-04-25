@@ -1,4 +1,22 @@
 <img [src]="trackHelper.getImage64Url(track)" />
-{{ track?.album.name }}
-{{ trackHelper.getArtists(track) }}
-{{ trackHelper.time(1239) }}
+<div class="song">
+  <strong>
+    {{ track?.name }}
+  </strong>
+  <span>
+    <a
+      *ngFor="let artist of track?.artists; let l = last"
+      [routerLink]="'/artist/' + artist.uri | clearUriData"
+    >
+      {{ artist.name | addComa: !l }}
+    </a>
+  </span>
+</div>
+<div class="album">
+  <a [routerLink]="'/album/' + track?.album.uri | clearUriData">
+    {{ track?.album.name }}
+  </a>
+</div>
+<div class="time">
+  {{ trackHelper.time(239) }}
+</div>

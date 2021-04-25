@@ -1,8 +1,40 @@
+@import 'variables';
+@import 'mixins';
+
 :host {
-  display: block;
-  @apply bg-yellow-300 shadow-md w-full;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: $padding-xs $padding-s;
+
+  & > * {
+    align-items: center;
+    display: flex;
+  }
+  &:hover {
+    background-color: var(--bg-d20);
+    @include rounded;
+  }
 }
 
 img {
-  @apply h-12 w-12;
+  @include square_img(40px);
+}
+
+.song {
+  flex: 2;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: $margin-s;
+  strong {
+    font-size: large;
+  }
+}
+
+.album {
+  @include flex-1;
+}
+.time {
+  width: 40px;
 }

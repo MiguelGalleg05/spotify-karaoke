@@ -9,8 +9,8 @@
 
 .main-container {
   display: flex;
-  @include flex-1;
   min-height: 0;
+  @include flex-1;
 }
 
 .content {

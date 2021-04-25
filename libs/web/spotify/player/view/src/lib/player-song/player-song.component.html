@@ -1,7 +1,10 @@
 <img [src]="image64Url" />
 <div class="song-data">
   <strong>{{ track?.name }}</strong>
-  <a>
-    <em>{{ artists }}</em>
+  <a
+    *ngFor="let artist of track?.artists; let l = last"
+    [routerLink]="'/artist/' + artist.uri | clearUriData"
+  >
+    {{ artist.name | addComa: !l }}
   </a>
 </div>

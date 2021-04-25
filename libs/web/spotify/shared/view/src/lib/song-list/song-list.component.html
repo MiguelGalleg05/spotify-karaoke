@@ -1,5 +1,4 @@
+<h3>{{ title }}</h3>
 <ul>
-  <li *ngFor="let song of songs">
-    <artur-ba-song-row [track]="song"></artur-ba-song-row>
-  </li>
+  <li *ngFor="let track of tracks" artur-ba-song-row [track]="track"></li>
 </ul>

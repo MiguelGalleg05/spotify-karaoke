@@ -8,7 +8,7 @@
 }
 img {
   margin-left: $margin-m;
-  width: 64px;
+  @include square_img($image64);
 }
 .song-data {
   margin-left: $margin-m;

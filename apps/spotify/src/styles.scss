@@ -17,6 +17,7 @@ body {
 }
 body {
   margin: 0;
+  text-overflow: ellipsis;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   overflow: overlay;
 }
@@ -25,6 +26,7 @@ a {
   color: var(--text-a60);
   text-decoration: none;
   @include transition(text-decoration);
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;

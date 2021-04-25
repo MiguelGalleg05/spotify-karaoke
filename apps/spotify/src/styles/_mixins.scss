@@ -14,6 +14,11 @@
   flex: 1 1 0%;
 }
 
+@mixin square_img($size) {
+  width: $size;
+  height: $size;
+}
+
 @mixin logoSize {
   width: 200px;
   height: 100px;

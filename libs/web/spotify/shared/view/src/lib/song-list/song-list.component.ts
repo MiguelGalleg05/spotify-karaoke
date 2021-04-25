@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./song-list.component.scss'],
 })
 export class SongListComponent {
-  @Input() songs: Spotify.Track[];
+  @Input() title: string;
+  @Input() tracks: Spotify.Track[];
   @Input() currentSongURI: string;
 }
