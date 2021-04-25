@@ -1,10 +1,17 @@
 @import 'variables';
+@import 'mixins';
 
 :host {
-  width: 300px;
+  width: $sidebar-width;
   padding: $padding-m;
+  background-color: var(--bg-d10);
 }
-
-img {
-  width: 200px;
+.logo {
+  background-image: url('/assets/logo_1x2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  @include logoSize;
+  @include darkMode {
+    background-image: url('/assets/logo_1x2_dark.png');
+  }
 }

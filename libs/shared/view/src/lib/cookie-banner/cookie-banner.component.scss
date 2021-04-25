@@ -4,7 +4,7 @@
 :host {
   position: absolute;
 
-  bottom: 120px;
+  bottom: calc(#{$player-height} + 40px);
   right: 40px;
   width: 300px;
   min-height: 200px;
@@ -13,10 +13,12 @@
   flex-direction: column;
 
   padding: $padding-s $padding-m;
-  background-color: $background;
+  background-color: var(--bg-l5);
+  outline: 2px var(--bg-d20);
 
   @include rounded;
 }
+
 span {
-  flex: 1 1 0%;
+  @include flex-1;
 }

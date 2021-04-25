@@ -1,4 +1,6 @@
+@import 'variables';
+
 .active {
   font: bold, large;
-  color: blue;
+  color: var(--accent);
 }

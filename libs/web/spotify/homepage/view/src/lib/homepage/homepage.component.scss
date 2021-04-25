@@ -6,15 +6,21 @@
   flex-direction: column;
   height: 100vh;
 }
-div {
+
+.main-container {
   display: flex;
   @include flex-1;
   min-height: 0;
-  div {
-    overflow-y: scroll;
-    height: 100%;
-    @include flex-1;
-    background-color: $primary;
-    padding: $padding-m;
+}
+
+.content {
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+  @include flex-1;
+  &::ng-deep {
+    background-color: var(--bg);
+    color: var(--text);
+    padding: $padding-m $padding-s;
   }
 }

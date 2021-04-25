@@ -1,12 +1,29 @@
+@import 'variables';
+
+:host {
+  flex-grow: 1;
+}
+
 .progress-bar {
-  width: 60vw;
+  max-width: 60vw;
+  min-width: fit-content;
+  margin: auto;
+
   mat-slider {
-    width: 55vw;
+    padding: 0 $padding-xs;
+    width: 90%;
+    height: 30px;
+    &::ng-deep > div {
+      top: 14px;
+    }
   }
+
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
+
 .controls {
   display: flex;
   justify-content: center;

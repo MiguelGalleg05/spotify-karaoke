@@ -21,7 +21,7 @@ export class TrackHelper {
     if (img && img[0]) {
       return img[0].url;
     }
-    return 'assets/favphoto.png';
+    return 'assets/logo_1x1.png';
   }
 
   static getArtists(track: Spotify.Track): string {

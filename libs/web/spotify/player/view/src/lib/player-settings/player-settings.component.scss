@@ -3,13 +3,12 @@
 
 :host {
   & > * {
-    margin: auto $margin-xs;
+    margin-right: $margin-s;
   }
   display: flex;
 
-  @include flex-1;
   flex-direction: row;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   margin-right: $margin-m;
 }

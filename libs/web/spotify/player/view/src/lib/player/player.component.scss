@@ -1,6 +1,9 @@
+@import 'variables';
+
 :host {
-  height: 100px;
+  height: $player-height;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  background-color: var(--bg-d5);
 }

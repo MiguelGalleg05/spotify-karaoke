@@ -1,3 +1,5 @@
+@import 'theme_variables';
+
 $margin-xs: 0.5rem;
 $margin-s: 1.25rem;
 $margin-m: 2rem;
@@ -6,9 +8,63 @@ $padding-xs: 0.5rem;
 $padding-s: 1.25rem;
 $padding-m: 2rem;
 
-$primary: #e8cd7b;
-$accent: #fce883;
-$background: green;
+$player-height: 100px;
+$sidebar-width: 300px;
 
-$primary-dark: #000;
-$accent-dark: #7a7a7a;
+$transition-animation: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+:root {
+  --bg-l5: #{lighten($light-background, 5%)};
+  --bg: #{$light-background};
+  --bg-d5: #{darken($light-background, 5%)};
+  --bg-d10: #{darken($light-background, 10%)};
+  --bg-d20: #{darken($light-background, 20%)};
+  --bg-a5: #{rgba($dark-background, 0.05)};
+  --bg-a15: #{rgba($dark-background, 0.15)};
+
+  --text: #{$dark-text};
+  --text-a90: #{$dark-primary-text};
+  --text-a60: #{$dark-accent-text};
+  --text-a40: #{$dark-disabled-text};
+  --text-a20: #{$dark-focused};
+
+  --primary: #e1bd51;
+  --primary-l: #f6ebcb;
+  --primary-d: #d5a637;
+
+  --text-primary: #{$dark-primary-text};
+  --text-primary-l: #{$dark-primary-text};
+  --text-primary-d: #{$dark-primary-text};
+
+  --accent: #2c4c8c;
+  --accent-l: #c0c9dd;
+  --accent-d: #1b336f;
+
+  --text-accent: #{$light-primary-text};
+  --text-accent-l: #{$dark-primary-text};
+  --text-accent-d: #{$light-primary-text};
+
+  --warn: #d94167;
+  --warn-l: #f4c6d1;
+  --warn-d: #ca2a4a;
+
+  --text-warn: #{$light-primary-text};
+  --text-warn-l: #{$dark-primary-text};
+  --text-warn-d: #{$light-primary-text};
+}
+
+.darkMode {
+  --bg-l5: #{lighten($dark-background, 5%)};
+  --bg: #{$dark-background};
+  --bg-d5: #{darken($dark-background, 3%)};
+  --bg-d10: #{darken($dark-background, 6%)};
+  --bg-d20: #{darken($dark-background, 12%)};
+  --bg-a5: #{rgba($light-background, 0.05)};
+  --bg-a15: #{rgba($light-background, 0.15)};
+
+  --text: #{$light-text};
+  --text-a90: #{$light-primary-text};
+  --text-a60: #{$light-accent-text};
+  --text-a40: #{$light-disabled-text};
+  --text-a20: #{$light-focused};
+}

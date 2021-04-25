@@ -21,7 +21,7 @@ export class PlayerSettingsComponent {
   }
 
   handleVolumeChange(event: number | null): void {
-    if (!event) {
+    if (event === null) {
       return;
     }
     this.setVolume(event);

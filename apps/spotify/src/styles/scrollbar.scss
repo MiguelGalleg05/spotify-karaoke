@@ -1,0 +1,20 @@
+@import 'variables';
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--bg-a5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-a15);
+}

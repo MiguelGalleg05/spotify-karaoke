@@ -51,10 +51,7 @@
               "apps/spotify/src/favicon.ico",
               "apps/spotify/src/assets"
             ],
-            "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "apps/spotify/src/styles.scss"
-            ],
+            "styles": ["apps/spotify/src/styles.scss"],
             "stylePreprocessorOptions": {
               "includePaths": ["apps/spotify/src/styles"]
             },
