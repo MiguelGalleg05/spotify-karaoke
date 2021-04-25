@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 
 import {
   DashboardComponent,
@@ -14,6 +15,7 @@ import { SpotifyTokenInterceptor } from '@artur-ba/shared/interceptors';
 import { WebSpotifyHomepageViewModule } from '@artur-ba/web/spotify/homepage/view';
 
 import { AppComponent } from './app.component';
+import { environment } from '../environments/environment';
 
 const ROUTES: Routes = [
   {
@@ -31,6 +33,7 @@ const ROUTES: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES),
+    NgxGoogleAnalyticsModule.forRoot(environment.ga),
     WebSpotifyHomepageViewModule,
     SharedViewModule,
   ],
