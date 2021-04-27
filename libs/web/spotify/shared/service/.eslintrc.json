@@ -9,7 +9,7 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "parserOptions": {
-        "project": ["libs/web/spotify/dashboard/view/tsconfig.*?.json"]
+        "project": ["libs/web/spotify/shared/service/tsconfig.*?.json"]
       },
       "rules": {
         "@angular-eslint/directive-selector": [

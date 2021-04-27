@@ -18,9 +18,12 @@
   height: 100%;
   width: 100%;
   @include flex-1;
-  &::ng-deep {
-    background-color: var(--bg);
+  &::ng-deep > *:not(router-outlet) {
+    display: block;
+    width: 100%;
+    min-height: 100%;
     color: var(--text);
+    background-color: var(--bg);
     padding: $padding-m $padding-s;
   }
 }

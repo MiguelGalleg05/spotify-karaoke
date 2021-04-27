@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { WebLyricsViewModule } from '@artur-ba/web/lyrics/view';
 import { WebSpotifySharedViewModule } from '@artur-ba/web/spotify/shared/view';
 
+import { AlbumComponent } from './album/album.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { QueueComponent } from './queue/queue.component';
 
@@ -22,7 +23,7 @@ import { QueueComponent } from './queue/queue.component';
     MatSlideToggleModule,
     ReactiveFormsModule,
   ],
-  declarations: [DashboardComponent, QueueComponent],
-  exports: [DashboardComponent, QueueComponent],
+  declarations: [DashboardComponent, QueueComponent, AlbumComponent],
+  exports: [DashboardComponent, QueueComponent, AlbumComponent],
 })
-export class WebSpotifyDashboardViewModule {}
+export class WebSpotifyViewModule {}

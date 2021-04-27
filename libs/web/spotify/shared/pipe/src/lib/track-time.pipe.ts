@@ -6,10 +6,13 @@ import { TrackHelper } from '@artur-ba/web/spotify/shared/helper';
   name: 'trackTime',
 })
 export class TrackTime implements PipeTransform {
-  transform(value: number): unknown {
-    if (isNaN(+value)) {
-      return value;
+  transform(time_s: number, milliseconds: boolean): unknown {
+    if (isNaN(+time_s)) {
+      return time_s;
     }
-    return TrackHelper.time(value);
+    if (milliseconds) {
+      time_s /= 1000;
+    }
+    return TrackHelper.time(time_s);
   }
 }

@@ -33,9 +33,7 @@
       "@artur-ba/web/spotify/sidebar/view": [
         "libs/web/spotify/sidebar/view/src/index.ts"
       ],
-      "@artur-ba/web/spotify/dashboard/view": [
-        "libs/web/spotify/dashboard/view/src/index.ts"
-      ],
+      "@artur-ba/web/spotify/view": ["libs/web/spotify/view/src/index.ts"],
       "@artur-ba/shared/pipes": ["libs/shared/pipes/src/index.ts"],
       "@artur-ba/shared/interceptors": [
         "libs/shared/interceptors/src/index.ts"
@@ -49,7 +47,10 @@
       "@artur-ba/web/spotify/shared/pipe": [
         "libs/web/spotify/shared/pipe/src/index.ts"
       ],
-      "@artur-ba/shared/view": ["libs/shared/view/src/index.ts"]
+      "@artur-ba/shared/view": ["libs/shared/view/src/index.ts"],
+      "@artur-ba/web/spotify/shared/service": [
+        "libs/web/spotify/shared/service/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,0 +1,13 @@
+<h1>Current queue</h1>
+<artur-ba-song-list
+  title="Currently playing"
+  [tracksUri]="[trackWindow?.current_track.uri]"
+  [columns]="displayColumns"
+>
+</artur-ba-song-list>
+<artur-ba-song-list
+  title="Up next"
+  [tracksUri]="nextTracksUri()"
+  [columns]="displayColumns"
+>
+</artur-ba-song-list>

@@ -1,6 +1,15 @@
+@import '../../styles/shared-track-list';
+
 :host {
   width: 100%;
 }
 ul {
   padding: 0;
+  margin-top: 0;
+}
+.header {
+  padding: $padding-xs $padding-s;
+  display: flex;
+  border-bottom: 1px solid var(--text);
+  @include sticky-top();
 }

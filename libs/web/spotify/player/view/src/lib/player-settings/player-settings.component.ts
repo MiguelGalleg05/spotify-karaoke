@@ -1,23 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import { PlayerControlService, PlayerStore } from '@artur-ba/shared/service';
+import { Subscription } from 'rxjs';
+
+import { PlayerControlService } from '@artur-ba/web/spotify/shared/service';
+import { PlayerStore } from '@artur-ba/shared/service';
 
 @Component({
   selector: 'artur-ba-player-settings',
   templateUrl: './player-settings.component.html',
   styleUrls: ['./player-settings.component.scss'],
 })
-export class PlayerSettingsComponent {
+export class PlayerSettingsComponent implements OnInit, OnDestroy {
   readonly loud = 50;
   volume = 0;
+
+  protected subscriptions: Subscription[] = [];
 
   constructor(
     protected playerStore: PlayerStore,
     protected playerControlService: PlayerControlService
-  ) {
-    this.playerStore.volume$.subscribe((volume) => {
-      this.volume = volume;
-    });
+  ) {}
+
+  ngOnInit(): void {
+    this.subscriptions.push(
+      this.playerStore.volume$.subscribe((volume) => {
+        this.volume = volume;
+      })
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach((sub) => sub.unsubscribe());
   }
 
   handleVolumeChange(event: number | null): void {

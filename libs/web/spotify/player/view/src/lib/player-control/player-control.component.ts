@@ -1,33 +1,49 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import { PlayerControlService, PlayerStore } from '@artur-ba/shared/service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
+
+import { PlayerControlService } from '@artur-ba/web/spotify/shared/service';
+import { PlayerStore } from '@artur-ba/shared/service';
 
 @Component({
   selector: 'artur-ba-player-control',
   templateUrl: './player-control.component.html',
   styleUrls: ['./player-control.component.scss'],
 })
-export class PlayerControlComponent {
+export class PlayerControlComponent implements OnInit, OnDestroy {
   progress$: Observable<number>;
   max: number;
   paused: boolean;
 
+  protected subscriptions: Subscription[] = [];
+
   constructor(
     protected playerStore: PlayerStore,
     protected playerControlService: PlayerControlService
-  ) {
-    this.playerStore.progress$.subscribe((progress) => {
-      this.progress$ = progress;
-    });
+  ) {}
 
-    this.playerStore.playback$.subscribe((playback) => {
-      this.max = playback.duration;
-    });
+  ngOnInit(): void {
+    this.subscriptions.push(
+      this.playerStore.progress$.subscribe((progress) => {
+        this.progress$ = progress;
+      })
+    );
 
-    this.playerStore.paused$.subscribe((paused) => {
-      this.paused = paused;
-    });
+    this.subscriptions.push(
+      this.playerStore.playback$.subscribe((playback) => {
+        this.max = playback.duration;
+      })
+    );
+
+    this.subscriptions.push(
+      this.playerStore.paused$.subscribe((paused) => {
+        this.paused = paused;
+      })
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach((sub) => sub.unsubscribe());
   }
 
   play(): void {

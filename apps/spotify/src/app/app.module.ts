@@ -7,9 +7,10 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 
 import {
+  AlbumComponent,
   DashboardComponent,
   QueueComponent,
-} from '@artur-ba/web/spotify/dashboard/view';
+} from '@artur-ba/web/spotify/view';
 import { SharedViewModule } from '@artur-ba/shared/view';
 import { SpotifyTokenInterceptor } from '@artur-ba/shared/interceptors';
 import { WebSpotifyHomepageViewModule } from '@artur-ba/web/spotify/homepage/view';
@@ -25,6 +26,7 @@ const ROUTES: Routes = [
   },
   { path: '', component: DashboardComponent },
   { path: 'queue', component: QueueComponent },
+  { path: 'album/:uri', component: AlbumComponent },
 ];
 
 @NgModule({

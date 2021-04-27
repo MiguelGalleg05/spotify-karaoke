@@ -1,5 +1,17 @@
-<img [src]="trackHelper.getImage64Url(track)" />
-<div class="song">
+<div class="count" *ngIf="columns.includes(songListColumns.count)">
+  <strong>
+    {{ track?.track_number }}
+  </strong>
+</div>
+
+<div class="image" *ngIf="columns.includes(songListColumns.image)">
+  <img [src]="trackHelper.getImage64Url(track)" />
+</div>
+
+<div
+  class="title-artist"
+  *ngIf="columns.includes(songListColumns.title_artist)"
+>
   <strong>
     {{ track?.name }}
   </strong>
@@ -12,11 +24,13 @@
     </a>
   </span>
 </div>
-<div class="album">
+
+<div class="album" *ngIf="columns.includes(songListColumns.album)">
   <a [routerLink]="'/album/' + track?.album.uri | clearUriData">
     {{ track?.album.name }}
   </a>
 </div>
-<div class="time">
-  {{ trackHelper.time(239) }}
+
+<div class="time" *ngIf="columns.includes(songListColumns.time)">
+  {{ track?.duration_ms | trackTime: true }}
 </div>

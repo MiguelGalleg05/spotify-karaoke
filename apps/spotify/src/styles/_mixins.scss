@@ -32,3 +32,10 @@
   -o-transition: $trans;
   transition: $trans;
 }
+
+@mixin sticky-top($top: 0) {
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: var(--bg);
+  top: $top;
+}

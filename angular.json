@@ -351,26 +351,26 @@
         }
       }
     },
-    "web-spotify-dashboard-view": {
+    "web-spotify-view": {
       "projectType": "library",
-      "root": "libs/web/spotify/dashboard/view",
-      "sourceRoot": "libs/web/spotify/dashboard/view/src",
+      "root": "libs/web/spotify/view",
+      "sourceRoot": "libs/web/spotify/view/src",
       "prefix": "artur-ba",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/web/spotify/dashboard/view/src/**/*.ts",
-              "libs/web/spotify/dashboard/view/src/**/*.html"
+              "libs/web/spotify/view/src/**/*.ts",
+              "libs/web/spotify/view/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/web/spotify/dashboard/view"],
+          "outputs": ["coverage/libs/web/spotify/view"],
           "options": {
-            "jestConfig": "libs/web/spotify/dashboard/view/jest.config.js",
+            "jestConfig": "libs/web/spotify/view/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -496,6 +496,31 @@
           "outputs": ["coverage/libs/shared/view"],
           "options": {
             "jestConfig": "libs/shared/view/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "web-spotify-shared-service": {
+      "projectType": "library",
+      "root": "libs/web/spotify/shared/service",
+      "sourceRoot": "libs/web/spotify/shared/service/src",
+      "prefix": "artur-ba",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/spotify/shared/service/src/**/*.ts",
+              "libs/web/spotify/shared/service/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/spotify/shared/service"],
+          "options": {
+            "jestConfig": "libs/web/spotify/shared/service/jest.config.js",
             "passWithNoTests": true
           }
         }

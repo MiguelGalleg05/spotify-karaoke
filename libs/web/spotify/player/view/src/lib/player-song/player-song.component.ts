@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Subscription } from 'rxjs';
+
 import { PlayerStore } from '@artur-ba/shared/service';
 import { TrackHelper } from '@artur-ba/web/spotify/shared/helper';
 @Component({
@@ -10,12 +12,22 @@ import { TrackHelper } from '@artur-ba/web/spotify/shared/helper';
 export class PlayerSongComponent {
   track: Spotify.Track;
 
-  constructor(protected playerStore: PlayerStore) {
-    this.playerStore.currentTrack$.subscribe((track) => {
-      if (this.track !== track) {
-        this.track = track;
-      }
-    });
+  protected subscriptions: Subscription[] = [];
+
+  constructor(protected playerStore: PlayerStore) {}
+
+  ngOnInit(): void {
+    this.subscriptions.push(
+      this.playerStore.currentTrack$.subscribe((track) => {
+        if (this.track !== track) {
+          this.track = track;
+        }
+      })
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach((sub) => sub.unsubscribe());
   }
 
   get image64Url(): string {
