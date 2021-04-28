@@ -1,8 +1,26 @@
-<a routerLink="/" alt="homepage">
-  <div class="logo" i18n-title title="Spotify Karaoke Logo"></div>
-</a>
-
-<p>login works!</p>
-{{ error?.message }}
-
-<button (click)="auth()" i18n="login.authorize">Authorize</button>
+<div class="content">
+  <div class="readme">
+    <h1>Spotify Karaoke</h1>
+    <h2 i18n="login.subtitle">Sign along with us!</h2>
+  </div>
+  <div class="authorize">
+    <h3 i18n="login.authorize_info">Authorize with Spotify</h3>
+    {{ error?.message }}
+    <button
+      mat-raised-button
+      (click)="auth()"
+      color="accent"
+      i18n="login.authorize"
+    >
+      <div class="button-content">
+        <img src="/assets/Spotify_Icon_RGB_White.png" />
+        Authorize
+      </div>
+    </button>
+  </div>
+  <div class="authorize-mobile">
+    <h3 i18n="login.mobile-not-available">
+      This page is not available on mobile devices
+    </h3>
+  </div>
+</div>

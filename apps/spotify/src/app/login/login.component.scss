@@ -1,12 +1,84 @@
 @import 'variables';
 @import 'mixins';
+@import 'media-queries';
+
+:host {
+  background-color: var(--primary-l);
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 1200px;
+  width: 70vw;
+  padding: $padding-m;
+  margin: auto;
+  @include rounded;
+  background-color: var(--bg);
+}
+
+.readme {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  h1 {
+    font-size: 5rem;
+  }
+  h2 {
+    margin-top: 0;
+    font-size: 3rem;
+  }
+}
+
+.authorize {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @include xs {
+    display: none;
+  }
+
+  button {
+    margin: 0 auto;
+    width: 70%;
+    max-width: 400px;
+    .button-content {
+      padding: $padding-xs;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      color: var(--text-accent);
+      font-size: large;
+
+      img {
+        @include square_img($image64);
+      }
+    }
+  }
+}
+
+.authorize-mobile {
+  align-items: center;
+  flex-direction: column;
+  display: none;
+  @include xs {
+    display: flex;
+  }
+}
 
 .logo {
-  background-image: getImageUrl($logo1x2-light);
+  background-image: getImageUrl($logo1x2-dark);
   background-size: contain;
   background-repeat: no-repeat;
   @include logoSize;
   @include darkMode {
-    background-image: getImageUrl($logo1x2-dark);
+    background-image: getImageUrl($logo1x2-light);
   }
 }
