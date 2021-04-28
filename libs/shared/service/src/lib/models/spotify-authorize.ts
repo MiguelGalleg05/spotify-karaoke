@@ -1,6 +1,5 @@
 export class SpotifyAuthorize {
   SPOTIFY_AUTHORIZE_URL = 'https://accounts.spotify.com/authorize';
-  CLIENT_ID = '88bbdd189e5d49849d7a6358c7d8a8ff';
   SCOPES = [
     //Listening History
     'user-read-recently-played',
@@ -25,12 +24,12 @@ export class SpotifyAuthorize {
     'user-read-private',
   ];
 
-  createAuthorizeURL() {
+  createAuthorizeURL(client_id: string) {
     const params = new URLSearchParams({
-      client_id: this.CLIENT_ID,
-      redirect_uri: `${window.location.origin}/`,
+      client_id,
+      redirect_uri: `${window.location.origin}/spotify/`,
       scope: encodeURIComponent(this.SCOPES.join(' ')),
-      response_type: 'token',
+      response_type: 'code',
     });
     return `${this.SPOTIFY_AUTHORIZE_URL}?${params.toString()}`;
   }

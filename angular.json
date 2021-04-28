@@ -48,6 +48,7 @@
             "tsConfig": "apps/spotify/tsconfig.app.json",
             "aot": true,
             "assets": [
+              "apps/spotify/src/robots.txt",
               "apps/spotify/src/favicon.ico",
               "apps/spotify/src/assets"
             ],

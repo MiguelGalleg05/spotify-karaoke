@@ -27,6 +27,7 @@
 <div class="progress-bar">
   {{ (progress$ | async) / 1000 | trackTime }}
   <mat-slider
+    aria-label="current song time"
     [value]="progress$ | async"
     [max]="max"
     (valueChange)="handleSeek($event)"

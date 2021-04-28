@@ -1,3 +1,4 @@
+import { secrets } from './secrets';
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
@@ -5,6 +6,8 @@
 export const environment = {
   production: false,
   ga: '',
+  spotify_client_id: '88bbdd189e5d49849d7a6358c7d8a8ff',
+  ...secrets,
 };
 
 /*

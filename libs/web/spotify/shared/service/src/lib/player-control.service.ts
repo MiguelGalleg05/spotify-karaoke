@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Injectable, OnDestroy } from '@angular/core';
 
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 import { PlayerStore } from '@artur-ba/shared/service';
 
@@ -35,14 +35,13 @@ export class PlayerControlService implements OnDestroy {
     this.playerSub.unsubscribe();
   }
 
-  transferUserPlayback(
-    deviceId: string,
-    play: boolean = true
-  ): Observable<any> {
-    return this.httpClient.put(this.playerURL, {
-      device_ids: [deviceId],
-      play,
-    });
+  transferUserPlayback(deviceId: string, play: boolean = true): Promise<void> {
+    return this.httpClient
+      .put<void>(this.playerURL, {
+        device_ids: [deviceId],
+        play,
+      })
+      .toPromise();
   }
 
   play(): Promise<void> {

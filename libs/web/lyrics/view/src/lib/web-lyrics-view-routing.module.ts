@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LyricsComponent } from './lyrics/lyrics.component';
 
-const ROUTES: Routes = [{ path: 'lyrics', component: LyricsComponent }];
+const ROUTES: Routes = [{ path: '', component: LyricsComponent }];
 @NgModule({
   imports: [RouterModule.forChild(ROUTES)],
   exports: [RouterModule],

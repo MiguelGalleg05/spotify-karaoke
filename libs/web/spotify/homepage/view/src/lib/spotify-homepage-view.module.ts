@@ -7,9 +7,11 @@ import { WebSpotifySidebarViewModule } from '@artur-ba/web/spotify/sidebar/view'
 import { WebSpotifyViewModule } from '@artur-ba/web/spotify/view';
 
 import { HomepageComponent } from './homepage/homepage.component';
+import { WebSpotifyHomepageViewRoutingModule } from './spotify-homepage-view-routing.module';
 
 @NgModule({
   imports: [
+    WebSpotifyHomepageViewRoutingModule,
     CommonModule,
     WebSpotifyViewModule,
     WebSpotifyPlayerViewModule,

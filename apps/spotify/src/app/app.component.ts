@@ -3,7 +3,11 @@ import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
-import { UserSettingsService } from '@artur-ba/shared/service';
+import {
+  EnvSettingsService,
+  UserSettingsService,
+} from '@artur-ba/shared/service';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'artur-ba-root',
@@ -18,9 +22,13 @@ export class AppComponent implements OnInit, OnDestroy {
 
   cookiesAccepted = true;
 
-  constructor(protected userSettings: UserSettingsService) {}
+  constructor(
+    protected userSettings: UserSettingsService,
+    protected env: EnvSettingsService
+  ) {}
 
   ngOnInit(): void {
+    this.env.init(environment);
     const darkModeSub = this.userSettings.darkModeOn$.subscribe((darkMode) => {
       this.className = darkMode ? this.darkClassName : '';
     });

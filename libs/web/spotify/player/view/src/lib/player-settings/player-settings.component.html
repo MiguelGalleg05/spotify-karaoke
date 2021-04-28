@@ -1,19 +1,20 @@
-<a routerLink="/queue">
+<a routerLink="/queue" alt="Music queue">
   <mat-icon matTooltip="Queue"> queue_music </mat-icon>
 </a>
-<a>
+<div class="as-link">
   <mat-icon matTooltip="not available now"> speaker_group </mat-icon>
-</a>
-<a *ngIf="isLoud() && !isMute()">
+</div>
+<div class="as-link" *ngIf="isLoud() && !isMute()">
   <mat-icon (click)="mute()" matTooltip="Mute"> volume_up </mat-icon>
-</a>
-<a *ngIf="!isLoud() && !isMute()">
+</div>
+<div class="as-link" *ngIf="!isLoud() && !isMute()">
   <mat-icon (click)="mute()" matTooltip="Mute"> volume_down </mat-icon>
-</a>
-<a *ngIf="isMute()">
+</div>
+<div class="as-link" *ngIf="isMute()">
   <mat-icon matTooltip="Device is muted"> volume_off </mat-icon>
-</a>
+</div>
 <mat-slider
+  aria-label="current volume"
   [value]="volume * 100"
   (valueChange)="handleVolumeChange($event)"
   color="primary"

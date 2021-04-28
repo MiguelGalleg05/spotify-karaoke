@@ -35,4 +35,14 @@ export class SpotifyDataService {
       })
       .toPromise();
   }
+
+  /**
+   * https://api.spotify.com/v1/me
+   * @returns Users data
+   */
+  getUserData(): Promise<SpotifyApi.CurrentUsersProfileResponse> {
+    return this.httpClient
+      .get<SpotifyApi.CurrentUsersProfileResponse>(this.baseURL + 'me')
+      .toPromise();
+  }
 }
