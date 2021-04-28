@@ -34,7 +34,6 @@ export class SongListComponent implements OnChanges {
   @Input() tracks: SpotifyApi.TrackObjectFull[] = [];
 
   readonly songListColumns = TrackListColumns;
-  // tracks: SpotifyApi.TrackObjectFull[];
 
   constructor(protected spotifyData: SpotifyDataService) {}
 

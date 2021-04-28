@@ -1,19 +1,44 @@
 <h3 *ngIf="title">{{ title }}</h3>
 <div *ngIf="header && columns" class="header">
-  <div class="count" *ngIf="columns.includes(songListColumns.count)">#</div>
+  <div
+    class="count"
+    *ngIf="columns.includes(songListColumns.count)"
+    i18n="song-list.count"
+  >
+    #
+  </div>
 
-  <div class="image" *ngIf="columns.includes(songListColumns.image)">Img</div>
+  <div
+    class="image"
+    *ngIf="columns.includes(songListColumns.image)"
+    i18n="song-list.image"
+  >
+    Img
+  </div>
 
   <div
     class="title-artist"
     *ngIf="columns.includes(songListColumns.title_artist)"
+    i18n="song-list.title"
   >
     Title
   </div>
 
-  <div class="album" *ngIf="columns.includes(songListColumns.album)">Album</div>
+  <div
+    class="album"
+    *ngIf="columns.includes(songListColumns.album)"
+    i18n="song-list.album"
+  >
+    Album
+  </div>
 
-  <div class="time" *ngIf="columns.includes(songListColumns.time)">Time</div>
+  <div
+    class="time"
+    *ngIf="columns.includes(songListColumns.time)"
+    i18n="song-list.time"
+  >
+    Time
+  </div>
 </div>
 <ul>
   <li

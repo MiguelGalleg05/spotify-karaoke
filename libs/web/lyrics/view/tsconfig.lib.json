@@ -6,7 +6,7 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
-    "types": [],
+    "types": ["spotify-web-playback-sdk"],
     "lib": ["dom", "es2018"]
   },
   "angularCompilerOptions": {

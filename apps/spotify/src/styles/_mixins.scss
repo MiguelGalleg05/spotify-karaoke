@@ -39,3 +39,7 @@
   background-color: var(--bg);
   top: $top;
 }
+
+@function getImageUrl($url) {
+  @return url('/assets/' + $url);
+}

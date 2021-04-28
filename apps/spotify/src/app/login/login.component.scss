@@ -1,0 +1,12 @@
+@import 'variables';
+@import 'mixins';
+
+.logo {
+  background-image: getImageUrl($logo1x2-light);
+  background-size: contain;
+  background-repeat: no-repeat;
+  @include logoSize;
+  @include darkMode {
+    background-image: getImageUrl($logo1x2-dark);
+  }
+}

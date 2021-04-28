@@ -1,4 +1,8 @@
-<p>login works!</p>
-{{ error?.message | json }}
+<a routerLink="/" alt="homepage">
+  <div class="logo" i18n-title title="Spotify Karaoke Logo"></div>
+</a>
 
-<button (click)="auth()">auth</button>
+<p>login works!</p>
+{{ error?.message }}
+
+<button (click)="auth()" i18n="login.authorize">Authorize</button>

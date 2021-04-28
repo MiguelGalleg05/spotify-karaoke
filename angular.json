@@ -37,10 +37,18 @@
       "root": "apps/spotify",
       "sourceRoot": "apps/spotify/src",
       "prefix": "artur-ba",
+      "i18n": {
+        "sourceLocale": "en",
+        "locales": {
+          "pl": "apps/spotify/src/locale/messages.pl.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "i18nMissingTranslation": "warning",
+            "localize": true,
             "outputPath": "dist/apps/spotify",
             "index": "apps/spotify/src/index.html",
             "main": "apps/spotify/src/main.ts",
@@ -85,19 +93,27 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "en": {
+              "localize": ["en"]
+            },
+            "pl": {
+              "localize": ["pl"]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "spotify:build",
+            "browserTarget": "spotify:build:en",
             "proxyConfig": "apps/spotify/proxy.conf.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "spotify:build:production",
-              "proxyConfig": "apps/spotify/proxy.conf.json"
+              "browserTarget": "spotify:build:production"
+            },
+            "pl": {
+              "browserTarget": "spotify:build:pl"
             }
           }
         },
@@ -347,31 +363,6 @@
           "outputs": ["coverage/libs/web/spotify/sidebar/view"],
           "options": {
             "jestConfig": "libs/web/spotify/sidebar/view/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "web-spotify-view": {
-      "projectType": "library",
-      "root": "libs/web/spotify/view",
-      "sourceRoot": "libs/web/spotify/view/src",
-      "prefix": "artur-ba",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/web/spotify/view/src/**/*.ts",
-              "libs/web/spotify/view/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/web/spotify/view"],
-          "options": {
-            "jestConfig": "libs/web/spotify/view/jest.config.js",
             "passWithNoTests": true
           }
         }

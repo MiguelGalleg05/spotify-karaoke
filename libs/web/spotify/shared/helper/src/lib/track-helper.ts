@@ -1,5 +1,7 @@
 /// <reference types="spotify-web-playback-sdk" />
 
+import { isDevMode } from '@angular/core';
+
 export class TrackHelper {
   static time(seconds: number) {
     const second = Math.floor(seconds % 60);
@@ -21,7 +23,7 @@ export class TrackHelper {
     if (img && img[0]) {
       return img[0].url;
     }
-    return 'assets/logo_1x1.png';
+    return isDevMode() ? '/assets/logo_1x1.png' : '/en/assets/logo_1x1.png';
   }
 
   static getArtists(track: Spotify.Track): string {

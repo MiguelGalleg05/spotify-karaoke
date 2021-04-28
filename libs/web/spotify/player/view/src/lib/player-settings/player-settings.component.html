@@ -1,20 +1,42 @@
 <a routerLink="/queue" alt="Music queue">
-  <mat-icon matTooltip="Queue"> queue_music </mat-icon>
+  <mat-icon matTooltip="Queue" i18n-matTooltip="player-settings.queue">
+    queue_music
+  </mat-icon>
 </a>
 <div class="as-link">
-  <mat-icon matTooltip="not available now"> speaker_group </mat-icon>
+  <mat-icon matTooltip="not available now" i18n-matTooltip="not-available">
+    speaker_group
+  </mat-icon>
 </div>
 <div class="as-link" *ngIf="isLoud() && !isMute()">
-  <mat-icon (click)="mute()" matTooltip="Mute"> volume_up </mat-icon>
+  <mat-icon
+    (click)="mute()"
+    matTooltip="Mute"
+    i18n-matTooltip="player-settings.mute"
+  >
+    volume_up
+  </mat-icon>
 </div>
 <div class="as-link" *ngIf="!isLoud() && !isMute()">
-  <mat-icon (click)="mute()" matTooltip="Mute"> volume_down </mat-icon>
+  <mat-icon
+    (click)="mute()"
+    matTooltip="Mute"
+    i18n-matTooltip="player-settings.mute"
+  >
+    volume_down
+  </mat-icon>
 </div>
 <div class="as-link" *ngIf="isMute()">
-  <mat-icon matTooltip="Device is muted"> volume_off </mat-icon>
+  <mat-icon
+    matTooltip="Device is muted"
+    i18n-matTooltip="player-settings.muted"
+  >
+    volume_off
+  </mat-icon>
 </div>
 <mat-slider
   aria-label="current volume"
+  i18n-aria-label="player-settings.current-volume"
   [value]="volume * 100"
   (valueChange)="handleVolumeChange($event)"
   color="primary"

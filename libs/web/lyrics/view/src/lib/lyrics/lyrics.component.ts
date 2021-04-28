@@ -52,28 +52,31 @@ export class LyricsComponent implements OnInit, OnDestroy {
   }
 
   protected async updateLyrics(): Promise<void> {
-    const lyricsList = await this.lyricsAPI.getLyricsList(
-      this.track.name,
-      this.track.artists[0].name
-    );
-    if (lyricsList.children.length < 1) {
+    try {
+      const lyricsList = await this.lyricsAPI.getLyricsList(
+        this.track.name,
+        this.track.artists[0].name
+      );
+      const sortedByDownload = lyricsList.children.sort(
+        (a: LyricsItem, b: LyricsItem) => b.downloads - a.downloads
+      );
+      const foundLyricAlbum = sortedByDownload.find(
+        (lyricsItem: LyricsItem) =>
+          lyricsItem.album?.toLowerCase() ===
+          this.track.album.name.toLowerCase()
+      );
+      if (foundLyricAlbum) {
+        this.setLyricsByLrc(await this.lyricsAPI.getLyrics(foundLyricAlbum));
+      } else {
+        this.setLyricsByLrc(
+          await this.lyricsAPI.getLyrics(sortedByDownload[0])
+        );
+      }
+      this.searching = false;
+    } catch (err) {
       this.searching = false;
       this.lyrics = undefined;
-      return;
     }
-    const sortedByDownload = lyricsList.children.sort(
-      (a: LyricsItem, b: LyricsItem) => b.downloads - a.downloads
-    );
-    const foundLyricAlbum = sortedByDownload.find(
-      (lyricsItem: LyricsItem) =>
-        lyricsItem.album?.toLowerCase() === this.track.album.name.toLowerCase()
-    );
-    if (foundLyricAlbum) {
-      this.setLyricsByLrc(await this.lyricsAPI.getLyrics(foundLyricAlbum));
-    } else {
-      this.setLyricsByLrc(await this.lyricsAPI.getLyrics(sortedByDownload[0]));
-    }
-    this.searching = false;
   }
 
   protected setLyricsByLrc(url: string) {
