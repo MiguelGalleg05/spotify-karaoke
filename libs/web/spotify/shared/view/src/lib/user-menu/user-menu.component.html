@@ -9,7 +9,8 @@
 
 <div class="user">
   <button mat-stroked-button [matMenuTriggerFor]="menu">
-    Hi {{ user?.display_name }}
+    <span i18n="user-menu.hi">Hi</span>
+    {{ user?.display_name }}
     <span i18n="user-menu.user-name" *ngIf="!user?.display_name">there</span>
     <mat-icon
       aria-hidden="false"

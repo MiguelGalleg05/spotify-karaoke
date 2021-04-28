@@ -2,24 +2,37 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="4c4ca9ad0ba2c0a5c09a44affd029efb5ee5ff13" datatype="html">
-        <source>Spotify Karaoke Logo</source>
+      <trans-unit id="94fb555bc7e7c64d5de2dcb90a42785376c5cb0e" datatype="html">
+        <source>Sign along with us!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/spotify/src/app/login/login.component.html</context>
-          <context context-type="linenumber">2</context>
+          <context context-type="linenumber">4</context>
         </context-group>
+        <note priority="1" from="description">login.subtitle</note>
+      </trans-unit>
+      <trans-unit id="af7fd5f4450860c30c8dfb51e6cf38ac5da30523" datatype="html">
+        <source>Authorize with Spotify</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/sidebar/view/src/lib/sidebar/sidebar.component.html</context>
-          <context context-type="linenumber">2</context>
+          <context context-type="sourcefile">apps/spotify/src/app/login/login.component.html</context>
+          <context context-type="linenumber">7</context>
         </context-group>
+        <note priority="1" from="description">login.authorize_info</note>
       </trans-unit>
       <trans-unit id="0126319b6e9c024ee03c2d8e51fda4955d3ec89d" datatype="html">
         <source>Authorize</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/spotify/src/app/login/login.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">12</context>
         </context-group>
         <note priority="1" from="description">login.authorize</note>
+      </trans-unit>
+      <trans-unit id="c18aa478728faa2dc310876ee192fabc70ac7211" datatype="html">
+        <source> This page is not available on mobile devices </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/spotify/src/app/login/login.component.html</context>
+          <context context-type="linenumber">18,19</context>
+        </context-group>
+        <note priority="1" from="description">login.mobile-not-available</note>
       </trans-unit>
       <trans-unit id="46900323fc7fc7883626fa41ed04c16cb53a8d48" datatype="html">
         <source>Cookies!</source>
@@ -246,11 +259,19 @@
         </context-group>
         <note priority="1" from="description">user-menu.back</note>
       </trans-unit>
+      <trans-unit id="3461ab23157a9153867c05a78c719b0d49cf1ad0" datatype="html">
+        <source>Hi</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/user-menu/user-menu.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">user-menu.hi</note>
+      </trans-unit>
       <trans-unit id="60d490407971f9dda9ef2f19142a48bbbedb5fd4" datatype="html">
         <source>there</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/user-menu/user-menu.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">14</context>
         </context-group>
         <note priority="1" from="description">user-menu.user-name</note>
       </trans-unit>
@@ -258,7 +279,7 @@
         <source>Open menu</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/user-menu/user-menu.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">18</context>
         </context-group>
         <note priority="1" from="description">user-menu.open-menu</note>
       </trans-unit>
@@ -266,9 +287,16 @@
         <source> Log out </source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/user-menu/user-menu.component.html</context>
-          <context context-type="linenumber">23,24</context>
+          <context context-type="linenumber">24,25</context>
         </context-group>
         <note priority="1" from="description">user-menu.logout</note>
+      </trans-unit>
+      <trans-unit id="4c4ca9ad0ba2c0a5c09a44affd029efb5ee5ff13" datatype="html">
+        <source>Spotify Karaoke Logo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/sidebar/view/src/lib/sidebar/sidebar.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="4836ce9489eba07d9382e2a72dd9f0bb6aeac5e8" datatype="html">
         <source> Home </source>

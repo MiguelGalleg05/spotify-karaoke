@@ -6,15 +6,10 @@
   <div class="authorize">
     <h3 i18n="login.authorize_info">Authorize with Spotify</h3>
     {{ error?.message }}
-    <button
-      mat-raised-button
-      (click)="auth()"
-      color="accent"
-      i18n="login.authorize"
-    >
+    <button mat-raised-button (click)="auth()" color="accent">
       <div class="button-content">
         <img src="/assets/Spotify_Icon_RGB_White.png" />
-        Authorize
+        <p i18n="login.authorize">Authorize</p>
       </div>
     </button>
   </div>
