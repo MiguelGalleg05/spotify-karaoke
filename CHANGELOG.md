@@ -1,3 +1,13 @@
+## [0.1.2](https://github.com/ArturBa/spotify/compare/v0.1.0...v0.1.2) (2021-04-28)
+
+### Features
+
+- **spotify:** :alien: Fix user authorization ([#27](https://github.com/ArturBa/spotify/issues/27)) ([dcdc012](https://github.com/ArturBa/spotify/commit/dcdc0125b4cff9a736024298db76489f9e1e0f90))
+- **spotify:** :alien: Use JWT for user authorization as described in Spotify API ([#29](https://github.com/ArturBa/spotify/issues/29)) ([77673b0](https://github.com/ArturBa/spotify/commit/77673b0d06e664556b5ed1b5442bc8f66c137f53))
+- **spotify:** :sparkles: Add basic navigation bar and user logout ([#30](https://github.com/ArturBa/spotify/issues/30)) ([a5a1479](https://github.com/ArturBa/spotify/commit/a5a14794d733ea3dbb8894ab8c5aa43f9749eb60))
+- **spotify:** :sparkles: Add login page to the app ([#31](https://github.com/ArturBa/spotify/issues/31)) ([bc2b7e0](https://github.com/ArturBa/spotify/commit/bc2b7e0503a29b884a0637d7476f630e3af49c3a))
+- :globe_with_meridians: add i18n support ([#28](https://github.com/ArturBa/spotify/issues/28)) ([5b3b827](https://github.com/ArturBa/spotify/commit/5b3b8272be115400703797446bdfa3598e05342c))
+
 # [0.1.0](https://github.com/ArturBa/spotify/compare/v0.0.2...v0.1.0) (2021-04-25)
 
 ### Features
