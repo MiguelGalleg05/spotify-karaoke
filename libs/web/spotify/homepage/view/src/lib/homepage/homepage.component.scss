@@ -12,8 +12,11 @@
   min-height: 0;
   @include flex-1;
 }
-
 .content {
+  width: 100%;
+}
+
+.routing {
   overflow-y: auto;
   height: 100%;
   width: 100%;

@@ -30,7 +30,8 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "prepare": "husky install",
-    "release": "release-it"
+    "release": "release-it",
+    "extract-i18n": "ng extract-i18n --output-path apps/spotify/src/locale"
   },
   "private": true,
   "dependencies": {

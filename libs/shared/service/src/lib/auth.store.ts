@@ -114,6 +114,7 @@ export class AuthStore {
   logout(): void {
     localStorage.removeItem('access_token');
     localStorage.removeItem('refresh_token');
+    this.router.navigate(['login']);
   }
 
   isLogged(): boolean {

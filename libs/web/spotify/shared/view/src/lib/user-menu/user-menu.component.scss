@@ -1,0 +1,21 @@
+@import 'variables';
+@import 'mixins';
+
+:host {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--bg);
+  padding: $padding-s $padding-m;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.user {
+  img {
+    height: 40px;
+  }
+}

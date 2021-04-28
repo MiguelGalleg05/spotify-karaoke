@@ -1,0 +1,26 @@
+<div class="navigation">
+  <a aria-hidden="false" i18n-aria-label="user-menu.back" aria-label="Back">
+    <mat-icon>chevron_left</mat-icon>
+  </a>
+  <a aria-hidden="false" i18n-aria-label="user-menu.next" aria-label="Next">
+    <mat-icon>chevron_right</mat-icon>
+  </a>
+</div>
+
+<div class="user">
+  <button mat-stroked-button [matMenuTriggerFor]="menu">
+    Hi {{ user?.display_name }}
+    <span i18n="user-menu.user-name" *ngIf="!user?.display_name">there</span>
+    <mat-icon
+      aria-hidden="false"
+      i18n-aria-label="user-menu.open-menu"
+      aria-label="Open menu"
+      >arrow_drop_down</mat-icon
+    >
+  </button>
+  <mat-menu #menu="matMenu" xPosition="before" yPosition="below">
+    <button mat-menu-item i18n="user-menu.logout" (click)="logout()">
+      Log out
+    </button>
+  </mat-menu>
+</div>
