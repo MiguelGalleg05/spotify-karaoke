@@ -12,13 +12,17 @@
   min-height: 0;
   @include flex-1;
 }
+
 .content {
   width: 100%;
+  artur-ba-user-menu {
+    height: $menu-height;
+  }
 }
 
 .routing {
   overflow-y: auto;
-  height: 100%;
+  height: calc(100% - #{$menu-height});
   width: 100%;
   @include flex-1;
   &::ng-deep > *:not(router-outlet) {

@@ -9,6 +9,8 @@
 
 .count {
   @include shared-style;
+  width: 2ch;
+  justify-content: flex-end;
 }
 
 $image-size: 50px;
@@ -38,5 +40,5 @@ $image-size: 50px;
 
 .time {
   @include shared-style;
-  width: 40px;
+  min-width: 4ch;
 }

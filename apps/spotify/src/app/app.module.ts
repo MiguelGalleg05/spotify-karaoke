@@ -6,8 +6,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatButtonModule } from '@angular/material/button';
 import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 
+import {
+  SpotifyTokenInterceptor,
+  ProxyInterceptor,
+} from '@artur-ba/shared/interceptors';
 import { SharedViewModule } from '@artur-ba/shared/view';
-import { SpotifyTokenInterceptor } from '@artur-ba/shared/interceptors';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +32,11 @@ import { LoginComponent } from './login/login.component';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: SpotifyTokenInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ProxyInterceptor,
       multi: true,
     },
   ],
