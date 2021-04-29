@@ -16,8 +16,8 @@ $sidebar-width: 300px;
 
 $transition-animation: cubic-bezier(0.075, 0.82, 0.165, 1);
 
-$logo1x2-dark: 'logo_1x2.png';
-$logo1x2-light: 'logo_1x2_dark.png';
+$logo1x2-light: 'logo_1x2.png';
+$logo1x2-dark: 'logo_1x2_dark.png';
 
 :root {
   --bg-l5: #{lighten($light-background, 5%)};
