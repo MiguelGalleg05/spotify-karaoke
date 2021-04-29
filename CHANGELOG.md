@@ -1,3 +1,16 @@
+## [0.1.3](https://github.com/ArturBa/spotify/compare/v0.1.2...v0.1.3) (2021-04-29)
+
+### Bug Fixes
+
+- :ambulance: Fix proxies on production ([#38](https://github.com/ArturBa/spotify/issues/38)) ([f9c6897](https://github.com/ArturBa/spotify/commit/f9c6897fad41776082503c4db457dad9a232c62f))
+- :bug: Wrong logo used page depending on dark/light mode ([#34](https://github.com/ArturBa/spotify/issues/34)) ([e58575f](https://github.com/ArturBa/spotify/commit/e58575f3f50f8c88114a616d02e5e8cffe3f921a))
+- :lipstick: Adjust login page for mobile devices ([#37](https://github.com/ArturBa/spotify/issues/37)) ([0bff1f8](https://github.com/ArturBa/spotify/commit/0bff1f8270e168bb2ddae020ade841be46d7a7b9))
+- :pencil2: Fix typo on main page ([#35](https://github.com/ArturBa/spotify/issues/35)) ([49d17c1](https://github.com/ArturBa/spotify/commit/49d17c1a9ace7fc9851a965c896cebc83861734c))
+
+### Features
+
+- :lipstick: Add dark mode toggle ([#36](https://github.com/ArturBa/spotify/issues/36)) ([eb119db](https://github.com/ArturBa/spotify/commit/eb119db4b22685d48f9cbdc7bf9b3a347633ba89))
+
 ## [0.1.2](https://github.com/ArturBa/spotify/compare/v0.1.0...v0.1.2) (2021-04-28)
 
 ### Features
