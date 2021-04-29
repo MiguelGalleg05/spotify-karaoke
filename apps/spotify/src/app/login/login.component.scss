@@ -9,6 +9,8 @@
 
   display: flex;
   align-items: center;
+
+  text-align: center;
 }
 
 .content {
@@ -16,11 +18,15 @@
   flex-direction: column;
 
   max-width: 1200px;
-  width: 70vw;
+  width: 100%;
   padding: $padding-m;
   margin: auto;
   @include rounded;
   background-color: var(--bg);
+
+  @include xs {
+    margin: auto $margin-s;
+  }
 }
 
 .readme {
@@ -70,15 +76,5 @@
   display: none;
   @include xs {
     display: flex;
-  }
-}
-
-.logo {
-  background-image: getImageUrl($logo1x2-dark);
-  background-size: contain;
-  background-repeat: no-repeat;
-  @include logoSize;
-  @include darkMode {
-    background-image: getImageUrl($logo1x2-light);
   }
 }

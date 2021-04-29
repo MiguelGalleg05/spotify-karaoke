@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'mixins';
+@import 'media-queries';
 
 :host {
   position: absolute;
@@ -17,6 +18,12 @@
   outline: 2px var(--bg-d20);
 
   @include rounded;
+
+  @include xs {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+  }
 }
 
 span {
