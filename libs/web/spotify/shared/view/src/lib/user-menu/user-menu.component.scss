@@ -14,8 +14,12 @@
   align-items: center;
 }
 
-.user {
-  img {
-    height: 40px;
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  mat-icon {
+    margin-right: 0;
   }
 }

@@ -20,7 +20,21 @@
     >
   </button>
   <mat-menu #menu="matMenu" xPosition="before" yPosition="below">
-    <button mat-menu-item i18n="user-menu.logout" (click)="logout()">
+    <button mat-menu-item (click)="toggleDarkMode()" class="menu-item">
+      <span i18n="user-menu.toggle-mode">Mode</span>
+      <mat-icon aria-hidden="false" aria-label="light mode" *ngIf="darkMode"
+        >light_mode</mat-icon
+      >
+      <mat-icon aria-hidden="false" aria-label="dark mode" *ngIf="!darkMode"
+        >dark_mode</mat-icon
+      >
+    </button>
+    <button
+      mat-menu-item
+      i18n="user-menu.logout"
+      (click)="logout()"
+      class="menu-item"
+    >
       Log out
     </button>
   </mat-menu>

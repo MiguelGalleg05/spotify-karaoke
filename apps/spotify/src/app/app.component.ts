@@ -1,5 +1,6 @@
-import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 
+import { DOCUMENT } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -15,8 +16,6 @@ import { environment } from '../environments/environment';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, OnDestroy {
-  @HostBinding('class') className = '';
-
   protected readonly subscriptions: Subscription[] = [];
   protected readonly darkClassName = 'darkMode';
 
@@ -24,13 +23,14 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     protected userSettings: UserSettingsService,
-    protected env: EnvSettingsService
+    protected env: EnvSettingsService,
+    @Inject(DOCUMENT) private document: Document
   ) {}
 
   ngOnInit(): void {
     this.env.init(environment);
     const darkModeSub = this.userSettings.darkModeOn$.subscribe((darkMode) => {
-      this.className = darkMode ? this.darkClassName : '';
+      this.handleDarkModeChange(darkMode);
     });
     this.subscriptions.push(darkModeSub);
     this.userSettings.cookiesAccepted$
@@ -51,5 +51,13 @@ export class AppComponent implements OnInit, OnDestroy {
   cookiesAccept(): void {
     this.cookiesAccepted = true;
     this.userSettings.allowCookies();
+  }
+
+  protected handleDarkModeChange(newMode: boolean) {
+    if (newMode) {
+      this.document.body.classList.add(this.darkClassName);
+    } else {
+      this.document.body.classList.remove(this.darkClassName);
+    }
   }
 }
