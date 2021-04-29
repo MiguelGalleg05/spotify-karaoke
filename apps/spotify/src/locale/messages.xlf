@@ -2,8 +2,8 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="94fb555bc7e7c64d5de2dcb90a42785376c5cb0e" datatype="html">
-        <source>Sign along with us!</source>
+      <trans-unit id="8537080703400a4f9cd88049c7f5e54cb88e0b7d" datatype="html">
+        <source>Sing along with us!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/spotify/src/app/login/login.component.html</context>
           <context context-type="linenumber">4</context>
