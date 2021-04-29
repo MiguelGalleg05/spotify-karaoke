@@ -7,8 +7,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 
 import {
-  SpotifyTokenInterceptor,
   ProxyInterceptor,
+  SpotifyTokenInterceptor,
 } from '@artur-ba/shared/interceptors';
 import { SharedViewModule } from '@artur-ba/shared/view';
 
