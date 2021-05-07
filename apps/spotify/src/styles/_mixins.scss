@@ -24,8 +24,8 @@
   height: 100px;
 }
 
-@mixin transition($property, $time: 0.5s) {
-  $trans: $transition-animation $property $time;
+@mixin transition($property, $time: 0.5s, $animation: $transition-animation) {
+  $trans: $animation $property $time;
   -webkit-transition: $trans;
   -moz-transition: $trans;
   -ms-transition: $trans;

@@ -1,6 +1,31 @@
 @import 'variables';
+@import 'mixins';
 
-.active {
-  font: bold, large;
-  color: var(--accent);
+:host {
+  display: flex;
+  @include flex-1;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  text-anchor: middle;
+
+  span {
+    display: none;
+
+    &.prepared {
+      display: block;
+      font-size: 0;
+    }
+
+    &.visible {
+      font-size: 3.2rem;
+    }
+
+    &.active {
+      font: bold;
+      color: var(--accent);
+      font-size: 4rem;
+    }
+  }
 }

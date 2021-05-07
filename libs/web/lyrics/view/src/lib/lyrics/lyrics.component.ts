@@ -43,7 +43,7 @@ export class LyricsComponent implements OnInit, OnDestroy {
   }
 
   protected async handleSongUpdate(track: Spotify.Track): Promise<void> {
-    if (this.track === track) {
+    if (JSON.stringify(this.track) === JSON.stringify(track)) {
       return;
     }
     this.searching = true;

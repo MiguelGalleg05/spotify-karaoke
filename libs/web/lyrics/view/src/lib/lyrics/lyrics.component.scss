@@ -1,7 +1,14 @@
 @import 'variables';
+@import 'mixins';
+
+:host {
+  display: flex !important;
+  flex-direction: column;
+}
 
 .user-notify {
   display: flex;
+  @include flex-1;
   justify-content: center;
   align-items: center;
   flex-direction: column;
