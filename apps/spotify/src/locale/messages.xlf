@@ -34,6 +34,38 @@
         </context-group>
         <note priority="1" from="description">login.mobile-not-available</note>
       </trans-unit>
+      <trans-unit id="a7b7895ba78d538df30e02338abc92843dc78385" datatype="html">
+        <source>App info</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/shared/view/src/lib/app-info/app-info.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">app-info.title</note>
+      </trans-unit>
+      <trans-unit id="34746fb1c7f3d2194d99652bdff89e6e14c9c4f4" datatype="html">
+        <source>Contact</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/shared/view/src/lib/app-info/app-info.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">app-info.contact</note>
+      </trans-unit>
+      <trans-unit id="95a00f0306e433b192aa1175f33bf5ccb3ad1690" datatype="html">
+        <source>Github</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/shared/view/src/lib/app-info/app-info.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">app-info.github</note>
+      </trans-unit>
+      <trans-unit id="f4e529ae5ffd73001d1ff4bbdeeb0a72e342e5c8" datatype="html">
+        <source>Close</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/shared/view/src/lib/app-info/app-info.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <note priority="1" from="description">app-info.close</note>
+      </trans-unit>
       <trans-unit id="46900323fc7fc7883626fa41ed04c16cb53a8d48" datatype="html">
         <source>Cookies!</source>
         <context-group purpose="location">
@@ -59,6 +91,30 @@
         </context-group>
         <note priority="1" from="description">cookie-banner.accept</note>
       </trans-unit>
+      <trans-unit id="0b10d1e2d864db90e6841ec5cd7d79e0710a3c4b" datatype="html">
+        <source>Application hotkeys</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/shared/view/src/lib/hotkey-dialog/hotkey-dialog.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">hotkey-dialog.title</note>
+      </trans-unit>
+      <trans-unit id="1bd5e17c9582661e20763a7634ef07881e33bbd7" datatype="html">
+        <source>Action</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/shared/view/src/lib/hotkey-dialog/hotkey-dialog.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">hotkey-dialog.action</note>
+      </trans-unit>
+      <trans-unit id="22a6fa7acaa68431722aeb552a35d5fa8078d5b5" datatype="html">
+        <source>Shortcut</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/shared/view/src/lib/hotkey-dialog/hotkey-dialog.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">hotkey-dialog.shortcut</note>
+      </trans-unit>
       <trans-unit id="9eb797f2e32138fd07eb3903b82ccf093182590e" datatype="html">
         <source>Lyrics</source>
         <context-group purpose="location">
@@ -73,7 +129,7 @@
           <context context-type="sourcefile">libs/web/lyrics/view/src/lib/lyrics/lyrics.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
-        <note priority="1" from="description">lyrics.couldn-find</note>
+        <note priority="1" from="description">lyrics.could-not-find</note>
       </trans-unit>
       <trans-unit id="47acf7d8ab7a0095359b586e750a3ffb973392df" datatype="html">
         <source> Looking for a lyrics </source>
@@ -267,11 +323,19 @@
         </context-group>
         <note priority="1" from="description">user-menu.hi</note>
       </trans-unit>
-      <trans-unit id="60d490407971f9dda9ef2f19142a48bbbedb5fd4" datatype="html">
-        <source>there</source>
+      <trans-unit id="a97be3aab6dfde6f0fb28a1e96c9e269a8beb4d9" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{ user?.display_name }}"/> </source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/user-menu/user-menu.component.html</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">13,15</context>
+        </context-group>
+        <note priority="1" from="description">user-menu.user-name</note>
+      </trans-unit>
+      <trans-unit id="1676925ed9969a70ccdc5b99a6c389ab9e86f11c" datatype="html">
+        <source> there</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/user-menu/user-menu.component.html</context>
+          <context context-type="linenumber">17</context>
         </context-group>
         <note priority="1" from="description">user-menu.user-name</note>
       </trans-unit>
@@ -279,17 +343,57 @@
         <source>Open menu</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/user-menu/user-menu.component.html</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">22</context>
         </context-group>
         <note priority="1" from="description">user-menu.open-menu</note>
+      </trans-unit>
+      <trans-unit id="37e10df2d9c0c25ef04ac112c9c9a7723e8efae0" datatype="html">
+        <source>Mode</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/user-menu/user-menu.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <note priority="1" from="description">user-menu.toggle-mode</note>
+      </trans-unit>
+      <trans-unit id="20b4445af374aacb6695f6e9d293fffa5d1c428a" datatype="html">
+        <source> App info </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/user-menu/user-menu.component.html</context>
+          <context context-type="linenumber">42,43</context>
+        </context-group>
+        <note priority="1" from="description">user-menu.app-info</note>
+      </trans-unit>
+      <trans-unit id="90f71d789ac74c897f133aaeed9062f3788f6809" datatype="html">
+        <source> Open hotkeys </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/user-menu/user-menu.component.html</context>
+          <context context-type="linenumber">52,53</context>
+        </context-group>
+        <note priority="1" from="description">user-menu.hotkeys</note>
       </trans-unit>
       <trans-unit id="80257e38855d0c7e4a1592432a0591f50c682e1f" datatype="html">
         <source> Log out </source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/user-menu/user-menu.component.html</context>
-          <context context-type="linenumber">24,25</context>
+          <context context-type="linenumber">60,61</context>
         </context-group>
         <note priority="1" from="description">user-menu.logout</note>
+      </trans-unit>
+      <trans-unit id="1655602937917394671" datatype="html">
+        <source>Toggle dark mode</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/user-menu/user-menu.component.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <note priority="1" from="description">hotkeys.dark-mode</note>
+      </trans-unit>
+      <trans-unit id="5849157444763563861" datatype="html">
+        <source>Show hotkeys dialog</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/user-menu/user-menu.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+        <note priority="1" from="description">hotkeys.show-hotkeys</note>
       </trans-unit>
       <trans-unit id="4c4ca9ad0ba2c0a5c09a44affd029efb5ee5ff13" datatype="html">
         <source>Spotify Karaoke Logo</source>
