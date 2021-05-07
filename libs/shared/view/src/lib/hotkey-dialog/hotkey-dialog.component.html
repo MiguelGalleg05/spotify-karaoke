@@ -1,0 +1,17 @@
+<h2 mat-dialog-title i18n="hotkey-dialog.title">Application hotkeys</h2>
+<mat-dialog-content>
+  <table>
+    <thead>
+      <tr>
+        <th i18n="hotkey-dialog.action">Action</th>
+        <th i18n="hotkey-dialog.shortcut">Shortcut</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data">
+        <td>{{ row.action }}</td>
+        <td class="text-right" [innerHtml]="renderKeyboard(row.keys)"></td>
+      </tr>
+    </tbody>
+  </table>
+</mat-dialog-content>

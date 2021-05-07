@@ -35,6 +35,14 @@
     </button>
     <button
       mat-menu-item
+      i18n="user-menu.hotkeys"
+      (click)="openHotKeyDialog()"
+      class="menu-item"
+    >
+      Open hotkeys
+    </button>
+    <button
+      mat-menu-item
       i18n="user-menu.logout"
       (click)="logout()"
       class="menu-item"
