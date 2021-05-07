@@ -1,5 +1,3 @@
-/// <reference types="spotify-web-playback-sdk" />
-
 import { isDevMode } from '@angular/core';
 
 export class TrackHelper {
@@ -16,6 +14,14 @@ export class TrackHelper {
       ret_str += '0';
     }
     return ret_str + `${second}`;
+  }
+
+  static getImage300Url(album: SpotifyApi.AlbumObjectFull): string {
+    const img = album?.images.filter((image) => image.height == 300);
+    if (img && img[0]) {
+      return img[0].url;
+    }
+    return isDevMode() ? '/assets/logo_1x1.png' : '/en/assets/logo_1x1.png';
   }
 
   static getImage64Url(track: Spotify.Track): string {

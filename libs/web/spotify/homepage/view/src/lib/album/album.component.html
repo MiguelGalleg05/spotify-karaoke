@@ -1,6 +1,19 @@
-<p>album works!</p>
+<div class="row">
+  <div class="album-data">
+    <img [src]="image300Url" />
+    <h2>
+      {{ album?.name }}
+    </h2>
+    <a
+      *ngFor="let artist of album?.artists; let l = last"
+      [routerLink]="'/artist/' + artist.uri | clearUriData"
+    >
+      {{ artist.name | addComa: !l }}
+    </a>
+  </div>
 
-<artur-ba-song-list
-  [tracks]="album?.items"
-  [columns]="columns"
-></artur-ba-song-list>
+  <artur-ba-song-list
+    [tracks]="albumTracks?.items"
+    [columns]="columns"
+  ></artur-ba-song-list>
+</div>

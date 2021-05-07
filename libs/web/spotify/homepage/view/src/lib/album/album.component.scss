@@ -1,0 +1,21 @@
+@import 'variables';
+@import 'mixins';
+
+:host {
+  height: 100%;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  .album-data {
+    display: flex;
+    padding: $padding-m;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+      @include square_img($image300);
+    }
+  }
+}

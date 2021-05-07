@@ -23,6 +23,17 @@ export class SpotifyDataService {
       .toPromise();
   }
 
+  /**
+   * https://api.spotify.com/v1/albums/
+   * @param albumUri
+   * @returns Promise
+   */
+  getAlbum(albumUri: string): Promise<SpotifyApi.AlbumObjectFull> {
+    return this.httpClient
+      .get<SpotifyApi.AlbumObjectFull>(this.baseURL + `albums/${albumUri}`)
+      .toPromise();
+  }
+
   getTracks(tracksIds: string[]): Promise<SpotifyApi.MultipleTracksResponse> {
     tracksIds = tracksIds.map((track) => {
       const trackUri = track.split(':');
