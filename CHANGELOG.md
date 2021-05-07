@@ -1,3 +1,16 @@
+# [0.2.0](https://github.com/ArturBa/spotify/compare/v0.1.3...v0.2.0) (2021-05-07)
+
+### Bug Fixes
+
+- :ambulance: fix lyrics proxies ([#39](https://github.com/ArturBa/spotify/issues/39)) ([bfd168b](https://github.com/ArturBa/spotify/commit/bfd168bc0fb4db418364c51a0ed272df744bcf75))
+
+### Features
+
+- **lyrics:** :lipstick: Change lyrics display mode for more user friendly ([#41](https://github.com/ArturBa/spotify/issues/41)) ([6bc7495](https://github.com/ArturBa/spotify/commit/6bc74959f5782735fa18de45a28968fbc714467a))
+- **shared:** :sparkles: Add app info modal ([#40](https://github.com/ArturBa/spotify/issues/40)) ([18d2ad6](https://github.com/ArturBa/spotify/commit/18d2ad6dca05310e15fac5a07a6458c6f4b7b3cc))
+- **shared:** :sparkles: add keyboard shortcuts to the app ([#42](https://github.com/ArturBa/spotify/issues/42)) ([79317cb](https://github.com/ArturBa/spotify/commit/79317cba7b05290158b2485af92acf210ac49460))
+- **spotify:** :lipstick: Add album cover on album view ([#44](https://github.com/ArturBa/spotify/issues/44)) ([eb5dbf4](https://github.com/ArturBa/spotify/commit/eb5dbf448aef9dfc362d16a3d63c67e1a9a266b3))
+
 ## [0.1.3](https://github.com/ArturBa/spotify/compare/v0.1.2...v0.1.3) (2021-04-29)
 
 ### Bug Fixes
