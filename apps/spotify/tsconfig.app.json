@@ -1,8 +1,9 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "resolveJsonModule": true,
     "outDir": "../../dist/out-tsc",
-    "types": ["spotify-api"]
+    "types": ["spotify-api", "node"]
   },
   "files": ["src/main.ts", "src/polyfills.ts"]
 }

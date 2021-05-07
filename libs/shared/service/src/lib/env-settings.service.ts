@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 export interface EnvInterface {
   production: boolean;
   ga: string;
+  app_version: string;
   spotify_client_id: string;
   spotify_client_secret: string;
 }
@@ -16,6 +17,10 @@ export class EnvSettingsService {
     if (this.env === undefined) {
       this.env = env;
     }
+  }
+
+  get app_version(): string {
+    return this.env.app_version;
   }
 
   get spotify_client_id(): string {

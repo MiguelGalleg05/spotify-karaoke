@@ -4,11 +4,14 @@ import '@angular/localize/init';
 import { MatDialog } from '@angular/material/dialog';
 
 import {
+  AppInfoDialogComponent,
+  HotkeyDialogComponent,
+} from '@artur-ba/shared/view';
+import {
   AuthStore,
   HotkeyService,
   UserSettingsService,
 } from '@artur-ba/shared/service';
-import { HotkeyDialogComponent } from '@artur-ba/shared/view';
 import { SpotifyDataService } from '@artur-ba/web/spotify/shared/service';
 import { Subscription } from 'rxjs';
 
@@ -27,8 +30,8 @@ export class UserMenuComponent implements OnInit, OnDestroy {
 
   constructor(
     protected spotifyData: SpotifyDataService,
-    protected dialog: MatDialog,
     protected authStore: AuthStore,
+    protected dialog: MatDialog,
     protected hotkey: HotkeyService,
     protected userSettings: UserSettingsService
   ) {}
@@ -64,6 +67,10 @@ export class UserMenuComponent implements OnInit, OnDestroy {
   toggleDarkMode(newMode?: boolean): void {
     const mode = newMode ? newMode : !this.darkMode;
     this.userSettings.darkMode(mode);
+  }
+
+  openInfoDialog(): void {
+    this.dialog.open(AppInfoDialogComponent);
   }
 
   openHotKeyDialog(): void {

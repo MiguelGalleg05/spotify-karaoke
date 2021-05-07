@@ -1,0 +1,26 @@
+<h1 mat-dialog-title i18n="app-info.title">App info</h1>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>App Version</mat-label>
+    <input matInput [value]="appVersion" readonly />
+  </mat-form-field>
+
+  <div class="contact">
+    <span i18n="app-info.contact">Contact</span>
+    <a
+      href="mailto:bauerart1+karaoke@gmail.com?subject=Spotify Karaoke"
+      target="_blank"
+    >
+      <mat-icon>email</mat-icon>
+    </a>
+  </div>
+  <div class="github">
+    <span i18n="app-info.github">Github</span>
+    <a href="https://github.com/ArturBa/spotify-karaoke" target="_blank">
+      <mat-icon svgIcon="github"></mat-icon>
+    </a>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close i18n="app-info.close">Close</button>
+</mat-dialog-actions>

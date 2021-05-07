@@ -6,6 +6,7 @@ import { tap } from 'rxjs/operators';
 
 import {
   EnvSettingsService,
+  IconService,
   UserSettingsService,
 } from '@artur-ba/shared/service';
 import { environment } from '../environments/environment';
@@ -24,7 +25,8 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(
     protected userSettings: UserSettingsService,
     protected env: EnvSettingsService,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    protected icon: IconService
   ) {}
 
   ngOnInit(): void {
