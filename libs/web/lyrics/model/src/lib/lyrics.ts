@@ -30,7 +30,7 @@ export class LyricsParser {
   );
 
   static lrcParser(data: string): Lyrics {
-    // split a long stirng into lines by system's end-of-line marker line \r\n on Windows
+    // split a long string into lines by system's end-of-line marker line \r\n on Windows
     // or \n on POSIX
     let lines = data.split(LyricsParser.EOL);
 
@@ -65,7 +65,7 @@ export class LyricsParser {
 
     return {
       album: result.al || '',
-      artist: result.al || '',
+      artist: result.ar || '',
       title: result.ti || '',
       script: scripts,
       offset: result.offset || 0,

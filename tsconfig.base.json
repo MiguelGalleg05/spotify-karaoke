@@ -49,7 +49,8 @@
       "@artur-ba/shared/view": ["libs/shared/view/src/index.ts"],
       "@artur-ba/web/spotify/shared/service": [
         "libs/web/spotify/shared/service/src/index.ts"
-      ]
+      ],
+      "@artur-ba/shared/test-helpers": ["libs/shared/test-helpers/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

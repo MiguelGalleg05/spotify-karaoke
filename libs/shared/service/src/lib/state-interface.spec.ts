@@ -1,19 +1,29 @@
-import { TestBed } from '@angular/core/testing';
-
 import { StateInterface } from './state-interface';
 
-interface Foo {
+interface StateInterfaceMock {
   a: string;
+  b: string;
 }
 describe('StateInterface', () => {
-  let service: StateInterface<Foo>;
+  let service: StateInterface<StateInterfaceMock>;
+  const data = { a: 'a', b: 'b' };
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(StateInterface);
+    service = new StateInterface();
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  it('should save given data', () => {
+    service.setState(data);
+
+    expect(service.state$.value).toEqual(data);
+  });
+
+  it('should update data partially if part given', () => {
+    service.setState(data);
+
+    const newAValue = { a: 'c' };
+    service.setState(newAValue);
+
+    expect(service.state$.value).toEqual({ ...data, ...newAValue });
   });
 });

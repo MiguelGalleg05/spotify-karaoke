@@ -27,6 +27,7 @@
     "web-spotify-shared-helper": { "tags": ["tags:helper"] },
     "web-spotify-shared-pipe": { "tags": ["tags:pipe"] },
     "shared-view": { "tags": ["tags:view"] },
-    "web-spotify-shared-service": { "tags": [] }
+    "web-spotify-shared-service": { "tags": [] },
+    "shared-test-helpers": { "tags": ["test"] }
   }
 }

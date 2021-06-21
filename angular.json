@@ -517,6 +517,31 @@
           }
         }
       }
+    },
+    "shared-test-helpers": {
+      "projectType": "library",
+      "root": "libs/shared/test-helpers",
+      "sourceRoot": "libs/shared/test-helpers/src",
+      "prefix": "test",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/test-helpers/src/**/*.ts",
+              "libs/shared/test-helpers/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/test-helpers"],
+          "options": {
+            "jestConfig": "libs/shared/test-helpers/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

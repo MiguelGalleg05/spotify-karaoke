@@ -1,3 +1,4 @@
+/// <reference types="spotify-web-playback-sdk" />
 import { Injectable } from '@angular/core';
 
 import { debounceTime, filter, map } from 'rxjs/operators';

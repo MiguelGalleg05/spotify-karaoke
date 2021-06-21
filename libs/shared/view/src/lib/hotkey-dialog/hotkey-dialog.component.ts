@@ -22,7 +22,7 @@ export class HotkeyDialogComponent {
     keysString = keysString.map((key) => {
       return this.symbols[key] || key;
     });
-    keysString = keysString.map((key) => `<kbd >${key}` + '</kbd>');
+    keysString = keysString.map((key) => `<kbd>${key}` + '</kbd>');
     return keysString.reduce((p, c) => p + '+' + c);
   }
 }

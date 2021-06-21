@@ -8,8 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 export class StateInterface<T> {
   readonly state$ = new BehaviorSubject<T>({} as T);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  setState(t: any): void {
+  setState(t: Partial<T>): void {
     this.state$.next({
       ...this.state$.value,
       ...t,

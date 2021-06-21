@@ -15,7 +15,7 @@ import { AuthStore } from './auth.store';
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  readonly public_routes = ['/login', '/spotify'];
+  readonly publicRoutes = ['/login', '/spotify'];
 
   constructor(protected router: Router, protected authStore: AuthStore) {}
   canActivate(
@@ -26,7 +26,10 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (state.url in this.public_routes || this.authStore.isLogged()) {
+    if (
+      this.publicRoutes.some((route) => route === state.url) ||
+      this.authStore.isLogged()
+    ) {
       return true;
     }
     this.router.navigate(['/login'], {

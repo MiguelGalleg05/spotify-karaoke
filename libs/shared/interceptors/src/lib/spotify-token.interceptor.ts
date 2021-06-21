@@ -15,7 +15,10 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class SpotifyTokenInterceptor implements HttpInterceptor {
-  protected readonly spotifyAPIRegex = new RegExp('^https://api.spotify.com/');
+  static readonly spotifyApiUrl = 'https://api.spotify.com/';
+  protected readonly spotifyAPIRegex = new RegExp(
+    `^${SpotifyTokenInterceptor.spotifyApiUrl}`
+  );
   protected refreshingInProgress = false;
 
   constructor(protected authStore: AuthStore, protected router: Router) {}
