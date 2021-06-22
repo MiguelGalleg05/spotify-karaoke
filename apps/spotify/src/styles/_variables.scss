@@ -1,5 +1,3 @@
-@import 'theme_variables';
-
 $margin-xs: 0.5rem;
 $margin-s: 1.25rem;
 $margin-m: 2rem;
@@ -20,6 +18,23 @@ $transition-animation: cubic-bezier(0.075, 0.82, 0.165, 1);
 $logo1x2-light: 'logo_1x2.png';
 $logo1x2-dark: 'logo_1x2_dark.png';
 $menu-height: 60px;
+
+$light-background: #f0f0f0;
+$dark-background: #171717;
+// Light Theme Text
+$dark-text: #171717;
+$dark-primary-text: rgba($dark-text, 0.9);
+$dark-accent-text: rgba($dark-text, 0.6);
+$dark-disabled-text: rgba($dark-text, 0.4);
+$dark-dividers: rgba($dark-text, 0.2);
+$dark-focused: rgba($dark-text, 0.2);
+// Dark Theme text
+$light-text: #e6e6e6;
+$light-primary-text: rgba($light-text, 0.9);
+$light-accent-text: rgba($light-text, 0.6);
+$light-disabled-text: rgba($light-text, 0.4);
+$light-dividers: rgba($light-text, 0.2);
+$light-focused: rgba($light-text, 0.2);
 
 :root {
   --bg-l5: #{lighten($light-background, 5%)};

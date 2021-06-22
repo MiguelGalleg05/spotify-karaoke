@@ -7,10 +7,8 @@ import {
 import { By } from '@angular/platform-browser';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-import {
-  createSpyObj,
-  MiniLyricsService,
-} from '@artur-ba/web/lyrics/mini-lyrics/service';
+import { createSpyObj } from '@artur-ba/shared/test-helpers';
+import { MiniLyricsService } from '@artur-ba/web/lyrics/mini-lyrics/service';
 
 import { LyricsComponent } from './lyrics.component';
 

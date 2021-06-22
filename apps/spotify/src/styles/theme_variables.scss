@@ -3,6 +3,7 @@
 * https://materialtheme.arcsine.dev
 */
 
+@import 'variables';
 @import '~@angular/material/theming';
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -29,14 +30,6 @@ $fontConfig: (
 
 // Foreground Elements
 
-// Light Theme Text
-$dark-text: #171717;
-$dark-primary-text: rgba($dark-text, 0.9);
-$dark-accent-text: rgba($dark-text, 0.6);
-$dark-disabled-text: rgba($dark-text, 0.4);
-$dark-dividers: rgba($dark-text, 0.2);
-$dark-focused: rgba($dark-text, 0.2);
-
 $mat-light-theme-foreground: (
   base: black,
   divider: $dark-dividers,
@@ -55,14 +48,6 @@ $mat-light-theme-foreground: (
   slider-off: rgba($dark-text, 0.26),
   slider-off-active: $dark-disabled-text,
 );
-
-// Dark Theme text
-$light-text: #e6e6e6;
-$light-primary-text: rgba($light-text, 0.9);
-$light-accent-text: rgba($light-text, 0.6);
-$light-disabled-text: rgba($light-text, 0.4);
-$light-dividers: rgba($light-text, 0.2);
-$light-focused: rgba($light-text, 0.2);
 
 $mat-dark-theme-foreground: (
   base: $light-text,
@@ -85,7 +70,6 @@ $mat-dark-theme-foreground: (
 
 // Background config
 // Light bg
-$light-background: #f0f0f0;
 $light-bg-darker-5: darken($light-background, 5%);
 $light-bg-darker-10: darken($light-background, 10%);
 $light-bg-darker-20: darken($light-background, 20%);
@@ -114,7 +98,6 @@ $mat-light-theme-background: (
 );
 
 // Dark bg
-$dark-background: #171717;
 $dark-bg-lighter-5: lighten($dark-background, 5%);
 $dark-bg-lighter-10: lighten($dark-background, 10%);
 $dark-bg-lighter-20: lighten($dark-background, 20%);

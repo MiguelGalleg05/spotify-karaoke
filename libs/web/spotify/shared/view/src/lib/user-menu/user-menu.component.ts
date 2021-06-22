@@ -1,7 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import '@angular/localize/init';
+import { Location } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
 
 import {
   AppInfoDialogComponent,
@@ -13,7 +15,6 @@ import {
   UserSettingsService,
 } from '@artur-ba/shared/service';
 import { SpotifyDataService } from '@artur-ba/web/spotify/shared/service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'artur-ba-user-menu',
@@ -29,11 +30,12 @@ export class UserMenuComponent implements OnInit, OnDestroy {
   protected subscriptions: Subscription[] = [];
 
   constructor(
-    protected spotifyData: SpotifyDataService,
-    protected authStore: AuthStore,
-    protected dialog: MatDialog,
-    protected hotkey: HotkeyService,
-    protected userSettings: UserSettingsService
+    protected readonly authStore: AuthStore,
+    protected readonly dialog: MatDialog,
+    protected readonly hotkey: HotkeyService,
+    protected readonly location: Location,
+    protected readonly spotifyData: SpotifyDataService,
+    protected readonly userSettings: UserSettingsService
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -90,5 +92,13 @@ export class UserMenuComponent implements OnInit, OnDestroy {
 
   logout(): void {
     this.authStore.logout();
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
+
+  goForward(): void {
+    this.location.forward();
   }
 }
