@@ -8,6 +8,7 @@ import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 
 import {
   ProxyInterceptor,
+  SpotifyMarketInterceptor,
   SpotifyTokenInterceptor,
 } from '@artur-ba/shared/interceptors';
 import { SharedViewModule } from '@artur-ba/shared/view';
@@ -32,6 +33,11 @@ import { LoginComponent } from './login/login.component';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: SpotifyTokenInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: SpotifyMarketInterceptor,
       multi: true,
     },
     {
