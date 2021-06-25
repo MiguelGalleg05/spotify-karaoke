@@ -1,33 +1,85 @@
 {
   "implicitDependencies": {
-    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
     ".eslintrc.json": "*"
   },
-  "affected": { "defaultBase": "master" },
+  "affected": {
+    "defaultBase": "master"
+  },
   "npmScope": "artur-ba",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e",
+          "build-storybook"
+        ]
+      }
     }
   },
   "projects": {
-    "spotify": { "tags": [] },
-    "spotify-e2e": { "tags": [], "implicitDependencies": ["spotify"] },
-    "shared-service": { "tags": ["type:service"] },
-    "web-lyrics-view": { "tags": ["type:view"] },
-    "web-lyrics-mini-lyrics-service": { "tags": ["type:service"] },
-    "web-lyrics-mini-lyrics-interface": { "tags": ["type:interface"] },
-    "web-lyrics-model": { "tags": ["tags:interface"] },
-    "web-spotify-player-view": { "tags": ["tags:view"] },
-    "web-spotify-homepage-view": { "tags": ["tags:view"] },
-    "web-spotify-sidebar-view": { "tags": ["tags:view"] },
-    "shared-interceptors": { "tags": ["tags:interceptor"] },
-    "web-spotify-shared-view": { "tags": ["tags:view"] },
-    "web-spotify-shared-helper": { "tags": ["tags:helper"] },
-    "web-spotify-shared-pipe": { "tags": ["tags:pipe"] },
-    "shared-view": { "tags": ["tags:view"] },
-    "web-spotify-shared-service": { "tags": [] },
-    "shared-test-helpers": { "tags": ["test"] }
+    "shared-interceptors": {
+      "tags": ["tags:interceptor"]
+    },
+    "shared-service": {
+      "tags": ["type:service"]
+    },
+    "shared-test-helpers": {
+      "tags": ["test"]
+    },
+    "shared-view": {
+      "tags": ["tags:view"]
+    },
+    "spotify": {
+      "tags": []
+    },
+    "spotify-e2e": {
+      "tags": [],
+      "implicitDependencies": ["spotify"]
+    },
+    "web-lyrics-mini-lyrics-interface": {
+      "tags": ["type:interface"]
+    },
+    "web-lyrics-mini-lyrics-service": {
+      "tags": ["type:service"]
+    },
+    "web-lyrics-model": {
+      "tags": ["tags:interface"]
+    },
+    "web-lyrics-view": {
+      "tags": ["type:view"]
+    },
+    "web-spotify-homepage-view": {
+      "tags": ["tags:view"]
+    },
+    "web-spotify-player-view": {
+      "tags": ["tags:view"]
+    },
+    "web-spotify-shared-helper": {
+      "tags": ["tags:helper"]
+    },
+    "web-spotify-shared-pipe": {
+      "tags": ["tags:pipe"]
+    },
+    "web-spotify-shared-service": {
+      "tags": []
+    },
+    "web-spotify-shared-view": {
+      "tags": ["tags:view"]
+    },
+    "web-spotify-shared-view-e2e": {
+      "tags": [],
+      "implicitDependencies": ["web-spotify-shared-view"]
+    },
+    "web-spotify-sidebar-view": {
+      "tags": ["tags:view"]
+    }
   }
 }

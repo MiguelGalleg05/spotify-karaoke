@@ -32,6 +32,106 @@
     }
   },
   "projects": {
+    "shared-interceptors": {
+      "projectType": "library",
+      "root": "libs/shared/interceptors",
+      "sourceRoot": "libs/shared/interceptors/src",
+      "prefix": "artur-ba",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/interceptors/src/**/*.ts",
+              "libs/shared/interceptors/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/interceptors"],
+          "options": {
+            "jestConfig": "libs/shared/interceptors/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-service": {
+      "projectType": "library",
+      "root": "libs/shared/service",
+      "sourceRoot": "libs/shared/service/src",
+      "prefix": "artur-ba",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/service/src/**/*.ts",
+              "libs/shared/service/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/service"],
+          "options": {
+            "jestConfig": "libs/shared/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-test-helpers": {
+      "projectType": "library",
+      "root": "libs/shared/test-helpers",
+      "sourceRoot": "libs/shared/test-helpers/src",
+      "prefix": "test",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/test-helpers/src/**/*.ts",
+              "libs/shared/test-helpers/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/test-helpers"],
+          "options": {
+            "jestConfig": "libs/shared/test-helpers/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-view": {
+      "projectType": "library",
+      "root": "libs/shared/view",
+      "sourceRoot": "libs/shared/view/src",
+      "prefix": "artur-ba",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/view/src/**/*.ts",
+              "libs/shared/view/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/view"],
+          "options": {
+            "jestConfig": "libs/shared/view/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "spotify": {
       "projectType": "application",
       "root": "apps/spotify",
@@ -168,51 +268,26 @@
         }
       }
     },
-    "shared-service": {
+    "web-lyrics-mini-lyrics-interface": {
       "projectType": "library",
-      "root": "libs/shared/service",
-      "sourceRoot": "libs/shared/service/src",
+      "root": "libs/web/lyrics/mini-lyrics/interface",
+      "sourceRoot": "libs/web/lyrics/mini-lyrics/interface/src",
       "prefix": "artur-ba",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/shared/service/src/**/*.ts",
-              "libs/shared/service/src/**/*.html"
+              "libs/web/lyrics/mini-lyrics/interface/src/**/*.ts",
+              "libs/web/lyrics/mini-lyrics/interface/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/service"],
+          "outputs": ["coverage/libs/web/lyrics/mini-lyrics/interface"],
           "options": {
-            "jestConfig": "libs/shared/service/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "web-lyrics-view": {
-      "projectType": "library",
-      "root": "libs/web/lyrics/view",
-      "sourceRoot": "libs/web/lyrics/view/src",
-      "prefix": "artur-ba",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/web/lyrics/view/src/**/*.ts",
-              "libs/web/lyrics/view/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/web/lyrics/view"],
-          "options": {
-            "jestConfig": "libs/web/lyrics/view/jest.config.js",
+            "jestConfig": "libs/web/lyrics/mini-lyrics/interface/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -243,31 +318,6 @@
         }
       }
     },
-    "web-lyrics-mini-lyrics-interface": {
-      "projectType": "library",
-      "root": "libs/web/lyrics/mini-lyrics/interface",
-      "sourceRoot": "libs/web/lyrics/mini-lyrics/interface/src",
-      "prefix": "artur-ba",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/web/lyrics/mini-lyrics/interface/src/**/*.ts",
-              "libs/web/lyrics/mini-lyrics/interface/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/web/lyrics/mini-lyrics/interface"],
-          "options": {
-            "jestConfig": "libs/web/lyrics/mini-lyrics/interface/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "web-lyrics-model": {
       "projectType": "library",
       "root": "libs/web/lyrics/model",
@@ -293,26 +343,26 @@
         }
       }
     },
-    "web-spotify-player-view": {
+    "web-lyrics-view": {
       "projectType": "library",
-      "root": "libs/web/spotify/player/view",
-      "sourceRoot": "libs/web/spotify/player/view/src",
+      "root": "libs/web/lyrics/view",
+      "sourceRoot": "libs/web/lyrics/view/src",
       "prefix": "artur-ba",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/web/spotify/player/view/src/**/*.ts",
-              "libs/web/spotify/player/view/src/**/*.html"
+              "libs/web/lyrics/view/src/**/*.ts",
+              "libs/web/lyrics/view/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/web/spotify/player/view"],
+          "outputs": ["coverage/libs/web/lyrics/view"],
           "options": {
-            "jestConfig": "libs/web/spotify/player/view/jest.config.js",
+            "jestConfig": "libs/web/lyrics/view/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -343,76 +393,26 @@
         }
       }
     },
-    "web-spotify-sidebar-view": {
+    "web-spotify-player-view": {
       "projectType": "library",
-      "root": "libs/web/spotify/sidebar/view",
-      "sourceRoot": "libs/web/spotify/sidebar/view/src",
+      "root": "libs/web/spotify/player/view",
+      "sourceRoot": "libs/web/spotify/player/view/src",
       "prefix": "artur-ba",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/web/spotify/sidebar/view/src/**/*.ts",
-              "libs/web/spotify/sidebar/view/src/**/*.html"
+              "libs/web/spotify/player/view/src/**/*.ts",
+              "libs/web/spotify/player/view/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/web/spotify/sidebar/view"],
+          "outputs": ["coverage/libs/web/spotify/player/view"],
           "options": {
-            "jestConfig": "libs/web/spotify/sidebar/view/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "shared-interceptors": {
-      "projectType": "library",
-      "root": "libs/shared/interceptors",
-      "sourceRoot": "libs/shared/interceptors/src",
-      "prefix": "artur-ba",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/shared/interceptors/src/**/*.ts",
-              "libs/shared/interceptors/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/interceptors"],
-          "options": {
-            "jestConfig": "libs/shared/interceptors/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "web-spotify-shared-view": {
-      "projectType": "library",
-      "root": "libs/web/spotify/shared/view",
-      "sourceRoot": "libs/web/spotify/shared/view/src",
-      "prefix": "artur-ba",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/web/spotify/shared/view/src/**/*.ts",
-              "libs/web/spotify/shared/view/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/web/spotify/shared/view"],
-          "options": {
-            "jestConfig": "libs/web/spotify/shared/view/jest.config.js",
+            "jestConfig": "libs/web/spotify/player/view/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -468,31 +468,6 @@
         }
       }
     },
-    "shared-view": {
-      "projectType": "library",
-      "root": "libs/shared/view",
-      "sourceRoot": "libs/shared/view/src",
-      "prefix": "artur-ba",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/shared/view/src/**/*.ts",
-              "libs/shared/view/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/view"],
-          "options": {
-            "jestConfig": "libs/shared/view/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "web-spotify-shared-service": {
       "projectType": "library",
       "root": "libs/web/spotify/shared/service",
@@ -518,26 +493,110 @@
         }
       }
     },
-    "shared-test-helpers": {
+    "web-spotify-shared-view": {
       "projectType": "library",
-      "root": "libs/shared/test-helpers",
-      "sourceRoot": "libs/shared/test-helpers/src",
-      "prefix": "test",
+      "root": "libs/web/spotify/shared/view",
+      "sourceRoot": "libs/web/spotify/shared/view/src",
+      "prefix": "artur-ba",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/shared/test-helpers/src/**/*.ts",
-              "libs/shared/test-helpers/src/**/*.html"
+              "libs/web/spotify/shared/view/src/**/*.ts",
+              "libs/web/spotify/shared/view/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/test-helpers"],
+          "outputs": ["coverage/libs/web/spotify/shared/view"],
           "options": {
-            "jestConfig": "libs/shared/test-helpers/jest.config.js",
+            "jestConfig": "libs/web/spotify/shared/view/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/web/spotify/shared/view/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "builder": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/web-spotify-shared-view",
+            "config": {
+              "configFolder": "libs/web/spotify/shared/view/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      }
+    },
+    "web-spotify-shared-view-e2e": {
+      "root": "apps/web-spotify-shared-view-e2e",
+      "sourceRoot": "apps/web-spotify-shared-view-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/web-spotify-shared-view-e2e/cypress.json",
+            "tsConfig": "apps/web-spotify-shared-view-e2e/tsconfig.e2e.json",
+            "devServerTarget": "web-spotify-shared-view:storybook"
+          },
+          "configurations": {
+            "ci": {
+              "devServerTarget": "web-spotify-shared-view:storybook:ci"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/web-spotify-shared-view-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "web-spotify-sidebar-view": {
+      "projectType": "library",
+      "root": "libs/web/spotify/sidebar/view",
+      "sourceRoot": "libs/web/spotify/sidebar/view/src",
+      "prefix": "artur-ba",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/spotify/sidebar/view/src/**/*.ts",
+              "libs/web/spotify/sidebar/view/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/spotify/sidebar/view"],
+          "options": {
+            "jestConfig": "libs/web/spotify/sidebar/view/jest.config.js",
             "passWithNoTests": true
           }
         }

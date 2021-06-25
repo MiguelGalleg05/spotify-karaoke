@@ -15,30 +15,28 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@artur-ba/shared/service": ["libs/shared/service/src/index.ts"],
-      "@artur-ba/web/lyrics/view": ["libs/web/lyrics/view/src/index.ts"],
-      "@artur-ba/web/lyrics/mini-lyrics/service": [
-        "libs/web/lyrics/mini-lyrics/service/src/index.ts"
-      ],
-      "@artur-ba/web/lyrics/mini-lyrics/interface": [
-        "libs/web/lyrics/mini-lyrics/interface/src/index.ts"
-      ],
-      "@artur-ba/web/lyrics/model": ["libs/web/lyrics/model/src/index.ts"],
-      "@artur-ba/web/spotify/player/view": [
-        "libs/web/spotify/player/view/src/index.ts"
-      ],
-      "@artur-ba/web/spotify/homepage/view": [
-        "libs/web/spotify/homepage/view/src/index.ts"
-      ],
-      "@artur-ba/web/spotify/sidebar/view": [
-        "libs/web/spotify/sidebar/view/src/index.ts"
-      ],
-      "@artur-ba/shared/pipes": ["libs/shared/pipes/src/index.ts"],
       "@artur-ba/shared/interceptors": [
         "libs/shared/interceptors/src/index.ts"
       ],
-      "@artur-ba/web/spotify/shared/view": [
-        "libs/web/spotify/shared/view/src/index.ts"
+      "@artur-ba/shared/pipes": ["libs/shared/pipes/src/index.ts"],
+      "@artur-ba/shared/service": ["libs/shared/service/src/index.ts"],
+      "@artur-ba/shared/test-helpers": [
+        "libs/shared/test-helpers/src/index.ts"
+      ],
+      "@artur-ba/shared/view": ["libs/shared/view/src/index.ts"],
+      "@artur-ba/web/lyrics/mini-lyrics/interface": [
+        "libs/web/lyrics/mini-lyrics/interface/src/index.ts"
+      ],
+      "@artur-ba/web/lyrics/mini-lyrics/service": [
+        "libs/web/lyrics/mini-lyrics/service/src/index.ts"
+      ],
+      "@artur-ba/web/lyrics/model": ["libs/web/lyrics/model/src/index.ts"],
+      "@artur-ba/web/lyrics/view": ["libs/web/lyrics/view/src/index.ts"],
+      "@artur-ba/web/spotify/homepage/view": [
+        "libs/web/spotify/homepage/view/src/index.ts"
+      ],
+      "@artur-ba/web/spotify/player/view": [
+        "libs/web/spotify/player/view/src/index.ts"
       ],
       "@artur-ba/web/spotify/shared/helper": [
         "libs/web/spotify/shared/helper/src/index.ts"
@@ -46,11 +44,15 @@
       "@artur-ba/web/spotify/shared/pipe": [
         "libs/web/spotify/shared/pipe/src/index.ts"
       ],
-      "@artur-ba/shared/view": ["libs/shared/view/src/index.ts"],
       "@artur-ba/web/spotify/shared/service": [
         "libs/web/spotify/shared/service/src/index.ts"
       ],
-      "@artur-ba/shared/test-helpers": ["libs/shared/test-helpers/src/index.ts"]
+      "@artur-ba/web/spotify/shared/view": [
+        "libs/web/spotify/shared/view/src/index.ts"
+      ],
+      "@artur-ba/web/spotify/sidebar/view": [
+        "libs/web/spotify/sidebar/view/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

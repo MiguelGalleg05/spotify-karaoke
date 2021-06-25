@@ -1,0 +1,7 @@
+<mat-card tabindex="0" (click)="$event.stopPropagation(); onClickHandle()">
+  <img mat-card-image [src]="imageUrl" />
+  <mat-card-content>
+    <span class="card-title" [innerHtml]="title"></span>
+    <span class="card-subtitle" [innerHtml]="subtitle"></span>
+  </mat-card-content>
+</mat-card>
