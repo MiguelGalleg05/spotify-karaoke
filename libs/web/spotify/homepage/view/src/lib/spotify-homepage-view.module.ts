@@ -10,6 +10,7 @@ import { WebSpotifySharedViewModule } from '@artur-ba/web/spotify/shared/view';
 import { WebSpotifySidebarViewModule } from '@artur-ba/web/spotify/sidebar/view';
 
 import { AlbumComponent } from './album/album.component';
+import { ArtistComponent } from './artist/artist.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { QueueComponent } from './queue/queue.component';
@@ -31,6 +32,7 @@ import { WebSpotifyHomepageViewRoutingModule } from './spotify-homepage-view-rou
     DashboardComponent,
     QueueComponent,
     AlbumComponent,
+    ArtistComponent,
   ],
   exports: [HomepageComponent],
 })

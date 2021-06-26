@@ -6,7 +6,7 @@
 
 <div class="image" *ngIf="columns.includes(songListColumns.image)">
   <img
-    [src]="trackHelper.getImage64Url(track)"
+    [src]="trackHelper.getImage64Url(track?.album)"
     alt="album cover"
     i18n-alt="song-row.album-cover"
   />

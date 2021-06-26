@@ -1,0 +1,41 @@
+@import 'mixins';
+
+.row {
+  display: flex;
+  flex-direction: row;
+  .artist-data {
+    display: flex;
+    padding: $padding-m;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+      @include square_img($image300);
+    }
+  }
+}
+
+.albums {
+  .album-items {
+    overflow-x: auto;
+    height: min-content;
+    display: grid;
+
+    & > artur-ba-album-card {
+      grid-row: 1;
+    }
+    & > artur-ba-album-card:first-of-type {
+      margin-right: $margin-xs;
+    }
+    & > artur-ba-album-card:last-of-type {
+      margin-left: $margin-xs;
+    }
+    & > artur-ba-album-card:not(:first-of-type):not(:last-of-type) {
+      margin: 0 $margin-xs;
+    }
+  }
+
+  // h3 {
+  //   width: 100%;
+  // }
+}

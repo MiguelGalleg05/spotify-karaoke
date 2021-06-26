@@ -13,7 +13,8 @@
 }
 
 .content {
-  width: 100%;
+  width: calc(100vw - #{$sidebar-width});
+
   artur-ba-user-menu {
     height: $menu-height;
   }
@@ -23,7 +24,7 @@
   overflow-y: auto;
   height: calc(100% - #{$menu-height});
   width: 100%;
-  @include flex-1;
+
   &::ng-deep > *:not(router-outlet) {
     display: block;
     width: 100%;

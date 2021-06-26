@@ -55,13 +55,4 @@ export class TrackHelper {
   ): string {
     return this.getImageUrl({ images }, 64);
   }
-
-  static getArtists(track: Spotify.Track): string {
-    let artists = '';
-    track?.artists.forEach((art) => {
-      artists += art.name + ' ';
-    });
-
-    return artists;
-  }
 }

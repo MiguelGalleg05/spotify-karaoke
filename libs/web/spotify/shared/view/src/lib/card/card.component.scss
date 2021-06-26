@@ -7,6 +7,7 @@ mat-card {
   width: $card-width;
   height: $card-height;
   overflow: hidden;
+  cursor: pointer;
   background-color: var(--bg-d5);
 
   &:hover {

@@ -17,9 +17,13 @@ export class AlbumCardComponent extends CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.imageUrl = this.getAlbumImage();
-    this.title = this.album.name;
-    this.subtitle = this.album.artists.map((artist) => artist.name).join(', ');
-    this.redirectUrl = `album/${UriDataHelper.getClearUri(this.album.uri)}`;
+    this.title = this.album?.name;
+    this.subtitle = this.getAlbumReleaseYear();
+    this.redirectUrl = `album/${UriDataHelper.getClearUri(this.album?.uri)}`;
+  }
+
+  protected getAlbumReleaseYear(): string {
+    return new Date(this.album?.release_date).getFullYear().toString();
   }
 
   protected getAlbumImage(): string {
