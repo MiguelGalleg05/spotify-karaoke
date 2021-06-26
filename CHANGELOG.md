@@ -1,3 +1,13 @@
+# [0.3.0](https://github.com/ArturBa/spotify/compare/v0.2.0...v0.3.0) (2021-06-26)
+
+### Features
+
+- **shared:** :sparkles: Add spotify market interceptor ([#50](https://github.com/ArturBa/spotify/issues/50)) ([1def952](https://github.com/ArturBa/spotify/commit/1def952974661a25b88dbb2df4bd229e5d1f0a6b))
+- **spotify:** :sparkles: Add album card ([#52](https://github.com/ArturBa/spotify/issues/52)) ([7ae1468](https://github.com/ArturBa/spotify/commit/7ae1468e1034eb6fc47fb43db910f0e4d3a51a83))
+- **spotify:** :sparkles: Add artist page ([#49](https://github.com/ArturBa/spotify/issues/49)) ([8901f13](https://github.com/ArturBa/spotify/commit/8901f139b9e953e913b55025abb2176054fad644))
+- **spotify:** :sparkles: Add card view and storybooks ([#51](https://github.com/ArturBa/spotify/issues/51)) ([c2323bf](https://github.com/ArturBa/spotify/commit/c2323bf4fcd01a792822ead0a0919590675ac11b))
+- **spotify:** :sparkles: Add navigation buttons ([#48](https://github.com/ArturBa/spotify/issues/48)) ([10d08dd](https://github.com/ArturBa/spotify/commit/10d08ddabe0a3eb0aaa5bcb76d05483210ed339f))
+
 # [0.2.0](https://github.com/ArturBa/spotify/compare/v0.1.3...v0.2.0) (2021-05-07)
 
 ### Bug Fixes
