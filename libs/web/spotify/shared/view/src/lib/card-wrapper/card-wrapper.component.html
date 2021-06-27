@@ -1,0 +1,10 @@
+<div class="card-wrapper-title">
+  <span [innerHtml]="title"></span>
+  <a *ngIf="viewMoreRoute" [routerLink]="viewMoreRoute">View more</a>
+</div>
+<div
+  class="card-wrapper-content"
+  [ngClass]="{ 'card-wrapper-single-line': singleLine }"
+>
+  <ng-content></ng-content>
+</div>

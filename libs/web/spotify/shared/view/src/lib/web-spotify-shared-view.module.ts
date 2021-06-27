@@ -13,6 +13,7 @@ import { WebSpotifySharedPipeModule } from '@artur-ba/web/spotify/shared/pipe';
 
 import { AlbumCardComponent } from './album-card/album-card.component';
 import { CardComponent } from './card/card.component';
+import { CardWrapperComponent } from './card-wrapper/card-wrapper.component';
 import { SongListComponent } from './song-list/song-list.component';
 import { SongRowComponent } from './song-row/song-row.component';
 import { UserMenuComponent } from './user-menu/user-menu.component';
@@ -35,11 +36,13 @@ import { UserMenuComponent } from './user-menu/user-menu.component';
     UserMenuComponent,
     CardComponent,
     AlbumCardComponent,
+    CardWrapperComponent,
   ],
   exports: [
     SongListComponent,
     UserMenuComponent,
     CardComponent,
+    CardWrapperComponent,
     AlbumCardComponent,
   ],
 })

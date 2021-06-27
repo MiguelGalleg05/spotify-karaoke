@@ -1,0 +1,18 @@
+@import 'mixins';
+
+.card-wrapper-title {
+  display: flex;
+  justify-content: space-between;
+  margin: $margin-s;
+}
+
+.card-wrapper-content {
+  display: grid;
+  grid-gap: $margin-s;
+  grid-template-columns: repeat(auto-fill, minmax($card-width, 1fr));
+}
+
+.card-wrapper-single-line {
+  height: calc(#{$card-height} + calc(#{$margin-s} / 2));
+  overflow: hidden;
+}

@@ -1,5 +1,5 @@
 export class UriDataHelper {
-  static getClearUri(uri: string): string {
+  static getClearUri(uri: string = ''): string {
     const last_slash: number = uri.lastIndexOf('/');
     let preserve_url = '';
     if (last_slash > 0) {

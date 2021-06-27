@@ -9,12 +9,15 @@
   <artur-ba-song-list [tracks]="artistTracks?.tracks"></artur-ba-song-list>
 </div>
 <div class="albums">
-  <h3 i18n="artist.albums">Albums</h3>
-  <div class="album-items">
+  <artur-ba-card-wrapper
+    [title]="getAlbumsWrapperTitle()"
+    [viewMoreRoute]="artistAlbumsUrl()"
+    [singleLine]="true"
+  >
     <artur-ba-album-card
       *ngFor="let album of artistAlbums?.items"
       [album]="album"
     >
     </artur-ba-album-card>
-  </div>
+  </artur-ba-card-wrapper>
 </div>
