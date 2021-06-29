@@ -1,2 +1,5 @@
 <p>dashboard works!</p>
-<artur-ba-album-card [album]="album"></artur-ba-album-card>
+<artur-ba-album-card
+  *ngFor="let album of albums"
+  [album]="album"
+></artur-ba-album-card>

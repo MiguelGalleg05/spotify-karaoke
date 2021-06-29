@@ -10,9 +10,6 @@ import { SpotifyDataService } from '@artur-ba/web/spotify/shared/service';
 })
 export class ArtistAlbumsComponent implements OnInit {
   artist: SpotifyApi.ArtistObjectFull;
-  artistAlbums: SpotifyApi.PagingObject<SpotifyApi.AlbumObjectSimplified>;
-
-  protected readonly albumsWrapperTitle = $localize`:artist.albums:Albums`;
 
   constructor(
     protected readonly route: ActivatedRoute,
@@ -20,12 +17,7 @@ export class ArtistAlbumsComponent implements OnInit {
   ) {}
 
   async ngOnInit(): Promise<void> {
-    const artistUri = this.route.snapshot.params.uri;
-    this.artist = await this.spotifyData.getArtist(artistUri);
-    this.artistAlbums = await this.spotifyData.getArtistAlbums(artistUri);
-  }
-
-  getAlbumsWrapperTitle(): string {
-    return this.albumsWrapperTitle;
+    const uri = this.route.snapshot.params.uri;
+    this.artist = await this.spotifyData.getArtist(uri);
   }
 }
