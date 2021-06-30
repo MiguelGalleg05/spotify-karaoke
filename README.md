@@ -22,10 +22,20 @@ I've tried to implement that for them.
     ├── apps
     │   └── angular-spotify
     └── libs
-        └── web (dir)
-            └── lyrics (dir)
-                ├── mini-lyrics
-                │   ├── interface (angular:lib MiniLyrics data interfaces)
-                │   └── service (angular:lib MiniLyricsService)
-                └── view (angular:lib, LyricsComponent)
+        ├── shared
+        │   ├── interceptors
+        │   ├── service
+        │   ├── test-helpers
+        │   └── view
+        └── web
+            ├── lyrics
+            │   ├── mini-lyrics
+            │   ├── model
+            │   └── view
+            └── spotify
+                ├── homepage
+                ├── player
+                ├── shared
+                └── sidebar
+
 ```
