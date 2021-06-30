@@ -31,7 +31,8 @@
     "help": "nx help",
     "prepare": "husky install",
     "release": "release-it",
-    "extract-i18n": "ng extract-i18n --output-path apps/spotify/src/locale"
+    "extract-i18n": "ng extract-i18n --output-path apps/spotify/src/locale",
+    "check-i18n": "ng-i18n-checker ./apps/**/*.html ./libs/**/*.html -i mat-icon"
   },
   "private": true,
   "dependencies": {
@@ -95,6 +96,7 @@
     "jest": "26.2.2",
     "jest-preset-angular": "8.3.2",
     "lint-staged": "^10.5.4",
+    "ng-i18n-checker": "^2.0.0",
     "postcss": "^8.2.12",
     "prettier": "2.2.1",
     "release-it": "^14.6.1",
