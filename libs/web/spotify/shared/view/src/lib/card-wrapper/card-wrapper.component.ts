@@ -8,5 +8,6 @@ import { Component, Input } from '@angular/core';
 export class CardWrapperComponent {
   @Input() title: string;
   @Input() viewMoreRoute: string;
+  @Input() viewMoreQueryParams: unknown;
   @Input() singleLine = false;
 }

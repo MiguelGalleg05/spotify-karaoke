@@ -7,10 +7,10 @@ import { PaginationInterface } from '@artur-ba/web/spotify/shared/service';
 @Component({
   template: '',
 })
-export abstract class AbstractListComponent<T> implements OnInit {
+export abstract class AbstractListComponent<T, R> implements OnInit {
   data: T[] = [];
 
-  uri: string;
+  requestParams: R;
 
   isLoading$ = new BehaviorSubject(true);
 
@@ -19,14 +19,16 @@ export abstract class AbstractListComponent<T> implements OnInit {
   constructor(protected readonly route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.uri = this.route.snapshot.params.uri;
-    this.getInitData();
+    this.initRequestParams();
+    this.initData();
   }
 
   abstract getData(
-    uri: string,
+    requestParam: R,
     pagination: PaginationInterface
   ): Promise<SpotifyApi.PagingObject<T>>;
+
+  abstract getRequestParams(): R;
 
   isMoreToShow(): boolean {
     const { total, offset, limit } = this.pagination;
@@ -38,8 +40,12 @@ export abstract class AbstractListComponent<T> implements OnInit {
     this.getMoreData();
   }
 
-  protected async getInitData(): Promise<void> {
-    const response = await this.getData(this.uri, this.pagination);
+  protected initRequestParams(): void {
+    this.requestParams = this.getRequestParams();
+  }
+
+  protected async initData(): Promise<void> {
+    const response = await this.getData(this.requestParams, this.pagination);
     this.data = this.getItemsFromResponse(response);
     this.pagination = this.getPaginationFromResponse(response);
     this.isLoading$.next(false);
@@ -47,7 +53,7 @@ export abstract class AbstractListComponent<T> implements OnInit {
 
   protected async getMoreData(): Promise<void> {
     this.pagination.offset += this.pagination.limit;
-    const response = await this.getData(this.uri, this.pagination);
+    const response = await this.getData(this.requestParams, this.pagination);
     this.data.push(...this.getItemsFromResponse(response));
     this.isLoading$.next(false);
   }

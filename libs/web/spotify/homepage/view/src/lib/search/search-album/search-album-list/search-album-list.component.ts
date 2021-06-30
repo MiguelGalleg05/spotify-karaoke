@@ -8,19 +8,20 @@ import {
 import { AbstractListComponent } from '@artur-ba/web/spotify/shared/view';
 
 @Component({
-  selector: 'artur-ba-artist-albums-list',
-  templateUrl: './artist-albums-list.component.html',
-  styleUrls: ['./artist-albums-list.component.scss'],
+  selector: 'artur-ba-search-album-list',
+  templateUrl: './search-album-list.component.html',
+  styleUrls: ['./search-album-list.component.scss'],
   providers: [
     {
       provide: AbstractListComponent,
-      useExisting: forwardRef(() => ArtistAlbumsListComponent),
+      useExisting: forwardRef(() => SearchAlbumListComponent),
     },
   ],
 })
-export class ArtistAlbumsListComponent extends AbstractListComponent<SpotifyApi.AlbumObjectSimplified> {
-  protected readonly albumsWrapperTitle = $localize`:artist.albums:Albums`;
-
+export class SearchAlbumListComponent extends AbstractListComponent<
+  SpotifyApi.AlbumObjectSimplified,
+  string
+> {
   constructor(
     protected readonly route: ActivatedRoute,
     protected readonly spotifyData: SpotifyDataService
@@ -29,13 +30,17 @@ export class ArtistAlbumsListComponent extends AbstractListComponent<SpotifyApi.
   }
 
   async getData(
-    uri: string,
+    requestParams: string,
     pagination: PaginationInterface
   ): Promise<SpotifyApi.PagingObject<SpotifyApi.AlbumObjectSimplified>> {
-    return this.spotifyData.getArtistAlbums(uri, pagination);
+    const response = await this.spotifyData.getSearchAlbumResult(
+      requestParams,
+      pagination
+    );
+    return Promise.resolve(response.albums);
   }
 
-  getAlbumsWrapperTitle(): string {
-    return this.albumsWrapperTitle;
+  getRequestParams(): string {
+    return this.route.snapshot.queryParams.q;
   }
 }

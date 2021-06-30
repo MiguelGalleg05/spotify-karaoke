@@ -1,0 +1,19 @@
+@import 'mixins';
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  & > * {
+    margin: 0 $margin-s;
+  }
+
+  mat-form-field {
+    @include flex-1;
+  }
+  button {
+    height: min-content;
+  }
+}

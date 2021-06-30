@@ -24,7 +24,7 @@ import { IndefiniteScrollComponent } from './indefinite-scroll.component';
     },
   ],
 })
-class MockListComponent extends AbstractListComponent<unknown> {
+class MockListComponent extends AbstractListComponent<unknown, unknown> {
   @Input() cardsCount: number;
 
   albumCard = {
@@ -39,6 +39,10 @@ class MockListComponent extends AbstractListComponent<unknown> {
     release_date: '1998-10-10',
     uri: 'album/3I9Z1nDCL4E0cP62flcbI5',
   };
+
+  getRequestParams(): unknown {
+    return '';
+  }
 
   getData(uri, paginate) {
     paginate.offset = paginate.offset || 0;

@@ -1,0 +1,14 @@
+<artur-ba-search-input (search)="search($event)"></artur-ba-search-input>
+
+<artur-ba-card-wrapper
+  [title]="getAlbumsWrapperTitle()"
+  [singleLine]="true"
+  viewMoreRoute="albums"
+  [viewMoreQueryParams]="queryParams"
+>
+  <artur-ba-album-card
+    *ngFor="let album of albumSearchResult?.albums.items"
+    [album]="album"
+  >
+  </artur-ba-album-card>
+</artur-ba-card-wrapper>

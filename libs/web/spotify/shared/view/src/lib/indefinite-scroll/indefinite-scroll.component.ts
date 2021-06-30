@@ -18,7 +18,7 @@ export class IndefiniteScrollComponent implements AfterViewInit {
   @ViewChild('anchor') anchor: ElementRef<HTMLElement>;
 
   @ContentChild(AbstractListComponent)
-  abstractList: AbstractListComponent<unknown>;
+  abstractList: AbstractListComponent<unknown, unknown>;
 
   protected observer: IntersectionObserver;
 

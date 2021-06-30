@@ -1,0 +1,24 @@
+<form>
+  <mat-form-field>
+    <mat-label i18n="search.input-label"
+      >Type what are you looking for</mat-label
+    >
+    <input
+      matInput
+      placeholder="Search"
+      i18n-placeholder="search.input-placeholder"
+      [formControl]="searchForm"
+      autocomplete="off"
+    />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    i18n="search.searchSubmit"
+    (click)="onSubmit()"
+  >
+    Search
+    <mat-icon>search</mat-icon>
+  </button>
+</form>
