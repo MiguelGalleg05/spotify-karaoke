@@ -1,4 +1,4 @@
-name: Tests
+name: Merge request
 
 on:
   pull_request:
@@ -38,7 +38,7 @@ jobs:
       - name: Build
         run: npm build --aot
 
-      - name: Lint errors
+      - name: Linting
         run: npx nx run-many --target=lint --all=true
 
       - name: Unit tests
