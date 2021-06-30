@@ -1,5 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 import { tap } from 'rxjs/operators';
 
@@ -12,9 +13,10 @@ import { PlayerControlService } from './player-control.service';
 })
 export class PlayerService implements OnDestroy {
   constructor(
-    protected playerState: PlayerStore,
-    protected authStore: AuthStore,
-    protected playerControl: PlayerControlService
+    protected readonly playerState: PlayerStore,
+    protected readonly authStore: AuthStore,
+    protected readonly playerControl: PlayerControlService,
+    protected readonly title: Title
   ) {}
 
   protected subscriptions: Subscription[] = [];
@@ -61,6 +63,7 @@ export class PlayerService implements OnDestroy {
     player.addListener(
       'player_state_changed',
       async (state: Spotify.PlaybackState) => {
+        this.setTitle(state);
         this.playerState.setState({
           playbackState: state,
           volume: await player.getVolume(),
@@ -83,6 +86,17 @@ export class PlayerService implements OnDestroy {
     // Connect to the player!
     await player.connect();
     this.playerState.setState({ player });
+  }
+
+  protected setTitle(state: Spotify.PlaybackState): void {
+    const current_track = state.track_window?.current_track;
+    if (!current_track) {
+      return;
+    }
+    const artist_name = current_track.artists[0].name || null;
+    this.title.setTitle(
+      `${current_track.name} ${artist_name ? ` - ${artist_name}` : ''}`
+    );
   }
 
   protected waitForSpotifyWebPlaybackSDKToLoad(): Promise<typeof Spotify> {
