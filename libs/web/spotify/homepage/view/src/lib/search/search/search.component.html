@@ -6,9 +6,9 @@
   viewMoreRoute="albums"
   [viewMoreQueryParams]="queryParams"
 >
-  <artur-ba-album-card
+  <artur-ba-album-card-decorator
     *ngFor="let album of albumSearchResult?.albums.items"
     [album]="album"
   >
-  </artur-ba-album-card>
+  </artur-ba-album-card-decorator>
 </artur-ba-card-wrapper>

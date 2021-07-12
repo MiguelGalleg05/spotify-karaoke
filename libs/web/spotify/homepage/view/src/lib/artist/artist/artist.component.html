@@ -14,10 +14,10 @@
     [viewMoreRoute]="artistAlbumsUrl()"
     [singleLine]="true"
   >
-    <artur-ba-album-card
+    <artur-ba-album-card-decorator
       *ngFor="let album of artistAlbums?.items"
       [album]="album"
     >
-    </artur-ba-album-card>
+    </artur-ba-album-card-decorator>
   </artur-ba-card-wrapper>
 </div>

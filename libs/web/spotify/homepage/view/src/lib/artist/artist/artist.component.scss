@@ -21,16 +21,16 @@
     height: min-content;
     display: grid;
 
-    & > artur-ba-album-card {
+    & > artur-ba-album-card-decorator {
       grid-row: 1;
     }
-    & > artur-ba-album-card:first-of-type {
+    & > artur-ba-album-card-decorator:first-of-type {
       margin-right: $margin-xs;
     }
-    & > artur-ba-album-card:last-of-type {
+    & > artur-ba-album-card-decorator:last-of-type {
       margin-left: $margin-xs;
     }
-    & > artur-ba-album-card:not(:first-of-type):not(:last-of-type) {
+    & > artur-ba-album-card-decorator:not(:first-of-type):not(:last-of-type) {
       margin: 0 $margin-xs;
     }
   }

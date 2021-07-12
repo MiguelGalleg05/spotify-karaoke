@@ -1,3 +1,4 @@
+///  <reference types="@types/spotify-web-playback-sdk"/>
 import { HttpClient } from '@angular/common/http';
 
 import { Injectable, OnDestroy } from '@angular/core';

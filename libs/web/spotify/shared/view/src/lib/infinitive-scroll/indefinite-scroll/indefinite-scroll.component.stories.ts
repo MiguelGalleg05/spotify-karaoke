@@ -1,20 +1,18 @@
 import { Component, forwardRef, Input } from '@angular/core';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { AbstractListComponent } from '../abstract-list/abstract-list.component';
-import { AlbumCardComponent } from '../album-card/album-card.component';
-import { CardWrapperComponent } from '../card-wrapper/card-wrapper.component';
+import { CardModule } from '../../card/card.module';
 import { IndefiniteScrollComponent } from './indefinite-scroll.component';
 
 @Component({
   selector: 'artur-ba-mock-list',
   template: `
     <artur-ba-card-wrapper title="title">
-      <artur-ba-album-card *ngFor="let album of data" [album]="album">
-      </artur-ba-album-card>
+      <artur-ba-album-card-decorator *ngFor="let album of data" [album]="album">
+      </artur-ba-album-card-decorator>
     </artur-ba-card-wrapper>
   `,
   providers: [
@@ -61,14 +59,9 @@ export default {
   component: IndefiniteScrollComponent,
   decorators: [
     moduleMetadata({
-      declarations: [
-        IndefiniteScrollComponent,
-        CardWrapperComponent,
-        AlbumCardComponent,
-        MockListComponent,
-      ],
+      declarations: [IndefiniteScrollComponent, MockListComponent],
       imports: [
-        MatCardModule,
+        CardModule,
         MatProgressSpinnerModule,
         RouterTestingModule.withRoutes([
           { path: '**', component: IndefiniteScrollComponent },

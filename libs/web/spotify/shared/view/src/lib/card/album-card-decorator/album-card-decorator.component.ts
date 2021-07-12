@@ -8,16 +8,23 @@ import {
 import { CardComponent } from '../card/card.component';
 
 @Component({
-  selector: 'artur-ba-album-card',
-  templateUrl: '../card/card.component.html',
-  styleUrls: ['../card/card.component.scss'],
+  selector: 'artur-ba-album-card-decorator',
+  templateUrl: '../card-decorator/card-decorator.component.html',
+  styleUrls: ['../card-decorator/card-decorator.component.scss'],
 })
-export class AlbumCardComponent extends CardComponent implements OnInit {
+export class AlbumCardDecoratorComponent
+  extends CardComponent
+  implements OnInit {
   @Input() album: SpotifyApi.AlbumObjectFull;
 
-  readonly cardImageAlt = $localize`:album-card.image-alt:Card image`;
-
   ngOnInit(): void {
+    this.initWithAlbumValue();
+  }
+
+  protected initWithAlbumValue(): void {
+    if (!this.album) {
+      return;
+    }
     this.imageUrl = this.getAlbumImage();
     this.title = this.album?.name;
     this.subtitle = this.getAlbumReleaseYear();

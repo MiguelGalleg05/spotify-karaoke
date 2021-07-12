@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AlbumCardComponent } from './album-card.component';
+import { CardDecoratorComponent } from './card-decorator.component';
 
-describe('AlbumCardComponent', () => {
-  let component: AlbumCardComponent;
-  let fixture: ComponentFixture<AlbumCardComponent>;
+describe('CardDecoratorComponent', () => {
+  let component: CardDecoratorComponent;
+  let fixture: ComponentFixture<CardDecoratorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AlbumCardComponent],
+      declarations: [CardDecoratorComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AlbumCardComponent);
+    fixture = TestBed.createComponent(CardDecoratorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
