@@ -1,3 +1,4 @@
+/// <reference types="spotify-web-playback-sdk" />
 import { TestBed } from '@angular/core/testing';
 
 import { PlayerService } from './player.service';

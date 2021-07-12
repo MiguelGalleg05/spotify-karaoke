@@ -4,5 +4,6 @@
     "emitDecoratorMetadata": true
   },
   "exclude": ["../**/*.spec.ts"],
-  "include": ["../src/**/*", "*.js"]
+  "include": ["../src/**/*", "*.js", "*.mdx"],
+  "files": ["../src/mdx.d.ts"]
 }

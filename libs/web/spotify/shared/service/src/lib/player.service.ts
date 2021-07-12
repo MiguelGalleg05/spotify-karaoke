@@ -1,3 +1,4 @@
+/// <reference types="spotify-web-playback-sdk" />
 import { Injectable, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Title } from '@angular/platform-browser';

@@ -1,4 +1,10 @@
 {
-  "conventionalCommits.scopes": ["lyrics", "spotify", "ci", "shared"],
+  "conventionalCommits.scopes": [
+    "lyrics",
+    "spotify",
+    "ci",
+    "shared",
+    "storybook"
+  ],
   "cSpell.words": ["mixins", "spotify", "tailwindcss"]
 }

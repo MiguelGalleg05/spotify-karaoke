@@ -18,7 +18,7 @@ export default {
       ],
     }),
   ],
-  title: 'CardWrapperComponent',
+  title: 'Card/CardWrapper',
   argTypes: {
     cardsCount: {
       control: { type: 'number', min: 1 },
@@ -49,16 +49,28 @@ const Template: Story<CardWrapperComponent> = (args) => ({
   `,
 });
 
+const cardValue = {
+  imageUrl: 'https://source.unsplash.com/random/500x500',
+  title: 'Appetite For Destruction',
+  subtitle: "Guns N' Roses",
+  redirectUrl: 'album/3I9Z1nDCL4E0cP62flcbI5',
+};
+
 export const Default = Template.bind({});
 Default.args = {
   title: 'Albums',
-  viewMoreRoute: 'artist/uri/albums',
-  singleLine: false,
   cardsCount: 9,
-  cardValue: {
-    imageUrl: 'https://source.unsplash.com/random/500x500',
-    title: 'Appetite For Destruction',
-    subtitle: "Guns N' Roses",
-    redirectUrl: 'album/3I9Z1nDCL4E0cP62flcbI5',
-  },
+  cardValue,
+};
+
+export const OneLine = Template.bind({});
+OneLine.args = {
+  ...Default.args,
+  singleLine: true,
+};
+
+export const ViewMore = Template.bind({});
+ViewMore.args = {
+  ...Default.args,
+  viewMoreRoute: 'artist/uri/albums',
 };

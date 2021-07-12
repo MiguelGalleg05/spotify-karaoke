@@ -16,7 +16,7 @@ export interface SpotifyPlayRequestApi {
   providedIn: 'root',
 })
 export class PlayerControlService implements OnDestroy {
-  protected player$: Spotify.SpotifyPlayer;
+  protected player$: Spotify.Player;
   protected readonly baseURL = 'https://api.spotify.com/v1/';
   protected readonly playerURL = this.baseURL + 'me/player';
 

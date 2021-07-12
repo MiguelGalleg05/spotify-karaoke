@@ -76,7 +76,7 @@ export default {
       ],
     }),
   ],
-  title: 'IndefiniteScrollComponent',
+  title: 'Shared/IndefiniteScroll',
   argTypes: {
     cardsCount: {
       control: { type: 'number', min: 1 },

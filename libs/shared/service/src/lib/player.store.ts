@@ -1,4 +1,3 @@
-/// <reference types="spotify-web-playback-sdk" />
 import { Injectable } from '@angular/core';
 
 import { debounceTime, filter, map } from 'rxjs/operators';
@@ -7,7 +6,7 @@ import { Observable, of, timer } from 'rxjs';
 import { StateInterface } from './state-interface';
 
 export interface PlayerState {
-  player: Spotify.SpotifyPlayer;
+  player: Spotify.Player;
   deviceId: string;
   playbackState: Spotify.PlaybackState;
   volume: number;

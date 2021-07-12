@@ -3,6 +3,7 @@ import { MatCardModule } from '@angular/material/card';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { AlbumCardComponent } from './album-card.component';
+import mdx from './album-card.component.mdx';
 
 export default {
   component: AlbumCardComponent,
@@ -17,7 +18,12 @@ export default {
       ],
     }),
   ],
-  title: 'AlbumCardComponent',
+  title: 'Card/Extended/AlbumCard',
+  parameters: {
+    docs: {
+      page: mdx,
+    },
+  },
 } as Meta;
 
 const Template: Story<AlbumCardComponent> = (args) => ({

@@ -15,6 +15,8 @@ import { CardComponent } from '../card/card.component';
 export class AlbumCardComponent extends CardComponent implements OnInit {
   @Input() album: SpotifyApi.AlbumObjectFull;
 
+  readonly cardImageAlt = $localize`:album-card.image-alt:Card image`;
+
   ngOnInit(): void {
     this.imageUrl = this.getAlbumImage();
     this.title = this.album?.name;
