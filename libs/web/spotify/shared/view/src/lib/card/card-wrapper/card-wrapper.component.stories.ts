@@ -2,6 +2,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { MatCardModule } from '@angular/material/card';
 import { RouterTestingModule } from '@angular/router/testing';
 
+import * as CardComponentStories from '../card/card.component.stories';
 import { CardComponent } from '../card/card.component';
 import { CardWrapperComponent } from './card-wrapper.component';
 
@@ -49,8 +50,10 @@ const Template: Story<CardWrapperComponent> = (args) => ({
   `,
 });
 
+const imageUrl = CardComponentStories.Default.args.imageUrl;
+
 const cardValue = {
-  imageUrl: 'https://source.unsplash.com/random/500x500',
+  imageUrl,
   title: 'Appetite For Destruction',
   subtitle: "Guns N' Roses",
   redirectUrl: 'album/3I9Z1nDCL4E0cP62flcbI5',

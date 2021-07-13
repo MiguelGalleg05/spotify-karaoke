@@ -38,7 +38,7 @@ Default.args = {
   album: {
     images: [
       {
-        url: 'https://source.unsplash.com/random/500x500',
+        url: CardComponentStories.Default.args.imageUrl,
         height: 500,
         width: 500,
       },

@@ -34,8 +34,30 @@ const Template: Story<CardComponent> = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  imageUrl: 'https://source.unsplash.com/random/500x500',
+  imageUrl:
+    'https://images.unsplash.com/photo-1625640871146-f1cdbbfb5c13?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYyNjE2MTA2Mg&ixlib=rb-1.2.1&q=80&w=500',
   title: 'Appetite For Destruction',
   subtitle: "Guns N' Roses",
   redirectUrl: 'album/3I9Z1nDCL4E0cP62flcbI5',
+};
+
+export const HorizontalImage = Template.bind({});
+HorizontalImage.args = {
+  ...Default.args,
+  imageUrl:
+    'https://images.unsplash.com/photo-1624542315822-f2c7bc3763e3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYyNjE2MTU1Nw&ixlib=rb-1.2.1&q=80&w=1100',
+};
+
+export const VerticalImage = Template.bind({});
+VerticalImage.args = {
+  ...Default.args,
+  imageUrl:
+    'https://images.unsplash.com/photo-1625230255604-7efe3b6af256?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYyNjE2MTYzNw&ixlib=rb-1.2.1&q=80&w=500',
+};
+
+export const SmallImage = Template.bind({});
+SmallImage.args = {
+  ...Default.args,
+  imageUrl:
+    'https://images.unsplash.com/photo-1625741333766-ed5116195b1b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=70&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYyNjE2MTY4MA&ixlib=rb-1.2.1&q=80&w=70',
 };

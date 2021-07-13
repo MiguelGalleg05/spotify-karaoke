@@ -11,6 +11,7 @@
     "build": "ng build",
     "pre:build:prod": "node tools/prepare_secrets.js",
     "build:prod": "npm run pre:build:prod && ng build spotify --aot --buildOptimizer --extractLicenses --no-namedChunks --optimization --outputHashing=all --no-sourceMap --no-vendorChunk",
+    "build-storybook": "ng run web-spotify-shared-view:build-storybook",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
@@ -32,7 +33,8 @@
     "prepare": "husky install",
     "release": "release-it",
     "extract-i18n": "ng extract-i18n --output-path apps/spotify/src/locale",
-    "check-i18n": "ng-i18n-checker ./apps/**/*.html ./libs/**/*.html -i mat-icon"
+    "check-i18n": "ng-i18n-checker ./apps/**/*.html ./libs/**/*.html -i mat-icon",
+    "chromatic": "npx chromatic"
   },
   "private": true,
   "dependencies": {
@@ -86,6 +88,7 @@
     "@types/spotify-web-playback-sdk": "^0.1.8",
     "@typescript-eslint/eslint-plugin": "4.28.3",
     "@typescript-eslint/parser": "4.19.0",
+    "chromatic": "^5.9.2",
     "cypress": "^6.0.1",
     "dotenv": "8.2.0",
     "eslint": "7.30.0",

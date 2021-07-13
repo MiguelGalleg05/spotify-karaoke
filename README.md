@@ -36,6 +36,16 @@ I've tried to implement that for them.
                 ├── homepage
                 ├── player
                 ├── shared
+                │   ├── helper
+                │   ├── pipe
+                │   ├── service
+                │   └── view (Storybook)
                 └── sidebar
 
 ```
+
+### Storybook
+
+I've used a storybook for a shared view description and visual tests
+
+The storybook documentation is available [here](https://development--60ed26c8451cdd003bd881db.chromatic.com)
