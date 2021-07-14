@@ -24,7 +24,7 @@ describe('EnvSettingsService', () => {
   it('should have spotify client values', () => {
     expect(service.spotify_client_id).toEqual(env_value.spotify_client_id);
     expect(service.spotify_client_secret).toEqual(
-      env_value.spotify_client_secret
+      env_value.spotify_client_secret,
     );
   });
 });

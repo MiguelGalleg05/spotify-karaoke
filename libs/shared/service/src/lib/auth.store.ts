@@ -23,7 +23,7 @@ export class AuthStore {
     protected route: ActivatedRoute,
     protected router: Router,
     protected http: HttpClient,
-    protected env: EnvSettingsService
+    protected env: EnvSettingsService,
   ) {}
   static readonly access_token_key = 'access_token';
   static readonly refresh_token_key = 'refresh_token';
@@ -63,8 +63,8 @@ export class AuthStore {
       .set(
         'Authorization',
         `Basic ${btoa(
-          this.env.spotify_client_id + ':' + this.env.spotify_client_secret
-        )}`
+          this.env.spotify_client_id + ':' + this.env.spotify_client_secret,
+        )}`,
       );
   }
 

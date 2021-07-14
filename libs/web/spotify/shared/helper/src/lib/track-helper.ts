@@ -18,7 +18,7 @@ export class TrackHelper {
 
   static getImageUrl(
     { images }: { images: SpotifyApi.ImageObject[] } = { images: [] },
-    size: number = 300
+    size: number = 300,
   ) {
     if (images.length < 1) {
       return this.getDefaultImage();
@@ -33,7 +33,7 @@ export class TrackHelper {
       return { url: image.url, difference: Math.abs(image.height - size) };
     });
     const images_sorted = images_rated.sort(
-      (a, b) => a.difference - b.difference
+      (a, b) => a.difference - b.difference,
     );
     return images_sorted[0].url;
   }
@@ -43,13 +43,13 @@ export class TrackHelper {
   }
 
   static getImage300Url(
-    { images }: { images: SpotifyApi.ImageObject[] } = { images: [] }
+    { images }: { images: SpotifyApi.ImageObject[] } = { images: [] },
   ): string {
     return this.getImageUrl({ images }, 300);
   }
 
   static getImage64Url(
-    { images }: { images: SpotifyApi.ImageObject[] } = { images: [] }
+    { images }: { images: SpotifyApi.ImageObject[] } = { images: [] },
   ): string {
     return this.getImageUrl({ images }, 64);
   }

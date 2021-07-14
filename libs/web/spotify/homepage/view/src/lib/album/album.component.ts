@@ -21,7 +21,7 @@ export class AlbumComponent implements OnInit {
 
   constructor(
     protected route: ActivatedRoute,
-    protected spotifyData: SpotifyDataService
+    protected spotifyData: SpotifyDataService,
   ) {}
 
   async ngOnInit() {

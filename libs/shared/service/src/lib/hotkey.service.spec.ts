@@ -36,7 +36,7 @@ describe('HotkeyService', () => {
       .subscribe(() => actionMethod());
 
     document.dispatchEvent(
-      new KeyboardEvent('keydown', { key: 'q', ctrlKey: true })
+      new KeyboardEvent('keydown', { key: 'q', ctrlKey: true }),
     );
 
     expect(actionMethod).toBeCalled();

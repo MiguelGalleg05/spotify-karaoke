@@ -20,7 +20,7 @@ export const HOMEPAGE_ROUTES: Routes = [
         path: 'lyrics',
         loadChildren: () =>
           import('@artur-ba/web/lyrics/view').then(
-            (m) => m.WebLyricsViewModule
+            (m) => m.WebLyricsViewModule,
           ),
       },
       {

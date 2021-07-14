@@ -12,12 +12,12 @@ import { Observable } from 'rxjs';
 export class ProxyInterceptor implements HttpInterceptor {
   static readonly proxies = ['minilyrics', 'minilyrics-proxy'];
   protected readonly proxiesRegex = ProxyInterceptor.proxies.map(
-    (proxy) => new RegExp('^' + proxy)
+    (proxy) => new RegExp('^' + proxy),
   );
 
   intercept(
     request: HttpRequest<unknown>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
     if (this.proxiesRegex.some((proxyRegex) => proxyRegex.test(request.url))) {
       const dupReq = request.clone({

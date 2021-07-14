@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
   constructor(
     protected readonly userSettings: UserSettingsService,
     protected readonly cdr: ChangeDetectorRef,
-    protected readonly spotifyService: SpotifyDataService
+    protected readonly spotifyService: SpotifyDataService,
   ) {}
 
   ngOnInit(): void {
@@ -28,10 +28,10 @@ export class DashboardComponent implements OnInit {
 
   protected async initAlbums(): Promise<void> {
     this.albums.push(
-      await this.spotifyService.getAlbum('4YzNjecIvmLFEby13NOBmj')
+      await this.spotifyService.getAlbum('4YzNjecIvmLFEby13NOBmj'),
     );
     this.albums.push(
-      await this.spotifyService.getAlbum('3I9Z1nDCL4E0cP62flcbI5')
+      await this.spotifyService.getAlbum('3I9Z1nDCL4E0cP62flcbI5'),
     );
   }
 }

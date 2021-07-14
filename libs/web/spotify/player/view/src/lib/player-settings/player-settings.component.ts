@@ -18,14 +18,14 @@ export class PlayerSettingsComponent implements OnInit, OnDestroy {
 
   constructor(
     protected playerStore: PlayerStore,
-    protected playerControlService: PlayerControlService
+    protected playerControlService: PlayerControlService,
   ) {}
 
   ngOnInit(): void {
     this.subscriptions.push(
       this.playerStore.volume$.subscribe((volume) => {
         this.volume = volume;
-      })
+      }),
     );
   }
 

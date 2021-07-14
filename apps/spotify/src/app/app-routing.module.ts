@@ -21,7 +21,7 @@ const ROUTES: Routes = [
     path: '',
     loadChildren: () =>
       import('@artur-ba/web/spotify/homepage/view').then(
-        (m) => m.WebSpotifyHomepageViewModule
+        (m) => m.WebSpotifyHomepageViewModule,
       ),
     canActivate: [AuthGuard],
   },

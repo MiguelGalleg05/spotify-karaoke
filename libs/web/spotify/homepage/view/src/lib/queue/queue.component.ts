@@ -29,7 +29,7 @@ export class QueueComponent implements OnInit, OnDestroy {
         if (this.trackWindow !== trackWindow) {
           this.trackWindow = trackWindow;
         }
-      })
+      }),
     );
   }
 

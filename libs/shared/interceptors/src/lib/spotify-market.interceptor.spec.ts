@@ -65,7 +65,7 @@ describe('SpotifyMarketInterceptor', () => {
       const httpRequest = httpMock.expectOne(() => true);
 
       expect(
-        httpRequest.request.params.has(SpotifyMarketInterceptor.marketKey)
+        httpRequest.request.params.has(SpotifyMarketInterceptor.marketKey),
       ).toBeTruthy();
     }));
 
@@ -87,7 +87,7 @@ describe('SpotifyMarketInterceptor', () => {
         expect(requestParams.get(paramKey)).toEqual(paramsValues[paramKey]);
       });
       expect(
-        requestParams.has(SpotifyMarketInterceptor.marketKey)
+        requestParams.has(SpotifyMarketInterceptor.marketKey),
       ).toBeTruthy();
     }));
   });

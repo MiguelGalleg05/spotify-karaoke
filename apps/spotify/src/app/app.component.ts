@@ -26,7 +26,7 @@ export class AppComponent implements OnInit, OnDestroy {
     protected userSettings: UserSettingsService,
     protected env: EnvSettingsService,
     @Inject(DOCUMENT) private document: Document,
-    protected icon: IconService
+    protected icon: IconService,
   ) {}
 
   ngOnInit(): void {
@@ -39,7 +39,7 @@ export class AppComponent implements OnInit, OnDestroy {
       .pipe(
         tap((cookiesAccepted) => {
           this.cookiesAccepted = cookiesAccepted;
-        })
+        }),
       )
       .subscribe();
   }

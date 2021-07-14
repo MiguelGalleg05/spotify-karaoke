@@ -17,7 +17,7 @@ export class PlayerService implements OnDestroy {
     protected readonly playerState: PlayerStore,
     protected readonly authStore: AuthStore,
     protected readonly playerControl: PlayerControlService,
-    protected readonly title: Title
+    protected readonly title: Title,
   ) {}
 
   protected subscriptions: Subscription[] = [];
@@ -28,9 +28,9 @@ export class PlayerService implements OnDestroy {
         .pipe(
           tap((token) => {
             this.initSpotify(token);
-          })
+          }),
         )
-        .subscribe()
+        .subscribe(),
     );
   }
 
@@ -69,7 +69,7 @@ export class PlayerService implements OnDestroy {
           playbackState: state,
           volume: await player.getVolume(),
         });
-      }
+      },
     );
 
     // Ready
@@ -80,7 +80,7 @@ export class PlayerService implements OnDestroy {
 
     player.addListener('not_ready', ({ device_id }) => {
       return Promise.reject(
-        new Error(`Device ID: ${device_id} has gone offline`)
+        new Error(`Device ID: ${device_id} has gone offline`),
       );
     });
 
@@ -96,7 +96,7 @@ export class PlayerService implements OnDestroy {
     }
     const artist_name = current_track.artists[0].name || null;
     this.title.setTitle(
-      `${current_track.name} ${artist_name ? ` - ${artist_name}` : ''}`
+      `${current_track.name} ${artist_name ? ` - ${artist_name}` : ''}`,
     );
   }
 

@@ -12,7 +12,7 @@ export class HomepageComponent implements OnInit {
   constructor(
     protected authStore: AuthStore,
     protected playerService: PlayerService,
-    protected hotkeyService: HotkeyService
+    protected hotkeyService: HotkeyService,
   ) {}
 
   async ngOnInit(): Promise<void> {

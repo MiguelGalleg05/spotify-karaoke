@@ -29,13 +29,13 @@ describe('Lyrics', () => {
 
   it('should have one script with text one', () => {
     const matchingScript = lyrics.script.filter(
-      (s) => s.text === lyricsTextSingle
+      (s) => s.text === lyricsTextSingle,
     );
     expect(matchingScript).toHaveLength(1);
   });
   it('should have multiple script with text witch exists multiple times', () => {
     const matchingScripts = lyrics.script.filter(
-      (s) => s.text === lyricsTextMultiple
+      (s) => s.text === lyricsTextMultiple,
     );
     expect(matchingScripts.length).toBeGreaterThan(2);
   });

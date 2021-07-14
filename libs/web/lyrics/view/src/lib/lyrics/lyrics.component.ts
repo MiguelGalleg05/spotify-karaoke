@@ -22,19 +22,19 @@ export class LyricsComponent implements OnInit, OnDestroy {
 
   constructor(
     protected lyricsAPI: MiniLyricsService,
-    protected playerState: PlayerStore
+    protected playerState: PlayerStore,
   ) {}
 
   async ngOnInit(): Promise<void> {
     this.subscriptions.push(
       this.playerState.currentTrack$.subscribe(async (track) => {
         this.handleSongUpdate(track);
-      })
+      }),
     );
     this.subscriptions.push(
       this.playerState.progress$.subscribe((pos) => {
         this.progress$ = pos;
-      })
+      }),
     );
   }
 
@@ -55,21 +55,21 @@ export class LyricsComponent implements OnInit, OnDestroy {
     try {
       const lyricsList = await this.lyricsAPI.getLyricsList(
         this.track.name,
-        this.track.artists[0].name
+        this.track.artists[0].name,
       );
       const sortedByDownload = lyricsList.children.sort(
-        (a: LyricsItem, b: LyricsItem) => b.downloads - a.downloads
+        (a: LyricsItem, b: LyricsItem) => b.downloads - a.downloads,
       );
       const foundLyricAlbum = sortedByDownload.find(
         (lyricsItem: LyricsItem) =>
           lyricsItem.album?.toLowerCase() ===
-          this.track.album.name.toLowerCase()
+          this.track.album.name.toLowerCase(),
       );
       if (foundLyricAlbum) {
         this.setLyricsByLrc(await this.lyricsAPI.getLyrics(foundLyricAlbum));
       } else {
         this.setLyricsByLrc(
-          await this.lyricsAPI.getLyrics(sortedByDownload[0])
+          await this.lyricsAPI.getLyrics(sortedByDownload[0]),
         );
       }
       this.searching = false;

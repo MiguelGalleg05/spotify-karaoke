@@ -24,18 +24,18 @@ export class SearchAlbumListComponent extends AbstractListComponent<
 > {
   constructor(
     protected readonly route: ActivatedRoute,
-    protected readonly spotifyData: SpotifyDataService
+    protected readonly spotifyData: SpotifyDataService,
   ) {
     super(route);
   }
 
   async getData(
     requestParams: string,
-    pagination: PaginationInterface
+    pagination: PaginationInterface,
   ): Promise<SpotifyApi.PagingObject<SpotifyApi.AlbumObjectSimplified>> {
     const response = await this.spotifyData.getSearchAlbumResult(
       requestParams,
-      pagination
+      pagination,
     );
     return Promise.resolve(response.albums);
   }

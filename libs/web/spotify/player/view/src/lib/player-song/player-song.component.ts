@@ -22,7 +22,7 @@ export class PlayerSongComponent implements OnInit, OnDestroy {
         if (this.track !== track) {
           this.track = track;
         }
-      })
+      }),
     );
   }
 

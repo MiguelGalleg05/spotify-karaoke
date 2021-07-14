@@ -14,7 +14,7 @@ import { AuthStore } from '@artur-ba/shared/service';
 export class LoginComponent implements OnInit, OnDestroy {
   constructor(
     protected authStore: AuthStore,
-    protected route: ActivatedRoute
+    protected route: ActivatedRoute,
   ) {}
   protected subscriptions: Subscription[] = [];
 
@@ -47,9 +47,9 @@ export class LoginComponent implements OnInit, OnDestroy {
           catchError((error) => {
             this.error = error;
             return of(null);
-          })
+          }),
         )
-        .subscribe()
+        .subscribe(),
     );
   }
 

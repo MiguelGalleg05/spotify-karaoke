@@ -14,14 +14,14 @@ export class SpotifyMarketInterceptor implements HttpInterceptor {
   static readonly spotifyApiUrl = 'https://api.spotify.com/';
   static readonly marketKey = 'market';
   protected readonly spotifyAPIRegex = new RegExp(
-    `^${SpotifyMarketInterceptor.spotifyApiUrl}`
+    `^${SpotifyMarketInterceptor.spotifyApiUrl}`,
   );
 
   constructor(protected readonly countryService: CountryService) {}
 
   intercept(
     request: HttpRequest<unknown>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
     if (!this.spotifyAPIRegex.test(request.url)) {
       return next.handle(request);
@@ -31,13 +31,13 @@ export class SpotifyMarketInterceptor implements HttpInterceptor {
 
   protected async addMarketParamToRequest(
     request: HttpRequest<unknown>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Promise<HttpEvent<unknown>> {
     const userCountry = await this.countryService.getUserCountry();
     request = request.clone({
       params: request.params.append(
         SpotifyMarketInterceptor.marketKey,
-        userCountry
+        userCountry,
       ),
     });
     return next.handle(request).toPromise();

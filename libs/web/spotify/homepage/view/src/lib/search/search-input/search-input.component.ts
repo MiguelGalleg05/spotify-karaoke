@@ -27,7 +27,7 @@ export class SearchInputComponent implements OnInit, OnDestroy {
 
   constructor(
     protected readonly router: Router,
-    protected readonly route: ActivatedRoute
+    protected readonly route: ActivatedRoute,
   ) {}
 
   ngOnInit(): void {
@@ -53,12 +53,12 @@ export class SearchInputComponent implements OnInit, OnDestroy {
       this.route.queryParams
         .pipe(
           map((params) => params.q),
-          filter((q) => q !== undefined)
+          filter((q) => q !== undefined),
         )
         .subscribe((q) => {
           this.searchForm.patchValue(decodeURI(q) || '');
           this.searchHandle();
-        })
+        }),
     );
   }
 

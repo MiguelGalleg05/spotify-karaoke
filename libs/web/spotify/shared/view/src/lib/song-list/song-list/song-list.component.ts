@@ -68,7 +68,7 @@ export class SongListComponent implements OnChanges {
 
   protected wasValueChanged(
     prev: any[] | undefined,
-    curr: any[] | undefined
+    curr: any[] | undefined,
   ): boolean {
     if (prev === undefined && curr !== undefined) {
       return true;

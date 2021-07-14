@@ -17,7 +17,7 @@ import { Router } from '@angular/router';
 export class SpotifyTokenInterceptor implements HttpInterceptor {
   static readonly spotifyApiUrl = 'https://api.spotify.com/';
   protected readonly spotifyAPIRegex = new RegExp(
-    `^${SpotifyTokenInterceptor.spotifyApiUrl}`
+    `^${SpotifyTokenInterceptor.spotifyApiUrl}`,
   );
   protected refreshingInProgress = false;
 
@@ -25,7 +25,7 @@ export class SpotifyTokenInterceptor implements HttpInterceptor {
 
   intercept(
     request: HttpRequest<any>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<any>> {
     if (!this.spotifyAPIRegex.test(request.url)) {
       return next.handle(request);
@@ -44,17 +44,17 @@ export class SpotifyTokenInterceptor implements HttpInterceptor {
         }
 
         return throwError(err);
-      })
+      }),
     );
   }
 
   protected addAuthorizationHeader(
-    request: HttpRequest<any>
+    request: HttpRequest<any>,
   ): HttpRequest<any> {
     request = request.clone({
       headers: request.headers.set(
         'Authorization',
-        'Bearer ' + this.authStore.access_token
+        'Bearer ' + this.authStore.access_token,
       ),
     });
     return request;
@@ -68,7 +68,7 @@ export class SpotifyTokenInterceptor implements HttpInterceptor {
 
   protected refreshToken(
     request: HttpRequest<any>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<any>> {
     if (!this.refreshingInProgress) {
       this.refreshingInProgress = true;
@@ -77,7 +77,7 @@ export class SpotifyTokenInterceptor implements HttpInterceptor {
         switchMap(() => {
           this.refreshingInProgress = true;
           return next.handle(this.addAuthorizationHeader(request));
-        })
+        }),
       );
     } else {
       // wait while getting new token
@@ -85,7 +85,7 @@ export class SpotifyTokenInterceptor implements HttpInterceptor {
         filter((token) => token !== null),
         switchMap(() => {
           return next.handle(this.addAuthorizationHeader(request));
-        })
+        }),
       );
     }
   }

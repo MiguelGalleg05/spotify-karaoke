@@ -26,14 +26,14 @@ export class ArtistAlbumsListComponent extends AbstractListComponent<
 
   constructor(
     protected readonly route: ActivatedRoute,
-    protected readonly spotifyData: SpotifyDataService
+    protected readonly spotifyData: SpotifyDataService,
   ) {
     super(route);
   }
 
   async getData(
     requestParams: string,
-    pagination: PaginationInterface
+    pagination: PaginationInterface,
   ): Promise<SpotifyApi.PagingObject<SpotifyApi.AlbumObjectSimplified>> {
     return this.spotifyData.getArtistAlbums(requestParams, pagination);
   }

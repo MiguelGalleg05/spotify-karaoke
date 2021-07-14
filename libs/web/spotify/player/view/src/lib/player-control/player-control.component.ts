@@ -19,26 +19,26 @@ export class PlayerControlComponent implements OnInit, OnDestroy {
 
   constructor(
     protected playerStore: PlayerStore,
-    protected playerControlService: PlayerControlService
+    protected playerControlService: PlayerControlService,
   ) {}
 
   ngOnInit(): void {
     this.subscriptions.push(
       this.playerStore.progress$.subscribe((progress) => {
         this.progress$ = progress;
-      })
+      }),
     );
 
     this.subscriptions.push(
       this.playerStore.playback$.subscribe((playback) => {
         this.max = playback.duration;
-      })
+      }),
     );
 
     this.subscriptions.push(
       this.playerStore.paused$.subscribe((paused) => {
         this.paused = paused;
-      })
+      }),
     );
   }
 

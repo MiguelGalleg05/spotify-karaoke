@@ -75,7 +75,7 @@ describe('SpotifyTokenInterceptor', () => {
           .flush(null, { status: 401, statusText: 'unauthorized' });
 
         expect(authStore.refreshToken).toHaveBeenCalled();
-      }
+      },
     ));
   });
 
@@ -93,7 +93,7 @@ describe('SpotifyTokenInterceptor', () => {
           .flush(null, { status: 401, statusText: 'unauthorized' });
 
         expect(router.navigate).toBeCalled();
-      }
+      },
     ));
     it('should redirect to login page if 403 returned (timeout of login)', inject(
       [Router],
@@ -108,7 +108,7 @@ describe('SpotifyTokenInterceptor', () => {
           .flush(null, { status: 403, statusText: 'unauthorized' });
 
         expect(router.navigate).toBeCalled();
-      }
+      },
     ));
   });
 });

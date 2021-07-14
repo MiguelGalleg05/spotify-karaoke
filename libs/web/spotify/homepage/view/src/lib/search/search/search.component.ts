@@ -20,10 +20,10 @@ export class SearchComponent {
   async search(searchQuery: string): Promise<void> {
     this.queryParams.q = searchQuery;
     this.albumSearchResult = await this.spotifyData.getSearchAlbumResult(
-      searchQuery
+      searchQuery,
     );
     this.playlistSearchResult = await this.spotifyData.getSearchPlaylistResult(
-      searchQuery
+      searchQuery,
     );
   }
 

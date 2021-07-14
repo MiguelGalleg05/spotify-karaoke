@@ -46,7 +46,7 @@ export class LyricsTextComponent {
   get nextScriptIndex(): number {
     const currentTime = this.timeWithOffset;
     let index = this.lyrics.script.findIndex(
-      (script) => script.start > currentTime
+      (script) => script.start > currentTime,
     );
     if (index === -1) {
       index = this.lyrics.script.length;

@@ -23,7 +23,7 @@ export class SpotifyDataService {
 
   constructor(
     protected readonly httpClient: HttpClient,
-    protected readonly countryService: CountryService
+    protected readonly countryService: CountryService,
   ) {}
 
   /**
@@ -34,7 +34,7 @@ export class SpotifyDataService {
   getAlbumTracks(albumUri: string): Promise<SpotifyApi.AlbumTracksResponse> {
     return this.httpClient
       .get<SpotifyApi.AlbumTracksResponse>(
-        this.baseURL + `albums/${albumUri}/tracks`
+        this.baseURL + `albums/${albumUri}/tracks`,
       )
       .toPromise();
   }
@@ -86,7 +86,7 @@ export class SpotifyDataService {
   getArtist(artistUri: string): Promise<SpotifyApi.SingleArtistResponse> {
     return this.httpClient
       .get<SpotifyApi.SingleArtistResponse>(
-        this.baseURL + `artists/${artistUri}`
+        this.baseURL + `artists/${artistUri}`,
       )
       .toPromise();
   }
@@ -97,11 +97,11 @@ export class SpotifyDataService {
    * @returns Promise
    */
   async getArtistTopTracks(
-    artistUri: string
+    artistUri: string,
   ): Promise<SpotifyApi.ArtistsTopTracksResponse> {
     return this.httpClient
       .get<SpotifyApi.ArtistsTopTracksResponse>(
-        this.baseURL + `artists/${artistUri}/top-tracks`
+        this.baseURL + `artists/${artistUri}/top-tracks`,
       )
       .toPromise();
   }
@@ -114,26 +114,26 @@ export class SpotifyDataService {
    */
   async getArtistAlbums(
     artistUri: string,
-    pagination?: PaginationInterface
+    pagination?: PaginationInterface,
   ): Promise<SpotifyApi.PagingObject<SpotifyApi.AlbumObjectSimplified>> {
     const include_groups: string[] = ['album'];
     let params = new HttpParams().append(
       'include_groups',
-      include_groups.join(',')
+      include_groups.join(','),
     );
     params = this.appendPaginationParams(params, pagination);
 
     return this.httpClient
       .get<SpotifyApi.PagingObject<SpotifyApi.AlbumObjectSimplified>>(
         this.baseURL + `artists/${artistUri}/albums`,
-        { params }
+        { params },
       )
       .toPromise();
   }
 
   async getSearchAlbumResult(
     q: string,
-    pagination?: PaginationInterface
+    pagination?: PaginationInterface,
   ): Promise<SpotifyApi.AlbumSearchResponse> {
     let params = new HttpParams()
       .append('q', encodeURI(q))
@@ -147,7 +147,7 @@ export class SpotifyDataService {
 
   async getSearchPlaylistResult(
     q: string,
-    pagination?: PaginationInterface
+    pagination?: PaginationInterface,
   ): Promise<SpotifyApi.PlaylistSearchResponse> {
     let params = new HttpParams()
       .append('q', encodeURI(q))
@@ -163,7 +163,7 @@ export class SpotifyDataService {
 
   protected appendPaginationParams(
     params: HttpParams,
-    pagination?: PaginationInterface
+    pagination?: PaginationInterface,
   ): HttpParams {
     if (!pagination) {
       return params;

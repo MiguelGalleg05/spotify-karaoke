@@ -11,7 +11,7 @@ const Icons = ['github'];
 export class IconService {
   constructor(
     protected matIconRegistry: MatIconRegistry,
-    protected domSanitizer: DomSanitizer
+    protected domSanitizer: DomSanitizer,
   ) {
     this.registerIcons();
   }
@@ -25,8 +25,8 @@ export class IconService {
       this.matIconRegistry.addSvgIcon(
         key,
         this.domSanitizer.bypassSecurityTrustResourceUrl(
-          `${iconUrl}/${key}.svg`
-        )
+          `${iconUrl}/${key}.svg`,
+        ),
       );
     });
   }

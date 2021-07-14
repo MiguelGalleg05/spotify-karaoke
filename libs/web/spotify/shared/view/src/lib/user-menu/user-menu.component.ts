@@ -35,7 +35,7 @@ export class UserMenuComponent implements OnInit, OnDestroy {
     protected readonly hotkey: HotkeyService,
     protected readonly location: Location,
     protected readonly spotifyData: SpotifyDataService,
-    protected readonly userSettings: UserSettingsService
+    protected readonly userSettings: UserSettingsService,
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -52,13 +52,13 @@ export class UserMenuComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.hotkey
         .addShortcut({ keys: 'control.d', action: darkModeAction })
-        .subscribe(() => this.toggleDarkMode())
+        .subscribe(() => this.toggleDarkMode()),
     );
     const showHotKeyAction = $localize`:hotkeys.show-hotkeys:Show hotkeys dialog`;
     this.subscriptions.push(
       this.hotkey
         .addShortcut({ keys: 'control.h', action: showHotKeyAction })
-        .subscribe(() => this.openHotKeyDialog())
+        .subscribe(() => this.openHotKeyDialog()),
     );
   }
 

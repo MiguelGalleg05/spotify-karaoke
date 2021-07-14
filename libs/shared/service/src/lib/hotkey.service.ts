@@ -22,7 +22,7 @@ export class HotkeyService {
 
   constructor(
     protected eventManager: EventManager,
-    @Inject(DOCUMENT) protected document: Document
+    @Inject(DOCUMENT) protected document: Document,
   ) {}
 
   addShortcut(options: Partial<Options>) {
@@ -42,7 +42,7 @@ export class HotkeyService {
       const dispose = this.eventManager.addEventListener(
         merged.element,
         event,
-        handler
+        handler,
       );
 
       return () => {

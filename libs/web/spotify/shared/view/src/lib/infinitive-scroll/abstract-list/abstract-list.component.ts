@@ -25,7 +25,7 @@ export abstract class AbstractListComponent<T, R> implements OnInit {
 
   abstract getData(
     requestParam: R,
-    pagination: PaginationInterface
+    pagination: PaginationInterface,
   ): Promise<SpotifyApi.PagingObject<T>>;
 
   abstract getRequestParams(): R;
@@ -63,7 +63,7 @@ export abstract class AbstractListComponent<T, R> implements OnInit {
   }
 
   protected getPaginationFromResponse(
-    response: SpotifyApi.PagingObject<T>
+    response: SpotifyApi.PagingObject<T>,
   ): PaginationInterface {
     const { limit, next, offset, previous, total } = response;
     return { limit, next, offset, previous, total };

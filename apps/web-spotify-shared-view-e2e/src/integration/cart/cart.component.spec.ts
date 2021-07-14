@@ -1,8 +1,8 @@
 describe('web-spotify-shared-view', () => {
   beforeEach(() =>
     cy.visit(
-      '/iframe.html?id=cartcomponent--primary&knob-image&knob-title&knob-subtitle'
-    )
+      '/iframe.html?id=cartcomponent--primary&knob-image&knob-title&knob-subtitle',
+    ),
   );
 
   it('should render the component', () => {

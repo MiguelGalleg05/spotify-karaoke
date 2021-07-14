@@ -26,7 +26,7 @@ export class LyricsParser {
   static readonly scriptText = /(.*)/; // Havana ooh na-na (ayy)
   static readonly scriptTextValue = /.*\](.*)/; // Havana ooh na-na (ayy)
   static readonly startAndText = new RegExp(
-    LyricsParser.timeStart.source + LyricsParser.scriptText.source
+    LyricsParser.timeStart.source + LyricsParser.scriptText.source,
   );
 
   static lrcParser(data: string): Lyrics {

@@ -31,11 +31,11 @@ export class UserSettingsService extends StateInterface<UserSettings> {
 
   readonly darkModeOn$ = this.state$.pipe(
     filter((p) => p.dark_mode !== undefined),
-    map((p) => p.dark_mode === this.true_str)
+    map((p) => p.dark_mode === this.true_str),
   ) as Observable<boolean>;
 
   readonly cookiesAccepted$ = this.state$.pipe(
-    map((p) => p.cookies_allowed === this.true_str)
+    map((p) => p.cookies_allowed === this.true_str),
   ) as Observable<boolean>;
 
   allowCookies(): void {

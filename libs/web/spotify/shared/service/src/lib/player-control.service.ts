@@ -25,7 +25,7 @@ export class PlayerControlService implements OnDestroy {
 
   constructor(
     protected httpClient: HttpClient,
-    protected playerStore: PlayerStore
+    protected playerStore: PlayerStore,
   ) {
     this.playerSub = this.playerStore.state$.subscribe((state) => {
       this.player$ = state.player;
