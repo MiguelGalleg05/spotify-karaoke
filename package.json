@@ -64,7 +64,7 @@
     "@angular/cli": "12.1.1",
     "@angular/compiler-cli": "12.1.1",
     "@angular/language-service": "12.1.1",
-    "@angular/localize": "^11.2.14",
+    "@angular/localize": "^12.1.1",
     "@nrwl/cli": "12.5.8",
     "@nrwl/cypress": "12.5.8",
     "@nrwl/eslint-plugin-nx": "12.5.8",
