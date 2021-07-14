@@ -9,13 +9,13 @@ import { AuthStore } from './auth.store';
 describe('AuthGuard (isolated)', () => {
   let guard: AuthGuard;
 
-  const routerMock = ({
+  const routerMock = {
     navigate: jest.fn(),
-  } as unknown) as Router;
+  } as unknown as Router;
   const authStoreMock = (logged = true) => {
-    return ({
+    return {
       isLogged: jest.fn(() => logged),
-    } as unknown) as AuthStore;
+    } as unknown as AuthStore;
   };
 
   const privateRoutes = ['/lyrics', '/dashboard'];

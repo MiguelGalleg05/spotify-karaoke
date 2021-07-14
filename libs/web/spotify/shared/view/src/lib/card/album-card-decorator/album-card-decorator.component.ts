@@ -14,7 +14,8 @@ import { CardComponent } from '../card/card.component';
 })
 export class AlbumCardDecoratorComponent
   extends CardComponent
-  implements OnInit {
+  implements OnInit
+{
   @Input() album: SpotifyApi.AlbumObjectFull;
 
   ngOnInit(): void {

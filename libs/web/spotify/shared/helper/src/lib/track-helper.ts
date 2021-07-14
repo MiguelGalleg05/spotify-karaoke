@@ -29,11 +29,9 @@ export class TrackHelper {
       difference: number;
     }
 
-    const images_rated = images.map(
-      (image): RatedImages => {
-        return { url: image.url, difference: Math.abs(image.height - size) };
-      }
-    );
+    const images_rated = images.map((image): RatedImages => {
+      return { url: image.url, difference: Math.abs(image.height - size) };
+    });
     const images_sorted = images_rated.sort(
       (a, b) => a.difference - b.difference
     );

@@ -3,7 +3,8 @@
   "compilerOptions": {
     "resolveJsonModule": true,
     "outDir": "../../dist/out-tsc",
-    "types": ["spotify-api", "node"]
+    "types": ["spotify-api", "node"],
+    "allowSyntheticDefaultImports": true
   },
   "files": ["src/main.ts", "src/polyfills.ts"]
 }

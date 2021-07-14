@@ -81,5 +81,13 @@
     "web-spotify-sidebar-view": {
       "tags": ["tags:view"]
     }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
   }
 }

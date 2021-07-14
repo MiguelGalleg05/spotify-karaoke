@@ -2,7 +2,7 @@ name: Chromatic build
 
 on:
   push:
-    branches: [ development, master ]
+    branches: [development, master]
 
 jobs:
   install:
