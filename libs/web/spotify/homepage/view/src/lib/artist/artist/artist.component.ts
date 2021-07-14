@@ -18,7 +18,7 @@ export class ArtistComponent implements OnInit, OnDestroy {
   artistTracks: SpotifyApi.ArtistsTopTracksResponse;
   artistAlbums: SpotifyApi.PagingObject<SpotifyApi.AlbumObjectSimplified>;
 
-  protected readonly albumsWrapperTitle = $localize`:artist.albums:Albums`;
+  readonly albumsWrapperTitle = $localize`:artist.albums:Albums`;
   protected subscriptions: Subscription[] = [];
 
   constructor(
@@ -43,10 +43,6 @@ export class ArtistComponent implements OnInit, OnDestroy {
 
   artistAlbumsUrl(): string {
     return `/artist/${UriDataHelper.getClearUri(this.artist?.uri)}/albums`;
-  }
-
-  getAlbumsWrapperTitle(): string {
-    return this.albumsWrapperTitle;
   }
 
   protected async getArtistData(artistUri: string): Promise<void> {

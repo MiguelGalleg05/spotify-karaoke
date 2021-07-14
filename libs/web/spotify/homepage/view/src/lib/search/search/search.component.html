@@ -1,7 +1,7 @@
 <artur-ba-search-input (search)="search($event)"></artur-ba-search-input>
 
 <artur-ba-card-wrapper
-  [title]="getAlbumsWrapperTitle()"
+  [title]="albumsWrapperTitle"
   [singleLine]="true"
   viewMoreRoute="albums"
   [viewMoreQueryParams]="queryParams"
@@ -11,4 +11,17 @@
     [album]="album"
   >
   </artur-ba-album-card-decorator>
+</artur-ba-card-wrapper>
+
+<artur-ba-card-wrapper
+  [title]="playlistWrapperTitle"
+  [singleLine]="true"
+  viewMoreRoute="playlists"
+  [viewMoreQueryParams]="queryParams"
+>
+  <artur-ba-playlist-card-decorator
+    *ngFor="let playlist of playlistSearchResult?.playlists.items"
+    [playlist]="playlist"
+  >
+  </artur-ba-playlist-card-decorator>
 </artur-ba-card-wrapper>

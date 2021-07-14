@@ -145,6 +145,22 @@ export class SpotifyDataService {
       .toPromise();
   }
 
+  async getSearchPlaylistResult(
+    q: string,
+    pagination?: PaginationInterface
+  ): Promise<SpotifyApi.PlaylistSearchResponse> {
+    let params = new HttpParams()
+      .append('q', encodeURI(q))
+      .append('type', 'playlist');
+    params = this.appendPaginationParams(params, pagination);
+
+    return this.httpClient
+      .get<SpotifyApi.PlaylistSearchResponse>(this.baseURL + 'search', {
+        params,
+      })
+      .toPromise();
+  }
+
   protected appendPaginationParams(
     params: HttpParams,
     pagination?: PaginationInterface

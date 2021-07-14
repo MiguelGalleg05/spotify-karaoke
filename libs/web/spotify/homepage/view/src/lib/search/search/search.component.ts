@@ -8,16 +8,21 @@ import { SpotifyDataService } from '@artur-ba/web/spotify/shared/service';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent {
-  albumSearchResult: any;
+  albumSearchResult: SpotifyApi.AlbumSearchResponse;
+  playlistSearchResult: SpotifyApi.PlaylistSearchResponse;
   queryParams = { q: '' };
 
-  protected readonly albumsWrapperTitle = $localize`:search.albumsWrapper:Albums`;
+  readonly albumsWrapperTitle = $localize`:search.albumsWrapper:Albums`;
+  readonly playlistWrapperTitle = $localize`:search.playlistsWrapper:Playlists`;
 
   constructor(protected readonly spotifyData: SpotifyDataService) {}
 
   async search(searchQuery: string): Promise<void> {
     this.queryParams.q = searchQuery;
     this.albumSearchResult = await this.spotifyData.getSearchAlbumResult(
+      searchQuery
+    );
+    this.playlistSearchResult = await this.spotifyData.getSearchPlaylistResult(
       searchQuery
     );
   }
