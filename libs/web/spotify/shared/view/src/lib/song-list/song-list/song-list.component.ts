@@ -9,11 +9,11 @@ import {
 import { SpotifyDataService } from '@artur-ba/web/spotify/shared/service';
 
 export enum TrackListColumns {
-  count,
-  image,
-  title_artist,
-  album,
-  time,
+  count = 'Count',
+  image = 'Image',
+  title_artist = 'Title_Artist',
+  album = 'Album',
+  time = 'Time',
 }
 
 @Component({

@@ -3,8 +3,8 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import * as CardComponentStories from '../../card/card/card.component.stories';
 import { AbstractListComponent } from '../abstract-list/abstract-list.component';
+import { album } from '../../../../.storybook/sharedData';
 import { CardModule } from '../../card/card.module';
 import { IndefiniteScrollComponent } from './indefinite-scroll.component';
 
@@ -26,19 +26,6 @@ import { IndefiniteScrollComponent } from './indefinite-scroll.component';
 class MockListComponent extends AbstractListComponent<unknown, unknown> {
   @Input() cardsCount: number;
 
-  albumCard = {
-    images: [
-      {
-        url: CardComponentStories.Default.args.imageUrl,
-        height: 500,
-        width: 500,
-      },
-    ],
-    name: 'Appetite For Destruction',
-    release_date: '1998-10-10',
-    uri: 'album/3I9Z1nDCL4E0cP62flcbI5',
-  };
-
   getRequestParams(): unknown {
     return '';
   }
@@ -49,7 +36,7 @@ class MockListComponent extends AbstractListComponent<unknown, unknown> {
     paginate.total = this.cardsCount;
     const max = Math.min(paginate.offset + paginate.limit, paginate.total);
     const items = new Array(this.cardsCount)
-      .fill(this.albumCard)
+      .fill(album)
       .slice(paginate.offset, max);
 
     return Promise.resolve({ ...paginate, items });

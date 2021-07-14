@@ -50,13 +50,8 @@ const Template: Story<CardWrapperComponent> = (args) => ({
   `,
 });
 
-const imageUrl = CardComponentStories.Default.args.imageUrl;
-
 const cardValue = {
-  imageUrl,
-  title: 'Appetite For Destruction',
-  subtitle: "Guns N' Roses",
-  redirectUrl: 'album/3I9Z1nDCL4E0cP62flcbI5',
+  ...CardComponentStories.Default.args,
 };
 
 export const Default = Template.bind({});

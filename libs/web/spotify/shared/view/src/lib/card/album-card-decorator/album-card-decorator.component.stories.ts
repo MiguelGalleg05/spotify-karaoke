@@ -3,6 +3,7 @@ import { MatCardModule } from '@angular/material/card';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import * as CardComponentStories from '../card/card.component.stories';
+import { album } from '../../../../.storybook/sharedData';
 import { AlbumCardDecoratorComponent } from './album-card-decorator.component';
 import { CardComponent } from '../card/card.component';
 import { CardDecoratorComponent } from '../card-decorator/card-decorator.component';
@@ -35,18 +36,7 @@ const Template: Story<AlbumCardDecoratorComponent> = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  album: {
-    images: [
-      {
-        url: CardComponentStories.Default.args.imageUrl,
-        height: 500,
-        width: 500,
-      },
-    ],
-    name: 'Appetite For Destruction',
-    release_date: '1998-10-10',
-    uri: 'album/3I9Z1nDCL4E0cP62flcbI5',
-  },
+  album,
 };
 
 export const OriginalComponent = Template.bind({});
