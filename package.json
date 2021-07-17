@@ -99,7 +99,7 @@
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-unused-imports": "^1.1.1",
     "husky": "^6.0.0",
-    "jest": "26.2.2",
+    "jest": "26.6.3",
     "jest-preset-angular": "8.4.0",
     "lint-staged": "^11.0.0",
     "ng-i18n-checker": "^2.0.0",
