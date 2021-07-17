@@ -8,7 +8,7 @@
 >
   <artur-ba-album-card-decorator
     *ngFor="let album of albumSearchResult?.albums.items"
-    [album]="album"
+    [data]="album"
   >
   </artur-ba-album-card-decorator>
 </artur-ba-card-wrapper>
@@ -21,7 +21,7 @@
 >
   <artur-ba-playlist-card-decorator
     *ngFor="let playlist of playlistSearchResult?.playlists.items"
-    [playlist]="playlist"
+    [data]="playlist"
   >
   </artur-ba-playlist-card-decorator>
 </artur-ba-card-wrapper>

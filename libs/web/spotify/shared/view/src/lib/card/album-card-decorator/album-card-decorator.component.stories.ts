@@ -36,7 +36,7 @@ const Template: Story<AlbumCardDecoratorComponent> = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  album,
+  data: album,
 };
 
 export const OriginalComponent = Template.bind({});

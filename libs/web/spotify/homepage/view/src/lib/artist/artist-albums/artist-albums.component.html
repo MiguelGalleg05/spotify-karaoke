@@ -1,5 +1,8 @@
 <h2>{{ artist?.name }}</h2>
 
-<artur-ba-indefinite-scroll>
-  <artur-ba-artist-albums-list> </artur-ba-artist-albums-list>
-</artur-ba-indefinite-scroll>
+<artur-ba-infinite-scroll>
+  <artur-ba-card-list
+    [strategy]="getStrategy()"
+    [viewMode]="CardListViewMode.ALBUM"
+  ></artur-ba-card-list>
+</artur-ba-infinite-scroll>

@@ -62,10 +62,12 @@ export class SongListComponent implements OnChanges {
     this.tracks = tracks;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   protected hasValue(v: any[] | undefined): boolean {
     return v !== undefined && v.length > 0;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   protected wasValueChanged(
     prev: any[] | undefined,
     curr: any[] | undefined,
@@ -79,6 +81,7 @@ export class SongListComponent implements OnChanges {
     return false;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   protected areArraysEqual(a: any[], b: any[]): boolean {
     return (
       a.length == b.length &&

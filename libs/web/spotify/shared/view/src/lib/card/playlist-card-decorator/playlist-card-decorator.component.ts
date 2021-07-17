@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 import {
   TrackHelper,
@@ -12,27 +12,17 @@ import { CardDecoratorComponent } from '../card-decorator/card-decorator.compone
   templateUrl: '../card-decorator/card-decorator.component.html',
   styleUrls: ['../card-decorator/card-decorator.component.scss'],
 })
-export class PlaylistCardDecoratorComponent extends CardDecoratorComponent {
-  @Input() playlist: SpotifyApi.PlaylistObjectSimplified;
-
+export class PlaylistCardDecoratorComponent extends CardDecoratorComponent<SpotifyApi.PlaylistObjectSimplified> {
   protected readonly ownerPrefix = $localize`:playlist.ownerPrefix:By `;
 
-  ngOnInit(): void {
-    this.initWithPlaylistValue();
-  }
-
-  protected initWithPlaylistValue(): void {
-    if (!this.playlist) {
-      return;
-    }
-
+  protected initWithData(): void {
     this.imageUrl = this.getImage();
-    this.title = this.playlist.name;
-    this.subtitle = `${this.ownerPrefix} <em> ${this.playlist.owner.display_name} </em>`;
-    this.redirectUrl = `album/${UriDataHelper.getClearUri(this.playlist.uri)}`;
+    this.title = this.data.name;
+    this.subtitle = `${this.ownerPrefix} <em> ${this.data.owner.display_name} </em>`;
+    this.redirectUrl = `album/${UriDataHelper.getClearUri(this.data.uri)}`;
   }
 
   protected getImage(): string {
-    return TrackHelper.getImage300Url(this.playlist);
+    return TrackHelper.getImage300Url(this.data);
   }
 }

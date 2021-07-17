@@ -6,11 +6,11 @@ import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 
 import { CardModule } from './card/card.module';
-import { InfinitiveScrollModule } from './infinitive-scroll/infinitive-scroll.module';
+import { InfiniteScrollModule } from './infinitive-scroll/infinite-scroll.module';
 import { SongListModule } from './song-list/song-list.module';
 import { UserMenuComponent } from './user-menu/user-menu.component';
 
-const exportModules = [CardModule, InfinitiveScrollModule, SongListModule];
+const exportModules = [CardModule, InfiniteScrollModule, SongListModule];
 const userMenu = [CommonModule, MatIconModule, MatMenuModule];
 
 @NgModule({

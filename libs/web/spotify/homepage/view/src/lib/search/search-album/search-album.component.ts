@@ -1,5 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
-import { SearchAlbumListComponent } from './search-album-list/search-album-list.component';
+import { ActivatedRoute } from '@angular/router';
+
+import {
+  CardListComponent,
+  CardListViewMode,
+  SearchAlbumCardListStrategy,
+} from '@artur-ba/web/spotify/shared/view';
+import { SpotifyDataService } from '@artur-ba/web/spotify/shared/service';
 
 @Component({
   selector: 'artur-ba-search-album',
@@ -7,10 +14,22 @@ import { SearchAlbumListComponent } from './search-album-list/search-album-list.
   styleUrls: ['./search-album.component.scss'],
 })
 export class SearchAlbumComponent {
-  @ViewChild(SearchAlbumListComponent)
-  searchAlbumList: SearchAlbumListComponent;
+  readonly CardListViewMode = CardListViewMode;
+  @ViewChild(CardListComponent) cardList: CardListComponent<
+    SpotifyApi.AlbumObjectSimplified,
+    string
+  >;
+
+  constructor(
+    protected readonly route: ActivatedRoute,
+    protected readonly spotifyData: SpotifyDataService,
+  ) {}
+
+  getStrategy(): SearchAlbumCardListStrategy {
+    return new SearchAlbumCardListStrategy(this.route, this.spotifyData);
+  }
 
   search() {
-    this.searchAlbumList?.ngOnInit();
+    this.cardList?.ngOnInit();
   }
 }

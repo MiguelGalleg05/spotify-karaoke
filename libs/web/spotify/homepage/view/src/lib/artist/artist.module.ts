@@ -5,16 +5,11 @@ import { NgModule } from '@angular/core';
 import { WebSpotifySharedViewModule } from '@artur-ba/web/spotify/shared/view';
 
 import { ArtistAlbumsComponent } from './artist-albums/artist-albums.component';
-import { ArtistAlbumsListComponent } from './artist-albums/artist-albums-list/artist-albums-list.component';
 import { ArtistComponent } from './artist/artist.component';
-import { ArtistRoutingModule } from './artist-routing.module';
+import { ArtistRoutingModule } from './artist.routing';
 
 @NgModule({
-  declarations: [
-    ArtistComponent,
-    ArtistAlbumsComponent,
-    ArtistAlbumsListComponent,
-  ],
+  declarations: [ArtistComponent, ArtistAlbumsComponent],
   imports: [
     CommonModule,
     FormsModule,

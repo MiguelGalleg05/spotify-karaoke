@@ -13,7 +13,7 @@ import { AlbumComponent } from './album/album.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { QueueComponent } from './queue/queue.component';
-import { WebSpotifyHomepageViewRoutingModule } from './spotify-homepage-view-routing.module';
+import { WebSpotifyHomepageViewRoutingModule } from './spotify-homepage-view.routing';
 
 @NgModule({
   imports: [

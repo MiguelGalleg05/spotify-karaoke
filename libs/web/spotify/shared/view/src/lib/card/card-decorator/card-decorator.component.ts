@@ -1,8 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { CardComponent } from '../card/card.component';
 
 @Component({
-  templateUrl: './card-decorator.component.html',
+  template: '',
 })
-export class CardDecoratorComponent extends CardComponent {}
+export abstract class CardDecoratorComponent<T>
+  extends CardComponent
+  implements OnInit
+{
+  @Input() data: T;
+
+  ngOnInit(): void {
+    if (this.data) {
+      this.initWithData();
+    }
+  }
+
+  protected abstract initWithData();
+}

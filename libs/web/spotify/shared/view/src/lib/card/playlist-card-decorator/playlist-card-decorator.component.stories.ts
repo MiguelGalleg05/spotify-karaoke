@@ -35,7 +35,7 @@ const Template: Story<PlaylistCardDecoratorComponent> = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  playlist: {
+  data: {
     images: [
       {
         url: CardComponentStories.Default.args.imageUrl,

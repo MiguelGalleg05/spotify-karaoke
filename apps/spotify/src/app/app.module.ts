@@ -14,7 +14,7 @@ import {
 import { SharedViewModule } from '@artur-ba/shared/view';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app.routing';
 import { environment } from '../environments/environment';
 import { LoginComponent } from './login/login.component';
 
