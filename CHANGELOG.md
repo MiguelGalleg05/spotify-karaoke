@@ -1,3 +1,14 @@
+# [0.4.0](https://github.com/ArturBa/spotify-karaoke/compare/v0.3.0...v0.4.0) (2021-07-17)
+
+### Features
+
+- :art: Add storybook addons ([#62](https://github.com/ArturBa/spotify-karaoke/issues/62)) ([be5fb84](https://github.com/ArturBa/spotify-karaoke/commit/be5fb84a8460de5f896bce8d29e7ca291a8f0339))
+- **spotify:** :sparkles: Add a current song in a page title ([#59](https://github.com/ArturBa/spotify-karaoke/issues/59)) ([0c19067](https://github.com/ArturBa/spotify-karaoke/commit/0c1906701c216a322c032b45f0a468700dd36a9b))
+- **spotify:** :sparkles: Add auto pagination handle ([#56](https://github.com/ArturBa/spotify-karaoke/issues/56)) ([763bbc3](https://github.com/ArturBa/spotify-karaoke/commit/763bbc3159717824748936bba625992216c711a6))
+- **spotify:** :sparkles: Add card wrapper ([#54](https://github.com/ArturBa/spotify-karaoke/issues/54)) ([213733f](https://github.com/ArturBa/spotify-karaoke/commit/213733f9a3e4e58088dac3e23c77a2e8539c3653))
+- **spotify:** :sparkles: Add Playlist Card Decorator ([#77](https://github.com/ArturBa/spotify-karaoke/issues/77)) ([675088a](https://github.com/ArturBa/spotify-karaoke/commit/675088ab32f9c288905f05dd863269456cd166eb))
+- **spotify:** :sparkles: Add search view ([#55](https://github.com/ArturBa/spotify-karaoke/issues/55)) ([4c7358d](https://github.com/ArturBa/spotify-karaoke/commit/4c7358d7f8cdca8b78f4c31afb29d43ec4ac1a58))
+
 # [0.3.0](https://github.com/ArturBa/spotify/compare/v0.2.0...v0.3.0) (2021-06-26)
 
 ### Features
