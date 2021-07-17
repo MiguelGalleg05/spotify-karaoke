@@ -34,13 +34,28 @@ export class ArtistAlbumCardListStrategy
   }
 }
 
-export class SearchAlbumCardListStrategy
-  implements CardListStrategy<SpotifyApi.AlbumObjectSimplified, string>
+export abstract class SearchCardListStrategy<T>
+  implements CardListStrategy<T, string>
 {
+  constructor(protected readonly route: ActivatedRoute) {}
+
+  abstract getData(
+    requestParam: string,
+    pagination: PaginationInterface,
+  ): Promise<SpotifyApi.PagingObject<T>>;
+
+  getRequestParams(): string {
+    return this.route.snapshot.queryParams.q;
+  }
+}
+
+export class SearchAlbumCardListStrategy extends SearchCardListStrategy<SpotifyApi.AlbumObjectSimplified> {
   constructor(
     protected readonly route: ActivatedRoute,
     protected readonly spotifyData: SpotifyDataService,
-  ) {}
+  ) {
+    super(route);
+  }
 
   async getData(
     requestParams: string,
@@ -52,8 +67,24 @@ export class SearchAlbumCardListStrategy
     );
     return Promise.resolve(response.albums);
   }
+}
 
-  getRequestParams(): string {
-    return this.route.snapshot.queryParams.q;
+export class SearchPlaylistCardListStrategy extends SearchCardListStrategy<SpotifyApi.PlaylistObjectSimplified> {
+  constructor(
+    protected readonly route: ActivatedRoute,
+    protected readonly spotifyData: SpotifyDataService,
+  ) {
+    super(route);
+  }
+
+  async getData(
+    requestParams: string,
+    pagination: PaginationInterface,
+  ): Promise<SpotifyApi.PagingObject<SpotifyApi.PlaylistObjectSimplified>> {
+    const response = await this.spotifyData.getSearchPlaylistResult(
+      requestParams,
+      pagination,
+    );
+    return Promise.resolve(response.playlists);
   }
 }

@@ -21,7 +21,7 @@ export class SearchComponent {
   constructor(protected readonly spotifyData: SpotifyDataService) {}
 
   async search(searchQuery: string): Promise<void> {
-    this.queryParams.q = searchQuery;
+    this.queryParams.q = encodeURI(searchQuery);
     this.albumSearchResult = await this.spotifyData.getSearchAlbumResult(
       searchQuery,
     );
