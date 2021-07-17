@@ -6,6 +6,7 @@ import {
   TrackHelper,
   UriDataHelper,
 } from '@artur-ba/web/spotify/shared/helper';
+import { CardListViewMode } from '@artur-ba/web/spotify/shared/view';
 import { SpotifyDataService } from '@artur-ba/web/spotify/shared/service';
 
 @Component({
@@ -18,6 +19,7 @@ export class ArtistComponent implements OnInit, OnDestroy {
   artistTracks: SpotifyApi.ArtistsTopTracksResponse;
   artistAlbums: SpotifyApi.PagingObject<SpotifyApi.AlbumObjectSimplified>;
 
+  readonly CardListViewMode = CardListViewMode;
   readonly albumsWrapperTitle = $localize`:artist.albums:Albums`;
   protected subscriptions: Subscription[] = [];
 

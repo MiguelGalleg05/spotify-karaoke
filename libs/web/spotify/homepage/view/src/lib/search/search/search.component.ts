@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import { CardListViewMode } from '@artur-ba/web/spotify/shared/view';
 import { SpotifyDataService } from '@artur-ba/web/spotify/shared/service';
 
 @Component({
@@ -11,6 +12,8 @@ export class SearchComponent {
   albumSearchResult: SpotifyApi.AlbumSearchResponse;
   playlistSearchResult: SpotifyApi.PlaylistSearchResponse;
   queryParams = { q: '' };
+
+  readonly CardListViewMode = CardListViewMode;
 
   readonly albumsWrapperTitle = $localize`:search.albumsWrapper:Albums`;
   readonly playlistWrapperTitle = $localize`:search.playlistsWrapper:Playlists`;

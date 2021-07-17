@@ -32,3 +32,16 @@ export const artist = {
 };
 
 export const artists = [artist];
+
+export const playlist = {
+  images: [
+    {
+      url: images.sq500,
+      height: 500,
+      width: 500,
+    },
+  ],
+  name: 'Appetite For Destruction',
+  owner: { display_name: 'Guns and Roses' },
+  uri: 'playlist/3I9Z1nDCL4E0cP62flcbI5',
+};

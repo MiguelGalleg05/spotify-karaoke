@@ -424,6 +424,31 @@
         }
       }
     },
+    "web-spotify-shared-directives": {
+      "projectType": "library",
+      "root": "libs/web/spotify/shared/directives",
+      "sourceRoot": "libs/web/spotify/shared/directives/src",
+      "prefix": "artur-ba",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/spotify/shared/directives"],
+          "options": {
+            "jestConfig": "libs/web/spotify/shared/directives/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/spotify/shared/directives/src/**/*.ts",
+              "libs/web/spotify/shared/directives/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "web-spotify-shared-helper": {
       "projectType": "library",
       "root": "libs/web/spotify/shared/helper",

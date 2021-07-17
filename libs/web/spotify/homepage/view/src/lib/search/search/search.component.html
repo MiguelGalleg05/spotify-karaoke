@@ -1,27 +1,21 @@
 <artur-ba-search-input (search)="search($event)"></artur-ba-search-input>
 
-<artur-ba-card-wrapper
+<artur-ba-card-wrapper-with-content
   [title]="albumsWrapperTitle"
   [singleLine]="true"
   viewMoreRoute="albums"
   [viewMoreQueryParams]="queryParams"
+  [viewMode]="CardListViewMode.ALBUM"
+  [data]="albumSearchResult?.albums.items"
 >
-  <artur-ba-album-card-decorator
-    *ngFor="let album of albumSearchResult?.albums.items"
-    [data]="album"
-  >
-  </artur-ba-album-card-decorator>
-</artur-ba-card-wrapper>
+</artur-ba-card-wrapper-with-content>
 
-<artur-ba-card-wrapper
+<artur-ba-card-wrapper-with-content
   [title]="playlistWrapperTitle"
   [singleLine]="true"
   viewMoreRoute="playlists"
   [viewMoreQueryParams]="queryParams"
+  [viewMode]="CardListViewMode.PLAYLIST"
+  [data]="playlistSearchResult?.playlists.items"
 >
-  <artur-ba-playlist-card-decorator
-    *ngFor="let playlist of playlistSearchResult?.playlists.items"
-    [data]="playlist"
-  >
-  </artur-ba-playlist-card-decorator>
-</artur-ba-card-wrapper>
+</artur-ba-card-wrapper-with-content>

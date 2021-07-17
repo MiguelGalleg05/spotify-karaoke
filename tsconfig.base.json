@@ -38,6 +38,9 @@
       "@artur-ba/web/spotify/player/view": [
         "libs/web/spotify/player/view/src/index.ts"
       ],
+      "@artur-ba/web/spotify/shared/directives": [
+        "libs/web/spotify/shared/directives/src/index.ts"
+      ],
       "@artur-ba/web/spotify/shared/helper": [
         "libs/web/spotify/shared/helper/src/index.ts"
       ],

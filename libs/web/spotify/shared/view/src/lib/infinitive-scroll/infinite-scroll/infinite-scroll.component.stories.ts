@@ -2,13 +2,12 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import {
-  CardListComponent,
-  CardListViewMode,
-} from '../card-list/card-list.component';
+import { WebSpotifySharedDirectivesModule } from '@artur-ba/web/spotify/shared/directives';
+
 import { album } from '../../../../.storybook/sharedData';
-import { CardListDirective } from '../card-list/card-list.directive';
+import { CardListComponent } from '../card-list/card-list.component';
 import { CardListStrategy } from '../card-list/card-list.strategy';
+import { CardListViewMode } from '../../card/dynamic-card-list/dynamic-card-list.component';
 import { CardModule } from '../../card/card.module';
 import { InfiniteScrollComponent } from './infinite-scroll.component';
 
@@ -16,17 +15,14 @@ export default {
   component: InfiniteScrollComponent,
   decorators: [
     moduleMetadata({
-      declarations: [
-        InfiniteScrollComponent,
-        CardListComponent,
-        CardListDirective,
-      ],
+      declarations: [InfiniteScrollComponent, CardListComponent],
       imports: [
         CardModule,
         MatProgressSpinnerModule,
         RouterTestingModule.withRoutes([
           { path: '**', component: InfiniteScrollComponent },
         ]),
+        WebSpotifySharedDirectivesModule,
       ],
     }),
   ],

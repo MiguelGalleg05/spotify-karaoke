@@ -5,6 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import * as CardComponentStories from '../card/card.component.stories';
 import { CardComponent } from '../card/card.component';
 import { CardDecoratorComponent } from '../card-decorator/card-decorator.component';
+import { playlist } from '../../../../.storybook/sharedData';
 import { PlaylistCardDecoratorComponent } from './playlist-card-decorator.component';
 
 export default {
@@ -35,18 +36,7 @@ const Template: Story<PlaylistCardDecoratorComponent> = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  data: {
-    images: [
-      {
-        url: CardComponentStories.Default.args.imageUrl,
-        height: 500,
-        width: 500,
-      },
-    ],
-    name: 'Appetite For Destruction',
-    owner: { display_name: 'Guns and Roses' },
-    uri: 'playlist/3I9Z1nDCL4E0cP62flcbI5',
-  },
+  data: playlist,
 };
 
 export const OriginalComponent = Template.bind({});
