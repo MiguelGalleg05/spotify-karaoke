@@ -12,6 +12,8 @@ import { AuthStore } from '@artur-ba/shared/service';
 
 import { SpotifyTokenInterceptor } from './spotify-token.interceptor';
 
+const spotifyApiUrl = 'https://api.spotify.com/';
+
 describe('SpotifyTokenInterceptor', () => {
   let httpMock: HttpTestingController;
   let httpClient: HttpClient;
@@ -56,7 +58,7 @@ describe('SpotifyTokenInterceptor', () => {
       authStore.logout();
     });
     it('should add header token for logged user', () => {
-      httpClient.get(SpotifyTokenInterceptor.spotifyApiUrl + 'foo').subscribe();
+      httpClient.get(spotifyApiUrl + 'foo').subscribe();
 
       const httpRequest = httpMock.expectOne(() => true);
 
@@ -66,9 +68,7 @@ describe('SpotifyTokenInterceptor', () => {
       [AuthStore],
       (authStore: AuthStore) => {
         spyOn<any>(authStore, 'refreshToken');
-        httpClient
-          .get(SpotifyTokenInterceptor.spotifyApiUrl + 'foo')
-          .subscribe();
+        httpClient.get(spotifyApiUrl + 'foo').subscribe();
 
         httpMock
           .expectOne(() => true)
@@ -84,9 +84,7 @@ describe('SpotifyTokenInterceptor', () => {
       [Router],
       (router: Router) => {
         spyOn(router, 'navigate');
-        httpClient
-          .get(SpotifyTokenInterceptor.spotifyApiUrl + 'foo')
-          .subscribe();
+        httpClient.get(spotifyApiUrl + 'foo').subscribe();
 
         httpMock
           .expectOne(() => true)
@@ -99,9 +97,7 @@ describe('SpotifyTokenInterceptor', () => {
       [Router],
       (router: Router) => {
         spyOn(router, 'navigate');
-        httpClient
-          .get(SpotifyTokenInterceptor.spotifyApiUrl + 'foo')
-          .subscribe();
+        httpClient.get(spotifyApiUrl + 'foo').subscribe();
 
         httpMock
           .expectOne(() => true)

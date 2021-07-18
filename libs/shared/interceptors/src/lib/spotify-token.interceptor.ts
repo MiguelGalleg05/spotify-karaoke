@@ -9,16 +9,14 @@ import {
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 import { AuthStore } from '@artur-ba/shared/service';
-import { Router } from '@angular/router';
+
+export const spotifyAPIRegex = /^https:\/\/api\.spotify\.com/;
 
 @Injectable()
 export class SpotifyTokenInterceptor implements HttpInterceptor {
-  static readonly spotifyApiUrl = 'https://api.spotify.com/';
-  protected readonly spotifyAPIRegex = new RegExp(
-    `^${SpotifyTokenInterceptor.spotifyApiUrl}`,
-  );
   protected refreshingInProgress = false;
 
   constructor(protected authStore: AuthStore, protected router: Router) {}
@@ -27,7 +25,7 @@ export class SpotifyTokenInterceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler,
   ): Observable<HttpEvent<any>> {
-    if (!this.spotifyAPIRegex.test(request.url)) {
+    if (!spotifyAPIRegex.test(request.url)) {
       return next.handle(request);
     }
     return next.handle(this.addAuthorizationHeader(request)).pipe(

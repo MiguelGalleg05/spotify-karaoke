@@ -15,6 +15,8 @@ import { routesBlank } from '@artur-ba/shared/test-helpers';
 
 import { SpotifyMarketInterceptor } from './spotify-market.interceptor';
 
+const spotifyApiUrl = 'https://api.spotify.com/';
+
 describe('SpotifyMarketInterceptor', () => {
   const appRoute = 'login';
   let httpMock: HttpTestingController;
@@ -57,9 +59,7 @@ describe('SpotifyMarketInterceptor', () => {
 
   describe('when request to spotify API', () => {
     it('should add a new market param to request', fakeAsync(() => {
-      httpClient
-        .get(SpotifyMarketInterceptor.spotifyApiUrl + 'foo')
-        .subscribe();
+      httpClient.get(spotifyApiUrl + 'foo').subscribe();
       tick();
 
       const httpRequest = httpMock.expectOne(() => true);
@@ -75,9 +75,7 @@ describe('SpotifyMarketInterceptor', () => {
       Object.keys(paramsValues).forEach((paramKey) => {
         params = params.append(paramKey, paramsValues[paramKey]);
       });
-      httpClient
-        .get(SpotifyMarketInterceptor.spotifyApiUrl + 'foo', { params })
-        .subscribe();
+      httpClient.get(spotifyApiUrl + 'foo', { params }).subscribe();
       tick();
 
       const httpRequest = httpMock.expectOne(() => true);

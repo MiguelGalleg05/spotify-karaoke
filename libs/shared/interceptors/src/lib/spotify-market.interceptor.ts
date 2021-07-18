@@ -9,13 +9,11 @@ import { Injectable } from '@angular/core';
 
 import { CountryService } from '@artur-ba/shared/service';
 
+import { spotifyAPIRegex } from './spotify-token.interceptor';
+
 @Injectable()
 export class SpotifyMarketInterceptor implements HttpInterceptor {
-  static readonly spotifyApiUrl = 'https://api.spotify.com/';
   static readonly marketKey = 'market';
-  protected readonly spotifyAPIRegex = new RegExp(
-    `^${SpotifyMarketInterceptor.spotifyApiUrl}`,
-  );
 
   constructor(protected readonly countryService: CountryService) {}
 
@@ -23,7 +21,7 @@ export class SpotifyMarketInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
-    if (!this.spotifyAPIRegex.test(request.url)) {
+    if (!spotifyAPIRegex.test(request.url)) {
       return next.handle(request);
     }
     return from(this.addMarketParamToRequest(request, next));
