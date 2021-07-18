@@ -1,20 +1,20 @@
-import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { CardModule } from './card/card.module';
 import { InfiniteScrollModule } from './infinitive-scroll/infinite-scroll.module';
 import { SongListModule } from './song-list/song-list.module';
-import { UserMenuComponent } from './user-menu/user-menu.component';
+import { UserMenuModule } from './user-menu/user-menu.module';
 
-const exportModules = [CardModule, InfiniteScrollModule, SongListModule];
-const userMenu = [CommonModule, MatIconModule, MatMenuModule];
+const exportModules = [
+  CardModule,
+  InfiniteScrollModule,
+  SongListModule,
+  UserMenuModule,
+];
 
 @NgModule({
-  imports: [...exportModules, ...userMenu, RouterModule.forChild([])],
-  declarations: [UserMenuComponent],
-  exports: [...exportModules, UserMenuComponent],
+  imports: [...exportModules, RouterModule.forChild([])],
+  exports: [...exportModules],
 })
 export class WebSpotifySharedViewModule {}
