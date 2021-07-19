@@ -51,6 +51,34 @@ export class SpotifyDataService {
   }
 
   /**
+   * https://api.spotify.com/v1/playlists/{uri}
+   * @param playlistUri
+   * @returns Promise
+   */
+  getPlaylist(playlistUri: string): Promise<SpotifyApi.PlaylistObjectFull> {
+    return this.httpClient
+      .get<SpotifyApi.PlaylistObjectFull>(
+        this.baseURL + `playlists/${playlistUri}`,
+      )
+      .toPromise();
+  }
+
+  /**
+   * https://api.spotify.com/v1/albums/{uri}/tracks
+   * @param playlistUri
+   * @returns Promise
+   */
+  getPlaylistTracks(
+    playlistUri: string,
+  ): Promise<SpotifyApi.PlaylistTrackResponse> {
+    return this.httpClient
+      .get<SpotifyApi.PlaylistTrackResponse>(
+        this.baseURL + `playlists/${playlistUri}/tracks`,
+      )
+      .toPromise();
+  }
+
+  /**
    * https://api.spotify.com/v1/traks?tracksUri
    * @param tracksIds
    * @returns Promise

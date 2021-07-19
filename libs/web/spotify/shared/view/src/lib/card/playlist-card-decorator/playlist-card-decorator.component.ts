@@ -19,7 +19,7 @@ export class PlaylistCardDecoratorComponent extends CardDecoratorComponent<Spoti
     this.imageUrl = this.getImage();
     this.title = this.data.name;
     this.subtitle = `${this.ownerPrefix} <em> ${this.data.owner.display_name} </em>`;
-    this.redirectUrl = `album/${UriDataHelper.getClearUri(this.data.uri)}`;
+    this.redirectUrl = `playlist/${UriDataHelper.getClearUri(this.data.uri)}`;
   }
 
   protected getImage(): string {

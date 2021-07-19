@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="playlist-data">
+    <img [src]="image300Url" />
+    <h2>
+      {{ playlist?.name }}
+    </h2>
+    <div class="playlist-owner">
+      <span i18n="playlist.by"> By </span>
+      <a>{{ playlist?.owner.display_name }} </a>
+    </div>
+  </div>
+
+  <artur-ba-song-list
+    [tracks]="getTracks()"
+    [columns]="columns"
+  ></artur-ba-song-list>
+</div>

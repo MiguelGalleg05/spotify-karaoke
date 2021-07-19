@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
+import { CardListViewMode } from '@artur-ba/web/spotify/shared/view';
 import { SpotifyDataService } from '@artur-ba/web/spotify/shared/service';
 import { UserSettingsService } from '@artur-ba/shared/service';
 
@@ -11,7 +12,12 @@ import { UserSettingsService } from '@artur-ba/shared/service';
 })
 export class DashboardComponent implements OnInit {
   toggleControl = new FormControl(false);
-  albums: SpotifyApi.AlbumObjectFull[] = [];
+  playlists: SpotifyApi.PlaylistObjectFull[] = [];
+
+  readonly CardListViewMode = CardListViewMode;
+  readonly singAlongTitle = $localize`:dashboard.sing_along:Sing along`;
+
+  protected readonly playlistUrls = ['37i9dQZF1DXc7aGdJ1YSSD'];
 
   constructor(
     protected readonly userSettings: UserSettingsService,
@@ -27,11 +33,10 @@ export class DashboardComponent implements OnInit {
   }
 
   protected async initAlbums(): Promise<void> {
-    this.albums.push(
-      await this.spotifyService.getAlbum('4YzNjecIvmLFEby13NOBmj'),
-    );
-    this.albums.push(
-      await this.spotifyService.getAlbum('3I9Z1nDCL4E0cP62flcbI5'),
-    );
+    this.playlists = await Promise.all([
+      ...this.playlistUrls.map((playlistUrl) =>
+        this.spotifyService.getPlaylist(playlistUrl),
+      ),
+    ]);
   }
 }

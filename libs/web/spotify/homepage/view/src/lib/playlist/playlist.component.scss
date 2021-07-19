@@ -1,0 +1,27 @@
+@import 'mixins';
+
+:host {
+  height: 100%;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  .playlist-data {
+    display: flex;
+    padding: $padding-m;
+    align-items: center;
+    flex-direction: column;
+
+    .playlist-owner {
+      display: flex;
+      & > * {
+        margin-right: 1ex;
+      }
+    }
+
+    img {
+      @include square_img($image300);
+    }
+  }
+}

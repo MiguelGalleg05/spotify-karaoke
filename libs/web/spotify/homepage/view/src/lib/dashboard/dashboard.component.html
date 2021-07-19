@@ -1,4 +1,5 @@
-<artur-ba-album-card-decorator
-  *ngFor="let album of albums"
-  [data]="album"
-></artur-ba-album-card-decorator>
+<artur-ba-card-wrapper-with-content
+  [viewMode]="CardListViewMode.PLAYLIST"
+  [title]="singAlongTitle"
+  [data]="playlists"
+></artur-ba-card-wrapper-with-content>
