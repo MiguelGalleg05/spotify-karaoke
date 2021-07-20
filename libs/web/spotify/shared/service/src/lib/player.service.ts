@@ -90,7 +90,7 @@ export class PlayerService implements OnDestroy {
   }
 
   protected setTitle(state: Spotify.PlaybackState): void {
-    const current_track = state.track_window?.current_track;
+    const current_track = state?.track_window?.current_track;
     if (!current_track) {
       return;
     }
