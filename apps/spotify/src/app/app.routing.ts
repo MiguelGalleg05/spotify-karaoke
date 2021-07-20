@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuard } from '@artur-ba/shared/service';
 
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './login/login/login.component';
 
 const ROUTES: Routes = [
   {

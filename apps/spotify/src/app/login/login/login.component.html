@@ -1,0 +1,22 @@
+<div class="content">
+  <h1 i18n="login.title">Spotify Karaoke</h1>
+  <h2 i18n="login.subtitle">Sing along with us!</h2>
+  <div class="columns">
+    <artur-ba-readme></artur-ba-readme>
+    <div class="authorize">
+      <h3 i18n="login.authorize_info">Authorize with Spotify</h3>
+      {{ error?.message }}
+      <button mat-raised-button (click)="auth()" color="accent">
+        <div class="button-content">
+          <img src="/assets/Spotify_Icon_RGB_White.png" />
+          <p i18n="login.authorize">Authorize</p>
+        </div>
+      </button>
+    </div>
+    <div class="authorize-mobile">
+      <h3 i18n="login.mobile-not-available">
+        This page is not available on mobile devices
+      </h3>
+    </div>
+  </div>
+</div>

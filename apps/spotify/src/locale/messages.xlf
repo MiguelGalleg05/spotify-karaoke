@@ -5,23 +5,23 @@
       <trans-unit id="866280ab1f622fd2541fd0f9611dcaa6ef7759ab" datatype="html">
         <source>Spotify Karaoke</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/spotify/src/app/login/login.component.html</context>
-          <context context-type="linenumber">3</context>
+          <context context-type="sourcefile">apps/spotify/src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">2</context>
         </context-group>
         <note priority="1" from="description">login.title</note>
       </trans-unit>
       <trans-unit id="8537080703400a4f9cd88049c7f5e54cb88e0b7d" datatype="html">
         <source>Sing along with us!</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/spotify/src/app/login/login.component.html</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="sourcefile">apps/spotify/src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">3</context>
         </context-group>
         <note priority="1" from="description">login.subtitle</note>
       </trans-unit>
       <trans-unit id="af7fd5f4450860c30c8dfb51e6cf38ac5da30523" datatype="html">
         <source>Authorize with Spotify</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/spotify/src/app/login/login.component.html</context>
+          <context context-type="sourcefile">apps/spotify/src/app/login/login/login.component.html</context>
           <context context-type="linenumber">7</context>
         </context-group>
         <note priority="1" from="description">login.authorize_info</note>
@@ -29,18 +29,106 @@
       <trans-unit id="0126319b6e9c024ee03c2d8e51fda4955d3ec89d" datatype="html">
         <source>Authorize</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/spotify/src/app/login/login.component.html</context>
+          <context context-type="sourcefile">apps/spotify/src/app/login/login/login.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
         <note priority="1" from="description">login.authorize</note>
       </trans-unit>
-      <trans-unit id="c18aa478728faa2dc310876ee192fabc70ac7211" datatype="html">
+      <trans-unit id="31c5377e1c1aeac73f408b4efb7bcb3331635de7" datatype="html">
         <source> This page is not available on mobile devices </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/spotify/src/app/login/login.component.html</context>
+          <context context-type="sourcefile">apps/spotify/src/app/login/login/login.component.html</context>
           <context context-type="linenumber">18,19</context>
         </context-group>
         <note priority="1" from="description">login.mobile-not-available</note>
+      </trans-unit>
+      <trans-unit id="c0fead7ca48230582a9f36382a1c8b3d26a98779" datatype="html">
+        <source>How to use it?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/spotify/src/app/login/readme/readme.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="636eea26439047e847beafc560a975f32de6ead8" datatype="html">
+        <source> Grab your friends and sing along your favorite songs which are played on Spotify
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/spotify/src/app/login/readme/readme.component.html</context>
+          <context context-type="linenumber">3,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a895093768276e25098e41fdfe9f3030a9d480b1" datatype="html">
+        <source>To get started, you need to have a premium Spotify account.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/spotify/src/app/login/readme/readme.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4e7ebabb9d1bb57938d00fe4c809174d85b4adb4" datatype="html">
+        <source>Since this project uses a Spotify you need to authorize it.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/spotify/src/app/login/readme/readme.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c0623214861eca3fc510df31a5a761108cd34b6a" datatype="html">
+        <source> After authorization you will be back redirected to this page and logged in.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/spotify/src/app/login/readme/readme.component.html</context>
+          <context context-type="linenumber">9,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="004b222ff9ef9dd4771b777950ca1d0e4cd4348a" datatype="html">
+        <source>About</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/spotify/src/app/login/readme/readme.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fa0807ec7bd3724c756ec5c6930a85f39b8b8282" datatype="html">
+        <source> It&apos;s a project that I found useful one time, when I wanted to sing my favorite spanish songs
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/spotify/src/app/login/readme/readme.component.html</context>
+          <context context-type="linenumber">14,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bc1435a7604bffbad58fc12c973e38b4495900d1" datatype="html">
+        <source> I couldn&apos;t find any cool way to do this, so I decided to make it myself.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/spotify/src/app/login/readme/readme.component.html</context>
+          <context context-type="linenumber">18,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4f8b2bb476981727ab34ed40fde1218361f92c45" datatype="html">
+        <source>Details</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/spotify/src/app/login/readme/readme.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9d589060b5b2293b4a34f93e289cd3afbb7032e7" datatype="html">
+        <source>This is my side project to develop my best with Angular framework.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/spotify/src/app/login/readme/readme.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0bea4097064813eaf3ed0412cab17703870a8d73" datatype="html">
+        <source> More (technical) details on </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/spotify/src/app/login/readme/readme.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3235d460ca9af675b0b84c63a723028ce2025f2b" datatype="html">
+        <source> Github </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/spotify/src/app/login/readme/readme.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="a7b7895ba78d538df30e02338abc92843dc78385" datatype="html">
         <source>App info</source>
@@ -158,18 +246,30 @@
       <trans-unit id="5043933900720743682" datatype="html">
         <source>Albums</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/artist/artist-albums/artist-albums-list/artist-albums-list.component.ts</context>
-          <context context-type="linenumber">25</context>
-        </context-group>
-        <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/artist/artist/artist.component.ts</context>
-          <context context-type="linenumber">21</context>
+          <context context-type="linenumber">23</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/search/search/search.component.ts</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">18</context>
         </context-group>
         <note priority="1" from="description">artist.albums</note>
+      </trans-unit>
+      <trans-unit id="8392605384169942076" datatype="html">
+        <source>Sing along</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/dashboard/dashboard.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">dashboard.sing_along</note>
+      </trans-unit>
+      <trans-unit id="8a12dde02c616937827c079cb7c48e5b83e3fd02" datatype="html">
+        <source> By </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/playlist/playlist.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">playlist.by</note>
       </trans-unit>
       <trans-unit id="5a6c9010e189fe1a5634e0bf38a92d25fe579315" datatype="html">
         <source>Current queue</source>
@@ -223,9 +323,25 @@
         <source> Search <x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>search<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/search/search-input/search-input.component.html</context>
-          <context context-type="linenumber">21,22</context>
+          <context context-type="linenumber">22,23</context>
         </context-group>
         <note priority="1" from="description">search.searchSubmit</note>
+      </trans-unit>
+      <trans-unit id="c82d0d40eacd715f4dbd1435e1547210a8453bd7" datatype="html">
+        <source>Search for playlist</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/search/search-playlist/search-playlist.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">search-playlist.title</note>
+      </trans-unit>
+      <trans-unit id="1823843876735462104" datatype="html">
+        <source>Playlists</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/search/search/search.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">search.playlistsWrapper</note>
       </trans-unit>
       <trans-unit id="680d5c75b7fd8d37961083608b9fcdc4167b4c43" datatype="html">
         <source>Previous</source>
@@ -326,15 +442,31 @@
       <trans-unit id="d16921d5730ab167b76a03076899e6e5e34fc94e" datatype="html">
         <source>View more</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/card-wrapper/card-wrapper.component.html</context>
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/card/card-wrapper/card-wrapper.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
         <note priority="1" from="description">card-wrapper.view-more</note>
       </trans-unit>
+      <trans-unit id="3041906249058802243" datatype="html">
+        <source>Album image</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/card/card/card.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">card.image-alt</note>
+      </trans-unit>
+      <trans-unit id="2207328686394808842" datatype="html">
+        <source>By </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/card/playlist-card-decorator/playlist-card-decorator.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">playlist.ownerPrefix</note>
+      </trans-unit>
       <trans-unit id="e03195f820710af690edc050a8ab83cfab45c0dc" datatype="html">
         <source> # </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/song-list/song-list.component.html</context>
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/song-list/song-list/song-list.component.html</context>
           <context context-type="linenumber">8,9</context>
         </context-group>
         <note priority="1" from="description">song-list.count</note>
@@ -342,7 +474,7 @@
       <trans-unit id="2d1f1227b320ce44dcd91c16c95bfe977daec9f8" datatype="html">
         <source> Title </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/song-list/song-list.component.html</context>
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/song-list/song-list/song-list.component.html</context>
           <context context-type="linenumber">22,23</context>
         </context-group>
         <note priority="1" from="description">song-list.title</note>
@@ -350,7 +482,7 @@
       <trans-unit id="20de1e9241fb2a520cf3910b17bec829e2ddec5b" datatype="html">
         <source> Album </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/song-list/song-list.component.html</context>
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/song-list/song-list/song-list.component.html</context>
           <context context-type="linenumber">30,31</context>
         </context-group>
         <note priority="1" from="description">song-list.album</note>
@@ -358,7 +490,7 @@
       <trans-unit id="57ddc7ccc8d0f6b5c1e144007251b4a6b66ba59a" datatype="html">
         <source> Time </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/song-list/song-list.component.html</context>
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/song-list/song-list/song-list.component.html</context>
           <context context-type="linenumber">38,39</context>
         </context-group>
         <note priority="1" from="description">song-list.time</note>
@@ -366,7 +498,7 @@
       <trans-unit id="f46c6953344f7d70f4507b85ee784f46e87c6913" datatype="html">
         <source>album cover</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/song-row/song-row.component.html</context>
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/song-list/song-row/song-row.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
         <note priority="1" from="description">song-row.album-cover</note>

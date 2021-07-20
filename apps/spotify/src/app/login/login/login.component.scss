@@ -20,6 +20,15 @@
   width: 100%;
   padding: $padding-m;
   margin: auto;
+
+  h1 {
+    font-size: 5rem;
+  }
+  h2 {
+    margin-top: 0;
+    font-size: 3rem;
+  }
+
   @include rounded;
   background-color: var(--bg);
 
@@ -28,23 +37,17 @@
   }
 }
 
-.readme {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  h1 {
-    font-size: 5rem;
-  }
-  h2 {
-    margin-top: 0;
-    font-size: 3rem;
-  }
+.columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
 
 .authorize {
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
+
   @include xs {
     display: none;
   }
