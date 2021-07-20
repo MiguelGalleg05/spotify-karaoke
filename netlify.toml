@@ -11,6 +11,11 @@
   force = true
 
 [[redirects]]
+  from = "https://www.spotify-karaoke.netlify.app/"
+  to = "https://spotify-karaoke.netlify.app/"
+  status = 301
+
+[[redirects]]
   from = "/assets/*"
   to = "/en/assets/:splat"
   status = 200
