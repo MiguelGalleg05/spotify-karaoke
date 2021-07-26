@@ -1,0 +1,14 @@
+@import 'mixins';
+
+:host {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: $margin-xs;
+
+  align-items: center;
+  background-color: var(--bg);
+
+  padding-top: $padding-s;
+  padding-right: $padding-m;
+  padding-left: $padding-m;
+}

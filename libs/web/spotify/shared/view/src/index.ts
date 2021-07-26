@@ -1,3 +1,4 @@
+import '@angular/localize/init';
 export * from './lib/web-spotify-shared-view.module';
 export * from './lib/infinitive-scroll/card-list/card-list.strategy';
 export { ImageModule } from './lib/image/image.module';
