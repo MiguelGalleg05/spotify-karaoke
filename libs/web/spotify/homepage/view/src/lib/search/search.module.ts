@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { WebSpotifySharedDirectivesModule } from '@artur-ba/web/spotify/shared/directives';
 import { WebSpotifySharedViewModule } from '@artur-ba/web/spotify/shared/view';
 
 import { SearchAlbumComponent } from './search-album/search-album.component';
@@ -26,6 +27,7 @@ import { SearchRoutingModule } from './search.routing';
     ReactiveFormsModule,
     SearchRoutingModule,
     WebSpotifySharedViewModule,
+    WebSpotifySharedDirectivesModule,
 
     MatInputModule,
     MatButtonModule,
