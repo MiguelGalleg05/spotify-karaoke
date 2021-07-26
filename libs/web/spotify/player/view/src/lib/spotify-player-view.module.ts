@@ -7,6 +7,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
 
+import { ImageModule } from '@artur-ba/web/spotify/shared/view';
 import { WebSpotifySharedPipeModule } from '@artur-ba/web/spotify/shared/pipe';
 
 import { PlayerComponent } from './player/player.component';
@@ -23,6 +24,7 @@ import { PlayerSongComponent } from './player-song/player-song.component';
     MatTooltipModule,
     RouterModule.forChild([]),
     WebSpotifySharedPipeModule,
+    ImageModule,
   ],
   declarations: [
     PlayerComponent,

@@ -5,6 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import * as CardComponentStories from '../card/card.component.stories';
 import { CardComponent } from '../card/card.component';
 import { CardDecoratorComponent } from '../card-decorator/card-decorator.component';
+import { ImageModule } from '../../image/image.module';
 import { playlist } from '../../../../.storybook/sharedData';
 import { PlaylistCardDecoratorComponent } from './playlist-card-decorator.component';
 
@@ -18,6 +19,7 @@ export default {
         CardDecoratorComponent,
       ],
       imports: [
+        ImageModule,
         MatCardModule,
         RouterTestingModule.withRoutes([
           { path: '**', component: PlaylistCardDecoratorComponent },

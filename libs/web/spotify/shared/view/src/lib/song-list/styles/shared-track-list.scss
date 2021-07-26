@@ -15,7 +15,10 @@
 $image-size: 50px;
 .image {
   width: $image-size;
-  img {
+  display: flex;
+
+  artur-ba-spotify-image {
+    margin: auto 0;
     @include square_img($image-size);
   }
 }

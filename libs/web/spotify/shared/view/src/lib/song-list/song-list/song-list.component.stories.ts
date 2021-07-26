@@ -2,6 +2,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
+import { ImageModule } from '../../image/image.module';
 import { WebSpotifySharedPipeModule } from '@artur-ba/web/spotify/shared/pipe';
 
 import { album, artists } from '../../../../.storybook/sharedData';
@@ -15,6 +16,7 @@ export default {
     moduleMetadata({
       declarations: [SongListComponent, SongRowComponent],
       imports: [
+        ImageModule,
         HttpClientTestingModule,
         RouterTestingModule.withRoutes([
           { path: '**', component: SongListComponent },

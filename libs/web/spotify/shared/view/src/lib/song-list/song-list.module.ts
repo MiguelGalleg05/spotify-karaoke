@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
-
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
+import { ImageModule } from '../image/image.module';
 import { WebSpotifySharedPipeModule } from '@artur-ba/web/spotify/shared/pipe';
 
 import { SongListComponent } from './song-list/song-list.component';
@@ -11,7 +12,12 @@ const exports = [SongListComponent];
 
 @NgModule({
   declarations: [...exports, SongRowComponent],
-  imports: [CommonModule, WebSpotifySharedPipeModule],
+  imports: [
+    CommonModule,
+    ImageModule,
+    WebSpotifySharedPipeModule,
+    RouterModule.forChild([]),
+  ],
   exports,
 })
 export class SongListModule {}

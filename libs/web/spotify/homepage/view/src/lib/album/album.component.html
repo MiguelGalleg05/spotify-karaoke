@@ -1,6 +1,10 @@
 <div class="row">
   <div class="album-data">
-    <img [src]="image300Url" />
+    <artur-ba-spotify-image
+      [images]="album?.images"
+      alt="Album cover"
+      i18n-alt="album.cover-image"
+    ></artur-ba-spotify-image>
     <h2>
       {{ album?.name }}
     </h2>

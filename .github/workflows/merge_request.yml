@@ -58,7 +58,7 @@ jobs:
       - name: Linting
         run: npx nx run-many --target=lint --all=true
       - name: Unit tests
-        run: npx nx test shared-interceptors shared-service shared-view web-lyrics-model web-lyrics-view
+        run: npx nx test shared-interceptors shared-service shared-view web-lyrics-model web-lyrics-view web-spotify-shared-helper
       - name: Chromatic
         if: "!contains(github.head_ref, 'dependabot')"
         uses: chromaui/action@v1

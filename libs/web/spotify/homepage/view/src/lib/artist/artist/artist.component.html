@@ -1,6 +1,11 @@
 <div class="row">
   <div class="artist-data">
-    <img [src]="imageUrl(300)" />
+    <artur-ba-spotify-image
+      [images]="artist?.images"
+      alt="Artist image"
+      i18n-alt="artist.image"
+    >
+    </artur-ba-spotify-image>
     <h2>
       {{ artist?.name }}
     </h2>

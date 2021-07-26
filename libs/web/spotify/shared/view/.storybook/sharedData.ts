@@ -11,6 +11,11 @@ export const imagesArray = [
     height: 500,
     width: 500,
   },
+  {
+    url: images.sq100,
+    height: 100,
+    width: 100,
+  },
 ];
 
 export const album = {

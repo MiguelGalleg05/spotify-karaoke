@@ -7,6 +7,7 @@ import { album } from '../../../../.storybook/sharedData';
 import { AlbumCardDecoratorComponent } from './album-card-decorator.component';
 import { CardComponent } from '../card/card.component';
 import { CardDecoratorComponent } from '../card-decorator/card-decorator.component';
+import { ImageModule } from '../../image/image.module';
 
 export default {
   component: AlbumCardDecoratorComponent,
@@ -18,6 +19,7 @@ export default {
         CardDecoratorComponent,
       ],
       imports: [
+        ImageModule,
         MatCardModule,
         RouterTestingModule.withRoutes([
           { path: '**', component: AlbumCardDecoratorComponent },

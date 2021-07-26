@@ -2,12 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import {
-  TrackHelper,
-  UriDataHelper,
-} from '@artur-ba/web/spotify/shared/helper';
 import { CardListViewMode } from '@artur-ba/web/spotify/shared/view';
 import { SpotifyDataService } from '@artur-ba/web/spotify/shared/service';
+import { UriDataHelper } from '@artur-ba/web/spotify/shared/helper';
 
 @Component({
   selector: 'artur-ba-artist',
@@ -21,7 +18,7 @@ export class ArtistComponent implements OnInit, OnDestroy {
 
   readonly CardListViewMode = CardListViewMode;
   readonly albumsWrapperTitle = $localize`:artist.albums:Albums`;
-  protected subscriptions: Subscription[] = [];
+  protected subscriptions = new Subscription();
 
   constructor(
     protected readonly route: ActivatedRoute,
@@ -32,16 +29,12 @@ export class ArtistComponent implements OnInit, OnDestroy {
     const routeParamsSub = this.route.params.subscribe((params) => {
       this.getArtistData(params['uri']);
     });
-    this.subscriptions.push(routeParamsSub);
+    this.subscriptions.add(routeParamsSub);
   }
 
   ngOnDestroy(): void {
-    this.subscriptions.forEach((sub) => sub.unsubscribe());
+    this.subscriptions.unsubscribe();
   }
-
-  imageUrl = (size: number): string => {
-    return TrackHelper.getImageUrl(this.artist, size);
-  };
 
   artistAlbumsUrl(): string {
     return `/artist/${UriDataHelper.getClearUri(this.artist?.uri)}/albums`;

@@ -1,5 +1,9 @@
 <mat-card tabindex="0" (click)="$event.stopPropagation(); onClickHandle()">
-  <img mat-card-image [src]="imageUrl" [alt]="cardImageAlt" />
+  <artur-ba-spotify-image
+    mat-card-image
+    [alt]="cardImageAlt"
+    [images]="images"
+  ></artur-ba-spotify-image>
   <mat-card-content>
     <span class="card-title" [innerHtml]="title"></span>
     <span class="card-subtitle" [innerHtml]="subtitle"></span>

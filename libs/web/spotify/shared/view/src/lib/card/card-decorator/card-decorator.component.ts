@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 
 import { CardComponent } from '../card/card.component';
 
@@ -11,11 +11,21 @@ export abstract class CardDecoratorComponent<T>
 {
   @Input() data: T;
 
+  @ViewChild(CardComponent, { static: true })
+  protected cardComponent: CardComponent;
+
+  set cardImageAlt(cardImageAlt: string) {
+    this.cardComponent.cardImageAlt = cardImageAlt;
+  }
+  get cardImageAlt(): string {
+    return this.cardComponent.cardImageAlt;
+  }
+
   ngOnInit(): void {
     if (this.data) {
       this.initWithData();
     }
   }
 
-  protected abstract initWithData();
+  protected abstract initWithData(): void;
 }

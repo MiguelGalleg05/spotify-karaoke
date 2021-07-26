@@ -11,7 +11,7 @@ mat-card {
     background-color: var(--bg-d10);
   }
 
-  img {
+  artur-ba-spotify-image {
     object-fit: cover;
     @include square_img($card-width);
   }

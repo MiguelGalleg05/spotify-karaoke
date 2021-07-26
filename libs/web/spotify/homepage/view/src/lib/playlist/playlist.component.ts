@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { SpotifyDataService } from '@artur-ba/web/spotify/shared/service';
-import { TrackHelper } from '@artur-ba/web/spotify/shared/helper';
 import { TrackListColumns } from '@artur-ba/web/spotify/shared/view';
 
 @Component({
@@ -37,9 +36,5 @@ export class PlaylistComponent implements OnInit {
     return this.playlistTracks?.items.map(
       (playlistTrack) => playlistTrack.track,
     );
-  }
-
-  get image300Url(): string {
-    return TrackHelper.getImage300Url(this.playlist);
   }
 }

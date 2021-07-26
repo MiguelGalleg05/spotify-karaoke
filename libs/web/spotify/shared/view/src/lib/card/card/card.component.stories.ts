@@ -3,8 +3,9 @@ import { action } from '@storybook/addon-actions';
 import { MatCardModule } from '@angular/material/card';
 import { RouterTestingModule } from '@angular/router/testing';
 
+import { images, imagesArray } from '../../../../.storybook/sharedData';
 import { CardComponent } from './card.component';
-import { images } from '../../../../.storybook/sharedData';
+import { ImageModule } from '../../image/image.module';
 
 export default {
   component: CardComponent,
@@ -12,6 +13,7 @@ export default {
     moduleMetadata({
       declarations: [CardComponent],
       imports: [
+        ImageModule,
         MatCardModule,
         RouterTestingModule.withRoutes([
           { path: '**', component: CardComponent },
@@ -35,7 +37,7 @@ const Template: Story<CardComponent> = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  imageUrl: images.sq500,
+  images: imagesArray,
   title: 'Appetite For Destruction',
   subtitle: "Guns N' Roses",
   redirectUrl: 'album/3I9Z1nDCL4E0cP62flcbI5',
@@ -44,17 +46,17 @@ Default.args = {
 export const HorizontalImage = Template.bind({});
 HorizontalImage.args = {
   ...Default.args,
-  imageUrl: images.horizontal,
+  images: [{ url: images.horizontal, width: 1100 }],
 };
 
 export const VerticalImage = Template.bind({});
 VerticalImage.args = {
   ...Default.args,
-  imageUrl: images.vertical,
+  images: [{ url: images.vertical, width: 500 }],
 };
 
 export const SmallImage = Template.bind({});
 SmallImage.args = {
   ...Default.args,
-  imageUrl: images.sq100,
+  images: [{ url: images.sq100, width: 100 }],
 };

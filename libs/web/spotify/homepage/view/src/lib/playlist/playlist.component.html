@@ -1,6 +1,10 @@
 <div class="row">
   <div class="playlist-data">
-    <img [src]="image300Url" />
+    <artur-ba-spotify-image
+      [images]="playlist?.images"
+      alt="Playlist cover"
+      i18n-alt="playlist.cover"
+    ></artur-ba-spotify-image>
     <h2>
       {{ playlist?.name }}
     </h2>

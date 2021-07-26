@@ -5,6 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import * as CardComponentStories from '../card/card.component.stories';
 import { CardComponent } from '../card/card.component';
 import { CardWrapperComponent } from './card-wrapper.component';
+import { ImageModule } from '../../image/image.module';
 
 export default {
   component: CardWrapperComponent,
@@ -12,6 +13,7 @@ export default {
     moduleMetadata({
       declarations: [CardWrapperComponent, CardComponent],
       imports: [
+        ImageModule,
         MatCardModule,
         RouterTestingModule.withRoutes([
           { path: '**', component: CardWrapperComponent },
@@ -40,7 +42,7 @@ const Template: Story<CardWrapperComponent> = (args) => ({
   >
     <artur-ba-card
       *ngFor="let i of cardsCountArray"
-      [imageUrl]="cardValue.imageUrl"
+      [images]="cardValue.images"
       [title]="cardValue.title"
       [subtitle]="cardValue.subtitle"
       [redirectUrl]="cardValue.redirectUrl"

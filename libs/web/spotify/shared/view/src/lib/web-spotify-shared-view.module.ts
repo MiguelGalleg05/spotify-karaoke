@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { CardModule } from './card/card.module';
+import { ImageModule } from './image/image.module';
 import { InfiniteScrollModule } from './infinitive-scroll/infinite-scroll.module';
 import { SongListModule } from './song-list/song-list.module';
 import { UserMenuModule } from './user-menu/user-menu.module';
@@ -11,6 +12,7 @@ const exportModules = [
   InfiniteScrollModule,
   SongListModule,
   UserMenuModule,
+  ImageModule,
 ];
 
 @NgModule({

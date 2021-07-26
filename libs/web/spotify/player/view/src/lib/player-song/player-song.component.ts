@@ -3,7 +3,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { PlayerStore } from '@artur-ba/shared/service';
-import { TrackHelper } from '@artur-ba/web/spotify/shared/helper';
 @Component({
   selector: 'artur-ba-player-song',
   templateUrl: './player-song.component.html',
@@ -12,12 +11,12 @@ import { TrackHelper } from '@artur-ba/web/spotify/shared/helper';
 export class PlayerSongComponent implements OnInit, OnDestroy {
   track: Spotify.Track;
 
-  protected subscriptions: Subscription[] = [];
+  protected subscriptions = new Subscription();
 
   constructor(protected playerStore: PlayerStore) {}
 
   ngOnInit(): void {
-    this.subscriptions.push(
+    this.subscriptions.add(
       this.playerStore.currentTrack$.subscribe((track) => {
         if (this.track !== track) {
           this.track = track;
@@ -27,10 +26,6 @@ export class PlayerSongComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.subscriptions.forEach((sub) => sub.unsubscribe());
-  }
-
-  get image64Url(): string {
-    return TrackHelper.getImage64Url(this.track?.album);
+    this.subscriptions.unsubscribe();
   }
 }
