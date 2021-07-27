@@ -1,3 +1,18 @@
+# [0.5.0](https://github.com/ArturBa/spotify-karaoke/compare/v0.4.0...v0.5.0) (2021-07-27)
+
+### Bug Fixes
+
+- :bug: dropdown menu button ([#99](https://github.com/ArturBa/spotify-karaoke/issues/99)) ([b220241](https://github.com/ArturBa/spotify-karaoke/commit/b220241009da94a51fbed27d50513fec61a371ad))
+- :bug: Set title when null is passed ([#113](https://github.com/ArturBa/spotify-karaoke/issues/113)) ([6e816dc](https://github.com/ArturBa/spotify-karaoke/commit/6e816dc76fb09cd2c04957490f0bdaeb37a4de92))
+- :lock: Fix regex vulnerability ([#98](https://github.com/ArturBa/spotify-karaoke/issues/98)) ([22fc9a6](https://github.com/ArturBa/spotify-karaoke/commit/22fc9a68d548c553a26ae3a4db6ad7365d2a6814))
+
+### Features
+
+- :memo: Add readme on welcome page ([#112](https://github.com/ArturBa/spotify-karaoke/issues/112)) ([e7898f7](https://github.com/ArturBa/spotify-karaoke/commit/e7898f7b33f68cc9d06a3d9fb42ceab008de911d))
+- **spotify:** :sparkles: Add autofocus directive ([#126](https://github.com/ArturBa/spotify-karaoke/issues/126)) ([798ed89](https://github.com/ArturBa/spotify-karaoke/commit/798ed89e57137f4dcc0935eb6e63adb2f7fa58f6))
+- **spotify:** :sparkles: Add playlist details view ([#105](https://github.com/ArturBa/spotify-karaoke/issues/105)) ([26168e0](https://github.com/ArturBa/spotify-karaoke/commit/26168e03ace5e55f8103012bdaa870bbaa1a1d72))
+- **spotify:** :sparkles: Add search playlist view ([#96](https://github.com/ArturBa/spotify-karaoke/issues/96)) ([19a80c3](https://github.com/ArturBa/spotify-karaoke/commit/19a80c317c41e0ef5131df67f074bc34be9a9eef))
+
 # [0.4.0](https://github.com/ArturBa/spotify-karaoke/compare/v0.3.0...v0.4.0) (2021-07-17)
 
 ### Features
