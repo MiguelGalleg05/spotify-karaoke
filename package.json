@@ -78,7 +78,7 @@
     "@storybook/addon-actions": "^6.3.0",
     "@storybook/addon-docs": "^6.3.4",
     "@storybook/addon-essentials": "^6.3.0",
-    "@storybook/addon-storysource": "^6.3.4",
+    "@storybook/addon-storysource": "^6.3.6",
     "@storybook/angular": "^6.2.7",
     "@storybook/builder-webpack5": "^6.2.7",
     "@storybook/manager-webpack5": "^6.3.0",
