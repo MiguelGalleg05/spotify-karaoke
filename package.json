@@ -105,7 +105,7 @@
     "ng-i18n-checker": "^2.0.0",
     "postcss": "^8.2.12",
     "prettier": "2.3.2",
-    "release-it": "^14.6.1",
+    "release-it": "^14.10.1",
     "storybook-dark-mode": "^1.0.8",
     "ts-jest": "26.5.6",
     "ts-node": "~10.1.0",
