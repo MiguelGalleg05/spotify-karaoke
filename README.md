@@ -5,7 +5,7 @@
 [![Top Lang](https://img.shields.io/github/languages/top/ArturBa/spotify-karaoke?style=flat-square)](https://github.com/ArturBa/spotify-karaoke/search?l=typescript)
 [![Licence](https://img.shields.io/github/license/ArturBa/spotify-karaoke?style=flat-square)](./LICENCE)
 [![Release](https://img.shields.io/github/v/release/ArturBa/spotify-karaoke?style=flat-square)](https://github.com/ArturBa/spotify-karaoke/releases)
-[![Build and Test](https://github.com/ArturBa/spotify-karaoke/actions/workflows/build_test.yml/badge.svg?branch=development)](https://github.com/ArturBa/spotify-karaoke/actions/workflows/build_test.yml)
+[![Build and Test](https://img.shields.io/github/workflow/status/ArturBa/spotify-karaoke/Build%20and%20test?label=Build%20and%20Test&style=flat-square)](https://github.com/ArturBa/spotify-karaoke/actions/workflows/build_test.yml)
 [![Dependabot](https://flat.badgen.net/github/dependabot/ArturBa/spotify-karaoke)](https://github.com/apps/dependabot)
 
 ## Why it's created
