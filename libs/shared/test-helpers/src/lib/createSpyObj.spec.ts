@@ -7,3 +7,7 @@ export const createSpyObj = (baseName, methodNames): { [key: string]: any } => {
 
   return obj;
 };
+
+it('createSpyObj', () => {
+  expect(true).toBeTruthy();
+});
