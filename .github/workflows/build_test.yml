@@ -1,8 +1,8 @@
-name: Merge request
+name: Build and test
 
 on:
-  pull_request:
-    branches: [development]
+  push:
+    branches: [development, master]
 
 jobs:
   install:

@@ -34,6 +34,7 @@
     "release": "release-it",
     "extract-i18n": "ng extract-i18n --output-path apps/spotify/src/locale",
     "check-i18n": "ng-i18n-checker ./apps/**/*.html ./libs/**/*.html -i mat-icon",
+    "storybook": "ng run web-spotify-shared-view:storybook",
     "chromatic": "npx chromatic"
   },
   "private": true,
