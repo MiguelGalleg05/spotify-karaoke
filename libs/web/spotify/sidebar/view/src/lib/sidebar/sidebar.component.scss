@@ -1,7 +1,6 @@
 @import 'mixins';
 
 :host {
-  width: $sidebar-width;
   padding: $padding-m;
   background-color: var(--bg-d10);
 }
