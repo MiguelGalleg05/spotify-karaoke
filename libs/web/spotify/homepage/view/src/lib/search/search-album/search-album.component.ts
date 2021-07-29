@@ -6,7 +6,7 @@ import {
   CardListViewMode,
   SearchAlbumCardListStrategy,
 } from '@artur-ba/web/spotify/shared/view';
-import { SpotifyDataService } from '@artur-ba/web/spotify/shared/service';
+import { SpotifySearchDataService } from '@artur-ba/web/spotify/shared/service';
 
 @Component({
   selector: 'artur-ba-search-album',
@@ -22,11 +22,11 @@ export class SearchAlbumComponent {
 
   constructor(
     protected readonly route: ActivatedRoute,
-    protected readonly spotifyData: SpotifyDataService,
+    protected readonly spotifySearchData: SpotifySearchDataService,
   ) {}
 
   getStrategy(): SearchAlbumCardListStrategy {
-    return new SearchAlbumCardListStrategy(this.route, this.spotifyData);
+    return new SearchAlbumCardListStrategy(this.route, this.spotifySearchData);
   }
 
   search() {

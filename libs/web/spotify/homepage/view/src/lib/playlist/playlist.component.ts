@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { SpotifyDataService } from '@artur-ba/web/spotify/shared/service';
+import { SpotifyPlaylistDataService } from '@artur-ba/web/spotify/shared/service';
 import { TrackListColumns } from '@artur-ba/web/spotify/shared/view';
 
 @Component({
@@ -21,15 +21,17 @@ export class PlaylistComponent implements OnInit {
 
   constructor(
     protected route: ActivatedRoute,
-    protected spotifyData: SpotifyDataService,
+    protected spotifyPlaylistData: SpotifyPlaylistDataService,
   ) {}
 
   async ngOnInit() {
     const routeParams = this.route.snapshot.paramMap;
     const playlistUri = routeParams.get('uri');
 
-    this.playlistTracks = await this.spotifyData.getPlaylistTracks(playlistUri);
-    this.playlist = await this.spotifyData.getPlaylist(playlistUri);
+    this.playlistTracks = await this.spotifyPlaylistData.getPlaylistTracks(
+      playlistUri,
+    );
+    this.playlist = await this.spotifyPlaylistData.getPlaylist(playlistUri);
   }
 
   getTracks(): SpotifyApi.TrackObjectFull[] {

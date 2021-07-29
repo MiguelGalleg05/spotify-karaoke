@@ -5,7 +5,7 @@ import {
   ArtistAlbumCardListStrategy,
   CardListViewMode,
 } from '@artur-ba/web/spotify/shared/view';
-import { SpotifyDataService } from '@artur-ba/web/spotify/shared/service';
+import { SpotifyArtistDataService } from '@artur-ba/web/spotify/shared/service';
 
 @Component({
   selector: 'artur-ba-artist-albums',
@@ -18,15 +18,15 @@ export class ArtistAlbumsComponent implements OnInit {
 
   constructor(
     protected readonly route: ActivatedRoute,
-    protected readonly spotifyData: SpotifyDataService,
+    protected readonly spotifyArtistData: SpotifyArtistDataService,
   ) {}
 
   async ngOnInit(): Promise<void> {
     const uri = this.route.snapshot.params.uri;
-    this.artist = await this.spotifyData.getArtist(uri);
+    this.artist = await this.spotifyArtistData.getArtist(uri);
   }
 
   getStrategy(): ArtistAlbumCardListStrategy {
-    return new ArtistAlbumCardListStrategy(this.route, this.spotifyData);
+    return new ArtistAlbumCardListStrategy(this.route, this.spotifyArtistData);
   }
 }

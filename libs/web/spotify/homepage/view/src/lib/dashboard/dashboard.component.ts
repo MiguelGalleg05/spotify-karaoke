@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 import { CardListViewMode } from '@artur-ba/web/spotify/shared/view';
-import { SpotifyDataService } from '@artur-ba/web/spotify/shared/service';
+import { SpotifyPlaylistDataService } from '@artur-ba/web/spotify/shared/service';
 import { UserSettingsService } from '@artur-ba/shared/service';
 
 @Component({
@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
   constructor(
     protected readonly userSettings: UserSettingsService,
     protected readonly cdr: ChangeDetectorRef,
-    protected readonly spotifyService: SpotifyDataService,
+    protected readonly spotifyPlaylistService: SpotifyPlaylistDataService,
   ) {}
 
   ngOnInit(): void {
@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
   protected async initAlbums(): Promise<void> {
     this.playlists = await Promise.all([
       ...this.playlistUrls.map((playlistUrl) =>
-        this.spotifyService.getPlaylist(playlistUrl),
+        this.spotifyPlaylistService.getPlaylist(playlistUrl),
       ),
     ]);
   }

@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { CardListViewMode } from '@artur-ba/web/spotify/shared/view';
-import { SpotifyDataService } from '@artur-ba/web/spotify/shared/service';
+import { SpotifyArtistDataService } from '@artur-ba/web/spotify/shared/service';
 import { UriDataHelper } from '@artur-ba/web/spotify/shared/helper';
 
 @Component({
@@ -22,7 +22,7 @@ export class ArtistComponent implements OnInit, OnDestroy {
 
   constructor(
     protected readonly route: ActivatedRoute,
-    protected readonly spotifyData: SpotifyDataService,
+    protected readonly spotifyArtistData: SpotifyArtistDataService,
   ) {}
 
   ngOnInit(): void {
@@ -41,8 +41,10 @@ export class ArtistComponent implements OnInit, OnDestroy {
   }
 
   protected async getArtistData(artistUri: string): Promise<void> {
-    this.artist = await this.spotifyData.getArtist(artistUri);
-    this.artistTracks = await this.spotifyData.getArtistTopTracks(artistUri);
-    this.artistAlbums = await this.spotifyData.getArtistAlbums(artistUri);
+    this.artist = await this.spotifyArtistData.getArtist(artistUri);
+    this.artistTracks = await this.spotifyArtistData.getArtistTopTracks(
+      artistUri,
+    );
+    this.artistAlbums = await this.spotifyArtistData.getArtistAlbums(artistUri);
   }
 }

@@ -2,7 +2,8 @@ import { ActivatedRoute } from '@angular/router';
 
 import {
   PaginationInterface,
-  SpotifyDataService,
+  SpotifyArtistDataService,
+  SpotifySearchDataService,
 } from '@artur-ba/web/spotify/shared/service';
 
 export abstract class CardListStrategy<T, R> {
@@ -19,14 +20,14 @@ export class ArtistAlbumCardListStrategy
 {
   constructor(
     protected readonly route: ActivatedRoute,
-    protected readonly spotifyData: SpotifyDataService,
+    protected readonly spotifyArtistData: SpotifyArtistDataService,
   ) {}
 
   async getData(
     requestParams: string,
     pagination: PaginationInterface,
   ): Promise<SpotifyApi.PagingObject<SpotifyApi.AlbumObjectSimplified>> {
-    return this.spotifyData.getArtistAlbums(requestParams, pagination);
+    return this.spotifyArtistData.getArtistAlbums(requestParams, pagination);
   }
 
   getRequestParams(): string {
@@ -52,7 +53,7 @@ export abstract class SearchCardListStrategy<T>
 export class SearchAlbumCardListStrategy extends SearchCardListStrategy<SpotifyApi.AlbumObjectSimplified> {
   constructor(
     protected readonly route: ActivatedRoute,
-    protected readonly spotifyData: SpotifyDataService,
+    protected readonly spotifySearchData: SpotifySearchDataService,
   ) {
     super(route);
   }
@@ -61,7 +62,7 @@ export class SearchAlbumCardListStrategy extends SearchCardListStrategy<SpotifyA
     requestParams: string,
     pagination: PaginationInterface,
   ): Promise<SpotifyApi.PagingObject<SpotifyApi.AlbumObjectSimplified>> {
-    const response = await this.spotifyData.getSearchAlbumResult(
+    const response = await this.spotifySearchData.getSearchAlbumResult(
       requestParams,
       pagination,
     );
@@ -72,7 +73,7 @@ export class SearchAlbumCardListStrategy extends SearchCardListStrategy<SpotifyA
 export class SearchPlaylistCardListStrategy extends SearchCardListStrategy<SpotifyApi.PlaylistObjectSimplified> {
   constructor(
     protected readonly route: ActivatedRoute,
-    protected readonly spotifyData: SpotifyDataService,
+    protected readonly spotifySearchData: SpotifySearchDataService,
   ) {
     super(route);
   }
@@ -81,7 +82,7 @@ export class SearchPlaylistCardListStrategy extends SearchCardListStrategy<Spoti
     requestParams: string,
     pagination: PaginationInterface,
   ): Promise<SpotifyApi.PagingObject<SpotifyApi.PlaylistObjectSimplified>> {
-    const response = await this.spotifyData.getSearchPlaylistResult(
+    const response = await this.spotifySearchData.getSearchPlaylistResult(
       requestParams,
       pagination,
     );
