@@ -1,11 +1,17 @@
 @import 'mixins';
+@import 'media-queries';
 
 :host {
   display: grid;
   grid-template-areas: 'sidebar content' 'player player';
   grid-template-columns: $sidebar-width auto;
   grid-template-rows: calc(100vh - #{$player-height}) $player-height;
+  @include transition(grid-template-columns);
   height: 100vh;
+
+  @include lt-lg {
+    grid-template-columns: $sidebar-narrow-width auto;
+  }
 }
 
 artur-ba-player {
@@ -13,8 +19,6 @@ artur-ba-player {
 }
 
 .content {
-  width: calc(100vw - #{$sidebar-width});
-
   artur-ba-user-menu {
     height: $menu-height;
   }

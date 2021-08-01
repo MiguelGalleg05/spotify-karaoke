@@ -1,17 +1,43 @@
 @import 'mixins';
+@import 'media-queries';
+
+@mixin adaptive-hover {
+  :host-context(.sidebar--no-hover) & {
+    @include lt-lg {
+      @content;
+    }
+  }
+}
 
 :host {
-  padding: $padding-m;
+  padding: $padding-s;
   background-color: var(--bg-d10);
+  width: 100%;
+  z-index: 1;
+
+  @include lt-lg {
+    @include transition(width);
+    &:hover {
+      @include transition(width);
+      width: $sidebar-width;
+    }
+  }
 }
 
 .logo {
   background-image: getImageUrl($logo1x2-light);
   background-size: contain;
   background-repeat: no-repeat;
-  @include logoSize;
+  width: 100%;
+  height: 60px;
+  margin: 0 auto;
+
   @include darkMode {
     background-image: getImageUrl($logo1x2-dark);
+  }
+
+  @include adaptive-hover {
+    background-image: getImageUrl($logo1x1-light);
   }
 }
 
@@ -22,5 +48,11 @@ button.mat-button-base {
   margin: $margin-xs auto;
   mat-icon {
     margin-right: $margin-s;
+  }
+
+  @include adaptive-hover {
+    span {
+      display: none;
+    }
   }
 }

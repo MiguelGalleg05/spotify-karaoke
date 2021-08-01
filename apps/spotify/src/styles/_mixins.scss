@@ -19,11 +19,6 @@
   height: $size;
 }
 
-@mixin logoSize {
-  width: 200px;
-  height: 100px;
-}
-
 @mixin transition($property, $time: 0.5s, $animation: $transition-animation) {
   $trans: $animation $property $time;
   -webkit-transition: $trans;
