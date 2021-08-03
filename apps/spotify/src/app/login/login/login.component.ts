@@ -12,6 +12,8 @@ import { AuthStore } from '@artur-ba/shared/service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit, OnDestroy {
+  isSpotifyCallback = false;
+
   constructor(
     protected authStore: AuthStore,
     protected route: ActivatedRoute,
@@ -21,7 +23,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   error: Error;
 
   ngOnInit(): void {
-    if (this.route.snapshot.data['spotify_callback']) {
+    this.isSpotifyCallback = this.route.snapshot.data['spotify_callback'];
+    if (this.isSpotifyCallback) {
       this.handleSpotifyCallback();
     }
   }

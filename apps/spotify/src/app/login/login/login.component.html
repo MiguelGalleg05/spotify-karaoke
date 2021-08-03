@@ -12,6 +12,13 @@
           <p i18n="login.authorize">Authorize</p>
         </div>
       </button>
+      <ng-container *ngIf="isSpotifyCallback">
+        <p i18n>Please wait for authorization</p>
+        <p i18n>
+          If you are stuck on this page please check if you are not blocking any
+          requests (for example: PrivacyBadger)
+        </p>
+      </ng-container>
     </div>
     <div class="authorize-mobile">
       <h3 i18n="login.mobile-not-available">
