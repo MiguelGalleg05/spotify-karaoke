@@ -1,21 +1,18 @@
-<div class="count" *ngIf="columns.includes(songListColumns.count)">
+<td class="count" *ngIf="columns.includes(songListColumns.count)">
   <strong>
     {{ track?.track_number }}
   </strong>
-</div>
+</td>
 
-<div class="image" *ngIf="columns.includes(songListColumns.image)">
+<td class="image" *ngIf="columns.includes(songListColumns.image)">
   <artur-ba-spotify-image
     [images]="track?.album.images"
     alt="Album cover"
     i18n-alt="song-row.album-cover"
   ></artur-ba-spotify-image>
-</div>
+</td>
 
-<div
-  class="title-artist"
-  *ngIf="columns.includes(songListColumns.title_artist)"
->
+<td class="title-artist" *ngIf="columns.includes(songListColumns.title_artist)">
   <strong>
     {{ track?.name }}
   </strong>
@@ -27,14 +24,14 @@
       {{ artist.name | addComa: !l }}
     </a>
   </span>
-</div>
+</td>
 
-<div class="album" *ngIf="columns.includes(songListColumns.album)">
+<td class="album" *ngIf="columns.includes(songListColumns.album)">
   <a [routerLink]="'/album/' + track?.album.uri | clearUriData">
     {{ track?.album.name }}
   </a>
-</div>
+</td>
 
-<div class="time" *ngIf="columns.includes(songListColumns.time)">
+<td class="time" *ngIf="columns.includes(songListColumns.time)">
   {{ track?.duration_ms | trackTime: true }}
-</div>
+</td>

@@ -1,21 +1,17 @@
 @import 'mixins';
 
-@mixin shared-style {
-  display: flex;
-  align-items: center;
-  margin-left: $margin-s;
+td,
+th {
+  padding: $padding-xs $padding-s;
 }
 
 .count {
-  @include shared-style;
   width: 2ch;
-  justify-content: flex-end;
 }
 
 $image-size: 50px;
 .image {
   width: $image-size;
-  display: flex;
 
   artur-ba-spotify-image {
     margin: auto 0;
@@ -24,9 +20,7 @@ $image-size: 50px;
 }
 
 .title-artist {
-  @include shared-style;
-  flex: 2;
-  justify-content: center;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
 
@@ -36,11 +30,10 @@ $image-size: 50px;
 }
 
 .album {
-  @include shared-style;
-  @include flex-1;
+  text-align: left;
 }
 
 .time {
-  @include shared-style;
-  min-width: 4ch;
+  text-align: right;
+  width: 6ch;
 }

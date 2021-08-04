@@ -1,13 +1,7 @@
 @import '../styles/shared-track-list';
 
 :host {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  padding: $padding-xs $padding-s;
-
   &:hover {
     background-color: var(--bg-d20);
-    @include rounded;
   }
 }
