@@ -1,0 +1,14 @@
+@import 'variables';
+
+:host {
+  display: flex;
+  gap: $padding-s;
+}
+
+mat-icon {
+  color: var(--text-a60);
+
+  &.active {
+    color: var(--primary);
+  }
+}

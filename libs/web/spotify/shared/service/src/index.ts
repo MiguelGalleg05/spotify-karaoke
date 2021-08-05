@@ -6,3 +6,4 @@ export { SpotifyAlbumDataService } from './lib/spotify-data/spotify-album-data.s
 export { SpotifyArtistDataService } from './lib/spotify-data/spotify-artist-data.service';
 export { SpotifyPlaylistDataService } from './lib/spotify-data/spotify-playlist-data.service';
 export { SpotifySearchDataService } from './lib/spotify-data/spotify-search-data.service';
+export { SpotifyPlayerService } from './lib/spotify-data/spotify-player.service';

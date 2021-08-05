@@ -1,0 +1,21 @@
+<button
+  mat-icon-button
+  [matMenuTriggerFor]="devicesMenu"
+  (click)="updateDeviceList()"
+>
+  <mat-icon
+    matTooltip="Available devices"
+    i18n-matTooltip="player-available-devices.available-devices"
+  >
+    speaker_group
+  </mat-icon>
+</button>
+<mat-menu #devicesMenu="matMenu" yPosition="above" xPosition="before">
+  <div
+    mat-menu-item
+    *ngFor="let device of userDevices?.devices"
+    (click)="selectDevice(device)"
+  >
+    <artur-ba-player-device [device]="device"></artur-ba-player-device>
+  </div>
+</mat-menu>

@@ -11,11 +11,3 @@
   justify-content: flex-end;
   margin-right: $margin-m;
 }
-
-.as-link:hover {
-  cursor: pointer;
-  mat-icon {
-    color: var(--primary);
-    @include transition(color);
-  }
-}

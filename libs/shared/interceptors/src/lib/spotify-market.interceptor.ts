@@ -21,7 +21,7 @@ export class SpotifyMarketInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
-    if (!spotifyAPIRegex.test(request.url)) {
+    if (!spotifyAPIRegex.test(request.url) || request.method !== 'GET') {
       return next.handle(request);
     }
     return from(this.addMarketParamToRequest(request, next));

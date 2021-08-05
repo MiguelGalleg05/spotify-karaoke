@@ -19,12 +19,12 @@ export class QueueComponent implements OnInit, OnDestroy {
     TrackListColumns.time,
   ];
 
-  protected subscriptions: Subscription[] = [];
+  protected readonly subscriptions: Subscription = new Subscription();
 
-  constructor(protected playerStore: PlayerStore) {}
+  constructor(protected readonly playerStore: PlayerStore) {}
 
-  ngOnInit(): void {
-    this.subscriptions.push(
+  async ngOnInit(): Promise<void> {
+    this.subscriptions.add(
       this.playerStore.trackWindow$.subscribe((trackWindow) => {
         if (this.trackWindow !== trackWindow) {
           this.trackWindow = trackWindow;
@@ -34,7 +34,7 @@ export class QueueComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.subscriptions.forEach((sub) => sub.unsubscribe());
+    this.subscriptions.unsubscribe();
   }
 
   nextTracksUri(): string[] {

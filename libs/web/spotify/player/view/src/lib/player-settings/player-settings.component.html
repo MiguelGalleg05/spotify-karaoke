@@ -1,14 +1,10 @@
-<a routerLink="/queue" alt="Music queue">
+<a mat-icon-button routerLink="/queue" alt="Music queue">
   <mat-icon matTooltip="Queue" i18n-matTooltip="player-settings.queue">
     queue_music
   </mat-icon>
 </a>
-<div class="as-link">
-  <mat-icon matTooltip="not available now" i18n-matTooltip="not-available">
-    speaker_group
-  </mat-icon>
-</div>
-<div class="as-link" *ngIf="isLoud() && !isMute()">
+<artur-ba-player-available-devices></artur-ba-player-available-devices>
+<button mat-icon-button *ngIf="isLoud() && !isMute()">
   <mat-icon
     (click)="mute()"
     matTooltip="Mute"
@@ -16,8 +12,8 @@
   >
     volume_up
   </mat-icon>
-</div>
-<div class="as-link" *ngIf="!isLoud() && !isMute()">
+</button>
+<button mat-icon-button *ngIf="!isLoud() && !isMute()">
   <mat-icon
     (click)="mute()"
     matTooltip="Mute"
@@ -25,15 +21,15 @@
   >
     volume_down
   </mat-icon>
-</div>
-<div class="as-link" *ngIf="isMute()">
+</button>
+<button mat-icon-button *ngIf="isMute()">
   <mat-icon
     matTooltip="Device is muted"
     i18n-matTooltip="player-settings.muted"
   >
     volume_off
   </mat-icon>
-</div>
+</button>
 <mat-slider
   aria-label="current volume"
   i18n-aria-label="player-settings.current-volume"

@@ -114,7 +114,7 @@
   },
   "lint-staged": {
     "*.{js,json,md,ts,scss,ts,html}": [
-      "npm run format --uncommitted"
+      "npm run format -- --uncommitted --fix"
     ]
   }
 }
