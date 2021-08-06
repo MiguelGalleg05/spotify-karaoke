@@ -73,7 +73,7 @@ export class SpotifyTokenInterceptor implements HttpInterceptor {
 
       return from(this.authStore.refreshToken()).pipe(
         switchMap(() => {
-          this.refreshingInProgress = true;
+          this.refreshingInProgress = false;
           return next.handle(this.addAuthorizationHeader(request));
         }),
       );

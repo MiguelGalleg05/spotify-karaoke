@@ -5,6 +5,7 @@
     "ci",
     "shared",
     "storybook",
+    "interceptor",
     "components"
   ],
   "cSpell.words": ["mixins", "spotify", "tailwindcss"]
