@@ -18,6 +18,6 @@
 }
 
 .card-wrapper-single-line {
-  height: calc(#{$card-height} + calc(#{$margin-s} / 2));
+  max-height: calc(#{$card-height} + calc(#{$margin-s} / 2));
   overflow: hidden;
 }

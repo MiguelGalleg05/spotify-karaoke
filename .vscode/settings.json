@@ -4,7 +4,8 @@
     "spotify",
     "ci",
     "shared",
-    "storybook"
+    "storybook",
+    "components"
   ],
   "cSpell.words": ["mixins", "spotify", "tailwindcss"]
 }
