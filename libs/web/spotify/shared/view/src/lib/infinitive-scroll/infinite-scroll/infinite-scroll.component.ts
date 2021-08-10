@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { CardListComponent } from '../card-list/card-list.component';
+import { CardListComponent } from '../../card/card-list/card-list.component';
 
 @Component({
   selector: 'artur-ba-infinite-scroll',

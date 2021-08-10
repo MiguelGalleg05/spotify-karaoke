@@ -1,0 +1,18 @@
+@import 'mixins';
+
+:host {
+  display: flex;
+  align-items: center;
+  gap: $padding-xs;
+  padding: calc(#{$padding-xs} * 0.5) $padding-xs;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--bg-d20);
+  }
+}
+
+artur-ba-spotify-image {
+  width: 40px;
+  height: 40px;
+}

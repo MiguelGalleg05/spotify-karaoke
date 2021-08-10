@@ -25,6 +25,12 @@ export class SpotifyDataService {
 
   constructor(protected readonly httpClient: HttpClient) {}
 
+  /**
+   * Append common pagination params into param set
+   * @param params
+   * @param pagination
+   * @returns HttpParams
+   */
   static appendPaginationParams(
     params: HttpParams,
     pagination?: PaginationInterface,

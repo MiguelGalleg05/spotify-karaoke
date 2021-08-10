@@ -8,6 +8,7 @@ import { WebSpotifySharedDirectivesModule } from '@artur-ba/web/spotify/shared/d
 
 import { AlbumCardDecoratorComponent } from './album-card-decorator/album-card-decorator.component';
 import { CardComponent } from './card/card.component';
+import { CardListComponent } from './card-list/card-list.component';
 import { CardWrapperComponent } from './card-wrapper/card-wrapper.component';
 import { CardWrapperWithContentComponent } from './card-wrapper-with-content/card-wrapper-with-content.component';
 import { DynamicCardListComponent } from './dynamic-card-list/dynamic-card-list.component';
@@ -20,6 +21,7 @@ const exports = [
   PlaylistCardDecoratorComponent,
   DynamicCardListComponent,
   CardWrapperWithContentComponent,
+  CardListComponent,
 ];
 
 @NgModule({

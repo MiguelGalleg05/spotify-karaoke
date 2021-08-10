@@ -2,15 +2,19 @@
   <div class="logo" i18n-title title="Spotify Karaoke Logo"></div>
 </a>
 
-<button mat-button routerLink="/">
-  <mat-icon>home</mat-icon>
-  <span i18n="sidebar.home"> Home </span>
-</button>
-<button mat-button routerLink="/search">
-  <mat-icon>search</mat-icon>
-  <span i18n="sidebar.search"> Search </span>
-</button>
-<button mat-button routerLink="/lyrics">
-  <mat-icon>text_format</mat-icon>
-  <span i18n="sidebar.lyrics"> Lyrics </span>
-</button>
+<nav>
+  <button mat-button routerLink="/">
+    <mat-icon>home</mat-icon>
+    <span i18n="sidebar.home"> Home </span>
+  </button>
+  <button mat-button routerLink="/search">
+    <mat-icon>search</mat-icon>
+    <span i18n="sidebar.search"> Search </span>
+  </button>
+  <button mat-button routerLink="/lyrics">
+    <mat-icon>text_format</mat-icon>
+    <span i18n="sidebar.lyrics"> Lyrics </span>
+  </button>
+</nav>
+
+<artur-ba-user-playlist></artur-ba-user-playlist>

@@ -1,7 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { SpotifyDataService } from './spotify-data.service';
+import {
+  PaginationInterface,
+  SpotifyDataService,
+} from './spotify-data.service';
 
 @Injectable({
   providedIn: 'root',
@@ -35,6 +38,28 @@ export class SpotifyPlaylistDataService {
         SpotifyDataService.SpotifyApiBaseURL +
           `playlists/${playlistUri}/tracks`,
       )
+      .toPromise();
+  }
+
+  /**
+   * https://api.spotify.com/v1/me/playlists
+   * @param pagination
+   * @returns Promise
+   */
+  getCurrentUserPlaylists(
+    pagination?: PaginationInterface,
+  ): Promise<
+    SpotifyApi.PagingObject<SpotifyApi.ListOfCurrentUsersPlaylistsResponse>
+  > {
+    const params = SpotifyDataService.appendPaginationParams(
+      new HttpParams(),
+      pagination,
+    );
+
+    return this.httpClient
+      .get<
+        SpotifyApi.PagingObject<SpotifyApi.ListOfCurrentUsersPlaylistsResponse>
+      >(SpotifyDataService.SpotifyApiBaseURL + 'me/playlists', { params })
       .toPromise();
   }
 }

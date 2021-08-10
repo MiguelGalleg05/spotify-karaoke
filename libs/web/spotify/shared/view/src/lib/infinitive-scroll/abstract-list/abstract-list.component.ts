@@ -3,17 +3,13 @@ import { BehaviorSubject } from 'rxjs';
 
 import { PaginationInterface } from '@artur-ba/web/spotify/shared/service';
 
-import { CardListStrategy } from './card-list.strategy';
-import { CardListViewMode } from '../../card/dynamic-card-list/dynamic-card-list.component';
+import { AbstractListStrategy } from './abstract-list.strategy';
 
 @Component({
-  selector: 'artur-ba-card-list',
-  templateUrl: './card-list.component.html',
+  template: '',
 })
-export class CardListComponent<T, R> implements OnInit {
-  @Input() strategy: CardListStrategy<T, R>;
-
-  @Input() viewMode: CardListViewMode;
+export class AbstractListComponent<T, R> implements OnInit {
+  @Input() strategy: AbstractListStrategy<T, R>;
 
   data: T[] = [];
 

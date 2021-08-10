@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { UserPlaylistModule } from './user-playlist/user-playlist.module';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     RouterModule.forChild([]),
     MatButtonModule,
     MatIconModule,
+    UserPlaylistModule,
   ],
   declarations: [SidebarComponent],
   exports: [SidebarComponent],
