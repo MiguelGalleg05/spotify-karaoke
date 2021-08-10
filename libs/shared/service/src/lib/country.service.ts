@@ -1,3 +1,5 @@
+import { filter, take } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -13,14 +15,30 @@ export class CountryService {
   constructor(protected readonly httpClient: HttpClient) {}
 
   readonly countryCodeDefault = 'gb';
-  protected countryCode = null;
+  protected countryCode$ = new BehaviorSubject<string>(null);
+  protected isInitialized = false;
   protected readonly countryUrl = 'http://ip-api.com/json';
 
   async getUserCountry(): Promise<string> {
-    if (this.countryCode === null) {
-      this.countryCode = await this.getNewUserCountry();
-    }
-    return this.countryCode;
+    return this.isInitialized
+      ? this.getInitCountryCode()
+      : this.initCountryCode();
+  }
+
+  protected async initCountryCode(): Promise<string> {
+    this.isInitialized = true;
+    await this.getNewUserCountry();
+    return this.countryCode$.value;
+  }
+
+  protected async getInitCountryCode(): Promise<string> {
+    await this.countryCode$
+      .pipe(
+        filter((c) => c !== null),
+        take(1),
+      )
+      .toPromise();
+    return this.countryCode$.value;
   }
 
   protected async getNewUserCountry(): Promise<string> {
@@ -28,8 +46,10 @@ export class CountryService {
       const response = await this.httpClient
         .get<CountryResponse>(this.countryUrl)
         .toPromise();
-      return response.countryCode;
+      this.countryCode$.next(response.countryCode);
+      return;
     } catch {
+      this.countryCode$.next(this.countryCodeDefault);
       return this.countryCodeDefault;
     }
   }
