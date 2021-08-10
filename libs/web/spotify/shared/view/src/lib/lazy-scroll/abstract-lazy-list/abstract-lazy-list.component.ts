@@ -3,13 +3,13 @@ import { BehaviorSubject } from 'rxjs';
 
 import { PaginationInterface } from '@artur-ba/web/spotify/shared/service';
 
-import { AbstractListStrategy } from './abstract-list.strategy';
+import { AbstractLazyListStrategy } from './abstract-lazy-list.strategy';
 
 @Component({
   template: '',
 })
-export class AbstractListComponent<T, R> implements OnInit {
-  @Input() strategy: AbstractListStrategy<T, R>;
+export class AbstractLazyListComponent<T, R> implements OnInit {
+  @Input() strategy: AbstractLazyListStrategy<T, R>;
 
   data: T[] = [];
 

@@ -4,28 +4,28 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { WebSpotifySharedDirectivesModule } from '@artur-ba/web/spotify/shared/directives';
 
-import { album } from '../../../../.storybook/sharedData';
+import { album, playlist } from '../../../../.storybook/sharedData';
 import { CardListStrategy } from '../../card/card-list/card-list.strategy';
 import { CardListViewMode } from '../../card/dynamic-card-list/dynamic-card-list.component';
 import { CardModule } from '../../card/card.module';
-import { InfiniteScrollComponent } from './infinite-scroll.component';
+import { LazyScrollComponent } from './lazy-scroll.component';
 
 export default {
-  component: InfiniteScrollComponent,
+  component: LazyScrollComponent,
   decorators: [
     moduleMetadata({
-      declarations: [InfiniteScrollComponent],
+      declarations: [LazyScrollComponent],
       imports: [
         CardModule,
         MatProgressSpinnerModule,
         RouterTestingModule.withRoutes([
-          { path: '**', component: InfiniteScrollComponent },
+          { path: '**', component: LazyScrollComponent },
         ]),
         WebSpotifySharedDirectivesModule,
       ],
     }),
   ],
-  title: 'Shared/IndefiniteScroll',
+  title: 'Shared/LazyScroll',
   argTypes: {
     cardsCount: {
       control: { type: 'number', min: 1 },
@@ -55,7 +55,7 @@ class CardListMockStrategy
   getData(requestParams, pagination) {
     const offset = pagination.offset || 0;
     const limit = Math.min(this.total - offset, this.limit);
-    const items = new Array(this.limit).fill(album);
+    const items = new Array(this.limit).fill({ ...album, ...playlist });
     const paginationResponse = {
       items,
       limit,
@@ -73,16 +73,16 @@ class CardListMockStrategy
   }
 }
 
-const Template: Story<InfiniteScrollComponent> = (args) => ({
+const Template: Story<LazyScrollComponent> = (args) => ({
   props: {
     ...args,
     newStrategy: new CardListMockStrategy((args as any).cardsCount),
   },
   template: `
-  <artur-ba-infinite-scroll>
+  <artur-ba-lazy-scroll>
     <artur-ba-card-list [viewMode]="cardListViewMode" [strategy]="newStrategy">
     </artur-ba-card-list>
-  </artur-ba-infinite-scroll>
+  </artur-ba-lazy-scroll>
   `,
 });
 

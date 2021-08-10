@@ -5,18 +5,14 @@ import { RouterModule } from '@angular/router';
 import { ImageModule } from '@artur-ba/web/spotify/shared/view';
 import { WebSpotifySharedPipeModule } from '@artur-ba/web/spotify/shared/pipe';
 
-import { PlaylistInfinitiveListComponent } from './playlist-infinitive-list/playlist-infinitive-list.component';
+import { PlaylistLazyListComponent } from './playlist-lazy-list/playlist-lazy-list.component';
 import { PlaylistRowComponent } from './playlist-row/playlist-row.component';
 import { UserPlaylistComponent } from './user-playlist/user-playlist.component';
 
 const exports = [UserPlaylistComponent];
 
 @NgModule({
-  declarations: [
-    ...exports,
-    PlaylistRowComponent,
-    PlaylistInfinitiveListComponent,
-  ],
+  declarations: [...exports, PlaylistRowComponent, PlaylistLazyListComponent],
   imports: [
     CommonModule,
     ImageModule,

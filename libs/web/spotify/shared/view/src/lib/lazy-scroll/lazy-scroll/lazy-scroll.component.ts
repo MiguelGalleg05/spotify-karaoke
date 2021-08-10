@@ -10,11 +10,11 @@ import { Observable } from 'rxjs';
 import { CardListComponent } from '../../card/card-list/card-list.component';
 
 @Component({
-  selector: 'artur-ba-infinite-scroll',
-  templateUrl: './infinite-scroll.component.html',
-  styleUrls: ['./infinite-scroll.component.scss'],
+  selector: 'artur-ba-lazy-scroll',
+  templateUrl: './lazy-scroll.component.html',
+  styleUrls: ['./lazy-scroll.component.scss'],
 })
-export class InfiniteScrollComponent implements AfterViewInit {
+export class LazyScrollComponent implements AfterViewInit {
   @ViewChild('anchor') anchor: ElementRef<HTMLElement>;
 
   @ContentChild(CardListComponent)

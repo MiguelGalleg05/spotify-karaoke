@@ -2,11 +2,14 @@ import {
   PaginationInterface,
   SpotifyPlaylistDataService,
 } from '@artur-ba/web/spotify/shared/service';
-import { AbstractListStrategy } from '@artur-ba/web/spotify/shared/view';
+import { AbstractLazyListStrategy } from '@artur-ba/web/spotify/shared/view';
 
-export class PlaylistListStrategy
+export class PlaylistLazyListStrategy
   implements
-    AbstractListStrategy<SpotifyApi.ListOfCurrentUsersPlaylistsResponse, null>
+    AbstractLazyListStrategy<
+      SpotifyApi.ListOfCurrentUsersPlaylistsResponse,
+      null
+    >
 {
   constructor(protected readonly spotifyPlaylist: SpotifyPlaylistDataService) {}
   getData(

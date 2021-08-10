@@ -2,15 +2,15 @@ import { CommonModule } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NgModule } from '@angular/core';
 
-import { AbstractListComponent } from './abstract-list/abstract-list.component';
+import { AbstractLazyListComponent } from './abstract-lazy-list/abstract-lazy-list.component';
 import { CardModule } from '../card/card.module';
-import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
+import { LazyScrollComponent } from './lazy-scroll/lazy-scroll.component';
 
-const exports = [InfiniteScrollComponent];
+const exports = [LazyScrollComponent];
 
 @NgModule({
-  declarations: [...exports, AbstractListComponent],
+  declarations: [...exports, AbstractLazyListComponent],
   imports: [CommonModule, MatProgressSpinnerModule, CardModule],
   exports,
 })
-export class InfiniteScrollModule {}
+export class LazyScrollModule {}

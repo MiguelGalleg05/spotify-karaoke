@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { SpotifyPlaylistDataService } from '@artur-ba/web/spotify/shared/service';
 
-import { PlaylistListStrategy } from '../playlist-infinitive-list/playlist-infinitive-list.strategy';
+import { PlaylistLazyListStrategy } from '../playlist-lazy-list/playlist-lazy-list.strategy';
 
 @Component({
   selector: 'artur-ba-user-playlist',
@@ -12,7 +12,7 @@ import { PlaylistListStrategy } from '../playlist-infinitive-list/playlist-infin
 export class UserPlaylistComponent {
   constructor(protected readonly spotifyPlaylist: SpotifyPlaylistDataService) {}
 
-  getStrategy(): PlaylistListStrategy {
-    return new PlaylistListStrategy(this.spotifyPlaylist);
+  getStrategy(): PlaylistLazyListStrategy {
+    return new PlaylistLazyListStrategy(this.spotifyPlaylist);
   }
 }
