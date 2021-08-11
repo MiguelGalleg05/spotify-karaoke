@@ -2,7 +2,10 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { ImageModule } from '@artur-ba/web/spotify/shared/view';
+import {
+  ImageModule,
+  LazyScrollModule,
+} from '@artur-ba/web/spotify/shared/view';
 import { WebSpotifySharedPipeModule } from '@artur-ba/web/spotify/shared/pipe';
 
 import { PlaylistLazyListComponent } from './playlist-lazy-list/playlist-lazy-list.component';
@@ -15,9 +18,10 @@ const exports = [UserPlaylistComponent];
   declarations: [...exports, PlaylistRowComponent, PlaylistLazyListComponent],
   imports: [
     CommonModule,
-    ImageModule,
     RouterModule.forChild([]),
     WebSpotifySharedPipeModule,
+    LazyScrollModule,
+    ImageModule,
   ],
   exports,
 })

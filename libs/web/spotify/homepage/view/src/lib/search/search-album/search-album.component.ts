@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import {
-  CardListComponent,
+  CardLazyListComponent,
   CardListViewMode,
   SearchAlbumCardListStrategy,
 } from '@artur-ba/web/spotify/shared/view';
@@ -15,7 +15,7 @@ import { SpotifySearchDataService } from '@artur-ba/web/spotify/shared/service';
 })
 export class SearchAlbumComponent {
   readonly CardListViewMode = CardListViewMode;
-  @ViewChild(CardListComponent) cardList: CardListComponent<
+  @ViewChild(CardLazyListComponent) cardList: CardLazyListComponent<
     SpotifyApi.AlbumObjectSimplified,
     string
   >;

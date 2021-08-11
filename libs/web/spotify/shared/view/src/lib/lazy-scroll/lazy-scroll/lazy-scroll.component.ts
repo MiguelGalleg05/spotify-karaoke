@@ -1,13 +1,13 @@
 import {
   AfterViewInit,
   Component,
-  ContentChild,
   ElementRef,
+  EventEmitter,
+  Input,
+  Output,
   ViewChild,
 } from '@angular/core';
 import { Observable } from 'rxjs';
-
-import { CardListComponent } from '../../card/card-list/card-list.component';
 
 @Component({
   selector: 'artur-ba-lazy-scroll',
@@ -17,8 +17,9 @@ import { CardListComponent } from '../../card/card-list/card-list.component';
 export class LazyScrollComponent implements AfterViewInit {
   @ViewChild('anchor') anchor: ElementRef<HTMLElement>;
 
-  @ContentChild(CardListComponent)
-  abstractList: CardListComponent<unknown, unknown>;
+  @Input() isLoading$: Observable<boolean>;
+
+  @Output() loadMore = new EventEmitter<void>();
 
   protected observer: IntersectionObserver;
 
@@ -28,22 +29,9 @@ export class LazyScrollComponent implements AfterViewInit {
     };
 
     this.observer = new IntersectionObserver(([entry]) => {
-      entry.isIntersecting && this.loadMore();
+      entry.isIntersecting && this.loadMore.emit();
     }, options);
 
     this.observer.observe(this.anchor.nativeElement);
-  }
-
-  isLoading$(): Observable<boolean> {
-    return this.abstractList.isLoading$;
-  }
-
-  loadMore(): void {
-    if (
-      !this.abstractList.isLoading$.value &&
-      this.abstractList.isMoreToShow()
-    ) {
-      this.abstractList.loadMoreData();
-    }
   }
 }

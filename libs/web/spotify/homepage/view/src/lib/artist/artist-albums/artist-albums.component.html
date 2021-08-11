@@ -1,8 +1,6 @@
 <h2>{{ artist?.name }}</h2>
 
-<artur-ba-lazy-scroll>
-  <artur-ba-card-list
-    [strategy]="getStrategy()"
-    [viewMode]="CardListViewMode.ALBUM"
-  ></artur-ba-card-list>
-</artur-ba-lazy-scroll>
+<artur-ba-card-lazy-list
+  [strategy]="getStrategy()"
+  [viewMode]="CardListViewMode.ALBUM"
+></artur-ba-card-lazy-list>

@@ -41,6 +41,9 @@ export class AbstractLazyListComponent<T, R> implements OnInit {
   }
 
   loadMoreData(): void {
+    if (this.isLoading$.value) {
+      return;
+    }
     this.isLoading$.next(true);
     this.getMoreData();
   }

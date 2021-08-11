@@ -6,17 +6,10 @@ import {
   SpotifySearchDataService,
 } from '@artur-ba/web/spotify/shared/service';
 
-export abstract class CardListStrategy<T, R> {
-  abstract getData(
-    requestParam: R,
-    pagination: PaginationInterface,
-  ): Promise<SpotifyApi.PagingObject<T>>;
-
-  abstract getRequestParams(): R;
-}
+import { AbstractLazyListStrategy } from '../../lazy-scroll/abstract-lazy-list/abstract-lazy-list.strategy';
 
 export class ArtistAlbumCardListStrategy
-  implements CardListStrategy<SpotifyApi.AlbumObjectSimplified, string>
+  implements AbstractLazyListStrategy<SpotifyApi.AlbumObjectSimplified, string>
 {
   constructor(
     protected readonly route: ActivatedRoute,
@@ -36,7 +29,7 @@ export class ArtistAlbumCardListStrategy
 }
 
 export abstract class SearchCardListStrategy<T>
-  implements CardListStrategy<T, string>
+  implements AbstractLazyListStrategy<T, string>
 {
   constructor(protected readonly route: ActivatedRoute) {}
 

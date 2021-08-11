@@ -4,3 +4,8 @@
     [data]="data"
   ></artur-ba-dynamic-card-list>
 </artur-ba-card-wrapper>
+
+<artur-ba-lazy-scroll
+  [isLoading$]="isLoading$"
+  (loadMore)="loadMoreData()"
+></artur-ba-lazy-scroll>
