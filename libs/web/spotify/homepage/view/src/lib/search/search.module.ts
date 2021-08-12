@@ -14,6 +14,7 @@ import { SearchComponent } from './search/search.component';
 import { SearchInputComponent } from './search-input/search-input.component';
 import { SearchPlaylistComponent } from './search-playlist/search-playlist.component';
 import { SearchRoutingModule } from './search.routing';
+import { SearchTrackComponent } from './search-track/search-track.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SearchRoutingModule } from './search.routing';
     SearchAlbumComponent,
     SearchInputComponent,
     SearchPlaylistComponent,
+    SearchTrackComponent,
   ],
   imports: [
     CommonModule,

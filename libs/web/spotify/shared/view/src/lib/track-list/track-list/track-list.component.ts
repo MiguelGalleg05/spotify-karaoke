@@ -16,6 +16,13 @@ export enum TrackListColumns {
   time = 'Time',
 }
 
+export const TrackListColumnsDefault = [
+  TrackListColumns.image,
+  TrackListColumns.title_artist,
+  TrackListColumns.album,
+  TrackListColumns.time,
+];
+
 @Component({
   selector: 'artur-ba-track-list',
   templateUrl: './track-list.component.html',
@@ -24,12 +31,7 @@ export enum TrackListColumns {
 export class TrackListComponent implements OnChanges {
   @Input() title: string;
   @Input() header = true;
-  @Input() columns: TrackListColumns[] = [
-    TrackListColumns.image,
-    TrackListColumns.title_artist,
-    TrackListColumns.album,
-    TrackListColumns.time,
-  ];
+  @Input() columns: TrackListColumns[] = TrackListColumnsDefault;
   @Input() tracksUri: string[] = [];
   @Input() tracks: SpotifyApi.TrackObjectFull[] = [];
 

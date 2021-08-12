@@ -6,7 +6,10 @@ import {
   SpotifySearchDataService,
 } from '@artur-ba/web/spotify/shared/service';
 
-import { AbstractLazyListStrategy } from '../../lazy-scroll/abstract-lazy-list/abstract-lazy-list.strategy';
+import {
+  AbstractLazyListStrategy,
+  SearchCardListStrategy,
+} from '../../lazy-scroll/abstract-lazy-list/abstract-lazy-list.strategy';
 
 export class ArtistAlbumCardListStrategy
   implements AbstractLazyListStrategy<SpotifyApi.AlbumObjectSimplified, string>
@@ -25,21 +28,6 @@ export class ArtistAlbumCardListStrategy
 
   getRequestParams(): string {
     return this.route.snapshot.params.uri;
-  }
-}
-
-export abstract class SearchCardListStrategy<T>
-  implements AbstractLazyListStrategy<T, string>
-{
-  constructor(protected readonly route: ActivatedRoute) {}
-
-  abstract getData(
-    requestParam: string,
-    pagination: PaginationInterface,
-  ): Promise<SpotifyApi.PagingObject<T>>;
-
-  getRequestParams(): string {
-    return this.route.snapshot.queryParams.q;
   }
 }
 

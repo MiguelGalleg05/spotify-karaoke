@@ -4,9 +4,13 @@ import {
   PaginationInterface,
   SpotifyAlbumDataService,
   SpotifyPlaylistDataService,
+  SpotifySearchDataService,
 } from '@artur-ba/web/spotify/shared/service';
 
-import { AbstractLazyListStrategy } from '../../lazy-scroll/abstract-lazy-list/abstract-lazy-list.strategy';
+import {
+  AbstractLazyListStrategy,
+  SearchCardListStrategy,
+} from '../../lazy-scroll/abstract-lazy-list/abstract-lazy-list.strategy';
 
 export abstract class TrackUriLazyListStrategy<
   T,
@@ -62,5 +66,25 @@ export class PlaylistTrackLazyListStrategy extends TrackUriLazyListStrategy<Spot
     );
     const items = response.items.map((playlistTrack) => playlistTrack.track);
     return Promise.resolve({ ...response, items });
+  }
+}
+
+export class SearchTrackLazyListStrategy extends SearchCardListStrategy<SpotifyApi.TrackObjectFull> {
+  constructor(
+    protected readonly route: ActivatedRoute,
+    protected readonly spotifySearchData: SpotifySearchDataService,
+  ) {
+    super(route);
+  }
+
+  async getData(
+    requestParam: string,
+    pagination: PaginationInterface,
+  ): Promise<SpotifyApi.PagingObject<SpotifyApi.TrackObjectFull>> {
+    const response = await this.spotifySearchData.getSearchTrackResult(
+      requestParam,
+      pagination,
+    );
+    return Promise.resolve(response.tracks);
   }
 }

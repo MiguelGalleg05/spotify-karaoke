@@ -59,4 +59,29 @@ export class SpotifySearchDataService {
       )
       .toPromise();
   }
+
+  /**
+   * Get the search track results for a given query.
+   * @param query The search query.
+   * @param pagination The pagination parameters.
+   * @returns A Promise that resolves to the search results.
+   */
+  getSearchTrackResult(
+    q: string,
+    pagination?: PaginationInterface,
+  ): Promise<SpotifyApi.TrackSearchResponse> {
+    let params = new HttpParams()
+      .append('q', encodeURI(q))
+      .append('type', 'track');
+    params = SpotifyDataService.appendPaginationParams(params, pagination);
+
+    return this.httpClient
+      .get<SpotifyApi.TrackSearchResponse>(
+        SpotifyDataService.SpotifyApiBaseURL + 'search',
+        {
+          params,
+        },
+      )
+      .toPromise();
+  }
 }

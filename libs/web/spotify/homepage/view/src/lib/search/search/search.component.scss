@@ -1,1 +1,14 @@
 @import 'mixins';
+
+.search--track {
+  div {
+    display: flex;
+    justify-content: space-between;
+    margin: $margin-s;
+
+    span {
+      font-size: x-large;
+      font-weight: bold;
+    }
+  }
+}

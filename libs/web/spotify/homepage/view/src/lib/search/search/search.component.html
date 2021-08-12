@@ -1,5 +1,20 @@
 <artur-ba-search-input (search)="search($event)"></artur-ba-search-input>
 
+<div class="search--track">
+  <div>
+    <span>{{ trackWrapperTitle }}</span>
+    <a
+      routerLink="tracks"
+      [queryParams]="queryParams"
+      i18n="card-wrapper.view-more"
+      >View more</a
+    >
+  </div>
+  <artur-ba-track-list
+    [tracks]="trackSearchResult?.tracks.items"
+  ></artur-ba-track-list>
+</div>
+
 <artur-ba-card-wrapper-with-content
   [title]="albumsWrapperTitle"
   [singleLine]="true"

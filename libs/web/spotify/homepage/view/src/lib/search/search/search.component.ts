@@ -11,12 +11,14 @@ import { SpotifySearchDataService } from '@artur-ba/web/spotify/shared/service';
 export class SearchComponent {
   albumSearchResult: SpotifyApi.AlbumSearchResponse;
   playlistSearchResult: SpotifyApi.PlaylistSearchResponse;
+  trackSearchResult: SpotifyApi.TrackSearchResponse;
   queryParams = { q: '' };
 
   readonly CardListViewMode = CardListViewMode;
 
   readonly albumsWrapperTitle = $localize`:search.albumsWrapper:Albums`;
   readonly playlistWrapperTitle = $localize`:search.playlistsWrapper:Playlists`;
+  readonly trackWrapperTitle = $localize`:search.trackWrapper:Tracks`;
 
   constructor(protected readonly spotifySearchData: SpotifySearchDataService) {}
 
@@ -27,9 +29,9 @@ export class SearchComponent {
     );
     this.playlistSearchResult =
       await this.spotifySearchData.getSearchPlaylistResult(searchQuery);
-  }
-
-  getAlbumsWrapperTitle(): string {
-    return this.albumsWrapperTitle;
+    this.trackSearchResult = await this.spotifySearchData.getSearchTrackResult(
+      searchQuery,
+      { limit: 5, offset: 0, total: null },
+    );
   }
 }
