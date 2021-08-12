@@ -1,3 +1,18 @@
+# [0.6.0](https://github.com/ArturBa/spotify-karaoke/compare/v0.5.0...v0.6.0) (2021-08-12)
+
+### Bug Fixes
+
+- Add a login authorization info ([#159](https://github.com/ArturBa/spotify-karaoke/issues/159)) ([030ab72](https://github.com/ArturBa/spotify-karaoke/commit/030ab72dbbce6af59584dcd13d5d6125ae09538d))
+- **components:** :lipstick: Card wrapper single line height ([#174](https://github.com/ArturBa/spotify-karaoke/issues/174)) ([162ed6d](https://github.com/ArturBa/spotify-karaoke/commit/162ed6da53486e97881a65435874eb9046498c04))
+- **interceptor:** :bug: Fix refresh token login in interceptor ([#175](https://github.com/ArturBa/spotify-karaoke/issues/175)) ([185446a](https://github.com/ArturBa/spotify-karaoke/commit/185446ac8166ec3a1f405fdbd1ce16be1b96d725))
+- **shared:** :bug: Remove duplicate user country requests ([#178](https://github.com/ArturBa/spotify-karaoke/issues/178)) ([35bedfe](https://github.com/ArturBa/spotify-karaoke/commit/35bedfef8705eef9ac61447d41a0db141a581916))
+
+### Features
+
+- **spotify:** :sparkles: Add a device selection ([#168](https://github.com/ArturBa/spotify-karaoke/issues/168)) ([5159c07](https://github.com/ArturBa/spotify-karaoke/commit/5159c078c95195dcbac76244e16935e54ebf347f))
+- **spotify:** :sparkles: Add track search ([#184](https://github.com/ArturBa/spotify-karaoke/issues/184)) ([36ff3b6](https://github.com/ArturBa/spotify-karaoke/commit/36ff3b6a5884182853c993c3abc0398085f15277))
+- **spotify:** :sparkles: Add user playlists on sidebar ([#176](https://github.com/ArturBa/spotify-karaoke/issues/176)) ([076d5a2](https://github.com/ArturBa/spotify-karaoke/commit/076d5a2e870efeeb3b9dad47b49439c186afd443))
+
 # [0.5.0](https://github.com/ArturBa/spotify-karaoke/compare/v0.4.0...v0.5.0) (2021-07-27)
 
 ### Bug Fixes
