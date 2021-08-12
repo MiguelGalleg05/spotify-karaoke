@@ -16,8 +16,8 @@
     </a>
   </div>
 
-  <artur-ba-song-list
-    [tracks]="albumTracks?.items"
+  <artur-ba-song-lazy-list
     [columns]="columns"
-  ></artur-ba-song-list>
+    [strategy]="getStrategy()"
+  ></artur-ba-song-lazy-list>
 </div>

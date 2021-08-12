@@ -20,6 +20,7 @@ export class AbstractLazyListComponent<T, R> implements OnInit {
   protected pagination = {} as PaginationInterface;
 
   ngOnInit(): void {
+    this.clearData();
     this.initRequestParams();
     this.initData();
   }
@@ -35,17 +36,22 @@ export class AbstractLazyListComponent<T, R> implements OnInit {
     return this.strategy.getRequestParams();
   }
 
-  isMoreToShow(): boolean {
-    const { total, offset, limit } = this.pagination;
-    return total > offset + limit;
-  }
-
   loadMoreData(): void {
-    if (this.isLoading$.value) {
+    if (this.isLoading$.value || !this.isMoreToShow()) {
       return;
     }
     this.isLoading$.next(true);
     this.getMoreData();
+  }
+
+  protected clearData(): void {
+    this.data = [];
+    this.isLoading$.next(true);
+  }
+
+  protected isMoreToShow(): boolean {
+    const { total, offset, limit } = this.pagination;
+    return total > offset + limit;
   }
 
   protected initRequestParams(): void {

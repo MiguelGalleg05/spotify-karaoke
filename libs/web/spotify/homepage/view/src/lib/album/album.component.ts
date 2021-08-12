@@ -1,8 +1,11 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component } from '@angular/core';
 
+import {
+  SongAlbumLazyListStrategy,
+  TrackListColumns,
+} from '@artur-ba/web/spotify/shared/view';
 import { SpotifyAlbumDataService } from '@artur-ba/web/spotify/shared/service';
-import { TrackListColumns } from '@artur-ba/web/spotify/shared/view';
 
 import { AbstractUriViewComponent } from '../abstract-uri-view/abstract-uri-view.component';
 
@@ -12,7 +15,6 @@ import { AbstractUriViewComponent } from '../abstract-uri-view/abstract-uri-view
   styleUrls: ['./album.component.scss'],
 })
 export class AlbumComponent extends AbstractUriViewComponent {
-  albumTracks: SpotifyApi.AlbumTracksResponse;
   album: SpotifyApi.AlbumObjectFull;
   readonly columns: TrackListColumns[] = [
     TrackListColumns.count,
@@ -21,14 +23,18 @@ export class AlbumComponent extends AbstractUriViewComponent {
   ];
 
   constructor(
-    protected route: ActivatedRoute,
-    protected spotifyAlbumData: SpotifyAlbumDataService,
+    protected readonly route: ActivatedRoute,
+    protected readonly spotifyAlbumData: SpotifyAlbumDataService,
   ) {
     super(route);
   }
 
   protected async getUriData(albumUri: string): Promise<void> {
-    this.albumTracks = await this.spotifyAlbumData.getAlbumTracks(albumUri);
+    // this.albumTracks = await this.spotifyAlbumData.getAlbumTracks(albumUri);
     this.album = await this.spotifyAlbumData.getAlbum(albumUri);
+  }
+
+  getStrategy(): SongAlbumLazyListStrategy {
+    return new SongAlbumLazyListStrategy(this.route, this.spotifyAlbumData);
   }
 }

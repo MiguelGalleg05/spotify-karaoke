@@ -32,11 +32,16 @@ export class SpotifyPlaylistDataService {
    */
   getPlaylistTracks(
     playlistUri: string,
+    pagination?: PaginationInterface,
   ): Promise<SpotifyApi.PlaylistTrackResponse> {
+    let params = new HttpParams();
+    params = SpotifyDataService.appendPaginationParams(params, pagination);
+
     return this.httpClient
       .get<SpotifyApi.PlaylistTrackResponse>(
         SpotifyDataService.SpotifyApiBaseURL +
           `playlists/${playlistUri}/tracks`,
+        { params },
       )
       .toPromise();
   }

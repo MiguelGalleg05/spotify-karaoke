@@ -1,8 +1,12 @@
+import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Component } from '@angular/core';
 
+import {
+  SongLazyListComponent,
+  SongPlaylistLazyListStrategy,
+  TrackListColumns,
+} from '@artur-ba/web/spotify/shared/view';
 import { SpotifyPlaylistDataService } from '@artur-ba/web/spotify/shared/service';
-import { TrackListColumns } from '@artur-ba/web/spotify/shared/view';
 
 import { AbstractUriViewComponent } from '../abstract-uri-view/abstract-uri-view.component';
 
@@ -21,23 +25,25 @@ export class PlaylistComponent extends AbstractUriViewComponent {
     TrackListColumns.time,
   ];
 
+  @ViewChild(SongLazyListComponent)
+  protected songLazyList: SongLazyListComponent;
+
   constructor(
-    protected route: ActivatedRoute,
-    protected spotifyPlaylistData: SpotifyPlaylistDataService,
+    protected readonly route: ActivatedRoute,
+    protected readonly spotifyPlaylistData: SpotifyPlaylistDataService,
   ) {
     super(route);
   }
 
   protected async getUriData(playlistUri: string): Promise<void> {
-    this.playlistTracks = await this.spotifyPlaylistData.getPlaylistTracks(
-      playlistUri,
-    );
     this.playlist = await this.spotifyPlaylistData.getPlaylist(playlistUri);
+    this.songLazyList.ngOnInit();
   }
 
-  getTracks(): SpotifyApi.TrackObjectFull[] {
-    return this.playlistTracks?.items.map(
-      (playlistTrack) => playlistTrack.track,
+  getStrategy(): SongPlaylistLazyListStrategy {
+    return new SongPlaylistLazyListStrategy(
+      this.route,
+      this.spotifyPlaylistData,
     );
   }
 }

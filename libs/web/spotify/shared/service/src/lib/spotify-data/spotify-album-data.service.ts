@@ -1,7 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { SpotifyDataService } from './spotify-data.service';
+import {
+  PaginationInterface,
+  SpotifyDataService,
+} from './spotify-data.service';
 
 @Injectable({
   providedIn: 'root',
@@ -14,10 +17,17 @@ export class SpotifyAlbumDataService {
    * @param albumUri
    * @returns Promise
    */
-  getAlbumTracks(albumUri: string): Promise<SpotifyApi.AlbumTracksResponse> {
+  getAlbumTracks(
+    albumUri: string,
+    pagination?: PaginationInterface,
+  ): Promise<SpotifyApi.AlbumTracksResponse> {
+    let params = new HttpParams();
+    params = SpotifyDataService.appendPaginationParams(params, pagination);
+
     return this.httpClient
       .get<SpotifyApi.AlbumTracksResponse>(
         SpotifyDataService.SpotifyApiBaseURL + `albums/${albumUri}/tracks`,
+        { params },
       )
       .toPromise();
   }

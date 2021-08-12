@@ -8,3 +8,5 @@ export { CardListViewMode } from './lib/card/dynamic-card-list/dynamic-card-list
 export { CardLazyListComponent } from './lib/card/card-lazy-list/card-lazy-list.component';
 export * from './lib/card/card-lazy-list/card-lazy-list.strategy';
 export { TrackListColumns } from './lib/song-list/song-list/song-list.component';
+export * from './lib/song-list/song-lazy-list/song-lazy-list.strategy';
+export { SongLazyListComponent } from './lib/song-list/song-lazy-list/song-lazy-list.component';
