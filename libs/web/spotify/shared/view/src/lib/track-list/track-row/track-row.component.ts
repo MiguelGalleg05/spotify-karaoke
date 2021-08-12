@@ -2,14 +2,14 @@ import { Component, Input } from '@angular/core';
 
 import { TrackHelper } from '@artur-ba/web/spotify/shared/helper';
 
-import { TrackListColumns } from '../song-list/song-list.component';
+import { TrackListColumns } from '../track-list/track-list.component';
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
-  selector: '[artur-ba-song-row]',
-  templateUrl: './song-row.component.html',
-  styleUrls: ['./song-row.component.scss'],
+  selector: '[artur-ba-track-row]',
+  templateUrl: './track-row.component.html',
+  styleUrls: ['./track-row.component.scss'],
 })
-export class SongRowComponent {
+export class TrackRowComponent {
   @Input() track: SpotifyApi.TrackObjectFull;
   @Input() columns: TrackListColumns[];
 

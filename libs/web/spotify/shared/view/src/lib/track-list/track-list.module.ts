@@ -6,14 +6,14 @@ import { ImageModule } from '../image/image.module';
 import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
 import { WebSpotifySharedPipeModule } from '@artur-ba/web/spotify/shared/pipe';
 
-import { SongLazyListComponent } from './song-lazy-list/song-lazy-list.component';
-import { SongListComponent } from './song-list/song-list.component';
-import { SongRowComponent } from './song-row/song-row.component';
+import { TrackLazyListComponent } from './track-lazy-list/track-lazy-list.component';
+import { TrackListComponent } from './track-list/track-list.component';
+import { TrackRowComponent } from './track-row/track-row.component';
 
-const exports = [SongListComponent, SongLazyListComponent];
+const exports = [TrackListComponent, TrackLazyListComponent];
 
 @NgModule({
-  declarations: [...exports, SongRowComponent],
+  declarations: [...exports, TrackRowComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([]),
@@ -23,4 +23,4 @@ const exports = [SongListComponent, SongLazyListComponent];
   ],
   exports,
 })
-export class SongListModule {}
+export class TrackListModule {}

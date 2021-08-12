@@ -8,7 +8,7 @@ import {
 
 import { AbstractLazyListStrategy } from '../../lazy-scroll/abstract-lazy-list/abstract-lazy-list.strategy';
 
-export abstract class SongUriLazyListStrategy<
+export abstract class TrackUriLazyListStrategy<
   T,
 > extends AbstractLazyListStrategy<T, string> {
   constructor(protected readonly route: ActivatedRoute) {
@@ -25,7 +25,7 @@ export abstract class SongUriLazyListStrategy<
   }
 }
 
-export class SongAlbumLazyListStrategy extends SongUriLazyListStrategy<SpotifyApi.TrackObjectFull> {
+export class AlbumTrackLazyListStrategy extends TrackUriLazyListStrategy<SpotifyApi.TrackObjectFull> {
   constructor(
     protected readonly route: ActivatedRoute,
     protected readonly spotifyAlbumData: SpotifyAlbumDataService,
@@ -44,7 +44,7 @@ export class SongAlbumLazyListStrategy extends SongUriLazyListStrategy<SpotifyAp
   }
 }
 
-export class SongPlaylistLazyListStrategy extends SongUriLazyListStrategy<SpotifyApi.TrackObjectFull> {
+export class PlaylistTrackLazyListStrategy extends TrackUriLazyListStrategy<SpotifyApi.TrackObjectFull> {
   constructor(
     protected readonly route: ActivatedRoute,
     protected readonly spotifyPlaylistData: SpotifyPlaylistDataService,

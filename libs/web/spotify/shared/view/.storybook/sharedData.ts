@@ -50,3 +50,11 @@ export const playlist = {
   owner: { display_name: 'Guns and Roses' },
   uri: 'playlist/3I9Z1nDCL4E0cP62flcbI5',
 };
+
+export const track = {
+  track_number: 9,
+  name: 'Welcome to the Jungle',
+  album,
+  artists,
+  duration_ms: 251003,
+};

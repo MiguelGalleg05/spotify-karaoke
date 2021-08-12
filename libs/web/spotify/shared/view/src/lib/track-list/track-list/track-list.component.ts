@@ -17,11 +17,11 @@ export enum TrackListColumns {
 }
 
 @Component({
-  selector: 'artur-ba-song-list',
-  templateUrl: './song-list.component.html',
-  styleUrls: ['./song-list.component.scss'],
+  selector: 'artur-ba-track-list',
+  templateUrl: './track-list.component.html',
+  styleUrls: ['./track-list.component.scss'],
 })
-export class SongListComponent implements OnChanges {
+export class TrackListComponent implements OnChanges {
   @Input() title: string;
   @Input() header = true;
   @Input() columns: TrackListColumns[] = [

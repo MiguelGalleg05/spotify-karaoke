@@ -2,7 +2,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Component } from '@angular/core';
 
 import {
-  SongAlbumLazyListStrategy,
+  AlbumTrackLazyListStrategy,
   TrackListColumns,
 } from '@artur-ba/web/spotify/shared/view';
 import { SpotifyAlbumDataService } from '@artur-ba/web/spotify/shared/service';
@@ -34,7 +34,7 @@ export class AlbumComponent extends AbstractUriViewComponent {
     this.album = await this.spotifyAlbumData.getAlbum(albumUri);
   }
 
-  getStrategy(): SongAlbumLazyListStrategy {
-    return new SongAlbumLazyListStrategy(this.route, this.spotifyAlbumData);
+  getStrategy(): AlbumTrackLazyListStrategy {
+    return new AlbumTrackLazyListStrategy(this.route, this.spotifyAlbumData);
   }
 }

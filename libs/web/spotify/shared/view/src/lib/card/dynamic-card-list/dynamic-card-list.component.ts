@@ -21,7 +21,6 @@ export enum CardListViewMode {
   ALBUM = 'Album',
   PLAYLIST = 'Playlist',
 }
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const viewModeMap = new Map<
   CardListViewMode,
   Type<CardDecoratorComponent<any>>

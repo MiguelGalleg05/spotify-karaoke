@@ -5,21 +5,21 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ImageModule } from '../../image/image.module';
 import { WebSpotifySharedPipeModule } from '@artur-ba/web/spotify/shared/pipe';
 
-import { album, artists } from '../../../../.storybook/sharedData';
-import { SongListComponent, TrackListColumns } from './song-list.component';
-import { SongRowComponent } from '../song-row/song-row.component';
+import { TrackListColumns, TrackListComponent } from './track-list.component';
+import { track } from '../../../../.storybook/sharedData';
+import { TrackRowComponent } from '../track-row/track-row.component';
 
 export default {
-  title: 'SongList/SongList',
-  component: SongListComponent,
+  title: 'TrackList/TrackList',
+  component: TrackListComponent,
   decorators: [
     moduleMetadata({
-      declarations: [SongListComponent, SongRowComponent],
+      declarations: [TrackListComponent, TrackRowComponent],
       imports: [
         ImageModule,
         HttpClientTestingModule,
         RouterTestingModule.withRoutes([
-          { path: '**', component: SongListComponent },
+          { path: '**', component: TrackListComponent },
         ]),
         WebSpotifySharedPipeModule,
       ],
@@ -37,7 +37,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<SongListComponent> = (args) => ({
+const Template: Story<TrackListComponent> = (args) => ({
   props: {
     ...args,
   },
@@ -45,15 +45,7 @@ const Template: Story<SongListComponent> = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  tracks: [
-    {
-      track_number: 9,
-      name: 'Welcome to the Jungle',
-      album,
-      artists,
-      duration_ms: 251003,
-    },
-  ],
+  tracks: [track],
 };
 
 export const CustomColumns = Template.bind({});

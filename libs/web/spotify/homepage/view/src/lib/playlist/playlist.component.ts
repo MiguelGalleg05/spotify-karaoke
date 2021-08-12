@@ -2,8 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import {
-  SongLazyListComponent,
-  SongPlaylistLazyListStrategy,
+  PlaylistTrackLazyListStrategy,
+  TrackLazyListComponent,
   TrackListColumns,
 } from '@artur-ba/web/spotify/shared/view';
 import { SpotifyPlaylistDataService } from '@artur-ba/web/spotify/shared/service';
@@ -25,8 +25,8 @@ export class PlaylistComponent extends AbstractUriViewComponent {
     TrackListColumns.time,
   ];
 
-  @ViewChild(SongLazyListComponent)
-  protected songLazyList: SongLazyListComponent;
+  @ViewChild(TrackLazyListComponent)
+  protected songLazyList: TrackLazyListComponent;
 
   constructor(
     protected readonly route: ActivatedRoute,
@@ -40,8 +40,8 @@ export class PlaylistComponent extends AbstractUriViewComponent {
     this.songLazyList.ngOnInit();
   }
 
-  getStrategy(): SongPlaylistLazyListStrategy {
-    return new SongPlaylistLazyListStrategy(
+  getStrategy(): PlaylistTrackLazyListStrategy {
+    return new PlaylistTrackLazyListStrategy(
       this.route,
       this.spotifyPlaylistData,
     );

@@ -6,6 +6,6 @@ describe('web-spotify-shared-view', () => {
   );
 
   it('should render the component', () => {
-    cy.get('artur-ba-song-list').should('exist');
+    cy.get('artur-ba-track-list').should('exist');
   });
 });
