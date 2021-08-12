@@ -67,7 +67,7 @@ describe('SpotifyTokenInterceptor', () => {
     it('should try to refresh token if 401 returned (timeout of login)', inject(
       [AuthStore],
       (authStore: AuthStore) => {
-        spyOn<any>(authStore, 'refreshToken');
+        jest.spyOn(authStore, 'refreshToken');
         httpClient.get(spotifyApiUrl + 'foo').subscribe();
 
         httpMock
@@ -83,7 +83,7 @@ describe('SpotifyTokenInterceptor', () => {
     it('should redirect to login page if 401 returned (timeout of login)', inject(
       [Router],
       (router: Router) => {
-        spyOn(router, 'navigate');
+        jest.spyOn(router, 'navigate');
         httpClient.get(spotifyApiUrl + 'foo').subscribe();
 
         httpMock
@@ -96,7 +96,7 @@ describe('SpotifyTokenInterceptor', () => {
     it('should redirect to login page if 403 returned (timeout of login)', inject(
       [Router],
       (router: Router) => {
-        spyOn(router, 'navigate');
+        jest.spyOn(router, 'navigate');
         httpClient.get(spotifyApiUrl + 'foo').subscribe();
 
         httpMock

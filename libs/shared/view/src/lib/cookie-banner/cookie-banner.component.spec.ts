@@ -23,7 +23,7 @@ describe('CookieBannerComponent', () => {
     expect(component).toBeTruthy();
   });
   it('should emit event when button pressed', () => {
-    spyOn(component, 'handleCookiesAccept');
+    jest.spyOn(component, 'handleCookiesAccept');
 
     const acceptButton = fixture.debugElement.query(By.css('button'));
     acceptButton.nativeElement.click();
