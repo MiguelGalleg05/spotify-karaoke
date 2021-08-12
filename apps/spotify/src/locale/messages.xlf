@@ -34,11 +34,25 @@
         </context-group>
         <note priority="1" from="description">login.authorize</note>
       </trans-unit>
+      <trans-unit id="f29c55965ec5f5ac846d05c145120d93bd862679" datatype="html">
+        <source>Please wait for authorization</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/spotify/src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="83882e627df6018d9b114edec05458c7524d9eb1" datatype="html">
+        <source> If you are stuck on this page please check if you are not blocking any requests (for example: PrivacyBadger) </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/spotify/src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">18,20</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="31c5377e1c1aeac73f408b4efb7bcb3331635de7" datatype="html">
         <source> This page is not available on mobile devices </source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/spotify/src/app/login/login/login.component.html</context>
-          <context context-type="linenumber">18,19</context>
+          <context context-type="linenumber">25,26</context>
         </context-group>
         <note priority="1" from="description">login.mobile-not-available</note>
       </trans-unit>
@@ -254,7 +268,7 @@
           <context context-type="linenumber">3</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/song-list/song-row/song-row.component.html</context>
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/track-list/track-row/track-row.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
         <note priority="1" from="description">album.cover-image</note>
@@ -271,11 +285,11 @@
         <source>Albums</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/artist/artist/artist.component.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">22</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/search/search/search.component.ts</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">19</context>
         </context-group>
         <note priority="1" from="description">artist.albums</note>
       </trans-unit>
@@ -333,6 +347,10 @@
           <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/search/search-album/search-album.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/search/search-track/search-track.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
         <note priority="1" from="description">search-album.title</note>
       </trans-unit>
       <trans-unit id="9d94ce4ce6ea23810b2c349fbf1ee1dc16263e82" datatype="html">
@@ -367,13 +385,33 @@
         </context-group>
         <note priority="1" from="description">search-playlist.title</note>
       </trans-unit>
+      <trans-unit id="d16921d5730ab167b76a03076899e6e5e34fc94e" datatype="html">
+        <source>View more</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/search/search/search.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/card/card-wrapper/card-wrapper.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">card-wrapper.view-more</note>
+      </trans-unit>
       <trans-unit id="1823843876735462104" datatype="html">
         <source>Playlists</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/search/search/search.component.ts</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">20</context>
         </context-group>
         <note priority="1" from="description">search.playlistsWrapper</note>
+      </trans-unit>
+      <trans-unit id="1575810254412583888" datatype="html">
+        <source>Tracks</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/search/search/search.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">search.trackWrapper</note>
       </trans-unit>
       <trans-unit id="680d5c75b7fd8d37961083608b9fcdc4167b4c43" datatype="html">
         <source>Previous</source>
@@ -419,6 +457,14 @@
         </context-group>
         <note priority="1" from="description">player-control.current-song-time</note>
       </trans-unit>
+      <trans-unit id="2dfefa9ac6b049deda26edd04052b5d30e6ca1d3" datatype="html">
+        <source>Available devices</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/player/view/src/lib/player-settings/player-available-devices/player-available-devices.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">player-available-devices.available-devices</note>
+      </trans-unit>
       <trans-unit id="91f9d49fca8f40714f2dda92688a0a05197f0bd6" datatype="html">
         <source>Queue</source>
         <context-group purpose="location">
@@ -427,23 +473,15 @@
         </context-group>
         <note priority="1" from="description">player-settings.queue</note>
       </trans-unit>
-      <trans-unit id="bac7d1e842d64a498c01fb03841862a8b6c4009a" datatype="html">
-        <source>not available now</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/player/view/src/lib/player-settings/player-settings.component.html</context>
-          <context context-type="linenumber">7</context>
-        </context-group>
-        <note priority="1" from="description">not-available</note>
-      </trans-unit>
       <trans-unit id="7be9877f3b1042bfc095c728acb0dbeb9c6e8205" datatype="html">
         <source>Mute</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/player/view/src/lib/player-settings/player-settings.component.html</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">10</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/player/view/src/lib/player-settings/player-settings.component.html</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">19</context>
         </context-group>
         <note priority="1" from="description">player-settings.mute</note>
       </trans-unit>
@@ -451,7 +489,7 @@
         <source>Device is muted</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/player/view/src/lib/player-settings/player-settings.component.html</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">27</context>
         </context-group>
         <note priority="1" from="description">player-settings.muted</note>
       </trans-unit>
@@ -459,7 +497,7 @@
         <source>current volume</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/player/view/src/lib/player-settings/player-settings.component.html</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">34</context>
         </context-group>
         <note priority="1" from="description">player-settings.current-volume</note>
       </trans-unit>
@@ -470,14 +508,6 @@
           <context context-type="linenumber">16</context>
         </context-group>
         <note priority="1" from="description">album-card-decorator.image-alt</note>
-      </trans-unit>
-      <trans-unit id="d16921d5730ab167b76a03076899e6e5e34fc94e" datatype="html">
-        <source>View more</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/card/card-wrapper/card-wrapper.component.html</context>
-          <context context-type="linenumber">8</context>
-        </context-group>
-        <note priority="1" from="description">card-wrapper.view-more</note>
       </trans-unit>
       <trans-unit id="5834128069219150995" datatype="html">
         <source>Card image</source>
@@ -511,35 +541,35 @@
         </context-group>
         <note priority="1" from="description">spotify-image.alt</note>
       </trans-unit>
-      <trans-unit id="e03195f820710af690edc050a8ab83cfab45c0dc" datatype="html">
+      <trans-unit id="331a8b29a6279535217620fabb680525ed346627" datatype="html">
         <source> # </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/song-list/song-list/song-list.component.html</context>
-          <context context-type="linenumber">8,9</context>
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/track-list/track-list/track-list.component.html</context>
+          <context context-type="linenumber">10,11</context>
         </context-group>
         <note priority="1" from="description">song-list.count</note>
       </trans-unit>
-      <trans-unit id="2d1f1227b320ce44dcd91c16c95bfe977daec9f8" datatype="html">
+      <trans-unit id="a05f8de596bd417ba08e9d95c41098e202ec26fc" datatype="html">
         <source> Title </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/song-list/song-list/song-list.component.html</context>
-          <context context-type="linenumber">22,23</context>
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/track-list/track-list/track-list.component.html</context>
+          <context context-type="linenumber">24,25</context>
         </context-group>
         <note priority="1" from="description">song-list.title</note>
       </trans-unit>
-      <trans-unit id="20de1e9241fb2a520cf3910b17bec829e2ddec5b" datatype="html">
+      <trans-unit id="af5b92c372b2fdd32aff0774a9cd9823255577b4" datatype="html">
         <source> Album </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/song-list/song-list/song-list.component.html</context>
-          <context context-type="linenumber">30,31</context>
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/track-list/track-list/track-list.component.html</context>
+          <context context-type="linenumber">32,33</context>
         </context-group>
         <note priority="1" from="description">song-list.album</note>
       </trans-unit>
-      <trans-unit id="57ddc7ccc8d0f6b5c1e144007251b4a6b66ba59a" datatype="html">
+      <trans-unit id="379f276661a040130233451d8d21be8ee26727d8" datatype="html">
         <source> Time </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/song-list/song-list/song-list.component.html</context>
-          <context context-type="linenumber">38,39</context>
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/track-list/track-list/track-list.component.html</context>
+          <context context-type="linenumber">40,41</context>
         </context-group>
         <note priority="1" from="description">song-list.time</note>
       </trans-unit>
@@ -634,7 +664,7 @@
         <source> Home </source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/sidebar/view/src/lib/sidebar/sidebar.component.html</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">8</context>
         </context-group>
         <note priority="1" from="description">sidebar.home</note>
       </trans-unit>
@@ -642,7 +672,7 @@
         <source> Search </source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/sidebar/view/src/lib/sidebar/sidebar.component.html</context>
-          <context context-type="linenumber">11</context>
+          <context context-type="linenumber">12</context>
         </context-group>
         <note priority="1" from="description">sidebar.search</note>
       </trans-unit>
@@ -650,9 +680,16 @@
         <source> Lyrics </source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/sidebar/view/src/lib/sidebar/sidebar.component.html</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">16</context>
         </context-group>
         <note priority="1" from="description">sidebar.lyrics</note>
+      </trans-unit>
+      <trans-unit id="99b3b35b0d4d7327af83f7714ff9987799108069" datatype="html">
+        <source>Yours playlists</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/sidebar/view/src/lib/user-playlist/user-playlist/user-playlist.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
       </trans-unit>
     </body>
   </file>
