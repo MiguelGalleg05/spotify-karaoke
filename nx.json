@@ -12,7 +12,7 @@
   "npmScope": "artur-ba",
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
         "cacheableOperations": [
           "build",
@@ -20,7 +20,8 @@
           "test",
           "e2e",
           "build-storybook"
-        ]
+        ],
+        "accessToken": "ZDQzMjgyYzQtYzQ1OS00ZmZjLTk2YjAtZGU1ZmNmZGEwM2MzfHJlYWQtd3JpdGU="
       }
     }
   },
