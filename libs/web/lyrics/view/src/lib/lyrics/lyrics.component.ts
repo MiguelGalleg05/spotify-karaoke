@@ -57,7 +57,11 @@ export class LyricsComponent implements OnInit, OnDestroy {
         this.track.name,
         this.track.artists[0].name,
       );
-      const sortedByDownload = lyricsList.children.sort(
+      const lcrEnd = /.*\.lrc$/;
+      const lcrLyrics = lyricsList.children.filter((lyrics) =>
+        lcrEnd.test(lyrics.link),
+      );
+      const sortedByDownload = lcrLyrics.sort(
         (a: LyricsItem, b: LyricsItem) => b.downloads - a.downloads,
       );
       const foundLyricAlbum = sortedByDownload.find(
