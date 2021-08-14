@@ -1,10 +1,14 @@
-<td class="count" *ngIf="columns.includes(songListColumns.count)">
+<td class="count">
   <strong>
-    {{ track?.track_number }}
+    {{ count + 1 }}
   </strong>
+  <artur-ba-play-button
+    [style]="PlayButtonStyle.ICON"
+    [context]="getPlayContext()"
+  ></artur-ba-play-button>
 </td>
 
-<td class="image" *ngIf="columns.includes(songListColumns.image)">
+<td class="image" *ngIf="columns.includes(TrackListColumns.image)">
   <artur-ba-spotify-image
     [images]="track?.album.images"
     alt="Album cover"
@@ -12,7 +16,10 @@
   ></artur-ba-spotify-image>
 </td>
 
-<td class="title-artist" *ngIf="columns.includes(songListColumns.title_artist)">
+<td
+  class="title-artist"
+  *ngIf="columns.includes(TrackListColumns.title_artist)"
+>
   <strong>
     {{ track?.name }}
   </strong>
@@ -20,18 +27,19 @@
     <a
       *ngFor="let artist of track?.artists; let l = last"
       [routerLink]="'/artist/' + artist.uri | clearUriData"
+      (click)="$event.stopPropagation()"
     >
       {{ artist.name | addComa: !l }}
     </a>
   </span>
 </td>
 
-<td class="album" *ngIf="columns.includes(songListColumns.album)">
+<td class="album" *ngIf="columns.includes(TrackListColumns.album)">
   <a [routerLink]="'/album/' + track?.album.uri | clearUriData">
     {{ track?.album.name }}
   </a>
 </td>
 
-<td class="time" *ngIf="columns.includes(songListColumns.time)">
+<td class="time" *ngIf="columns.includes(TrackListColumns.time)">
   {{ track?.duration_ms | trackTime: true }}
 </td>

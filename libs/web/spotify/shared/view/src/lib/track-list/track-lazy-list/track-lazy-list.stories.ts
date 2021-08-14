@@ -1,16 +1,21 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { RouterTestingModule } from '@angular/router/testing';
 
+import {
+  SpotifyDataService,
+  SpotifyPlayerService,
+} from '@artur-ba/web/spotify/shared/service';
 import { AbstractLazyListStrategy } from '../../lazy-scroll/abstract-lazy-list/abstract-lazy-list.strategy';
 import { ImageModule } from '../../image/image.module';
 import { LazyScrollModule } from '../../lazy-scroll/lazy-scroll.module';
-import { SpotifyDataService } from '@artur-ba/web/spotify/shared/service';
+import { PlayModule } from '../../play/play.module';
 import { WebSpotifySharedPipeModule } from '@artur-ba/web/spotify/shared/pipe';
 
 import {
   TrackListColumns,
   TrackListComponent,
 } from '../track-list/track-list.component';
+import { SpotifyPlayerServiceMock } from '../../../../.storybook/sharedMock';
 import { track } from '../../../../.storybook/sharedData';
 import { TrackLazyListComponent } from './track-lazy-list.component';
 import { TrackRowComponent } from '../track-row/track-row.component';
@@ -22,14 +27,21 @@ export default {
     moduleMetadata({
       declarations: [TrackListComponent, TrackRowComponent],
       imports: [
-        ImageModule,
-        WebSpotifySharedPipeModule,
-        LazyScrollModule,
         RouterTestingModule.withRoutes([
           { path: '**', component: TrackLazyListComponent },
         ]),
+        ImageModule,
+        PlayModule,
+        WebSpotifySharedPipeModule,
+        LazyScrollModule,
       ],
-      providers: [{ provide: SpotifyDataService, useValue: {} }],
+      providers: [
+        { provide: SpotifyDataService, useValue: {} },
+        {
+          provide: SpotifyPlayerService,
+          useClass: SpotifyPlayerServiceMock,
+        },
+      ],
     }),
   ],
   argTypes: {

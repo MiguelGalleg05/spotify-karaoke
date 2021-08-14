@@ -16,4 +16,5 @@ export class TrackLazyListComponent extends AbstractLazyListComponent<
   string
 > {
   @Input() columns: TrackListColumns[] = TrackListColumnsDefault;
+  @Input() context_uri: string;
 }

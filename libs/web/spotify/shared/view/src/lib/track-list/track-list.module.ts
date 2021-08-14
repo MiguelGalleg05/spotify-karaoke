@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { ImageModule } from '../image/image.module';
 import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
+import { PlayModule } from '../play/play.module';
 import { WebSpotifySharedPipeModule } from '@artur-ba/web/spotify/shared/pipe';
 
 import { TrackLazyListComponent } from './track-lazy-list/track-lazy-list.component';
@@ -17,6 +18,7 @@ const exports = [TrackListComponent, TrackLazyListComponent];
   imports: [
     CommonModule,
     RouterModule.forChild([]),
+    PlayModule,
     ImageModule,
     LazyScrollModule,
     WebSpotifySharedPipeModule,

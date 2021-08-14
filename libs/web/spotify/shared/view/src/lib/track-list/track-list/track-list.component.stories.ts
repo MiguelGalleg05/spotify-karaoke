@@ -3,9 +3,12 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { ImageModule } from '../../image/image.module';
+import { PlayModule } from '../../play/play.module';
+import { SpotifyPlayerService } from '@artur-ba/web/spotify/shared/service';
 import { WebSpotifySharedPipeModule } from '@artur-ba/web/spotify/shared/pipe';
 
 import { TrackListColumns, TrackListComponent } from './track-list.component';
+import { SpotifyPlayerServiceMock } from '../../../../.storybook/sharedMock';
 import { track } from '../../../../.storybook/sharedData';
 import { TrackRowComponent } from '../track-row/track-row.component';
 
@@ -16,12 +19,19 @@ export default {
     moduleMetadata({
       declarations: [TrackListComponent, TrackRowComponent],
       imports: [
-        ImageModule,
         HttpClientTestingModule,
         RouterTestingModule.withRoutes([
           { path: '**', component: TrackListComponent },
         ]),
+        ImageModule,
+        PlayModule,
         WebSpotifySharedPipeModule,
+      ],
+      providers: [
+        {
+          provide: SpotifyPlayerService,
+          useClass: SpotifyPlayerServiceMock,
+        },
       ],
     }),
   ],
@@ -51,9 +61,5 @@ Default.args = {
 export const CustomColumns = Template.bind({});
 CustomColumns.args = {
   ...Default.args,
-  columns: [
-    TrackListColumns.count,
-    TrackListColumns.album,
-    TrackListColumns.image,
-  ],
+  columns: [TrackListColumns.album, TrackListColumns.image],
 };

@@ -17,7 +17,6 @@ import { AbstractUriViewComponent } from '../abstract-uri-view/abstract-uri-view
 export class AlbumComponent extends AbstractUriViewComponent {
   album: SpotifyApi.AlbumObjectFull;
   readonly columns: TrackListColumns[] = [
-    TrackListColumns.count,
     TrackListColumns.title_artist,
     TrackListColumns.time,
   ];

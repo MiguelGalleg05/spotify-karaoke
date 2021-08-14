@@ -1,7 +1,23 @@
 @import '../styles/shared-track-list';
 
 :host {
+  cursor: pointer;
+
   &:hover {
     background-color: var(--bg-d20);
+    .count {
+      strong {
+        display: none;
+      }
+      artur-ba-play-button {
+        display: block;
+      }
+    }
+  }
+
+  .count {
+    artur-ba-play-button {
+      display: none;
+    }
   }
 }

@@ -11,7 +11,7 @@
   <button mat-mini-fab *ngSwitchCase="PlayButtonStyle.ROUND" color="primary">
     <mat-icon>play_arrow</mat-icon>
   </button>
-  <button mat-icon-button *ngSwitchCase="PlayButtonStyle.ICON" color="primary">
-    <mat-icon>play_arrow</mat-icon>
-  </button>
+  <mat-icon *ngSwitchCase="PlayButtonStyle.ICON" color="primary">
+    play_arrow
+  </mat-icon>
 </ng-container>

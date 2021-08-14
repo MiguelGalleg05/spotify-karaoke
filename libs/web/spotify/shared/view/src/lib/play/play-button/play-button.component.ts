@@ -14,14 +14,14 @@ export enum PlayButtonStyle {
   styleUrls: ['./play-button.component.scss'],
 })
 export class PlayButtonComponent {
-  @Input() context_uri: string;
+  @Input() context: SpotifyApi.PlayParameterObject;
   @Input() style = PlayButtonStyle.SQUARE;
 
   readonly PlayButtonStyle = PlayButtonStyle;
 
   @HostListener('click', ['$event']) onPlayClick($event: MouseEvent) {
-    $event.stopPropagation();
-    this.context_uri && this.spotifyPlayer.playContext(this.context_uri);
+    $event?.stopPropagation();
+    this.context && this.spotifyPlayer.play(this.context);
   }
 
   constructor(protected readonly spotifyPlayer: SpotifyPlayerService) {}

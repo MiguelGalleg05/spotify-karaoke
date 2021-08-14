@@ -9,7 +9,6 @@ import {
 import { SpotifyDataService } from '@artur-ba/web/spotify/shared/service';
 
 export enum TrackListColumns {
-  count = 'Count',
   image = 'Image',
   title_artist = 'Title_Artist',
   album = 'Album',
@@ -34,8 +33,9 @@ export class TrackListComponent implements OnChanges {
   @Input() columns: TrackListColumns[] = TrackListColumnsDefault;
   @Input() tracksUri: string[] = [];
   @Input() tracks: SpotifyApi.TrackObjectFull[] = [];
+  @Input() context_uri: string;
 
-  readonly songListColumns = TrackListColumns;
+  readonly TrackListColumns = TrackListColumns;
 
   constructor(protected spotifyData: SpotifyDataService) {}
 

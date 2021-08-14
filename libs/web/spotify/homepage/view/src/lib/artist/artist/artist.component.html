@@ -10,10 +10,15 @@
       {{ artist?.name }}
     </h2>
 
-    <artur-ba-play-button [context_uri]="artist?.uri"></artur-ba-play-button>
+    <artur-ba-play-button
+      [context]="{ context_uri: artist?.uri }"
+    ></artur-ba-play-button>
   </div>
 
-  <artur-ba-track-list [tracks]="artistTracks?.tracks"></artur-ba-track-list>
+  <artur-ba-track-list
+    [tracks]="artistTracks?.tracks"
+    [context_uri]="artist?.uri"
+  ></artur-ba-track-list>
 </div>
 <div class="albums">
   <artur-ba-card-wrapper-with-content

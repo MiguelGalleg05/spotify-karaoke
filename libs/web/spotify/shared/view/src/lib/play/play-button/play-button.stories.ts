@@ -32,7 +32,9 @@ const Template: Story<PlayButtonComponent> = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  context_uri: 'spotify:album:0rkFxZHJhYGKi5qJjZxq',
+  context: {
+    context_uri: 'spotify:album:0rkFxZHJhYGKi5qJjZxq',
+  },
 };
 
 export const Round = Template.bind({});

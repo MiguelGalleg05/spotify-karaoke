@@ -1,8 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input, ViewChild } from '@angular/core';
 
-import { TrackHelper } from '@artur-ba/web/spotify/shared/helper';
+import {
+  PlayButtonComponent,
+  PlayButtonStyle,
+} from '../../play/play-button/play-button.component';
 
 import { TrackListColumns } from '../track-list/track-list.component';
+
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: '[artur-ba-track-row]',
@@ -10,10 +14,27 @@ import { TrackListColumns } from '../track-list/track-list.component';
   styleUrls: ['./track-row.component.scss'],
 })
 export class TrackRowComponent {
+  @Input() count: number;
   @Input() track: SpotifyApi.TrackObjectFull;
   @Input() columns: TrackListColumns[];
+  @Input() context: SpotifyApi.PlayParameterObject;
 
-  readonly songListColumns = TrackListColumns;
+  readonly PlayButtonStyle = PlayButtonStyle;
 
-  readonly trackHelper = TrackHelper;
+  readonly TrackListColumns = TrackListColumns;
+
+  @ViewChild(PlayButtonComponent) playButtonComponent: PlayButtonComponent;
+
+  @HostListener('click', ['$event']) onClick(event: MouseEvent) {
+    this.playButtonComponent.onPlayClick(null);
+  }
+
+  getPlayContext(): SpotifyApi.PlayParameterObject {
+    return this.context?.context_uri
+      ? this.context
+      : {
+          context_uri: this.track?.album?.uri,
+          offset: { position: this.track?.track_number },
+        };
+  }
 }

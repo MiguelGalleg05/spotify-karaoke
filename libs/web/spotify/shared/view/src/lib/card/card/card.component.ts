@@ -13,7 +13,7 @@ export class CardComponent {
   @Input() title: string;
   @Input() subtitle: string;
   @Input() redirectUrl: string;
-  @Input() context_uri: string;
+  @Input() context: SpotifyApi.PlayParameterObject;
 
   readonly PlayButtonStyle = PlayButtonStyle;
 

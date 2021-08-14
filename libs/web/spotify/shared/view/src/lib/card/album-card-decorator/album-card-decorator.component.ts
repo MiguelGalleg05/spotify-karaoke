@@ -15,7 +15,7 @@ export class AlbumCardDecoratorComponent extends CardDecoratorComponent<SpotifyA
     this.title = this.data.name;
     this.subtitle = this.getAlbumReleaseYear();
     this.redirectUrl = `album/${UriDataHelper.getClearUri(this.data.uri)}`;
-    this.context_uri = this.data.uri;
+    this.context = { context_uri: this.data.uri };
   }
 
   protected getAlbumReleaseYear(): string {

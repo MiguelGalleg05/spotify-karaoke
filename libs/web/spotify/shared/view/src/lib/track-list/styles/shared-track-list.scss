@@ -6,7 +6,9 @@ th {
 }
 
 .count {
-  width: 2ch;
+  width: calc(3ex + #{$padding-xs} * 2);
+  overflow: visible;
+  text-align: end;
 }
 
 $image-size: 50px;
