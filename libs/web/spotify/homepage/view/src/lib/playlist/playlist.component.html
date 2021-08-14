@@ -3,13 +3,13 @@
     <artur-ba-spotify-image
       [images]="playlist?.images"
       alt="Playlist cover"
-      i18n-alt="playlist.cover"
+      i18n-alt
     ></artur-ba-spotify-image>
     <h2>
       {{ playlist?.name }}
     </h2>
     <div class="owner">
-      <span i18n="playlist.by"> By </span>
+      <span i18n> By </span>
       <a>{{ playlist?.owner.display_name }} </a>
     </div>
     <artur-ba-play-button

@@ -1,38 +1,23 @@
 <a mat-icon-button routerLink="/queue" alt="Music queue">
-  <mat-icon matTooltip="Queue" i18n-matTooltip="player-settings.queue">
-    queue_music
-  </mat-icon>
+  <mat-icon matTooltip="Queue" i18n-matTooltip> queue_music </mat-icon>
 </a>
 <artur-ba-player-available-devices></artur-ba-player-available-devices>
 <button mat-icon-button *ngIf="isLoud() && !isMute()">
-  <mat-icon
-    (click)="mute()"
-    matTooltip="Mute"
-    i18n-matTooltip="player-settings.mute"
-  >
+  <mat-icon (click)="mute()" matTooltip="Mute" i18n-matTooltip>
     volume_up
   </mat-icon>
 </button>
 <button mat-icon-button *ngIf="!isLoud() && !isMute()">
-  <mat-icon
-    (click)="mute()"
-    matTooltip="Mute"
-    i18n-matTooltip="player-settings.mute"
-  >
+  <mat-icon (click)="mute()" matTooltip="Mute" i18n-matTooltip>
     volume_down
   </mat-icon>
 </button>
 <button mat-icon-button *ngIf="isMute()">
-  <mat-icon
-    matTooltip="Device is muted"
-    i18n-matTooltip="player-settings.muted"
-  >
-    volume_off
-  </mat-icon>
+  <mat-icon matTooltip="Device is muted" i18n-matTooltip> volume_off </mat-icon>
 </button>
 <mat-slider
   aria-label="current volume"
-  i18n-aria-label="player-settings.current-volume"
+  i18n-aria-label
   [value]="volume * 100"
   (valueChange)="handleVolumeChange($event)"
   color="primary"

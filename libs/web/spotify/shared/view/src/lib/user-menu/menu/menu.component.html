@@ -1,22 +1,17 @@
 <div class="user">
   <button mat-stroked-button [matMenuTriggerFor]="menu">
-    <span i18n="user-menu.hi">Hi</span>
+    <span i18n>Hi</span>
     <span *ngIf="user?.display_name">
       {{ user?.display_name }}
     </span>
-    <span i18n="user-menu.user-name" *ngIf="!user?.display_name"
-      >&nbsp;there</span
-    >
-    <mat-icon
-      aria-hidden="false"
-      i18n-aria-label="user-menu.open-menu"
-      aria-label="Open menu"
+    <span i18n>&nbsp;there</span>
+    <mat-icon aria-hidden="false" i18n-aria-label aria-label="Open menu"
       >arrow_drop_down</mat-icon
     >
   </button>
   <mat-menu #menu="matMenu" xPosition="before" yPosition="below">
     <button mat-menu-item (click)="toggleDarkMode()" class="menu-item">
-      <span i18n="user-menu.toggle-mode">Mode</span>
+      <span i18n>Mode</span>
       <mat-icon aria-hidden="false" aria-label="light mode" *ngIf="darkMode"
         >light_mode</mat-icon
       >
@@ -24,31 +19,19 @@
         >dark_mode</mat-icon
       >
     </button>
-    <button
-      mat-menu-item
-      i18n="user-menu.app-info"
-      (click)="openInfoDialog()"
-      class="menu-item"
-    >
+    <button mat-menu-item i18n (click)="openInfoDialog()" class>
       App info
     </button>
     <button
       mat-menu-item
       App
       Info
-      i18n="user-menu.hotkeys"
+      i18n
       (click)="openHotKeyDialog()"
       class="menu-item"
     >
       Open hotkeys
     </button>
-    <button
-      mat-menu-item
-      i18n="user-menu.logout"
-      (click)="logout()"
-      class="menu-item"
-    >
-      Log out
-    </button>
+    <button mat-menu-item i18n (click)="logout()" class>Log out</button>
   </mat-menu>
 </div>

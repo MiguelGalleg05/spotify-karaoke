@@ -3,12 +3,7 @@
 <div class="search--track">
   <div>
     <span>{{ trackWrapperTitle }}</span>
-    <a
-      routerLink="tracks"
-      [queryParams]="queryParams"
-      i18n="card-wrapper.view-more"
-      >View more</a
-    >
+    <a routerLink="tracks" [queryParams]="queryParams" i18n>View more</a>
   </div>
   <artur-ba-track-list
     [tracks]="trackSearchResult?.tracks.items"

@@ -2,7 +2,7 @@
   <button
     mat-icon-button
     aria-label="Previous"
-    i18n-aria-label="player-control.previous"
+    i18n-aria-label
     (click)="prevTrack()"
   >
     <mat-icon>skip_previous</mat-icon>
@@ -10,7 +10,7 @@
   <button
     mat-mini-fab
     color="primary"
-    i18n-aria-label="player-control.play"
+    i18n-aria-label
     aria-label="Play"
     *ngIf="paused"
     (click)="play()"
@@ -21,7 +21,7 @@
     mat-mini-fab
     color="primary"
     aria-label="Pause"
-    i18n-aria-label="player-control.pause"
+    i18n-aria-label
     *ngIf="!paused"
     (click)="pause()"
   >
@@ -30,7 +30,7 @@
   <button
     mat-icon-button
     aria-label="Next"
-    i18n-aria-label="player-control.next"
+    i18n-aria-label
     (click)="nextTrack()"
   >
     <mat-icon>skip_next</mat-icon>
@@ -40,7 +40,7 @@
   {{ (progress$ | async) / 1000 | trackTime }}
   <mat-slider
     aria-label="current song time"
-    i18n-aria-label="player-control.current-song-time"
+    i18n-aria-label
     [value]="progress$ | async"
     [max]="max"
     (valueChange)="handleSeek($event)"

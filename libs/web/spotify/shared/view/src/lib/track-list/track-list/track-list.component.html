@@ -2,35 +2,27 @@
 <table>
   <thead>
     <tr>
-      <th class="count" i18n="song-list.count">#</th>
+      <th class="count" i18n>#</th>
 
       <th
         class="image"
         *ngIf="columns.includes(TrackListColumns.image)"
-        i18n="song-list.image"
+        i18n
       ></th>
 
       <th
         class="title-artist"
         *ngIf="columns.includes(TrackListColumns.title_artist)"
-        i18n="song-list.title"
+        i18n
       >
         Title
       </th>
 
-      <th
-        class="album"
-        *ngIf="columns.includes(TrackListColumns.album)"
-        i18n="song-list.album"
-      >
+      <th class="album" *ngIf="columns.includes(TrackListColumns.album)" i18n>
         Album
       </th>
 
-      <th
-        class="time"
-        *ngIf="columns.includes(TrackListColumns.time)"
-        i18n="song-list.time"
-      >
+      <th class="time" *ngIf="columns.includes(TrackListColumns.time)" i18n>
         Time
       </th>
     </tr>

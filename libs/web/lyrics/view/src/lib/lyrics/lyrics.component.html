@@ -1,4 +1,4 @@
-<h1 i18n="lyrics.header">Lyrics</h1>
+<h1 i18n>Lyrics</h1>
 
 <artur-ba-lyrics-text
   *ngIf="lyrics && !searching"
@@ -7,10 +7,10 @@
 ></artur-ba-lyrics-text>
 
 <div class="user-notify" *ngIf="!lyrics && !searching">
-  <span i18n="lyrics.could-not-find"> Couldn't find a right text :< </span>
+  <span i18n> Couldn't find a right text :< </span>
 </div>
 
 <div *ngIf="searching" class="user-notify">
   <mat-spinner diameter="300" strokeWidth="20"> </mat-spinner>
-  <span i18n="lyrics.searching"> Looking for a lyrics </span>
+  <span i18n> Looking for a lyrics </span>
 </div>
