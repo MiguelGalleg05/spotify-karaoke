@@ -4,7 +4,7 @@
     <span *ngIf="user?.display_name">
       {{ user?.display_name }}
     </span>
-    <span i18n>&nbsp;there</span>
+    <span i18n *ngIf="!user?.display_name">&nbsp;there</span>
     <mat-icon aria-hidden="false" i18n-aria-label aria-label="Open menu"
       >arrow_drop_down</mat-icon
     >

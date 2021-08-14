@@ -1,8 +1,12 @@
 @import 'mixins';
+@import 'media-queries';
 
 :host {
   & > * {
     margin-right: $margin-s;
+    @include lt-lg {
+      margin-right: 0;
+    }
   }
   display: flex;
 
@@ -10,4 +14,7 @@
   align-items: center;
   justify-content: flex-end;
   margin-right: $margin-m;
+  @include lt-lg {
+    margin-right: $margin-xs;
+  }
 }

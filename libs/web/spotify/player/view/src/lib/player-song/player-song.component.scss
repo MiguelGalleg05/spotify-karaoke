@@ -1,4 +1,5 @@
 @import 'mixins';
+@import 'media-queries';
 
 :host {
   display: flex;
@@ -6,12 +7,19 @@
   justify-content: flex-start;
 }
 artur-ba-spotify-image {
-  margin-left: $margin-m;
   @include square_img($image64);
+  margin-left: $margin-m;
+  @include lt-lg {
+    margin-left: $margin-xs;
+  }
 }
 .song-data {
-  margin-left: $margin-m;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  margin-left: $margin-m;
+  @include lt-lg {
+    margin-left: $margin-xs;
+  }
 }
