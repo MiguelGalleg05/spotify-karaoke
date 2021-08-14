@@ -1,14 +1,30 @@
 @import 'mixins';
 
+$play-button-position: 160px;
+
 mat-card {
   width: $card-width;
   height: $card-height;
   overflow: hidden;
   cursor: pointer;
   background-color: var(--bg-d5);
+  position: relative;
 
   &:hover {
     background-color: var(--bg-d10);
+
+    artur-ba-play-button {
+      opacity: 1;
+    }
+  }
+
+  artur-ba-play-button {
+    position: absolute;
+    top: $play-button-position;
+    left: $play-button-position;
+
+    opacity: 0;
+    @include transition(opacity, 0.1s, ease-out);
   }
 
   artur-ba-spotify-image {

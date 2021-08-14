@@ -13,7 +13,7 @@ import { AbstractUriViewComponent } from '../abstract-uri-view/abstract-uri-view
 @Component({
   selector: 'artur-ba-playlist',
   templateUrl: './playlist.component.html',
-  styleUrls: ['./playlist.component.scss'],
+  styleUrls: ['../../../styles/details.scss'],
 })
 export class PlaylistComponent extends AbstractUriViewComponent {
   playlistTracks: SpotifyApi.PlaylistTrackResponse;

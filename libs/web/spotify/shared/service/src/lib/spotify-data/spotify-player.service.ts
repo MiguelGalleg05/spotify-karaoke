@@ -44,4 +44,35 @@ export class SpotifyPlayerService {
       .put<void>(SpotifyDataService.SpotifyApiBaseURL + 'me/player', context)
       .toPromise();
   }
+
+  /**
+   * PUT https://api.spotify.com/v1/me/player
+   * @param context_uri
+   * @returns Promise
+   */
+  playContext(context_uri): Promise<void> {
+    const context = { context_uri };
+    return this.httpClient
+      .put<void>(
+        SpotifyDataService.SpotifyApiBaseURL + 'me/player/play',
+        context,
+      )
+      .toPromise();
+  }
+
+  /**
+   * PUT https://api.spotify.com/v1/me/player/play
+   * @param uri
+   * @returns Promise
+   */
+  playUri(uri: string | string[]): Promise<void> {
+    uri = Array.isArray(uri) ? uri : [uri];
+    const context = { uris: uri };
+    return this.httpClient
+      .put<void>(
+        SpotifyDataService.SpotifyApiBaseURL + 'me/player/play',
+        context,
+      )
+      .toPromise();
+  }
 }

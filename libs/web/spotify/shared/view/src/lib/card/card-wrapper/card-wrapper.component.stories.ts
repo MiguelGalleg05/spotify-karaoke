@@ -2,10 +2,14 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { MatCardModule } from '@angular/material/card';
 import { RouterTestingModule } from '@angular/router/testing';
 
+import { SpotifyPlayerService } from '@artur-ba/web/spotify/shared/service';
+
 import * as CardComponentStories from '../card/card.component.stories';
 import { CardComponent } from '../card/card.component';
 import { CardWrapperComponent } from './card-wrapper.component';
 import { ImageModule } from '../../image/image.module';
+import { PlayModule } from '../../play/play.module';
+import { SpotifyPlayerServiceMock } from '../../../../.storybook/sharedMock';
 
 export default {
   component: CardWrapperComponent,
@@ -14,10 +18,17 @@ export default {
       declarations: [CardWrapperComponent, CardComponent],
       imports: [
         ImageModule,
+        PlayModule,
         MatCardModule,
         RouterTestingModule.withRoutes([
           { path: '**', component: CardWrapperComponent },
         ]),
+      ],
+      providers: [
+        {
+          provide: SpotifyPlayerService,
+          useClass: SpotifyPlayerServiceMock,
+        },
       ],
     }),
   ],
@@ -46,6 +57,7 @@ const Template: Story<CardWrapperComponent> = (args) => ({
       [title]="cardValue.title"
       [subtitle]="cardValue.subtitle"
       [redirectUrl]="cardValue.redirectUrl"
+      [context_uri]="cardValue.context_uri"
     >
     </artur-ba-card>
   </artur-ba-card-wrapper>

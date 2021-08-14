@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { CardModule } from './card/card.module';
 import { ImageModule } from './image/image.module';
 import { LazyScrollModule } from './lazy-scroll/lazy-scroll.module';
+import { PlayModule } from './play/play.module';
 import { TrackListModule } from './track-list/track-list.module';
 import { UserMenuModule } from './user-menu/user-menu.module';
 
@@ -13,6 +14,7 @@ const exportModules = [
   TrackListModule,
   UserMenuModule,
   ImageModule,
+  PlayModule,
 ];
 
 @NgModule({

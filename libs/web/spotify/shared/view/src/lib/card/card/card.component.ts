@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { PlayButtonStyle } from '../../play/play-button/play-button.component';
+
 @Component({
   selector: 'artur-ba-card',
   templateUrl: './card.component.html',
@@ -11,6 +13,9 @@ export class CardComponent {
   @Input() title: string;
   @Input() subtitle: string;
   @Input() redirectUrl: string;
+  @Input() context_uri: string;
+
+  readonly PlayButtonStyle = PlayButtonStyle;
 
   protected _cardImageAlt = $localize`:card.image-alt:Card image`;
 

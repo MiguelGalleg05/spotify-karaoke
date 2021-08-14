@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="playlist-data">
+  <div class="data">
     <artur-ba-spotify-image
       [images]="playlist?.images"
       alt="Playlist cover"
@@ -8,10 +8,11 @@
     <h2>
       {{ playlist?.name }}
     </h2>
-    <div class="playlist-owner">
+    <div class="owner">
       <span i18n="playlist.by"> By </span>
       <a>{{ playlist?.owner.display_name }} </a>
     </div>
+    <artur-ba-play-button [context_uri]="playlist.uri"></artur-ba-play-button>
   </div>
 
   <artur-ba-track-lazy-list

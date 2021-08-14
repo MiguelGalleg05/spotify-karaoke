@@ -1,0 +1,17 @@
+<ng-container [ngSwitch]="style">
+  <button
+    *ngSwitchCase="PlayButtonStyle.SQUARE"
+    mat-flat-button
+    color="primary"
+    class="play--square-button"
+  >
+    <mat-icon>play_arrow</mat-icon>
+    <span i18n>Play</span>
+  </button>
+  <button mat-mini-fab *ngSwitchCase="PlayButtonStyle.ROUND" color="primary">
+    <mat-icon>play_arrow</mat-icon>
+  </button>
+  <button mat-icon-button *ngSwitchCase="PlayButtonStyle.ICON" color="primary">
+    <mat-icon>play_arrow</mat-icon>
+  </button>
+</ng-container>

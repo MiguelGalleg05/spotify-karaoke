@@ -10,3 +10,4 @@ export * from './lib/card/card-lazy-list/card-lazy-list.strategy';
 export { TrackListColumns } from './lib/track-list/track-list/track-list.component';
 export * from './lib/track-list/track-lazy-list/track-lazy-list.strategy';
 export { TrackLazyListComponent } from './lib/track-list/track-lazy-list/track-lazy-list.component';
+export { PlayButtonStyle } from './lib/play/play-button/play-button.component';

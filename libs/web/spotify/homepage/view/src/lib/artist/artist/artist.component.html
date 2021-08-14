@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="artist-data">
+  <div class="data">
     <artur-ba-spotify-image
       [images]="artist?.images"
       alt="Artist image"
@@ -9,6 +9,8 @@
     <h2>
       {{ artist?.name }}
     </h2>
+
+    <artur-ba-play-button [context_uri]="artist?.uri"></artur-ba-play-button>
   </div>
 
   <artur-ba-track-list [tracks]="artistTracks?.tracks"></artur-ba-track-list>

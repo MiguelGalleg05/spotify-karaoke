@@ -3,9 +3,13 @@ import { action } from '@storybook/addon-actions';
 import { MatCardModule } from '@angular/material/card';
 import { RouterTestingModule } from '@angular/router/testing';
 
+import { SpotifyPlayerService } from '@artur-ba/web/spotify/shared/service';
+
 import { images, imagesArray } from '../../../../.storybook/sharedData';
 import { CardComponent } from './card.component';
 import { ImageModule } from '../../image/image.module';
+import { PlayModule } from '../../play/play.module';
+import { SpotifyPlayerServiceMock } from '../../../../.storybook/sharedMock';
 
 export default {
   component: CardComponent,
@@ -14,10 +18,17 @@ export default {
       declarations: [CardComponent],
       imports: [
         ImageModule,
+        PlayModule,
         MatCardModule,
         RouterTestingModule.withRoutes([
           { path: '**', component: CardComponent },
         ]),
+      ],
+      providers: [
+        {
+          provide: SpotifyPlayerService,
+          useClass: SpotifyPlayerServiceMock,
+        },
       ],
     }),
   ],
@@ -41,6 +52,7 @@ Default.args = {
   title: 'Appetite For Destruction',
   subtitle: "Guns N' Roses",
   redirectUrl: 'album/3I9Z1nDCL4E0cP62flcbI5',
+  context_uri: 'spotify:album:3I9Z1nDCL4E0cP62flcbI5',
 };
 
 export const HorizontalImage = Template.bind({});

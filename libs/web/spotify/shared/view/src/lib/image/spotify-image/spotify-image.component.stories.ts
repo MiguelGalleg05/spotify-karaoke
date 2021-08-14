@@ -1,4 +1,5 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
+
 import { imagesArray } from '../../../../.storybook/sharedData';
 import { SpotifyImageComponent } from './spotify-image.component';
 

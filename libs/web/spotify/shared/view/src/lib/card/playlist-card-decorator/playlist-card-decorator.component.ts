@@ -18,5 +18,6 @@ export class PlaylistCardDecoratorComponent extends CardDecoratorComponent<Spoti
     this.title = this.data.name;
     this.subtitle = `${this.ownerPrefix} <em> ${this.data.owner.display_name} </em>`;
     this.redirectUrl = `playlist/${UriDataHelper.getClearUri(this.data.uri)}`;
+    this.context_uri = this.data.uri;
   }
 }

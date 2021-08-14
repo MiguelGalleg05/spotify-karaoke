@@ -22,7 +22,7 @@ export const album = {
   images: imagesArray,
   name: 'Appetite For Destruction',
   release_date: '1998-10-10',
-  uri: 'album/3I9Z1nDCL4E0cP62flcbI5',
+  uri: 'spotify:album:3I9Z1nDCL4E0cP62flcbI5',
 };
 
 export const artist = {
@@ -48,7 +48,7 @@ export const playlist = {
   ],
   name: 'Appetite For Destruction',
   owner: { display_name: 'Guns and Roses' },
-  uri: 'playlist/3I9Z1nDCL4E0cP62flcbI5',
+  uri: 'spotify:playlist:3I9Z1nDCL4E0cP62flcbI5',
 };
 
 export const track = {

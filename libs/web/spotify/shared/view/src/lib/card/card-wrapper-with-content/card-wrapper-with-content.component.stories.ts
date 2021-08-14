@@ -1,12 +1,15 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { RouterTestingModule } from '@angular/router/testing';
 
+import { SpotifyPlayerService } from '@artur-ba/web/spotify/shared/service';
 import { WebSpotifySharedDirectivesModule } from '@artur-ba/web/spotify/shared/directives';
 
 import { album, playlist } from '../../../../.storybook/sharedData';
 import { CardListViewMode } from '../dynamic-card-list/dynamic-card-list.component';
 import { CardModule } from '../card.module';
 import { CardWrapperWithContentComponent } from './card-wrapper-with-content.component';
+import { PlayModule } from '../../play/play.module';
+import { SpotifyPlayerServiceMock } from '../../../../.storybook/sharedMock';
 
 export default {
   component: CardWrapperWithContentComponent,
@@ -14,10 +17,17 @@ export default {
     moduleMetadata({
       imports: [
         CardModule,
+        PlayModule,
         RouterTestingModule.withRoutes([
           { path: '**', component: CardWrapperWithContentComponent },
         ]),
         WebSpotifySharedDirectivesModule,
+      ],
+      providers: [
+        {
+          provide: SpotifyPlayerService,
+          useClass: SpotifyPlayerServiceMock,
+        },
       ],
     }),
   ],

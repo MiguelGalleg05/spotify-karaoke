@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { ImageModule } from '../image/image.module';
 import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
+import { PlayModule } from '../play/play.module';
 import { WebSpotifySharedDirectivesModule } from '@artur-ba/web/spotify/shared/directives';
 
 import { AlbumCardDecoratorComponent } from './album-card-decorator/album-card-decorator.component';
@@ -32,6 +33,7 @@ const exports = [
     MatCardModule,
     RouterModule.forChild([]),
     ImageModule,
+    PlayModule,
     LazyScrollModule,
     WebSpotifySharedDirectivesModule,
   ],

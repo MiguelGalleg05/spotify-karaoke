@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="album-data">
+  <div class="data">
     <artur-ba-spotify-image
       [images]="album?.images"
       alt="Album cover"
@@ -8,12 +8,15 @@
     <h2>
       {{ album?.name }}
     </h2>
-    <a
-      *ngFor="let artist of album?.artists; let l = last"
-      [routerLink]="'/artist/' + artist.uri | clearUriData"
-    >
-      {{ artist.name | addComa: !l }}
-    </a>
+    <div class="owner">
+      <a
+        *ngFor="let artist of album?.artists; let l = last"
+        [routerLink]="'/artist/' + artist.uri | clearUriData"
+      >
+        {{ artist.name | addComa: !l }}
+      </a>
+    </div>
+    <artur-ba-play-button [context_uri]="album?.uri"></artur-ba-play-button>
   </div>
 
   <artur-ba-track-lazy-list

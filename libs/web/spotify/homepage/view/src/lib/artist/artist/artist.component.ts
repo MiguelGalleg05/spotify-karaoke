@@ -11,7 +11,7 @@ import { AbstractUriViewComponent } from '../../abstract-uri-view/abstract-uri-v
 @Component({
   selector: 'artur-ba-artist',
   templateUrl: './artist.component.html',
-  styleUrls: ['./artist.component.scss'],
+  styleUrls: ['../../../../styles/details.scss'],
 })
 export class ArtistComponent extends AbstractUriViewComponent {
   artist: SpotifyApi.SingleArtistResponse;

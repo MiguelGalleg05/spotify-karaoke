@@ -6,15 +6,31 @@
 .row {
   display: flex;
   flex-direction: row;
-  height: 100%;
-  .album-data {
+  max-height: 100%;
+
+  .data {
     display: flex;
     padding: $padding-m;
     align-items: center;
     flex-direction: column;
 
+    h2 {
+      text-align: center;
+    }
+
+    .owner {
+      display: flex;
+      & > * {
+        margin-right: 1ex;
+      }
+    }
+
     artur-ba-spotify-image {
       @include square_img($image300);
+    }
+    artur-ba-play-button {
+      padding-top: $padding-s;
+      width: 70%;
     }
   }
 }
