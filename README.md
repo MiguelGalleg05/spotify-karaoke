@@ -16,6 +16,10 @@ I like to sing along songs and spotify doesn't have a lyrics.
 
 I've tried to implement that for them.
 
+## Preview
+
+![Preview gif](./docs/gif/preview.gif)
+
 ## Used resources
 
 - [minilyrics proxy](https://github.com/olee/minilyrics-proxy). Used to get a lyrics from a MiniLyrics. Thanks for your work
