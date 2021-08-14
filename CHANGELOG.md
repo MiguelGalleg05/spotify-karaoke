@@ -1,3 +1,12 @@
+# [0.7.0](https://github.com/ArturBa/spotify-karaoke/compare/v0.6.0...v0.7.0) (2021-08-14)
+
+### Features
+
+- :lipstick: Add homepage padding on large screens ([#196](https://github.com/ArturBa/spotify-karaoke/issues/196)) ([9177aae](https://github.com/ArturBa/spotify-karaoke/commit/9177aae32cdeff47fdf7f84d9e5d6f20f5efed53))
+- **lyrics:** :sparkles: Filter lyrics to use only lrc files ([#194](https://github.com/ArturBa/spotify-karaoke/issues/194)) ([55737a5](https://github.com/ArturBa/spotify-karaoke/commit/55737a56364a2a16203ef8abb8fb91e7431091b8))
+- **spotify:** :sparkles: Add play button on track ([#197](https://github.com/ArturBa/spotify-karaoke/issues/197)) ([f5cac99](https://github.com/ArturBa/spotify-karaoke/commit/f5cac99f650199191b86208f5abf8eaa56c9c8a8))
+- **spotify:** :sparkles: Add play on details view ([#195](https://github.com/ArturBa/spotify-karaoke/issues/195)) ([c1a7372](https://github.com/ArturBa/spotify-karaoke/commit/c1a737280adc698bd53dd63e0e798e36426b20ce))
+
 # [0.6.0](https://github.com/ArturBa/spotify-karaoke/compare/v0.5.0...v0.6.0) (2021-08-12)
 
 ### Bug Fixes
