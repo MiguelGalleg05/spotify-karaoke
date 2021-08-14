@@ -27,14 +27,19 @@ artur-ba-player {
 .routing {
   overflow-y: auto;
   height: calc(100% - #{$menu-height});
+  color: var(--text);
+  background-color: var(--bg);
   width: 100%;
 
   &::ng-deep > *:not(router-outlet) {
     display: block;
     width: 100%;
     min-height: 100%;
-    color: var(--text);
-    background-color: var(--bg);
     padding: $padding-m $padding-s;
+
+    @include gt-lg {
+      padding-left: $padding-l;
+      padding-right: $padding-l;
+    }
   }
 }
