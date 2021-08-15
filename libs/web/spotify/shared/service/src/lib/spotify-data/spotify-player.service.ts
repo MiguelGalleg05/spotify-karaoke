@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { PlayerControlService } from '../player-control.service';
 
 import { SpotifyDataService } from './spotify-data.service';
 
@@ -7,7 +8,10 @@ import { SpotifyDataService } from './spotify-data.service';
   providedIn: 'root',
 })
 export class SpotifyPlayerService {
-  constructor(protected readonly httpClient: HttpClient) {}
+  constructor(
+    protected readonly httpClient: HttpClient,
+    protected readonly player: PlayerControlService,
+  ) {}
 
   /**
    * https://api.spotify.com/v1/me/player
@@ -51,6 +55,7 @@ export class SpotifyPlayerService {
    * @returns Promise
    */
   play(context: SpotifyApi.PlayParameterObject): Promise<void> {
+    return this.player.play(context);
     if (!context.context_uri && !context.uris) {
       return Promise.reject(new Error('context_uri or uris are required'));
     }

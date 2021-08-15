@@ -1,0 +1,23 @@
+@mixin artur-ba-overflow($lines: 2) {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  position: relative;
+
+  .artur-ba-overflow-preview {
+    position: absolute;
+    display: none;
+    background-color: var(--bg);
+    border: 2px black solid;
+    &.artur-ba-overflow-preview--visible {
+      display: block;
+    }
+  }
+}
+
+.artur-ba-overflow-2 {
+  @include artur-ba-overflow(2);
+}

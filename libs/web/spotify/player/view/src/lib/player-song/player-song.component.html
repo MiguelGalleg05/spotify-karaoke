@@ -4,11 +4,13 @@
   i18n-alt
 ></artur-ba-spotify-image>
 <div class="song-data">
-  <strong>{{ track?.name }}</strong>
-  <a
-    *ngFor="let artist of track?.artists; let l = last"
-    [routerLink]="'/artist/' + artist.uri | clearUriData"
-  >
-    {{ artist.name | addComa: !l }}
-  </a>
+  <strong arturBaOverflow>{{ track?.name }}</strong>
+  <div arturBaOverflow>
+    <a
+      *ngFor="let artist of track?.artists; let l = last"
+      [routerLink]="'/artist/' + artist.uri | clearUriData"
+    >
+      {{ artist.name | addComa: !l }}
+    </a>
+  </div>
 </div>

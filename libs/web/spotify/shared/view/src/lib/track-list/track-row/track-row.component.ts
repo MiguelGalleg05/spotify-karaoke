@@ -25,7 +25,7 @@ export class TrackRowComponent {
 
   @ViewChild(PlayButtonComponent) playButtonComponent: PlayButtonComponent;
 
-  @HostListener('click', ['$event']) onClick(event: MouseEvent) {
+  @HostListener('click') onClick() {
     this.playButtonComponent.onPlayClick(null);
   }
 
