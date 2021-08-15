@@ -26,7 +26,7 @@ export class MiniLyricsService {
   getLyricsList(title: string, artist: string): Promise<MiniLyricsResponse> {
     const params = new HttpParams({
       fromObject: {
-        title,
+        title: title.split('-')[0],
         artist,
       },
     });
