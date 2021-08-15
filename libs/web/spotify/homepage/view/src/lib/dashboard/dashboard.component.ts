@@ -17,7 +17,18 @@ export class DashboardComponent implements OnInit {
   readonly CardListViewMode = CardListViewMode;
   readonly singAlongTitle = $localize`:dashboard.sing_along:Sing along`;
 
-  protected readonly playlistUrls = ['37i9dQZF1DXc7aGdJ1YSSD'];
+  protected readonly playlistUrls = [
+    '37i9dQZF1DXc7aGdJ1YSSD',
+    '5AAqhBRMIR0kANietc1E7m',
+    '37i9dQZF1DX0mi9kezFJ0K',
+    '37i9dQZF1DX1Mj6nQRkc5p',
+    '37i9dQZF1DWYOkVTse9lln',
+    '37i9dQZF1DX0qVgUFKIZBO',
+    '37i9dQZF1DX2nwuHNKim4S',
+    '37i9dQZF1DX5I05jXm1F2M',
+    '3thDm8iuyZqJJfKOrkglqe',
+    '2WE4CIDzPlvOFlaG2lunze',
+  ];
 
   constructor(
     protected readonly userSettings: UserSettingsService,
