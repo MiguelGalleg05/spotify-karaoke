@@ -17,7 +17,7 @@ export class CountryService {
   readonly countryCodeDefault = 'gb';
   protected countryCode$ = new BehaviorSubject<string>(null);
   protected isInitialized = false;
-  protected readonly countryUrl = 'http://ip-api.com/json';
+  protected readonly countryUrl = 'location/json';
 
   async getUserCountry(): Promise<string> {
     return this.isInitialized

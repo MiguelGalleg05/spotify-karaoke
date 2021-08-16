@@ -14,5 +14,13 @@
       "^/minilyrics": ""
     },
     "changeOrigin": true
+  },
+  "/location/*": {
+    "target": "http://ip-api.com",
+    "secure": false,
+    "pathRewrite": {
+      "^/location": ""
+    },
+    "changeOrigin": true
   }
 }

@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class ProxyInterceptor implements HttpInterceptor {
-  static readonly proxies = ['minilyrics', 'minilyrics-proxy'];
+  static readonly proxies = ['minilyrics', 'minilyrics-proxy', 'location'];
   protected readonly proxiesRegex = ProxyInterceptor.proxies.map(
     (proxy) => new RegExp('^' + proxy),
   );
