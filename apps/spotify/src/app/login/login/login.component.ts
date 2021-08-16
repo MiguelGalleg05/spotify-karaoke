@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { catchError, map, retry, tap } from 'rxjs/operators';
+import { GaActionEnum, GoogleAnalyticsService } from 'ngx-google-analytics';
 import { of, Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
@@ -15,8 +16,9 @@ export class LoginComponent implements OnInit, OnDestroy {
   isSpotifyCallback = false;
 
   constructor(
-    protected authStore: AuthStore,
-    protected route: ActivatedRoute,
+    protected readonly authStore: AuthStore,
+    protected readonly route: ActivatedRoute,
+    protected readonly $gaService: GoogleAnalyticsService,
   ) {}
   protected subscriptions: Subscription[] = [];
 
@@ -34,6 +36,11 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   protected handleSpotifyCallback(): void {
+    this.$gaService.event(
+      GaActionEnum.LOGIN,
+      'Login',
+      'User authorization spotify succeed',
+    );
     this.subscriptions.push(
       this.route.queryParams
         .pipe(
@@ -57,6 +64,11 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   auth(): void {
+    this.$gaService.event(
+      GaActionEnum.LOGIN,
+      'Login',
+      'User authorization spotify called',
+    );
     this.authStore.authorize();
   }
 }
