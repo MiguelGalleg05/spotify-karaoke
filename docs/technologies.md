@@ -1,6 +1,6 @@
 # Technologies
 
-[:arrow_left: Readme](../README.md)
+[:arrow_left: Readme](../README.md#more-details)
 
 ## Product
 

@@ -1,6 +1,6 @@
 # Testing
 
-[:arrow_left: Readme](../README.md)
+[:arrow_left: Readme](../README.md#more-details)
 
 In this project I've used few of popular test approaches depending on the system under the test
 

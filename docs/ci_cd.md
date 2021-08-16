@@ -1,6 +1,6 @@
 # CI/CD
 
-[:arrow_left: Readme](../README.md)
+[:arrow_left: Readme](../README.md#more-details)
 
 There are few steps of a CI/CD process:
 
