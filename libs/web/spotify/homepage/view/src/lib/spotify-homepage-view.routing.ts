@@ -2,11 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { RouterModule, Routes } from '@angular/router';
 
-import { AlbumComponent } from './album/album.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { PlaylistComponent } from './playlist/playlist.component';
-import { QueueComponent } from './queue/queue.component';
 
 export const HOMEPAGE_ROUTES: Routes = [
   {
@@ -14,10 +10,26 @@ export const HOMEPAGE_ROUTES: Routes = [
     component: HomepageComponent,
     children: [
       { path: '', redirectTo: 'dashboard' },
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'queue', component: QueueComponent },
-      { path: 'album/:uri', component: AlbumComponent },
-      { path: 'playlist/:uri', component: PlaylistComponent },
+      {
+        path: 'dashboard',
+        loadChildren: () =>
+          import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+      },
+      {
+        path: 'queue',
+        loadChildren: () =>
+          import('./queue/queue.module').then((m) => m.QueueModule),
+      },
+      {
+        path: 'album/:uri',
+        loadChildren: () =>
+          import('./album/album.module').then((m) => m.AlbumModule),
+      },
+      {
+        path: 'playlist/:uri',
+        loadChildren: () =>
+          import('./playlist/playlist.module').then((m) => m.PlaylistModule),
+      },
       {
         path: 'lyrics',
         loadChildren: () =>

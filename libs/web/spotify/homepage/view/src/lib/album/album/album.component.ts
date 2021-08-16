@@ -7,12 +7,12 @@ import {
 } from '@artur-ba/web/spotify/shared/view';
 import { SpotifyAlbumDataService } from '@artur-ba/web/spotify/shared/service';
 
-import { AbstractUriViewComponent } from '../abstract-uri-view/abstract-uri-view.component';
+import { AbstractUriViewComponent } from '../../abstract-uri-view/abstract-uri-view.component';
 
 @Component({
   selector: 'artur-ba-album',
   templateUrl: './album.component.html',
-  styleUrls: ['../../../styles/details.scss'],
+  styleUrls: ['../../../../styles/details.scss'],
 })
 export class AlbumComponent extends AbstractUriViewComponent {
   album: SpotifyApi.AlbumObjectFull;

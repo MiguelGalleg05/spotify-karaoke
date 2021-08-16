@@ -8,12 +8,12 @@ import {
 } from '@artur-ba/web/spotify/shared/view';
 import { SpotifyPlaylistDataService } from '@artur-ba/web/spotify/shared/service';
 
-import { AbstractUriViewComponent } from '../abstract-uri-view/abstract-uri-view.component';
+import { AbstractUriViewComponent } from '../../abstract-uri-view/abstract-uri-view.component';
 
 @Component({
   selector: 'artur-ba-playlist',
   templateUrl: './playlist.component.html',
-  styleUrls: ['../../../styles/details.scss'],
+  styleUrls: ['../../../../styles/details.scss'],
 })
 export class PlaylistComponent extends AbstractUriViewComponent {
   playlistTracks: SpotifyApi.PlaylistTrackResponse;

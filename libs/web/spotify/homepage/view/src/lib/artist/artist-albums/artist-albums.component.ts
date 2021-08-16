@@ -10,7 +10,6 @@ import { SpotifyArtistDataService } from '@artur-ba/web/spotify/shared/service';
 @Component({
   selector: 'artur-ba-artist-albums',
   templateUrl: './artist-albums.component.html',
-  styleUrls: ['./artist-albums.component.scss'],
 })
 export class ArtistAlbumsComponent implements OnInit {
   artist: SpotifyApi.ArtistObjectFull;
