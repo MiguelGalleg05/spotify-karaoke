@@ -1,3 +1,24 @@
+# [0.8.0](https://github.com/ArturBa/spotify-karaoke/compare/v0.7.0...v0.8.0) (2021-08-16)
+
+### Bug Fixes
+
+- **lyrics:** :bug: Split title to not use '- From...' in lyrics search ([#202](https://github.com/ArturBa/spotify-karaoke/issues/202)) ([4f66956](https://github.com/ArturBa/spotify-karaoke/commit/4f66956a112234d2825b63ed3dfada0a781d0f07))
+- **spotify:** :bug: Use the grid on the player to prevent for moving a track controls ([fb0d26c](https://github.com/ArturBa/spotify-karaoke/commit/fb0d26ce9f1ee28af6950ec43a181b0e32ee29b5))
+
+### Features
+
+- **shared:** :sparkles: Add auth token autorefresh ([#213](https://github.com/ArturBa/spotify-karaoke/issues/213)) ([b2073bb](https://github.com/ArturBa/spotify-karaoke/commit/b2073bb3b08d8a90e0261013ab9097c31c699b49))
+- **shared:** :zap: Use proxy for getting user location ([#210](https://github.com/ArturBa/spotify-karaoke/issues/210)) ([e7d6ee1](https://github.com/ArturBa/spotify-karaoke/commit/e7d6ee140e8ae9622b70c6100e07dd1c618c7827))
+- **spotify:** :sparkles: Add non premium user message ([#204](https://github.com/ArturBa/spotify-karaoke/issues/204)) ([98385bb](https://github.com/ArturBa/spotify-karaoke/commit/98385bbcb567a3c81e2348236b0a9863234f86cb))
+- **spotify:** :sparkles: Add overflow directive ([#203](https://github.com/ArturBa/spotify-karaoke/issues/203)) ([891c3a1](https://github.com/ArturBa/spotify-karaoke/commit/891c3a10f41942b3e8b723b12f6f41d65cf5e19f))
+- **spotify:** :sparkles: Add playlists on homepage ([#201](https://github.com/ArturBa/spotify-karaoke/issues/201)) ([cfd4acf](https://github.com/ArturBa/spotify-karaoke/commit/cfd4acf1e25c3b1f9f43b1fc1f50edc968a939c5))
+- **spotify:** :sparkles: Add recently played and featured playlists on dashboard ([#215](https://github.com/ArturBa/spotify-karaoke/issues/215)) ([57e63c0](https://github.com/ArturBa/spotify-karaoke/commit/57e63c02dbb5006edb2a4d81afe5085e661cb827))
+
+### Performance Improvements
+
+- :zap: Split homepage views into modules for better first load impression ([#211](https://github.com/ArturBa/spotify-karaoke/issues/211)) ([357e414](https://github.com/ArturBa/spotify-karaoke/commit/357e414e7e478c0b32dbfb4937885fe5c2f6462b))
+- **shared:** :chart_with_upwards_trend: Improve google analytics tracking ([#214](https://github.com/ArturBa/spotify-karaoke/issues/214)) ([5493618](https://github.com/ArturBa/spotify-karaoke/commit/54936185fcf22d4b9d0f9f8af7993e68696948f5))
+
 # [0.7.0](https://github.com/ArturBa/spotify-karaoke/compare/v0.6.0...v0.7.0) (2021-08-14)
 
 ### Features
