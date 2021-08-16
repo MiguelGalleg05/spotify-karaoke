@@ -1,8 +1,12 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
+import {
+  SpotifyBrowseService,
+  SpotifyPlayerService,
+  SpotifyPlaylistDataService,
+} from '@artur-ba/web/spotify/shared/service';
 import { CardListViewMode } from '@artur-ba/web/spotify/shared/view';
-import { SpotifyPlaylistDataService } from '@artur-ba/web/spotify/shared/service';
 import { UserSettingsService } from '@artur-ba/shared/service';
 
 @Component({
@@ -13,9 +17,13 @@ import { UserSettingsService } from '@artur-ba/shared/service';
 export class DashboardComponent implements OnInit {
   toggleControl = new FormControl(false);
   playlists: SpotifyApi.PlaylistObjectFull[] = [];
+  featuredPlaylists: SpotifyApi.PlaylistObjectSimplified[] = [];
+  tracks: SpotifyApi.TrackObjectSimplified[] = [];
 
   readonly CardListViewMode = CardListViewMode;
   readonly singAlongTitle = $localize`:dashboard.sing_along:Sing along`;
+  readonly recentlyPlayedTitle = $localize`:dashboard.recently_played:Recently played`;
+  featuredPlaylistTitle;
 
   protected readonly playlistUrls = [
     '37i9dQZF1DXc7aGdJ1YSSD',
@@ -34,6 +42,8 @@ export class DashboardComponent implements OnInit {
     protected readonly userSettings: UserSettingsService,
     protected readonly cdr: ChangeDetectorRef,
     protected readonly spotifyPlaylistService: SpotifyPlaylistDataService,
+    protected readonly spotifyPlayer: SpotifyPlayerService,
+    protected readonly spotifyBrowse: SpotifyBrowseService,
   ) {}
 
   ngOnInit(): void {
@@ -41,6 +51,8 @@ export class DashboardComponent implements OnInit {
       this.userSettings.darkMode(darkMode);
     });
     this.initAlbums();
+    this.initTracks();
+    this.initFeaturedPlaylists();
   }
 
   protected async initAlbums(): Promise<void> {
@@ -49,5 +61,26 @@ export class DashboardComponent implements OnInit {
         this.spotifyPlaylistService.getPlaylist(playlistUrl),
       ),
     ]);
+  }
+
+  protected async initTracks(): Promise<void> {
+    const response = await this.spotifyPlayer.recentlyPlayed();
+    const tracks = [...response.items.map((t) => t.track)];
+    const trackIds = [];
+    this.tracks = tracks.filter((t) => {
+      if (trackIds.includes(t.id)) {
+        return false;
+      }
+      trackIds.push(t.id);
+      return true;
+    });
+  }
+
+  protected async initFeaturedPlaylists(): Promise<void> {
+    const response = await this.spotifyBrowse.getFeaturedPlaylists();
+    this.featuredPlaylistTitle =
+      response.message ||
+      $localize`:dashboard.featured_playlist:Featured playlists`;
+    this.featuredPlaylists = response.playlists.items;
   }
 }

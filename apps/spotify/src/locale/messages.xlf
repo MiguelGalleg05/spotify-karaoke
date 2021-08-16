@@ -241,7 +241,7 @@
       <trans-unit id="34013789ef658e9b29c6a31b2da82114f71d055e" datatype="html">
         <source>Album cover</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/album/album.component.html</context>
+          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/album/album/album.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
         <context-group purpose="location">
@@ -275,43 +275,59 @@
       <trans-unit id="8392605384169942076" datatype="html">
         <source>Sing along</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/dashboard/dashboard.component.ts</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/dashboard/dashboard/dashboard.component.ts</context>
+          <context context-type="linenumber">24</context>
         </context-group>
         <note priority="1" from="description">dashboard.sing_along</note>
+      </trans-unit>
+      <trans-unit id="1024803264261739724" datatype="html">
+        <source>Recently played</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/dashboard/dashboard/dashboard.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <note priority="1" from="description">dashboard.recently_played</note>
+      </trans-unit>
+      <trans-unit id="1874750095597554419" datatype="html">
+        <source>Featured playlists</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/dashboard/dashboard/dashboard.component.ts</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+        <note priority="1" from="description">dashboard.featured_playlist</note>
       </trans-unit>
       <trans-unit id="77d2c789575b9a7a608f97ff60771488ca54a369" datatype="html">
         <source>Playlist cover</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/playlist/playlist.component.html</context>
+          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/playlist/playlist/playlist.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8a12dde02c616937827c079cb7c48e5b83e3fd02" datatype="html">
         <source> By </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/playlist/playlist.component.html</context>
+          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/playlist/playlist/playlist.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5a6c9010e189fe1a5634e0bf38a92d25fe579315" datatype="html">
         <source>Current queue</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/queue/queue.component.html</context>
+          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/queue/queue/queue.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3aff6c61fefcbb2363c5d13d642f1618b1aa876d" datatype="html">
         <source>Currently playing</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/queue/queue.component.html</context>
+          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/queue/queue/queue.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5136702a12209b5e25ca9b8786794f977a3a03a9" datatype="html">
         <source>Up next</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/queue/queue.component.html</context>
+          <context context-type="sourcefile">libs/web/spotify/homepage/view/src/lib/queue/queue/queue.component.html</context>
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
@@ -506,6 +522,14 @@
           <context context-type="linenumber">16</context>
         </context-group>
         <note priority="1" from="description">playlist-card-decorator.image-alt</note>
+      </trans-unit>
+      <trans-unit id="8851480626566911419" datatype="html">
+        <source>Track album cover</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/card/track-card-decorator/track-card-decorator.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">track-card-decorator.image-alt</note>
       </trans-unit>
       <trans-unit id="3369256122420440321" datatype="html">
         <source>Image alt</source>

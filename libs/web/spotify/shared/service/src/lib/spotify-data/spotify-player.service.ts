@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PlayerControlService } from '../player-control.service';
 
@@ -55,15 +55,28 @@ export class SpotifyPlayerService {
    * @returns Promise
    */
   play(context: SpotifyApi.PlayParameterObject): Promise<void> {
-    return this.player.play(context);
-    if (!context.context_uri && !context.uris) {
-      return Promise.reject(new Error('context_uri or uris are required'));
-    }
-
     return this.httpClient
       .put<void>(
         SpotifyDataService.SpotifyApiBaseURL + 'me/player/play',
         context,
+      )
+      .toPromise();
+  }
+
+  /**
+   * GET https://api.spotify.com/v1/me/player/play
+   * @param context
+   * @returns Promise
+   */
+  recentlyPlayed(
+    limit = 50,
+  ): Promise<SpotifyApi.UsersRecentlyPlayedTracksResponse> {
+    const params = new HttpParams().append('limit', limit);
+
+    return this.httpClient
+      .get<SpotifyApi.UsersRecentlyPlayedTracksResponse>(
+        SpotifyDataService.SpotifyApiBaseURL + 'me/player/recently-played',
+        { params },
       )
       .toPromise();
   }

@@ -15,6 +15,7 @@ import { CardWrapperComponent } from './card-wrapper/card-wrapper.component';
 import { CardWrapperWithContentComponent } from './card-wrapper-with-content/card-wrapper-with-content.component';
 import { DynamicCardListComponent } from './dynamic-card-list/dynamic-card-list.component';
 import { PlaylistCardDecoratorComponent } from './playlist-card-decorator/playlist-card-decorator.component';
+import { TrackCardDecoratorComponent } from './track-card-decorator/track-card-decorator.component';
 
 const exports = [
   AlbumCardDecoratorComponent,
@@ -27,7 +28,7 @@ const exports = [
 ];
 
 @NgModule({
-  declarations: [...exports],
+  declarations: [...exports, TrackCardDecoratorComponent],
   imports: [
     CommonModule,
     MatCardModule,

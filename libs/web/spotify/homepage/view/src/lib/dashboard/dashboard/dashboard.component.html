@@ -3,3 +3,17 @@
   [title]="singAlongTitle"
   [data]="playlists"
 ></artur-ba-card-wrapper-with-content>
+
+<artur-ba-card-wrapper-with-content
+  [viewMode]="CardListViewMode.PLAYLIST"
+  [title]="featuredPlaylistTitle"
+  [data]="featuredPlaylists"
+  [singleLine]="true"
+></artur-ba-card-wrapper-with-content>
+
+<artur-ba-card-wrapper-with-content
+  [viewMode]="CardListViewMode.TRACK"
+  [title]="recentlyPlayedTitle"
+  [data]="tracks"
+  [singleLine]="true"
+></artur-ba-card-wrapper-with-content>

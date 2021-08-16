@@ -16,10 +16,12 @@ import { CardDirective } from '@artur-ba/web/spotify/shared/directives';
 import { AlbumCardDecoratorComponent } from '../album-card-decorator/album-card-decorator.component';
 import { CardDecoratorComponent } from '../card-decorator/card-decorator.component';
 import { PlaylistCardDecoratorComponent } from '../playlist-card-decorator/playlist-card-decorator.component';
+import { TrackCardDecoratorComponent } from '../track-card-decorator/track-card-decorator.component';
 
 export enum CardListViewMode {
   ALBUM = 'Album',
   PLAYLIST = 'Playlist',
+  TRACK = 'Track',
 }
 const viewModeMap = new Map<
   CardListViewMode,
@@ -27,6 +29,7 @@ const viewModeMap = new Map<
 >();
 viewModeMap.set(CardListViewMode.ALBUM, AlbumCardDecoratorComponent);
 viewModeMap.set(CardListViewMode.PLAYLIST, PlaylistCardDecoratorComponent);
+viewModeMap.set(CardListViewMode.TRACK, TrackCardDecoratorComponent);
 
 @Component({
   selector: 'artur-ba-dynamic-card-list',
