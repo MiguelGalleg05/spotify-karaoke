@@ -53,6 +53,7 @@ export class PlayerService implements OnDestroy {
       return Promise.reject(new Error(message));
     });
     player.addListener('account_error', ({ message }) => {
+      this.playerState.setState({ userPremium: false });
       return Promise.reject(new Error(message));
     });
     player.addListener('playback_error', ({ message }) => {

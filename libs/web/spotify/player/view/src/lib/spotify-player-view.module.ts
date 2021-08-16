@@ -16,6 +16,7 @@ import { PlayerAvailableDevicesComponent } from './player-settings/player-availa
 import { PlayerComponent } from './player/player.component';
 import { PlayerControlComponent } from './player-control/player-control.component';
 import { PlayerDeviceComponent } from './player-settings/player-device/player-device.component';
+import { PlayerFreeComponent } from './player-free/player-free.component';
 import { PlayerSettingsComponent } from './player-settings/player-settings.component';
 import { PlayerSongComponent } from './player-song/player-song.component';
 
@@ -39,7 +40,8 @@ import { PlayerSongComponent } from './player-song/player-song.component';
     PlayerSettingsComponent,
     PlayerAvailableDevicesComponent,
     PlayerDeviceComponent,
+    PlayerFreeComponent,
   ],
-  exports: [PlayerComponent],
+  exports: [PlayerComponent, PlayerFreeComponent],
 })
 export class WebSpotifyPlayerViewModule {}

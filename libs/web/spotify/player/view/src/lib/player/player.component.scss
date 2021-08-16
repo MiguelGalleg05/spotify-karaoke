@@ -1,9 +1,7 @@
-@import 'variables';
+@import '../styles/player';
 
 :host {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   justify-content: space-between;
-  align-items: center;
-  background-color: var(--bg-d5);
 }

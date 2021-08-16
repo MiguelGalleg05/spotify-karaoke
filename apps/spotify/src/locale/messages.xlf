@@ -428,6 +428,14 @@
           <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="a4d3b8a590a13aa956b63ddfb33628c3041ae878" datatype="html">
+        <source> Some of the website functions may not work because the account isn&apos;t premium
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/spotify/player/view/src/lib/player-free/player-free.component.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="2dfefa9ac6b049deda26edd04052b5d30e6ca1d3" datatype="html">
         <source>Available devices</source>
         <context-group purpose="location">

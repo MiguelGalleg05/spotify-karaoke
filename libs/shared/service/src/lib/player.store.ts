@@ -6,6 +6,7 @@ import { Observable, of, timer } from 'rxjs';
 import { StateInterface } from './state-interface';
 
 export interface PlayerState {
+  userPremium: boolean;
   player: Spotify.Player;
   deviceId: string;
   playbackState: Spotify.PlaybackState;
@@ -54,4 +55,9 @@ export class PlayerStore extends StateInterface<PlayerState> {
       );
     }),
   ) as Observable<Observable<number>>;
+
+  readonly userPremium$ = this.state$.pipe(
+    filter((p) => !!p),
+    map((p) => p.userPremium ?? true),
+  ) as Observable<boolean>;
 }

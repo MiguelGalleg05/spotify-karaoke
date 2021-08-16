@@ -5,4 +5,7 @@
     <router-outlet></router-outlet>
   </div>
 </div>
-<artur-ba-player></artur-ba-player>
+<artur-ba-player *ngIf="userPremium$() | async"></artur-ba-player>
+<artur-ba-player-free
+  *ngIf="(userPremium$() | async) === false"
+></artur-ba-player-free>

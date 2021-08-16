@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthStore, HotkeyService } from '@artur-ba/shared/service';
+import {
+  AuthStore,
+  HotkeyService,
+  PlayerStore,
+} from '@artur-ba/shared/service';
 import { PlayerService } from '@artur-ba/web/spotify/shared/service';
 
 @Component({
@@ -11,11 +15,16 @@ import { PlayerService } from '@artur-ba/web/spotify/shared/service';
 export class HomepageComponent implements OnInit {
   constructor(
     protected authStore: AuthStore,
+    protected playerStore: PlayerStore,
     protected playerService: PlayerService,
     protected hotkeyService: HotkeyService,
   ) {}
 
   async ngOnInit(): Promise<void> {
     this.playerService.init();
+  }
+
+  userPremium$() {
+    return this.playerStore.userPremium$;
   }
 }
