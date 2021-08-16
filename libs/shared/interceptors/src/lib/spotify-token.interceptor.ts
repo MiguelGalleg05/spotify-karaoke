@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { catchError, filter, switchMap } from 'rxjs/operators';
-import { from, Observable, throwError } from 'rxjs';
 import {
   HttpErrorResponse,
   HttpEvent,
@@ -9,6 +8,7 @@ import {
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 
 import { AuthStore } from '@artur-ba/shared/service';
@@ -70,21 +70,15 @@ export class SpotifyTokenInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     if (!this.refreshingInProgress) {
       this.refreshingInProgress = true;
-
-      return from(this.authStore.refreshToken()).pipe(
-        switchMap(() => {
-          this.refreshingInProgress = false;
-          return next.handle(this.addAuthorizationHeader(request));
-        }),
-      );
-    } else {
-      // wait while getting new token
-      return this.authStore.access_token_sub$.pipe(
-        filter((token) => token !== null),
-        switchMap(() => {
-          return next.handle(this.addAuthorizationHeader(request));
-        }),
-      );
+      this.authStore.refreshToken().then(() => {
+        this.refreshingInProgress = false;
+      });
     }
+    return this.authStore.access_token_sub$.pipe(
+      filter((token) => token !== null),
+      switchMap(() => {
+        return next.handle(this.addAuthorizationHeader(request));
+      }),
+    );
   }
 }

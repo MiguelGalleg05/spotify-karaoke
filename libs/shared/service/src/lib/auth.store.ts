@@ -1,6 +1,11 @@
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import {
+  HttpBackend,
+  HttpClient,
+  HttpHeaders,
+  HttpParams,
+} from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 
@@ -22,21 +27,26 @@ export class AuthStore {
   constructor(
     protected route: ActivatedRoute,
     protected router: Router,
-    protected http: HttpClient,
+    protected httpBackend: HttpBackend,
     protected env: EnvSettingsService,
-  ) {}
+  ) {
+    this.http = new HttpClient(httpBackend);
+    this.init();
+  }
   static readonly access_token_key = 'access_token';
   static readonly refresh_token_key = 'refresh_token';
   static readonly return_url_key = 'returnUrl';
 
   access_token_sub$ = new BehaviorSubject(this.access_token);
   protected readonly tokenUrl = 'https://accounts.spotify.com/api/token';
+  protected tokenRefreshTimer;
+  protected http: HttpClient;
 
-  protected saveTokenData(token: SpotifyTokenResponse): void {
-    Object.keys(token).forEach((key) => {
-      localStorage.setItem(key, token[key]);
-    });
-    this.access_token_sub$.next(token.access_token);
+  protected async init(): Promise<void> {
+    if (!this.isLogged()) {
+      return;
+    }
+    this.refreshToken();
   }
 
   get access_token(): string {
@@ -79,7 +89,7 @@ export class AuthStore {
         headers: this.headers,
       })
       .toPromise();
-    this.saveTokenData(token);
+    this.login(token);
     this.router.navigate([this.returnUrl]);
   }
 
@@ -94,22 +104,51 @@ export class AuthStore {
   }
 
   async refreshToken(): Promise<void> {
+    this.saveTokenData(await this.getRefreshToken());
+  }
+
+  protected login(token: SpotifyTokenResponse): void {
+    this.saveTokenData(token);
+    this.initTokenRefreshInterval(token);
+  }
+
+  protected initTokenRefreshInterval({
+    expires_in,
+  }: SpotifyTokenResponse): void {
+    this.tokenRefreshTimer = setInterval(
+      () => this.refreshToken(),
+      expires_in * 0.9 * 1000,
+    );
+  }
+
+  protected stopTokenRefreshTimer(): void {
+    clearInterval(this.tokenRefreshTimer);
+  }
+
+  protected saveTokenData(token: SpotifyTokenResponse): void {
+    Object.keys(token).forEach((key) => {
+      localStorage.setItem(key, token[key]);
+    });
+    this.access_token_sub$.next(token.access_token);
+  }
+
+  protected async getRefreshToken(): Promise<SpotifyTokenResponse> {
     const params = new HttpParams().appendAll({
       grant_type: 'refresh_token',
       refresh_token: this.refresh_token,
     });
     this.access_token_sub$.next(null);
-    const token = await this.http
+    return this.http
       .post<SpotifyTokenResponse>(this.tokenUrl, params.toString(), {
         headers: this.headers,
       })
       .toPromise();
-    this.saveTokenData(token);
   }
 
   logout(): void {
     localStorage.removeItem(AuthStore.access_token_key);
     localStorage.removeItem(AuthStore.refresh_token_key);
+    this.stopTokenRefreshTimer();
     this.router.navigate(['login']);
   }
 
