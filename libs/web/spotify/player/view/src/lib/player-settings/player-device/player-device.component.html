@@ -1,4 +1,12 @@
 <div class="player-device">
-  <mat-icon [ngClass]="{ active: device.is_active }">computer</mat-icon>
+  <mat-icon
+    *ngIf="device.type === 'Smartphone'; else computer"
+    [ngClass]="{ active: device.is_active }"
+  >
+    phonelink_ring
+  </mat-icon>
+  <ng-template #computer>
+    <mat-icon [ngClass]="{ active: device.is_active }">computer</mat-icon>
+  </ng-template>
 </div>
 <span>{{ device.name }}</span>
