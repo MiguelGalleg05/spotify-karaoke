@@ -5,6 +5,11 @@
   flex-direction: column;
 }
 
+head {
+  display: flex;
+  justify-content: space-between;
+}
+
 .user-notify {
   display: flex;
   @include flex-1;

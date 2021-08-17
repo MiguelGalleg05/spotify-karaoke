@@ -1,16 +1,25 @@
-<h1 i18n>Lyrics</h1>
+<head>
+  <h1 i18n>Lyrics</h1>
+
+  <artur-ba-lyrics-selection
+    (state)="state = $event"
+  ></artur-ba-lyrics-selection>
+</head>
 
 <artur-ba-lyrics-text
-  *ngIf="lyrics && !searching"
+  *ngIf="state.state === LyricsSearchState.SEARCH_SUCCESS"
   [currentTime]="progress$ | async"
-  [lyrics]="lyrics"
+  [lyrics]="state.lyrics"
 ></artur-ba-lyrics-text>
 
-<div class="user-notify" *ngIf="!lyrics && !searching">
+<div
+  class="user-notify"
+  *ngIf="state.state === LyricsSearchState.SEARCH_FAILED"
+>
   <span i18n> Couldn't find a right text :< </span>
 </div>
 
-<div *ngIf="searching" class="user-notify">
+<div *ngIf="state.state === LyricsSearchState.SEARCHING" class="user-notify">
   <mat-spinner diameter="300" strokeWidth="20"> </mat-spinner>
   <span i18n> Looking for a lyrics </span>
 </div>

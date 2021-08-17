@@ -6,5 +6,10 @@
     "types": ["jest", "node", "spotify-web-playback-sdk", "spotify-api"]
   },
   "files": ["src/test-setup.ts"],
-  "include": ["**/*.spec.ts", "**/*.d.ts"]
+  "include": [
+    "**/*.spec.ts",
+    "**/*.d.ts",
+    "src/lib/service/mat-dialog.service.ts",
+    "src/lib/createSpyObj.ts"
+  ]
 }

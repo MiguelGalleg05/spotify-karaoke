@@ -18,4 +18,11 @@ export class AuthStoreProxy extends AuthStore {
     tokenData = tokenData || this.tokenData;
     this.saveTokenData(tokenData);
   }
+
+  async init(): Promise<void> {
+    return;
+  }
+  async refreshToken(): Promise<void> {
+    return;
+  }
 }

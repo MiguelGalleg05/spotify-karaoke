@@ -7,10 +7,18 @@ import {
 import { By } from '@angular/platform-browser';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-import { createSpyObj } from '@artur-ba/shared/test-helpers';
+import {
+  createSpyObj,
+  MatDialogServiceMock,
+} from '@artur-ba/shared/test-helpers';
 import { MiniLyricsService } from '@artur-ba/web/lyrics/mini-lyrics/service';
 
+import {
+  LyricsSearchState,
+  LyricsSelectionComponent,
+} from '../lyrics-selection/lyrics-selection.component';
 import { LyricsComponent } from './lyrics.component';
+import { MatDialog } from '@angular/material/dialog';
 
 describe('LyricsComponent', () => {
   let component: LyricsComponent;
@@ -21,8 +29,9 @@ describe('LyricsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [MatProgressSpinnerModule],
-      declarations: [LyricsComponent],
+      declarations: [LyricsComponent, LyricsSelectionComponent],
       providers: [
+        { provide: MatDialog, useClass: MatDialogServiceMock },
         { provide: MiniLyricsService, useValue: miniLyricsServiceMock },
       ],
     }).compileComponents();
@@ -39,7 +48,7 @@ describe('LyricsComponent', () => {
   });
 
   it('should display searching info while searching', fakeAsync(() => {
-    component.searching = true;
+    component.state = { state: LyricsSearchState.SEARCHING };
     fixture.detectChanges();
     tick();
 
@@ -51,8 +60,7 @@ describe('LyricsComponent', () => {
   }));
 
   it('should display no lyrics found if none lyrics and not searching', fakeAsync(() => {
-    component.searching = false;
-    component.lyrics = undefined;
+    component.state = { state: LyricsSearchState.SEARCH_FAILED };
     fixture.detectChanges();
     tick();
 
