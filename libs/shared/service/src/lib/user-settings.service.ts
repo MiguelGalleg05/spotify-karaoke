@@ -19,6 +19,7 @@ export class UserSettingsService extends StateInterface<UserSettings> {
   protected readonly dark_mode = 'dark_mode';
   protected readonly return_path = 'return_path';
   protected readonly true_str = 'true';
+  protected readonly cookieMaxAge = 365 * 24 * 60 * 60;
 
   constructor(protected cookieService: CookieService) {
     super();
@@ -39,7 +40,7 @@ export class UserSettingsService extends StateInterface<UserSettings> {
   ) as Observable<boolean>;
 
   allowCookies(): void {
-    this.cookieService.set(this.cookies_allowed, this.true_str);
+    this.setCookie(this.cookies_allowed, this.true_str);
     this.setState({
       cookies_allowed: this.true_str,
     });
@@ -50,11 +51,11 @@ export class UserSettingsService extends StateInterface<UserSettings> {
     this.setState({
       dark_mode: isOnStr,
     });
-    this.cookieService.set(this.dark_mode, isOnStr);
+    this.setCookie(this.dark_mode, isOnStr);
   }
 
   saveReturnPath(path: string): void {
-    this.cookieService.set(this.return_path, path);
+    this.setCookie(this.return_path, path, 5 * 60);
   }
 
   getReturnPath(): string {
@@ -64,5 +65,21 @@ export class UserSettingsService extends StateInterface<UserSettings> {
       this.cookieService.delete(this.return_path);
     }
     return path;
+  }
+
+  protected setCookie(
+    key: string,
+    value: string,
+    cookieMaxAge = this.cookieMaxAge,
+  ): void {
+    this.cookieService.set(
+      key,
+      value,
+      cookieMaxAge,
+      '/',
+      window.location.hostname,
+      false,
+      'Strict',
+    );
   }
 }
