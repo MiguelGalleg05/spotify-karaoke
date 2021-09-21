@@ -58,6 +58,7 @@ root
 
 Read more about:
 
+- [Internationalization](./docs/i18n.md)
 - [Technologies](./docs/technologies.md)
 - [Tests](./docs/tests.md)
 - [CI/CD](./docs/ci_cd.md)

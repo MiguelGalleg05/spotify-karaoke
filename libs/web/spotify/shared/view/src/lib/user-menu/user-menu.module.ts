@@ -4,6 +4,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { NgModule } from '@angular/core';
 
+import { SharedViewModule } from '@artur-ba/shared/view';
+
 import { MenuComponent } from './menu/menu.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { TitleComponent } from './title/title.component';
@@ -25,6 +27,7 @@ const exports = [UserMenuComponent];
     MatMenuModule,
     MatButtonModule,
     UserMenuRoutingModule,
+    SharedViewModule,
   ],
   exports,
 })

@@ -23,7 +23,7 @@
         <target state="translated">Autoryzuj z Spotify</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/spotify/src/app/login/login/login.component.html</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="0126319b6e9c024ee03c2d8e51fda4955d3ec89d" datatype="html">
@@ -31,7 +31,7 @@
         <target state="translated">Autoryzuj</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/spotify/src/app/login/login/login.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f29c55965ec5f5ac846d05c145120d93bd862679" datatype="html">
@@ -39,7 +39,7 @@
         <target state="translated">Proszę czekaj na autoryzację</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/spotify/src/app/login/login/login.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="83882e627df6018d9b114edec05458c7524d9eb1" datatype="html">
@@ -47,15 +47,15 @@
         <target state="translated">Jeśli utknąłeś na tej stronie, prosze sprawdź czy Twoje rozszerzenia nie blokują zapytań (np. PrivacyBadger)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/spotify/src/app/login/login/login.component.html</context>
-          <context context-type="linenumber">18,20</context>
+          <context context-type="linenumber">19,21</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="d91a6079b16ac83cc7b9b2c46bf5318ea0d54220" datatype="html">
-        <source>This page is not available on mobile devices</source>
-        <target state="translated"> Ta strona nie jest dostępna na urządzeniach mobilnych</target>
+      <trans-unit id="c37def435ef47af233e47be240e0f92fd28244ed" datatype="html">
+        <source>Login is not available on mobile devices</source>
+        <target state="translated"> Logowanie nie jest dostępne na urządzeniach mobilnych</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/spotify/src/app/login/login/login.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c0fead7ca48230582a9f36382a1c8b3d26a98779" datatype="html">
@@ -162,6 +162,15 @@
           <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="1536087519743707362" datatype="html">
+        <source>Dismiss</source>
+        <target state="translated">Odrzuć</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/shared/interceptors/src/lib/error.interceptor.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description">error-interceptor.dismiss</note>
+      </trans-unit>
       <trans-unit id="a7b7895ba78d538df30e02338abc92843dc78385" datatype="html">
         <source>App info</source>
         <target state="translated">Informacje o aplikacji</target>
@@ -252,12 +261,48 @@
           <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="be56057593348a736a51decb71a4e318f6dec4a7" datatype="html">
+        <source>Select lyrics</source>
+        <target state="translated">Wybierz słowa piosenek</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/lyrics/view/src/lib/lyrics-selection-dialog/lyrics-selection-dialog.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/lyrics/view/src/lib/lyrics-selection/lyrics-selection.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2b2c93f26d2128e7ac812d9b39336f86bd66104d" datatype="html">
+        <source>Selected lyrics</source>
+        <target state="translated">Wybrane słowa</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/lyrics/view/src/lib/lyrics-selection-dialog/lyrics-selection-dialog.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
+        <source>Cancel</source>
+        <target state="translated">Anuluj</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/lyrics/view/src/lib/lyrics-selection-dialog/lyrics-selection-dialog.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9ca82952a6bc860b5391d5975322d8af8ceddfa4" datatype="html">
+        <source>Select</source>
+        <target state="translated">Wybierz</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/web/lyrics/view/src/lib/lyrics-selection-dialog/lyrics-selection-dialog.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="9eb797f2e32138fd07eb3903b82ccf093182590e" datatype="html">
         <source>Lyrics</source>
         <target state="translated">Słowa</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/lyrics/view/src/lib/lyrics/lyrics.component.html</context>
-          <context context-type="linenumber">1</context>
+          <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
       <trans-unit id="06f7a221e5a5b9089c728d135f0c3a5658e0e564" datatype="html">
@@ -265,7 +310,7 @@
         <target state="translated"> Nie udało znaleźć się odpowiedniego tekstu</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/lyrics/view/src/lib/lyrics/lyrics.component.html</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="47acf7d8ab7a0095359b586e750a3ffb973392df" datatype="html">
@@ -273,7 +318,7 @@
         <target state="translated"> Trwa szukanie tekstu</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/lyrics/view/src/lib/lyrics/lyrics.component.html</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="34013789ef658e9b29c6a31b2da82114f71d055e" datatype="html">
@@ -601,7 +646,7 @@
         <target state="translated">Okładka utworu</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/web/spotify/shared/view/src/lib/card/track-card-decorator/track-card-decorator.component.ts</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">12</context>
         </context-group>
         <note priority="1" from="description">track-card-decorator.image-alt</note>
       </trans-unit>

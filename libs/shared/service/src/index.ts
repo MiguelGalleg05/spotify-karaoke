@@ -7,3 +7,6 @@ export * from './lib/env-settings.service';
 export * from './lib/icon.service';
 export * from './lib/hotkey.service';
 export * from './lib/country.service';
+export * from './lib/language.resolver';
+export * from './lib/language.service';
+export * from './lib/models/language.model';

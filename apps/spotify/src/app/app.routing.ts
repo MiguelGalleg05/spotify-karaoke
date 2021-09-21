@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { RouterModule, Routes } from '@angular/router';
 
-import { AuthGuard } from '@artur-ba/shared/service';
+import { AuthGuard, LanguageResolver } from '@artur-ba/shared/service';
 
 import { LoginComponent } from './login/login/login.component';
 
@@ -11,11 +11,17 @@ const ROUTES: Routes = [
     path: 'login',
     component: LoginComponent,
     data: { spotify_callback: false },
+    resolve: {
+      languages: LanguageResolver,
+    },
   },
   {
     path: 'spotify',
     component: LoginComponent,
     data: { spotify_callback: true },
+    resolve: {
+      languages: LanguageResolver,
+    },
   },
   {
     path: '',
@@ -24,6 +30,9 @@ const ROUTES: Routes = [
         (m) => m.WebSpotifyHomepageViewModule,
       ),
     canActivate: [AuthGuard],
+    resolve: {
+      languages: LanguageResolver,
+    },
   },
 ];
 

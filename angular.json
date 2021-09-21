@@ -157,6 +157,7 @@
             "assets": [
               "apps/spotify/src/robots.txt",
               "apps/spotify/src/sitemap.xml",
+              "apps/spotify/src/languages.json",
               "apps/spotify/src/favicon.ico",
               "apps/spotify/src/assets"
             ],

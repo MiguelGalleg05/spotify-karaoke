@@ -42,7 +42,7 @@ export class AuthStore {
   protected tokenRefreshTimer;
   protected http: HttpClient;
 
-  protected async init(): Promise<void> {
+  protected init(): void {
     if (!this.isLogged()) {
       return;
     }
