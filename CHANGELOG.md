@@ -1,3 +1,16 @@
+# [0.9.0](https://github.com/ArturBa/spotify-karaoke/compare/v0.8.0...v0.9.0) (2021-10-19)
+
+### Features
+
+- **shared:** :sparkles: Add error snackbar ([#205](https://github.com/ArturBa/spotify-karaoke/issues/205)) ([e29d408](https://github.com/ArturBa/spotify-karaoke/commit/e29d4082685b090346e2ff8b3457c8810702e7df))
+- **shared:** :sparkles: Add language selection ([#247](https://github.com/ArturBa/spotify-karaoke/issues/247)) ([7f153f5](https://github.com/ArturBa/spotify-karaoke/commit/7f153f58111a6a61cc99aeff469e10fe058259b2))
+- **spotify:** :sparkles: Add smartphone icon for user devices ([#219](https://github.com/ArturBa/spotify-karaoke/issues/219)) ([f56fbbc](https://github.com/ArturBa/spotify-karaoke/commit/f56fbbcf9b6470365514ad892290a2521594f9cd))
+
+### Performance Improvements
+
+- :zap: Migrate to yarn ([#217](https://github.com/ArturBa/spotify-karaoke/issues/217)) ([2ef3ecd](https://github.com/ArturBa/spotify-karaoke/commit/2ef3ecd0f75b6ad8139a19696c5e4d0459c4e164))
+- **shared:** :lock: Add more strict rules for cookies ([#239](https://github.com/ArturBa/spotify-karaoke/issues/239)) ([6ba15d7](https://github.com/ArturBa/spotify-karaoke/commit/6ba15d726f1e9bafb5a07ff3b232a284f797c905))
+
 # [0.8.0](https://github.com/ArturBa/spotify-karaoke/compare/v0.7.0...v0.8.0) (2021-08-16)
 
 ### Bug Fixes
