@@ -75,7 +75,7 @@
     "@nrwl/storybook": "12.7.1",
     "@nrwl/tao": "12.7.1",
     "@nrwl/workspace": "12.7.1",
-    "@release-it/conventional-changelog": "^3.0.1",
+    "@release-it/conventional-changelog": "^3.3.0",
     "@storybook/addon-a11y": "^6.3.2",
     "@storybook/addon-actions": "^6.3.0",
     "@storybook/addon-docs": "6.3.6",
