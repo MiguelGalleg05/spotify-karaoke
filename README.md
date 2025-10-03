@@ -10,3 +10,5 @@ El objetivo es analizar cómo integrar un **modo karaoke en Spotify** mostrando 
 
 ## Fuente original
 Este proyecto fue clonado de un repositorio público en GitHub para fines académicos.
+
+## El desarrollo del taller el informe esta en el repo y se llama Informe Taller – Spotify 
