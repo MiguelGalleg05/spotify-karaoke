@@ -14,3 +14,5 @@ Este proyecto fue clonado de un repositorio público en GitHub para fines acadé
 ## El desarrollo del taller el informe esta en el repo y se llama Informe Taller – Spotify 
 link:  https://github.com/MiguelGalleg05/spotify-karaoke/blob/main/Taller%20Parejas.pdf
 
+Anexo Repositorio 2:
+https://github.com/MiguelGalleg05/SpotifyKaraoke-ref
